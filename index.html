@@ -515,6 +515,18 @@ th{background:var(--surface-2)}
 .kpi:hover{background:var(--surface-2);border-color:var(--line-2);transform:translateY(-2px)}
 @media (prefers-reduced-motion:reduce){.tcard::before,.kpi{transition:none}.tcard:hover,.kpi:hover{transform:none}}
 @media (max-width:600px){#sec-painel{gap:30px}}
+
+/* ===== animação de entrada das ilustrações (só uma vez; visível por padrão) ===== */
+.ill-in :is(path,rect,circle,ellipse):not(.fade){animation:ill-draw 1.25s cubic-bezier(.65,.05,.36,1) both;animation-delay:calc(var(--i,0) * 55ms)}
+.ill-in .acc:not(.fade){animation-duration:.9s;animation-delay:calc(var(--i,0) * 55ms + .35s)}
+.ill-in .fade{animation:ill-fade .7s ease both;animation-delay:calc(var(--i,0) * 55ms + .25s)}
+.ill-in .drive-l{animation:drive-l 1.7s cubic-bezier(.16,.84,.3,1) .1s both}
+.ill-in .drive-r{animation:drive-r 1.7s cubic-bezier(.16,.84,.3,1) .3s both}
+@keyframes ill-draw{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
+@keyframes ill-fade{from{opacity:0}to{opacity:1}}
+@keyframes drive-l{from{transform:translateX(-70px);opacity:0}to{transform:none;opacity:1}}
+@keyframes drive-r{from{transform:translateX(70px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.ill-in *{animation:none!important}}
 </style>
 </head>
 <body>
@@ -1018,8 +1030,8 @@ const ILLU={
  risco:'<path d="M24 30h76a6 6 0 0 1 6 6v36a6 6 0 0 1-6 6H30a6 6 0 0 1-6-6z"/><path d="M24 34c0-6 4-10 10-10h52v6"/><path d="M106 46H90a6 6 0 0 0 0 12h16z"/><circle cx="92" cy="52" r="1.5"/><path class="acc" d="M118 70c0 2 5 4 12 4s12-2 12-4v-8c0 2-5 4-12 4s-12-2-12-4zM118 62v-8c0 2 5 4 12 4s12-2 12-4v8M118 54c0-2 5-4 12-4s12 2 12 4"/>',
  parecer:'<path d="M80 18v58M60 80h40"/><circle cx="80" cy="16" r="3"/><path class="acc" d="M38 30h84"/><path d="M38 30l-12 24h24zM122 30l-12 24h24z"/><path d="M24 54a14 5 0 0 0 28 0M108 54a14 5 0 0 0 28 0"/>'
 };
-const ill=k=>'<svg viewBox="0 0 160 90" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ILLU[k]||'')+'</svg>';
-const HOME_ART='<svg viewBox="0 0 320 170" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 120V64h26v56M52 120V44h30v76M88 120V72h22v48M236 120V52h28v68M270 120V80h24v40" opacity=".28"/><path d="M4 136h312" opacity=".45"/><g transform="translate(-6 74)">'+SEDAN+'</g><g transform="translate(150 0)"><path d="M10 134V92c0-5 4-9 9-9h82c6 0 11 3 14 7l20 24c2 3 3 6 3 9v11"/><path d="M10 134h20M54 134h56M134 134h4"/><path d="M24 92h22v18H24zM54 92h22v18H54zM84 92h17c3 0 5 1 7 3l12 15H84z"/><circle class="acc" cx="42" cy="134" r="11"/><circle class="acc" cx="122" cy="134" r="11"/></g></svg>';
+const ill=k=>'<svg class="ill" viewBox="0 0 160 90" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ILLU[k]||'')+'</svg>';
+const HOME_ART='<svg class="ill" viewBox="0 0 320 170" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 120V64h26v56M52 120V44h30v76M88 120V72h22v48M236 120V52h28v68M270 120V80h24v40" opacity=".28"/><path d="M4 136h312" opacity=".45"/><g class="drive-l"><g transform="translate(-6 74)">'+SEDAN+'</g></g><g class="drive-r"><g transform="translate(150 0)"><path d="M10 134V92c0-5 4-9 9-9h82c6 0 11 3 14 7l20 24c2 3 3 6 3 9v11"/><path d="M10 134h20M54 134h56M134 134h4"/><path d="M24 92h22v18H24zM54 92h22v18H54zM84 92h17c3 0 5 1 7 3l12 15H84z"/><circle class="acc" cx="42" cy="134" r="11"/><circle class="acc" cx="122" cy="134" r="11"/></g></g></svg>';
 
 /* ---------------- formatação ---------------- */
 const BRL=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
@@ -1533,9 +1545,9 @@ const CARD={
 function renderHeroes(){
   SECTIONS.forEach(s=>{
     const sec=$('sec-'+s.id); const el=sec&&sec.querySelector('.sec-head'); if(!el) return;
+    if(!el.querySelector('.hero-art')){ el.innerHTML='<div class="hero-txt"></div><figure class="hero-art">'+ill(s.sec)+'</figure>'; sec.setAttribute('aria-labelledby','bn-'+s.id); }
     const done=secProgress(s.id)>=1;
-    el.innerHTML='<div><p class="eyebrow">Etapa '+s.etapa+' de 5 · '+ETAPAS[s.etapa-1].nome+(done?' · <span class="done-tag">✓ concluída</span>':'')+'</p><h2 id="bn-'+s.id+'">'+s.nome+'</h2><div class="hero-nums">'+HN[s.id]().map(n=>'<div class="hn"><span class="v c-'+n.c+'">'+n.v+'</span><span class="l">'+n.l+'</span></div>').join('')+'</div><p class="lead"><b>Conclusão:</b> '+TAKE[s.id]()+'</p></div><figure class="hero-art">'+ill(s.sec)+'</figure>';
-    sec.setAttribute('aria-labelledby','bn-'+s.id);
+    el.querySelector('.hero-txt').innerHTML='<p class="eyebrow">Etapa '+s.etapa+' de 5 · '+ETAPAS[s.etapa-1].nome+(done?' · <span class="done-tag">✓ concluída</span>':'')+'</p><h2 id="bn-'+s.id+'">'+s.nome+'</h2><div class="hero-nums">'+HN[s.id]().map(n=>'<div class="hn"><span class="v c-'+n.c+'">'+n.v+'</span><span class="l">'+n.l+'</span></div>').join('')+'</div><p class="lead"><b>Conclusão:</b> '+TAKE[s.id]()+'</p>';
   });
 }
 function renderCards(){
@@ -1545,7 +1557,7 @@ function renderCards(){
     $('cd-'+s.id).hidden=secProgress(s.id)<1;
   });
 }
-function refreshProgress(){renderHeroes(); renderCards(); renderParecer();}
+function refreshProgress(){renderHeroes(); renderCards(); renderParecer(); prepIll();}
 
 function parecerCalc(){
   const s=matrizSummary(), r=calc(state.sim), allK=KIT.flatMap(g=>g.itens), kd=allK.filter(i=>state.kit.done[i.id]).length;
@@ -1598,6 +1610,29 @@ function renderParecer(){
 }
 $('parSeg').addEventListener('click',e=>{const b=e.target.closest('[data-d]'); if(!b)return; parDraft=b.dataset.d; renderParecer();});
 $('parBtn').addEventListener('click',()=>{const d=parDraft!==null?parDraft:state.parecer.decisao; if(!d){$('parReg').textContent='Escolha uma decisão antes de registrar.'; return;} state.parecer={decisao:d,nota:$('parNota').value.slice(0,1500),em:new Date().toISOString()}; parDraft=null; renderOverview(); persist('parecer');});
+
+/* ---------------- animação de entrada ---------------- */
+const ILL_ON=('IntersectionObserver' in window) && !(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+const ILL_IO=ILL_ON?new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) startIll(e.target); }),{rootMargin:'0px 0px 12% 0px',threshold:0}):null;
+function startIll(svg){ if(svg.classList.contains('ill-in')) return; svg.classList.add('ill-in'); if(ILL_IO) ILL_IO.unobserve(svg); }
+function kickIll(){
+  if(!ILL_ON||document.visibilityState!=='visible') return;
+  const vh=window.innerHeight;
+  document.querySelectorAll('svg.ill[data-anim]:not(.ill-in)').forEach(svg=>{ const r=svg.getBoundingClientRect(); if(r.width&&r.bottom>0&&r.top<vh*1.1) startIll(svg); });
+}
+function prepIll(){
+  if(!ILL_ON) return;
+  document.querySelectorAll('svg.ill:not([data-anim])').forEach(svg=>{
+    svg.dataset.anim='1'; let i=0;
+    svg.querySelectorAll('path,rect,circle,ellipse').forEach(el=>{
+      if(el.closest('.drive-l,.drive-r')) return;
+      if(el.getAttribute('stroke-dasharray')||(el.style&&el.style.fill)) el.classList.add('fade'); else el.setAttribute('pathLength','1');
+      el.style.setProperty('--i',i++);
+    });
+    ILL_IO.observe(svg);
+  });
+  kickIll();
+}
 
 /* ---------------- blocos recolhíveis ---------------- */
 const CHEV='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
