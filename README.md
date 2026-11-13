@@ -42,6 +42,10 @@ Depois abra http://localhost:8000.
 2. Em **Framework Preset**, escolha **Other**. Deixe Build Command e Output Directory vazios.
 3. Clique em **Deploy**.
 
+## Compartilhamento
+
+`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` e `site.webmanifest` definem os ícones. `og-image.jpg` (1200×630) é a imagem das prévias de link em redes sociais; o modelo fica em `fonte/social/og.html`.
+
 ## Fontes
 
 Edital do Pregão Eletrônico nº 319/2026 (05/11/2026) e Termo de Referência nº 236/2026 com apêndices.
