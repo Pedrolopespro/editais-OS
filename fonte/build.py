@@ -18,7 +18,7 @@ DOCS_SITE, DOCS_ABS = "docs/", "https://editais-os.vercel.app/docs/"
 if "--inline" in sys.argv:
     out = sys.argv[sys.argv.index("--inline") + 1]
     b64 = lambda p, m: f"data:{m};base64," + base64.b64encode(open(os.path.join(RAIZ, p), "rb").read()).decode()
-    s = t.replace("{{DOCS}}", DOCS_ABS).replace("{{LOGO}}", b64("assets/brasao.png", "image/png")).replace("{{PLANILHA}}", b64("assets/planilha-apendice-iv.jpg", "image/jpeg"))
+    s = t.replace('" download>', '" target="_blank" rel="noopener">').replace("{{DOCS}}", DOCS_ABS).replace("{{LOGO}}", b64("assets/brasao.png", "image/png")).replace("{{PLANILHA}}", b64("assets/planilha-apendice-iv.jpg", "image/jpeg"))
     open(out, "w", encoding="utf-8", newline="\n").write(s); print("gerado", out); sys.exit()
 
 s = t.replace("{{DOCS}}", DOCS_SITE).replace("{{LOGO}}", "assets/brasao.png").replace("{{PLANILHA}}", "assets/planilha-apendice-iv.jpg")
