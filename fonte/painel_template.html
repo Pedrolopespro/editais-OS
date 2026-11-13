@@ -416,6 +416,28 @@ a.card.ev:hover{border-color:var(--strong)}
 @media (max-width:900px){.journey{padding:4px 18px 0}}
 @media (max-width:560px){.sec-head{grid-template-columns:minmax(0,1fr);padding:16px 18px}.bn-ico{display:none}.jr-steps{gap:5px}.jr-step{font-size:11px}}
 
+/* blocos recolhíveis (ver mais) */
+details.fold{border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);min-width:0}
+details.fold>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:40px minmax(0,1fr) auto auto;gap:14px;align-items:center;padding:14px 16px;border-radius:var(--r-md);transition:background .15s}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary:hover{background:var(--surface-2)}
+details.fold[open]>summary{border-bottom:1px solid var(--line);border-radius:var(--r-md) var(--r-md) 0 0}
+.fold-ico{width:40px;height:40px;border-radius:12px;background:var(--tint);color:var(--strong);display:grid;place-items:center}
+.fold-ico svg{width:20px;height:20px}
+.fold-txt{display:grid;gap:2px;min-width:0}
+.fold-txt b{font-size:16px;font-weight:700}
+.fold-txt>span{font-size:13px;color:var(--muted)}
+.fold-meta{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.fold-meta:empty{display:none}
+.fold-more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--strong);white-space:nowrap;padding:6px 12px;border-radius:99px;background:var(--tint)}
+.fold-more .chev{width:16px;height:16px;transition:transform .2s}
+details.fold[open] .fold-more .chev{transform:rotate(180deg)}
+details.fold[open] .m-open,details.fold:not([open]) .m-close{display:none}
+.fold-body{padding:16px;display:grid;gap:12px;min-width:0}
+details.fold[open] .fold-body{animation:fade .2s ease}
+@media (prefers-reduced-motion:reduce){details.fold[open] .fold-body{animation:none}.fold-more .chev{transition:none}}
+@media (max-width:560px){details.fold>summary{grid-template-columns:minmax(0,1fr);gap:8px;padding:14px}.fold-ico{display:none}.fold-meta{justify-content:flex-start}.fold-more{justify-self:start}}
+
 /* ---------- responsivo ---------- */
 @media (max-width:1100px){
   .cover,.sim{grid-template-columns:minmax(0,1fr)}
@@ -554,7 +576,7 @@ a.card.ev:hover{border-color:var(--strong)}
     <ul class="legend" id="legend"></ul>
   </div>
 
-  <div class="block">
+  <div class="block" data-fold="9 regras: diária de 10 h até 80% da de 24 h, hora extra até 20% e no show até 70%" data-fold-icon="cond">
     <div class="block-h"><h3>Regras de remuneração</h3><span class="hint">Estes limites valem para cada preço unitário da sua planilha.</span></div>
     <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Regra</th><th>O que diz</th><th>Fonte</th></tr></thead><tbody>
       <tr><td><b>Faixas de diária do veículo</b></td><td>Até 6 dias consecutivos (24 h e 10 h), 7 a 14, 15 a 29 e 30 ou mais dias, com hora extra própria em cada faixa</td><td><span class="src">TR 5.11</span></td></tr>
@@ -569,7 +591,7 @@ a.card.ev:hover{border-color:var(--strong)}
     </tbody></table></div>
   </div>
 
-  <div class="block">
+  <div class="block" data-fold="22 categorias. Sedan e Van Executiva somam 41% da locação" data-fold-icon="oper">
     <div class="block-h"><h3>Categorias de veículos e peso no orçamento</h3><span class="hint">Diária de 24 h máxima (até 6 dias) e valor anual estimado por categoria. As linhas destacadas são exigidas em atestado ou em frota própria.</span></div>
     <div class="tbl-wrap"><table class="tbl-min" id="catTable"><thead><tr><th>Cód.</th><th>Categoria</th><th class="r">Diária 24 h máx.</th><th class="r">Valor anual</th><th>Peso na locação</th><th>Exigência ligada</th></tr></thead><tbody></tbody></table></div>
   </div>
@@ -645,7 +667,7 @@ a.card.ev:hover{border-color:var(--strong)}
     <li><span>Índices <b>LG, LC e SG acima de 1</b> nos dois últimos exercícios. Se algum não alcançar, <b>patrimônio líquido de R$ 2.083.570,67</b> (10%), com regra ambígua (ver Conflitos).</span></li>
   </ul></div>
 
-  <div class="block">
+  <div class="block" data-fold="1 blindado, 2 caminhonetes ou SUV II, 6 Executivo II e 10 Sedan" data-fold-icon="qual">
     <div class="block-h"><h3>Qualificação técnico-operacional por atestados</h3><span class="pill elim">Eliminatório</span></div>
     <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>#</th><th>Categoria exigida no atestado</th><th class="r">Qtde. mínima</th><th>Por que o TR exige</th></tr></thead><tbody>
       <tr><td>1</td><td><b>Executivo Blindado II</b> ou Camioneta II Blindada (SUV II) ou superior</td><td class="r"><b>1</b></td><td>Parcela acima de 4% do valor total</td></tr>
@@ -657,14 +679,14 @@ a.card.ev:hover{border-color:var(--strong)}
   </div>
 
   <div class="grid-2">
-    <div class="card"><h4><span data-icon="decl"></span>Regras de validade do atestado</h4><ul>
+    <div class="card" data-fold="Contrato concluído ou com 1 ano de execução; soma de atestados permitida" data-fold-icon="decl"><h4><span data-icon="decl"></span>Regras de validade do atestado</h4><ul>
       <li>Emitido por pessoa jurídica de direito público ou privado <span class="src">TR 8.38</span></li>
       <li>Serviço dentro da atividade principal ou secundária do contrato social vigente <span class="src">TR 8.38.2</span></li>
       <li>Só após a conclusão do contrato ou com pelo menos 1 ano de execução <span class="src">TR 8.38.3</span></li>
       <li>Admitida a soma de atestados de contratos executados ao mesmo tempo <span class="src">TR 8.38.4</span></li>
       <li>Em nome da matriz ou da filial; o pregoeiro pode pedir cópia do contrato que sustenta o atestado <span class="src">TR 8.38.5–8.38.6</span></li>
     </ul></div>
-    <div class="card"><h4><span data-icon="risco"></span>Qualificação econômico-financeira</h4><ul>
+    <div class="card" data-fold="LG, LC e SG acima de 1 nos 2 últimos exercícios, ou patrimônio líquido de R$ 2,08 milhões" data-fold-icon="risco"><h4><span data-icon="risco"></span>Qualificação econômico-financeira</h4><ul>
       <li>Certidão negativa de falência <span class="src">TR 8.24</span></li>
       <li>Balanço patrimonial e DRE dos 2 últimos exercícios <span class="src">TR 8.25</span></li>
       <li><b>LG, LC e SG maiores que 1</b> em cada exercício, atestados por contador habilitado <span class="src">TR 8.25, 8.30</span></li>
@@ -690,7 +712,7 @@ a.card.ev:hover{border-color:var(--strong)}
     <li><span>Deixar de entregar documento pedido pelo pregoeiro é infração sujeita a multa <span class="src">Edital 11.1.1</span>.</span></li>
   </ul></div>
 
-  <div class="block">
+  <div class="block" data-fold="3 declarações exigidas e 2 termos enviados por cautela" data-fold-icon="decl">
     <div class="block-h"><h3>Com a proposta ajustada ao último lance</h3><span class="pill att">Prazo: 2 horas · Edital 6.23.4</span></div>
     <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Documento</th><th>Conteúdo</th><th>Status no edital</th><th>Fonte</th></tr></thead><tbody>
       <tr><td><b>Declaração de atendimento em 4 horas</b></td><td>Capacidade de disponibilizar os veículos do Apêndice II em até 4 h em eventos na capital ou região metropolitana</td><td><span class="pill att">Exigida</span></td><td><span class="src">TR 5.9.1 · Edital 6.23.4.1</span></td></tr>
@@ -760,36 +782,36 @@ a.card.ev:hover{border-color:var(--strong)}
 
   <div class="tiles six" id="planTiles"></div>
 
-  <div class="block">
+  <div class="block" data-fold="22 categorias em 4 faixas de prazo · R$ 14,46 milhões no ano" data-fold-icon="plan">
     <div class="block-h"><h3>Locação de veículos por categoria</h3><span class="hint">Preço máximo da diária em cada faixa de prazo e valor anual estimado. Cores das faixas iguais às do Apêndice IV.</span></div>
     <div class="tbl-wrap"><table class="pl-table" id="plLoc"></table></div>
   </div>
 
-  <div class="block">
+  <div class="block" data-fold="Teto por categoria e excesso da planilha do órgão (R$ 11.525,60 no ano)" data-fold-icon="conf">
     <div class="block-h"><h3>No show · teto de 70% da diária de 10 h</h3><span class="pill alta" id="plNsBadge"></span></div>
     <div class="tbl-wrap"><table class="pl-table tbl-mid" id="plNs"></table></div>
     <p class="hint">Linhas em vermelho: a planilha do órgão passa do teto do TR 5.11.3. Ao cotar, use no máximo o teto. A hora extra da categoria A (15 a 29 dias, R$ 298,00) também passa de 20% da diária (R$ 288,00).</p>
   </div>
 
   <div class="grid-2">
-    <div class="block">
+    <div class="block" data-fold="5 itens · R$ 5,60 milhões no ano" data-fold-icon="oper">
       <div class="block-h"><h3>Motoristas e agentes de missão</h3></div>
       <div class="tbl-wrap"><table class="pl-table" id="plMo"></table></div>
     </div>
-    <div class="block">
+    <div class="block" data-fold="3 combustíveis pelo preço ANP · R$ 705,6 mil no ano" data-fold-icon="plan">
       <div class="block-h"><h3>Combustível · repasse</h3></div>
       <div class="tbl-wrap"><table class="pl-table" id="plComb"></table></div>
       <p class="hint">Preço ANP de julho/2026 + 9,45% de tributos. Não entra no seu desconto.</p>
     </div>
   </div>
 
-  <details class="orig">
-    <summary>Ver a planilha original do órgão (imagem do Apêndice IV)</summary>
-    <div class="block" style="margin-top:12px">
+  <div class="block" data-fold="Imagem do Apêndice IV do TR (p. 42), com zoom" data-fold-icon="plan">
+    <div class="block-h"><h3>Planilha original do órgão</h3></div>
+    <div class="block">
       <div class="block-h"><span class="hint">Clique na imagem para ampliar.</span><button class="btn ghost small" id="zoomBtn" type="button">Ampliar</button></div>
       <div class="sheet" id="sheet"><img src="{{PLANILHA}}" alt="Planilha de custo do Apêndice IV do Termo de Referência, com as 22 categorias, no show, diárias de motoristas e agentes, combustíveis e total de R$ 20.835.706,71" id="sheetImg" loading="lazy"></div>
     </div>
-  </details>
+  </div>
 </section>
 
 <!-- ======================= 8. MATRIZ ======================= -->
@@ -1511,8 +1533,27 @@ function renderParecer(){
 $('parSeg').addEventListener('click',e=>{const b=e.target.closest('[data-d]'); if(!b)return; parDraft=b.dataset.d; renderParecer();});
 $('parBtn').addEventListener('click',()=>{const d=parDraft!==null?parDraft:state.parecer.decisao; if(!d){$('parReg').textContent='Escolha uma decisão antes de registrar.'; return;} state.parecer={decisao:d,nota:$('parNota').value.slice(0,1500),em:new Date().toISOString()}; parDraft=null; renderOverview(); persist('parecer');});
 
+/* ---------------- blocos recolhíveis ---------------- */
+const CHEV='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+function initFolds(){
+  document.querySelectorAll('[data-fold]').forEach(el=>{
+    const det=document.createElement('details'); det.className='fold';
+    const bh=el.querySelector(':scope > .block-h'), h4=el.querySelector(':scope > h4');
+    let title='', meta=[], hints=[];
+    if(bh){ const h3=bh.querySelector('h3'); title=h3?h3.innerHTML:''; [...bh.children].forEach(c=>{ if(c===h3) return; (c.classList.contains('hint')?hints:meta).push(c); }); bh.remove(); }
+    else if(h4){ h4.querySelectorAll('[data-icon],svg').forEach(i=>i.remove()); title=h4.innerHTML; h4.remove(); }
+    const sum=document.createElement('summary');
+    sum.innerHTML='<span class="fold-ico">'+svg(el.dataset.foldIcon||'plan')+'</span><span class="fold-txt"><b>'+title+'</b><span>'+esc(el.dataset.fold)+'</span></span><span class="fold-meta"></span><span class="fold-more"><span class="m-open">Ver mais</span><span class="m-close">Ver menos</span>'+CHEV+'</span>';
+    meta.forEach(m=>sum.querySelector('.fold-meta').appendChild(m));
+    const body=document.createElement('div'); body.className='fold-body';
+    hints.forEach(h=>{const p=document.createElement('p'); p.className='hint'; p.innerHTML=h.innerHTML; body.appendChild(p);});
+    while(el.firstChild) body.appendChild(el.firstChild);
+    det.appendChild(sum); det.appendChild(body); el.replaceWith(det);
+  });
+}
+
 /* ---------------- início ---------------- */
-buildNav(); buildSimForm(); renderDeadlines(); renderComposition(); renderPlanilha(); renderConflitos(); renderMatriz(); renderKit(); renderSim('force'); renderImr(); renderOverview(); route();
+initFolds(); buildNav(); buildSimForm(); renderDeadlines(); renderComposition(); renderPlanilha(); renderConflitos(); renderMatriz(); renderKit(); renderSim('force'); renderImr(); renderOverview(); route();
 window.addEventListener('hashchange',route);
 connectDb();
 })();
