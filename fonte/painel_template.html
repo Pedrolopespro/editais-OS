@@ -1,0 +1,1338 @@
+<title>Pregão 319/2026 · Painel de Decisão</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: menu lateral escuro (seções agrupadas em "Entender" e "Decidir") + painel branco com uma seção por vez; cada seção tem cor e ícone próprios e a mesma anatomia: cabeçalho, "Em resumo", detalhe. */
+:root{
+  --bg:#E8EFF8; --surface:#FFFFFF; --surface-2:#F3F6FA; --ink:#15171C; --muted:#5D6574; --line:#E0E5ED;
+  --side:#17181C; --side-ink:#A9AFBB; --side-hi:#FFFFFF; --side-hover:#24262C;
+  --accent:#BCDAF7; --accent-ink:#0E365C; --focus:#2C6FD1;
+  --good:#1C7F52; --good-bg:#DCF1E5; --warn:#9A6200; --warn-bg:#FAEDCC; --bad:#BC3434; --bad-bg:#FADFDF; --neutral-bg:#ECEFF4;
+  --dark-card:#1B1C21; --dark-card-ink:#F2F3F5; --dark-card-muted:#A7ACB7;
+  --t-visao:#E1E9F7; --s-visao:#2E4E8C;
+  --t-cond:#DCEEF8;  --s-cond:#1A6890;
+  --t-oper:#DCF0E2;  --s-oper:#22744A;
+  --t-qual:#E9E1F6;  --s-qual:#6343A5;
+  --t-decl:#F6ECCC;  --s-decl:#835F00;
+  --t-conf:#F8DFDF;  --s-conf:#AE3636;
+  --t-plan:#FAE5D4;  --s-plan:#9E521A;
+  --t-matriz:#D7EFEC;--s-matriz:#18736B;
+  --t-simul:#E1E3FA; --s-simul:#3F46AD;
+  --t-risco:#F5E6CF; --s-risco:#8D5C14;
+  --t-kit:#E4F0D1;   --s-kit:#4F7410;
+  --font-ui:"Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --r-lg:22px; --r-md:14px; --r-sm:9px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0E1014; --surface:#17191E; --surface-2:#1F2228; --ink:#ECEEF2; --muted:#9AA1AE; --line:#2B2F37;
+  --side:#08090B; --side-ink:#9097A3; --side-hi:#FFFFFF; --side-hover:#1A1C21;
+  --accent:#2A4A6E; --accent-ink:#D6E8FB; --focus:#7FB0F5;
+  --good:#5CC994; --good-bg:#16352A; --warn:#E9B654; --warn-bg:#3A2F14; --bad:#F08585; --bad-bg:#3D1D1F; --neutral-bg:#252931;
+  --dark-card:#252832; --dark-card-ink:#F2F3F5; --dark-card-muted:#A7ACB7;
+  --t-visao:#1E2A40; --s-visao:#9DB8EC; --t-cond:#17303D; --s-cond:#83C3E6; --t-oper:#173326; --s-oper:#7CCFA0;
+  --t-qual:#2A2240; --s-qual:#BDA6F0; --t-decl:#352D12; --s-decl:#E5C25E; --t-conf:#3D1C1E; --s-conf:#F09A9A;
+  --t-plan:#3A2616; --s-plan:#F0A970; --t-matriz:#123430; --s-matriz:#6FD3C7; --t-simul:#22254A; --s-simul:#A9AEF6;
+  --t-risco:#382A15; --s-risco:#E8B465; --t-kit:#26321A; --s-kit:#B5D97A;
+  color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --bg:#0E1014; --surface:#17191E; --surface-2:#1F2228; --ink:#ECEEF2; --muted:#9AA1AE; --line:#2B2F37;
+  --side:#08090B; --side-ink:#9097A3; --side-hi:#FFFFFF; --side-hover:#1A1C21;
+  --accent:#2A4A6E; --accent-ink:#D6E8FB; --focus:#7FB0F5;
+  --good:#5CC994; --good-bg:#16352A; --warn:#E9B654; --warn-bg:#3A2F14; --bad:#F08585; --bad-bg:#3D1D1F; --neutral-bg:#252931;
+  --dark-card:#252832; --dark-card-ink:#F2F3F5; --dark-card-muted:#A7ACB7;
+  --t-visao:#1E2A40; --s-visao:#9DB8EC; --t-cond:#17303D; --s-cond:#83C3E6; --t-oper:#173326; --s-oper:#7CCFA0;
+  --t-qual:#2A2240; --s-qual:#BDA6F0; --t-decl:#352D12; --s-decl:#E5C25E; --t-conf:#3D1C1E; --s-conf:#F09A9A;
+  --t-plan:#3A2616; --s-plan:#F0A970; --t-matriz:#123430; --s-matriz:#6FD3C7; --t-simul:#22254A; --s-simul:#A9AEF6;
+  --t-risco:#382A15; --s-risco:#E8B465; --t-kit:#26321A; --s-kit:#B5D97A;
+  color-scheme:dark; }
+
+[data-sec="visao"]{--tint:var(--t-visao);--strong:var(--s-visao)}
+[data-sec="cond"]{--tint:var(--t-cond);--strong:var(--s-cond)}
+[data-sec="oper"]{--tint:var(--t-oper);--strong:var(--s-oper)}
+[data-sec="qual"]{--tint:var(--t-qual);--strong:var(--s-qual)}
+[data-sec="decl"]{--tint:var(--t-decl);--strong:var(--s-decl)}
+[data-sec="conf"]{--tint:var(--t-conf);--strong:var(--s-conf)}
+[data-sec="plan"]{--tint:var(--t-plan);--strong:var(--s-plan)}
+[data-sec="matriz"]{--tint:var(--t-matriz);--strong:var(--s-matriz)}
+[data-sec="simul"]{--tint:var(--t-simul);--strong:var(--s-simul)}
+[data-sec="risco"]{--tint:var(--t-risco);--strong:var(--s-risco)}
+[data-sec="kit"]{--tint:var(--t-kit);--strong:var(--s-kit)}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-ui);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:20px 32px}
+.app{display:grid;grid-template-columns:236px minmax(0,1fr);gap:0;max-width:1440px;margin:0 auto;background:var(--side);border-radius:30px;padding:12px;min-height:calc(100vh - 52px)}
+h1,h2,h3,h4{margin:0;text-wrap:balance;line-height:1.2}
+p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.mono{font-family:var(--font-mono)}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- menu lateral ---------- */
+.side{display:flex;flex-direction:column;gap:18px;padding:14px 10px 14px 6px;color:var(--side-ink);min-width:0}
+.brand{display:flex;align-items:center;gap:12px;padding:4px 8px}
+.brand-mark{width:52px;height:52px;border-radius:14px;background:#F6EFCF;display:grid;place-items:center;flex:none}
+.brand-mark img{width:38px;height:38px;object-fit:contain}
+.brand-txt{display:grid;gap:1px;min-width:0}
+.brand-txt b{color:var(--side-hi);font-size:14px;font-weight:700}
+.brand-txt span{font-size:12px}
+.nav-group{display:grid;gap:2px}
+.nav-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:0 12px 6px;color:#6F7581}
+.nav a{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:12px;color:var(--side-ink);text-decoration:none;font-size:14px;font-weight:500;position:relative}
+.nav a:hover{background:var(--side-hover);color:var(--side-hi)}
+.nav a .ico{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:none;background:transparent;transition:background .15s}
+.nav a .ico svg{width:18px;height:18px}
+.nav a[aria-current="page"]{color:var(--side-hi);background:var(--side-hover)}
+.nav a[aria-current="page"] .ico{background:var(--tint);color:var(--strong)}
+.nav a[aria-current="page"]::before{content:"";position:absolute;left:-6px;top:10px;bottom:10px;width:3px;border-radius:3px;background:var(--side-hi)}
+.nav a .badge{margin-left:auto;font-size:11px;font-weight:700;padding:1px 7px;border-radius:99px;background:#3A2023;color:#F39A9A}
+.side-foot{margin-top:auto;padding:10px 12px;font-size:11.5px;line-height:1.45;color:#767C88;border-top:1px solid #2A2C32}
+
+/* ---------- painel ---------- */
+.panel{background:var(--surface);border-radius:22px;min-width:0;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:22px 32px 6px}
+.crumb{display:flex;align-items:center;gap:10px;min-width:0}
+.crumb .dot{width:10px;height:10px;border-radius:50%;background:var(--strong);flex:none}
+.crumb span{font-size:13px;color:var(--muted)}
+.top-chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:99px;background:var(--surface-2);font-size:13px;font-weight:600;white-space:nowrap}
+.chip svg{width:15px;height:15px}
+.chip.hot{background:var(--bad-bg);color:var(--bad)}
+.content{padding:6px 32px 32px;display:grid;gap:0;min-width:0}
+
+.sec{display:grid;gap:26px;min-width:0;animation:fade .25s ease}
+@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.sec{animation:none}}
+.sec-head{display:flex;gap:16px;align-items:flex-start;padding-top:8px}
+.sec-ico{width:52px;height:52px;border-radius:16px;background:var(--tint);color:var(--strong);display:grid;place-items:center;flex:none}
+.sec-ico svg{width:26px;height:26px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--strong)}
+.sec-head h2{font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.02em;margin-top:2px}
+.sec-head .q{color:var(--muted);margin-top:4px;max-width:70ch}
+
+.tldr{background:var(--tint);border-radius:var(--r-lg);padding:18px 22px;display:grid;gap:10px}
+.tldr h3{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--strong)}
+.tldr ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.tldr li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:start}
+.tldr li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--strong);margin:7px 0 0 6px}
+.tldr b{font-weight:700}
+
+.block{display:grid;gap:12px;min-width:0}
+.block-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.block-h h3{font-size:18px;font-weight:700}
+.hint{font-size:13px;color:var(--muted);max-width:75ch}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:var(--r-md);padding:16px 18px;display:grid;gap:8px;align-content:start;min-width:0;background:var(--surface)}
+.card h4{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+.card h4 svg{width:18px;height:18px;color:var(--strong);flex:none}
+.card p,.card li{font-size:14px;color:var(--ink)}
+.card ul{margin:0;padding-left:18px;display:grid;gap:5px}
+.card .muted{color:var(--muted);font-size:13px}
+
+.src{display:inline-block;font-family:var(--font-mono);font-size:11.5px;padding:1px 7px;border-radius:6px;background:var(--surface-2);color:var(--muted);white-space:nowrap;vertical-align:1px}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.pill.elim{background:var(--bad-bg);color:var(--bad)}
+.pill.att{background:var(--warn-bg);color:var(--warn)}
+.pill.ok{background:var(--good-bg);color:var(--good)}
+.pill.info{background:var(--neutral-bg);color:var(--muted)}
+.pill.alta{background:var(--bad-bg);color:var(--bad)}
+.pill.media{background:var(--warn-bg);color:var(--warn)}
+.pill.baixa{background:var(--neutral-bg);color:var(--muted)}
+
+/* KPI tiles (estilo dos cards pastel do modelo) */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:14px}
+.tile{border-radius:var(--r-lg);padding:18px;display:grid;gap:6px;align-content:start;background:var(--surface-2);min-width:0}
+.tile .k{font-size:12px;font-weight:600;color:var(--muted)}
+.tile .v{font-size:22px;font-weight:800;letter-spacing:-.01em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.tile .s{font-size:12.5px;color:var(--muted)}
+.tile.t1{background:var(--t-qual)} .tile.t2{background:var(--t-oper)} .tile.t3{background:var(--t-decl)} .tile.t4{background:var(--t-cond)} .tile.t5{background:var(--t-plan)} .tile.t6{background:var(--t-conf)}
+
+/* tabelas */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-md)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:12px;font-weight:700;color:var(--muted);padding:11px 14px;background:var(--surface-2);border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl-min{min-width:720px}
+.tbl-mid{min-width:560px}
+.cat-code{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--surface-2);font-weight:800;font-size:13px}
+.barcell{display:grid;grid-template-columns:minmax(60px,1fr) 52px;gap:8px;align-items:center}
+.bar{height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:var(--strong)}
+tr.hl td{background:color-mix(in srgb, var(--tint) 55%, transparent)}
+
+/* capa */
+.cover{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:18px;align-items:stretch}
+.cover-main{border-radius:var(--r-lg);background:var(--tint);padding:24px;display:grid;gap:18px;align-content:start}
+.org{display:flex;gap:16px;align-items:center}
+.org-logo{width:68px;height:68px;border-radius:18px;background:#FFFFFF;display:grid;place-items:center;flex:none;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.org-logo img{width:52px;height:52px;object-fit:contain}
+.org h1{font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.025em}
+.org p{color:var(--muted);font-size:14px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:10px}
+.fact{background:var(--surface);border-radius:var(--r-md);padding:12px 14px;display:grid;gap:3px;align-content:start;min-width:0}
+.fact .k{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.fact .v{font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.fact .s{font-size:12.5px;color:var(--muted)}
+.fact.no .v{color:var(--bad)}
+.objeto{background:var(--surface);border-radius:var(--r-md);padding:14px 16px;display:grid;gap:6px}
+.objeto .k{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.objeto p{font-size:14.5px;max-width:95ch}
+
+.decision{border-radius:var(--r-lg);background:var(--dark-card);color:var(--dark-card-ink);padding:24px;display:grid;gap:14px;align-content:start;position:relative;overflow:hidden}
+.decision::after{content:"";position:absolute;right:-40px;bottom:-40px;width:200px;height:150px;border:1.5px solid rgba(255,255,255,.14);border-radius:18px;transform:rotate(-14deg)}
+.decision::before{content:"";position:absolute;right:-10px;bottom:-60px;width:200px;height:150px;border:1.5px solid rgba(255,255,255,.1);border-radius:18px;transform:rotate(-24deg)}
+.decision .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dark-card-muted);font-weight:700}
+.decision h3{font-size:24px;font-weight:800;letter-spacing:-.01em}
+.decision p{color:var(--dark-card-muted);font-size:14px;position:relative;z-index:1}
+.verdict{display:inline-flex;align-items:center;gap:8px;border:1.5px solid currentColor;border-radius:12px;padding:4px 12px;font-weight:800;font-size:15px;width:max-content;max-width:100%}
+.verdict.go{color:#7FE0AE}.verdict.nogo{color:#FF9C9C}.verdict.wait{color:#F4CF7A}
+.dmini{display:grid;gap:8px;position:relative;z-index:1}
+.dmini a{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.07);color:var(--dark-card-ink);text-decoration:none;font-size:13.5px}
+.dmini a:hover{background:rgba(255,255,255,.13)}
+.dmini a b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:10px 18px;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;background:var(--accent);color:var(--accent-ink)}
+.btn:hover{filter:brightness(.97)}
+.btn.ghost{background:var(--surface-2);color:var(--ink)}
+.btn.small{padding:7px 12px;font-size:13px;border-radius:10px}
+
+.deadlines{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px}
+.dl{border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;display:grid;gap:4px;align-content:start}
+.dl .d{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.dl .d b{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums}
+.dl .left{font-size:12px;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--neutral-bg);color:var(--muted)}
+.dl.urgent{border-color:color-mix(in srgb,var(--bad) 40%,var(--line))}
+.dl.urgent .left{background:var(--bad-bg);color:var(--bad)}
+.dl p{font-size:13.5px}
+.copy{border:0;background:var(--surface-2);border-radius:8px;padding:2px 8px;font-size:12px;cursor:pointer;color:var(--muted)}
+
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
+#mapEntender{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+#mapDecidir{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+.map a{display:grid;grid-template-columns:42px minmax(0,1fr);gap:12px;align-items:start;padding:14px;border-radius:var(--r-md);text-decoration:none;color:var(--ink);background:var(--surface-2);border:1px solid transparent;transition:border-color .15s, transform .15s}
+.map a:hover{border-color:var(--strong);transform:translateY(-1px)}
+.map .mi{width:42px;height:42px;border-radius:12px;background:var(--tint);color:var(--strong);display:grid;place-items:center}
+.map .mi svg{width:21px;height:21px}
+.map b{font-size:14.5px;display:block}
+.map span{font-size:12.5px;color:var(--muted);display:block}
+.map em{font-style:normal;font-size:12px;font-weight:700;color:var(--strong);display:block;margin-top:4px}
+.group-title{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.group-title::after{content:"";height:1px;background:var(--line);flex:1}
+
+/* composição do valor */
+.stack{display:flex;height:22px;border-radius:99px;overflow:hidden;background:var(--surface-2)}
+.stack i{display:block;height:100%}
+.legend{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.legend li{display:grid;grid-template-columns:12px minmax(0,1fr) auto 56px;gap:10px;align-items:center;font-size:14px}
+.legend .sw{width:12px;height:12px;border-radius:4px}
+.legend .r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.legend .p{color:var(--muted)}
+
+/* filtros */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.fbtn{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:600;cursor:pointer}
+.fbtn[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+
+/* conflitos */
+.conf-list{display:grid;gap:12px}
+.conf{border:1px solid var(--line);border-radius:var(--r-md);display:grid;grid-template-columns:6px minmax(0,1fr);overflow:hidden}
+.conf .stripe{background:var(--muted)}
+.conf.alta .stripe{background:var(--bad)} .conf.media .stripe{background:var(--warn)} .conf.baixa .stripe{background:var(--line)}
+.conf-body{padding:14px 18px;display:grid;gap:10px}
+.conf-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.conf-top h4{font-size:16px;font-weight:700;margin-right:auto}
+.versus{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr);gap:8px;align-items:stretch}
+.versus .side-a,.versus .side-b{background:var(--surface-2);border-radius:10px;padding:10px 12px;font-size:13.5px;display:grid;gap:4px;align-content:start}
+.versus .vs{display:grid;place-items:center;font-size:11px;font-weight:800;color:var(--muted)}
+.conf .why{font-size:13.5px;color:var(--muted)}
+.conf .todo{font-size:13.5px}
+.conf .todo b{color:var(--strong)}
+
+/* planilha */
+.sheet{border:1px solid var(--line);border-radius:var(--r-md);overflow:auto;background:#FFFFFF;max-height:72vh}
+.sheet img{display:block;max-width:none;width:100%;height:auto;cursor:zoom-in}
+.sheet.zoom img{width:2157px;max-width:none;cursor:zoom-out}
+
+/* planilha nativa */
+.gs-card{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:16px;align-items:center;border-radius:var(--r-lg);padding:18px 20px;background:var(--good-bg)}
+.gs-ico{width:52px;height:52px;border-radius:14px;background:var(--surface);color:var(--good);display:grid;place-items:center}
+.gs-ico svg{width:26px;height:26px}
+.gs-txt{display:grid;gap:4px;min-width:0}
+.gs-txt b{font-size:16px}
+.gs-txt span{font-size:13.5px}
+.pl-table{min-width:760px}
+.pl-table th.fx{text-align:center;color:#1E2530}
+.pl-table th.fx1{background:#DDF3F9}.pl-table th.fx2{background:#E2F0D9}.pl-table th.fx3{background:#DCE6F7}.pl-table th.fx4{background:#FBF5D2}
+.pl-table td.fx1{background:color-mix(in srgb,#DDF3F9 35%,transparent)}.pl-table td.fx2{background:color-mix(in srgb,#E2F0D9 35%,transparent)}
+.pl-table td.fx3{background:color-mix(in srgb,#DCE6F7 35%,transparent)}.pl-table td.fx4{background:color-mix(in srgb,#FBF5D2 35%,transparent)}
+.pl-table tr.bad td{background:color-mix(in srgb,var(--bad-bg) 60%,transparent)}
+.pl-table tr.tot td{background:var(--surface-2);font-weight:800}
+.pl-table .sub{display:block;font-size:11.5px;color:var(--muted);font-weight:500}
+.pl-table td.warn{color:var(--bad);font-weight:700}
+details.orig{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 16px}
+details.orig summary{cursor:pointer;font-weight:700;font-size:14px}
+@media (max-width:700px){.gs-card{grid-template-columns:minmax(0,1fr)}.gs-ico{display:none}}
+
+/* matriz */
+.verdict-bar{border-radius:var(--r-lg);padding:18px 22px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center}
+.verdict-bar.go{background:var(--good-bg)} .verdict-bar.nogo{background:var(--bad-bg)} .verdict-bar.wait{background:var(--warn-bg)}
+.verdict-bar h3{font-size:20px;font-weight:800}
+.verdict-bar.go h3{color:var(--good)} .verdict-bar.nogo h3{color:var(--bad)} .verdict-bar.wait h3{color:var(--warn)}
+.verdict-bar p{font-size:14px}
+.ring{width:74px;height:74px}
+.counts{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.req-group{display:grid;gap:8px}
+.req{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;align-items:center}
+.req.st-nao{border-color:color-mix(in srgb,var(--bad) 45%,var(--line));background:color-mix(in srgb,var(--bad-bg) 35%,transparent)}
+.req.st-atende{border-color:color-mix(in srgb,var(--good) 35%,var(--line))}
+.req.st-ajuste{border-color:color-mix(in srgb,var(--warn) 40%,var(--line))}
+.req-txt{display:grid;gap:3px;min-width:0}
+.req-txt b{font-size:14.5px;font-weight:700}
+.req-txt span{font-size:13px;color:var(--muted)}
+.seg{display:inline-flex;background:var(--surface-2);border-radius:11px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;border-radius:8px;padding:6px 10px;font-size:12.5px;font-weight:700;cursor:pointer;color:var(--muted);white-space:nowrap}
+.seg button[aria-pressed="true"][data-v="atende"]{background:var(--good-bg);color:var(--good)}
+.seg button[aria-pressed="true"][data-v="ajuste"]{background:var(--warn-bg);color:var(--warn)}
+.seg button[aria-pressed="true"][data-v="nao"]{background:var(--bad-bg);color:var(--bad)}
+.seg button[aria-pressed="true"][data-v="verificar"]{background:var(--surface);color:var(--ink)}
+.note{grid-column:1/-1;width:100%;border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:13px;background:var(--surface)}
+.save-state{font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.save-state::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--good)}
+.save-state.local::before{background:var(--warn)}
+.save-state.busy::before{background:var(--focus)}
+.save-state.err::before{background:var(--bad)}
+
+/* simulador */
+.sim{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:18px;align-items:start}
+.form{display:grid;gap:10px}
+.field{display:grid;grid-template-columns:minmax(0,1fr) 116px;gap:4px 12px;align-items:center;padding:10px 12px;border-radius:12px;background:var(--surface-2)}
+.field label{font-size:13.5px;font-weight:600}
+.field small{grid-column:1/2;font-size:12px;color:var(--muted)}
+.field .inp{grid-row:1/3;grid-column:2;display:flex;align-items:center;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:0 8px}
+.field input{width:100%;border:0;background:transparent;padding:8px 0;text-align:right;font-variant-numeric:tabular-nums;font-weight:700;outline:none}
+.field .u{font-size:12px;color:var(--muted)}
+.field.big{grid-template-columns:minmax(0,1fr) 180px}
+.out{border-radius:var(--r-lg);background:var(--t-simul);padding:20px;display:grid;gap:16px}
+.out-main{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px}
+.out-main .tile{background:var(--surface)}
+.zone{display:grid;gap:8px}
+.zone-track{position:relative;height:34px;border-radius:10px;overflow:visible;background:var(--surface)}
+.zone-seg{position:absolute;top:0;bottom:0}
+.zone-mark{position:absolute;top:-6px;bottom:-6px;width:3px;border-radius:3px;transform:translateX(-1.5px)}
+.zone-scale{position:relative;height:34px;font-size:11.5px;color:var(--muted)}
+.zone-scale span{position:absolute;transform:translateX(-50%);white-space:nowrap;text-align:center;line-height:1.25}
+.zone-scale span.end{transform:translateX(-100%);text-align:right}
+.zone-scale span.start{transform:none;text-align:left}
+.zone-key{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.zone-key i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.alert{border-radius:12px;padding:12px 14px;font-size:14px;display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start}
+.alert svg{width:20px;height:20px}
+.alert.ok{background:var(--good-bg);color:var(--good)} .alert.warn{background:var(--warn-bg);color:var(--warn)} .alert.bad{background:var(--bad-bg);color:var(--bad)}
+.alert p{color:var(--ink)}
+.example-tag{font-size:12px;font-weight:700;color:var(--warn);background:var(--warn-bg);padding:3px 9px;border-radius:99px}
+
+/* riscos */
+.timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;position:relative}
+.tl-step{display:grid;gap:6px;padding:0 8px;position:relative;text-align:center;justify-items:center}
+.tl-step::before{content:"";position:absolute;top:15px;left:0;right:0;height:3px;background:var(--line);z-index:0}
+.tl-step:first-child::before{left:50%}.tl-step:last-child::before{right:50%}
+.tl-dot{width:32px;height:32px;border-radius:50%;background:var(--tint);color:var(--strong);display:grid;place-items:center;font-weight:800;font-size:13px;position:relative;z-index:1;border:3px solid var(--surface)}
+.tl-step b{font-size:13.5px}
+.tl-step span{font-size:12.5px;color:var(--muted)}
+.imr{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px}
+.formula{font-family:var(--font-mono);font-size:13.5px;background:var(--surface-2);border-radius:10px;padding:10px 12px;overflow-x:auto}
+
+/* kit */
+.kit-groups{display:grid;gap:18px}
+.kit-g{border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 18px;display:grid;gap:12px}
+.kit-g-h{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.kit-g-h h4{font-size:16px;font-weight:700}
+.prog{height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden;min-width:120px;flex:1;max-width:240px}
+.prog i{display:block;height:100%;background:var(--strong);border-radius:99px;transition:width .2s}
+.check{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:10px;align-items:start;padding:8px 4px;border-top:1px solid var(--line)}
+.check:first-of-type{border-top:0}
+.check input{width:19px;height:19px;margin:2px 0 0;accent-color:var(--s-kit)}
+.check label{font-size:14px;cursor:pointer}
+.check label span{display:block;font-size:12.5px;color:var(--muted)}
+.check.done label{color:var(--muted);text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--muted) 60%,transparent)}
+
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:18px}
+.pager a{display:grid;gap:2px;text-decoration:none;color:var(--ink);padding:10px 14px;border-radius:12px;background:var(--surface-2);min-width:0;max-width:48%}
+.pager a span{font-size:12px;color:var(--muted)}
+.pager a b{font-size:14px}
+.pager a.next{text-align:right;margin-left:auto}
+.foot{font-size:12px;color:var(--muted);padding:0 32px 22px}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1100px){
+  .cover,.sim{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:900px){
+  .wrap{padding-block:10px 20px}
+  .app{grid-template-columns:minmax(0,1fr);padding:8px;border-radius:24px;min-height:0}
+  .side{padding:8px 4px 10px;gap:10px}
+  .brand-mark{width:42px;height:42px;border-radius:12px}.brand-mark img{width:30px;height:30px}
+  .navs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .navs::-webkit-scrollbar{display:none}
+  .nav-group{display:flex;gap:4px;flex:none}
+  .nav-label{display:none}
+  .nav a{padding:6px 10px 6px 6px;font-size:13px;white-space:nowrap;gap:7px}
+  .nav a .ico{width:26px;height:26px}
+  .nav a[aria-current="page"]::before{display:none}
+  .side-foot{display:none}
+  .topbar{padding:16px 18px 4px}
+  .content{padding:4px 18px 24px}
+  .foot{padding:0 18px 18px}
+}
+@media (max-width:560px){
+  .versus{grid-template-columns:minmax(0,1fr)}
+  .versus .vs{padding:2px 0}
+  .req{grid-template-columns:minmax(0,1fr)}
+  .field,.field.big{grid-template-columns:minmax(0,1fr) 110px}
+  .timeline{grid-template-columns:minmax(0,1fr);gap:10px}
+  .tl-step{grid-template-columns:32px minmax(0,1fr);text-align:left;justify-items:start;column-gap:12px}
+  .tl-step::before{display:none}
+  .tl-dot{grid-row:1/3}
+  .verdict-bar{grid-template-columns:minmax(0,1fr)}
+  .pager a{max-width:100%}
+  .sec-head{gap:12px}.sec-ico{width:44px;height:44px;border-radius:13px}
+}
+</style>
+
+<div class="wrap">
+<div class="app" id="app">
+  <aside class="side" aria-label="Seções do painel">
+    <div class="brand">
+      <div class="brand-mark"><img src="{{LOGO}}" alt="Brasão da República"></div>
+      <div class="brand-txt"><b>Pregão 319/2026</b><span>Painel de decisão</span></div>
+    </div>
+    <div class="navs nav" id="nav"></div>
+    <div class="side-foot">Análise independente para apoio à decisão do licitante. Não é documento oficial do órgão.</div>
+  </aside>
+
+  <div class="panel" id="panel">
+    <div class="topbar">
+      <div class="crumb" id="crumb"><i class="dot"></i><span id="crumbTxt">Visão geral</span></div>
+      <div class="top-chips" id="topChips"></div>
+    </div>
+    <main class="content" id="content">
+
+<!-- ======================= 1. VISÃO GERAL ======================= -->
+<section class="sec" id="sec-visao" data-sec="visao" aria-labelledby="h-visao">
+  <div class="cover">
+    <div class="cover-main">
+      <div class="org">
+        <div class="org-logo"><img src="{{LOGO}}" alt="Brasão da República Federativa do Brasil"></div>
+        <div>
+          <p>Presidência da República · Casa Civil · Secretaria de Administração · UASG 110001</p>
+          <h1 id="h-visao">Pregão Eletrônico nº 319/2026</h1>
+          <p>Processo nº 00087.000909/2026-01 · Edital de 05/11/2026 · TR nº 236/2026</p>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="k">Órgão contratante</span><span class="v">Secretaria de Administração da Casa Civil</span><span class="s">Presidência da República <span class="src">Edital p. 1</span></span></div>
+        <div class="fact"><span class="k">Modalidade</span><span class="v">Pregão eletrônico</span><span class="s">Lei 14.133/2021 · Decreto 11.462/2023</span></div>
+        <div class="fact"><span class="k">Sessão pública</span><span class="v num">23/11/2026 · 9h30</span><span class="s">horário de Brasília</span></div>
+        <div class="fact"><span class="k">Valor total</span><span class="v num">R$ 20.835.706,71</span><span class="s">anual estimado · item único <span class="src">TR 1.1</span></span></div>
+        <div class="fact"><span class="k">Critério de julgamento</span><span class="v">Menor preço por item</span><span class="s">preços do Apêndice IV são os máximos</span></div>
+        <div class="fact"><span class="k">Modo de disputa</span><span class="v">Aberto e fechado</span><span class="s">lances 0,10% · fechado até 10% <span class="src">Edital 6.8, 6.11</span></span></div>
+        <div class="fact no"><span class="k">Tratamento favorecido</span><span class="v">Não</span><span class="s">ME/EPP sem benefício <span class="src">Edital 2.6</span></span></div>
+        <div class="fact no"><span class="k">Margem de preferência</span><span class="v">Não</span><span class="s">nenhum item</span></div>
+        <div class="fact"><span class="k">Vigência do contrato</span><span class="v">12 meses</span><span class="s">prorrogável até 10 anos <span class="src">TR 1.4</span></span></div>
+        <div class="fact"><span class="k">Plataforma</span><span class="v">Compras.gov.br</span><span class="s">cadastro prévio no SICAF <span class="src">Edital 2.1</span></span></div>
+      </div>
+      <div class="objeto">
+        <span class="k">Objeto completo da contratação</span>
+        <p>Contratação de empresa para locação de veículos, com e sem motorista, para todos os Estados da Região Sudeste (Espírito Santo, Minas Gerais, Rio de Janeiro e São Paulo), destinada ao atendimento das atividades administrativas da Presidência da República, seus Órgãos Integrantes, bem como as necessidades de segurança do Gabinete de Segurança Institucional afetas ao Presidente e Vice-Presidente da República.</p>
+        <p class="hint">Inclui, de forma acessória, os serviços de motoristas e de agentes de missão (TR 1.2). Execução sob demanda, em capitais e no interior, com 22 categorias de veículos (A a V).</p>
+      </div>
+    </div>
+
+    <aside class="decision" aria-labelledby="h-dec">
+      <span class="k">Participar ou não?</span>
+      <h3 id="h-dec">Sua decisão hoje</h3>
+      <span class="verdict wait" id="ovVerdict">Decisão pendente</span>
+      <p id="ovVerdictTxt">Avalie os requisitos na Matriz de aderência para gerar a recomendação.</p>
+      <div class="dmini">
+        <a href="#matriz"><span>Requisitos avaliados</span><b id="ovMatriz">0 de 0</b></a>
+        <a href="#simulador"><span>Lance mínimo viável</span><b id="ovLance">—</b></a>
+        <a href="#kit"><span>Kit das 2 horas pronto</span><b id="ovKit">0%</b></a>
+        <a href="#conflitos"><span>Conflitos de alta gravidade</span><b id="ovConf">—</b></a>
+      </div>
+      <a class="btn" href="#matriz" style="position:relative;z-index:1;width:max-content">Avaliar requisitos</a>
+    </aside>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Prazos que afetam a decisão</h3><span class="hint">Contagem a partir de hoje. 20/11 é feriado nacional (Lei 14.759/2023).</span></div>
+    <div class="deadlines" id="deadlines"></div>
+  </div>
+
+  <div class="block">
+    <div class="group-title">Entender o edital</div>
+    <div class="map" id="mapEntender"></div>
+    <div class="group-title" style="margin-top:8px">Decidir e se preparar</div>
+    <div class="map" id="mapDecidir"></div>
+  </div>
+</section>
+
+<!-- ======================= 2. CONDIÇÕES GERAIS ======================= -->
+<section class="sec" id="sec-condicoes" data-sec="cond" aria-labelledby="h-cond" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="cond"></span><div><p class="eyebrow">Entender o edital · 2 de 7</p><h2 id="h-cond">Condições gerais da contratação</h2><p class="q">Quais regras valem para o contrato e como a empresa é paga?</p></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Contrato de <b>12 meses, prorrogável até 10 anos</b>, com garantia de <b>5% do valor anual</b> e reajuste pelo IPCA só após 1 ano da data do orçamento (24/09/2026).</span></li>
+    <li><span><b>Item único</b> com 22 categorias nos 4 estados. Sedan (L) e Van Executiva (N) somam <b>41% da locação</b>.</span></li>
+    <li><span>Consórcio permitido. Subcontratação parcial permitida, <b>exceto Executivo II (K) e Sedan (L)</b>.</span></li>
+  </ul></div>
+
+  <div class="tiles">
+    <div class="tile t4"><span class="k">Vigência</span><span class="v">12 meses</span><span class="s">até 10 anos · TR 1.4</span></div>
+    <div class="tile t1"><span class="k">Garantia contratual</span><span class="v num">R$ 1.041.785</span><span class="s">5% do valor anual · TR 4.7</span></div>
+    <div class="tile t2"><span class="k">Consórcio</span><span class="v">Permitido</span><span class="s">soma de atestados · TR 4.10</span></div>
+    <div class="tile t3"><span class="k">Subcontratação</span><span class="v">Parcial</span><span class="s">vedada em K e L · TR 4.2</span></div>
+    <div class="tile t5"><span class="k">Vistoria prévia</span><span class="v">Não exigida</span><span class="s">TR 4.9</span></div>
+    <div class="tile t6"><span class="k">Reajuste</span><span class="v">IPCA</span><span class="s">após 12 meses de 24/09/2026 · TR 13</span></div>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Para onde vai o dinheiro</h3><span class="hint">Composição do valor estimado no Apêndice IV do TR.</span></div>
+    <div class="stack" id="stack" role="img" aria-label="Composição do valor estimado"></div>
+    <ul class="legend" id="legend"></ul>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Regras de remuneração</h3><span class="hint">Estes limites valem para cada preço unitário da sua planilha.</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Regra</th><th>O que diz</th><th>Fonte</th></tr></thead><tbody>
+      <tr><td><b>Faixas de diária do veículo</b></td><td>Até 6 dias consecutivos (24 h e 10 h), 7 a 14, 15 a 29 e 30 ou mais dias, com hora extra própria em cada faixa</td><td><span class="src">TR 5.11</span></td></tr>
+      <tr><td><b>Diária de 10 h</b></td><td>No máximo 80% da diária de 24 h</td><td><span class="src">TR 5.11.1</span></td></tr>
+      <tr><td><b>Hora extra do veículo</b></td><td>No máximo 20% da diária correspondente</td><td><span class="src">TR 5.11.2</span></td></tr>
+      <tr><td><b>No show</b></td><td>No máximo 70% da diária de 10 h. Devido se o cancelamento ocorrer com menos de 4 h (capital/RM) ou 6 h (interior)</td><td><span class="src">TR 5.11.3</span></td></tr>
+      <tr><td><b>Motorista</b></td><td>Jornada de 10 h/dia (2 h de refeição descontadas); excedente pago como hora extra. Adicional de 60% na diária com pernoite fora do domicílio</td><td><span class="src">TR 5.7, 5.8, 5.17</span></td></tr>
+      <tr><td><b>Deslocamento ao interior</b></td><td>Ida e volta pagas só se faltar veículo na localidade, comprovado com 3 ou mais declarações de locadoras</td><td><span class="src">TR 5.6</span></td></tr>
+      <tr><td><b>Combustível</b></td><td>A contratada adianta e é reembolsada pelo preço médio ANP do mês/UF + 9,45% de tributos. Não é cotado pelo licitante</td><td><span class="src">TR 5.3, 12.22</span></td></tr>
+      <tr><td><b>Pagamento</b></td><td>Recebimento provisório em até 10 dias úteis, definitivo em até 10 dias, liquidação em até 10 dias úteis e pagamento em até 10 dias úteis</td><td><span class="src">TR 7.6–7.30</span></td></tr>
+      <tr><td><b>Preço máximo</b></td><td>Os preços unitários do Apêndice IV são os máximos aceitáveis. Proposta abaixo de 50% do orçado gera diligência de exequibilidade</td><td><span class="src">Edital 5.11, 7.8</span></td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Categorias de veículos e peso no orçamento</h3><span class="hint">Diária de 24 h máxima (até 6 dias) e valor anual estimado por categoria. As linhas destacadas são exigidas em atestado ou em frota própria.</span></div>
+    <div class="tbl-wrap"><table class="tbl-min" id="catTable"><thead><tr><th>Cód.</th><th>Categoria</th><th class="r">Diária 24 h máx.</th><th class="r">Valor anual</th><th>Peso na locação</th><th>Exigência ligada</th></tr></thead><tbody></tbody></table></div>
+  </div>
+</section>
+
+<!-- ======================= 3. ESTRUTURA OPERACIONAL ======================= -->
+<section class="sec" id="sec-operacao" data-sec="oper" aria-labelledby="h-oper" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="oper"></span><div><p class="eyebrow">Entender o edital · 3 de 7</p><h2 id="h-oper">Estrutura operacional da contratada</h2><p class="q">O que a empresa precisa ter montado para atender a Presidência?</p></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Atendimento em <b>4 horas nas capitais e regiões metropolitanas</b> e <b>6 horas no interior</b> dos 4 estados, com central 24 h exclusiva.</span></li>
+    <li><span><b>16 veículos próprios</b> comprovados na assinatura: 6 Executivo II (ou SUV II ou superior) e 10 Sedan (ou superior). As demais categorias podem ser sublocadas.</span></li>
+    <li><span>Equipe com <b>preposto exclusivo</b>, <b>agente de missão</b> presencial por missão e motoristas com 3 anos de CNH e direção defensiva.</span></li>
+  </ul></div>
+
+  <div class="grid-2">
+    <div class="card"><h4><span data-icon="kit"></span>Prontidão e atendimento</h4><ul>
+      <li>Entrega nos horários e locais definidos pela Coordenação de Transporte Terrestre, "independentemente do local de onde tenha que trazê-los" <span class="src">TR 5.1.2, 5.9</span></li>
+      <li>Prazo de 4 h (capital/RM) e 6 h (interior), que também é referência do IMR e do no show <span class="src">TR 5.9.1–5.9.2</span></li>
+      <li>Central de atendimento e celular 24 h exclusivos para a Presidência, indicados na assinatura <span class="src">TR 5.9.5, 12.31</span></li>
+      <li>Substituição imediata de veículo com defeito, fora da especificação, roubado ou sinistrado, e de motorista sem perícia <span class="src">TR 5.9.3, 12.27</span></li>
+    </ul></div>
+    <div class="card"><h4><span data-icon="qual"></span>Segurança presidencial</h4><ul>
+      <li>Veículos apresentados ao Coordenador e ao Departamento de Segurança Presidencial, com cores padronizadas <span class="src">TR 5.4</span></li>
+      <li>Motoristas do comboio passam por levantamento de segurança; substituição imediata se houver impedimento <span class="src">TR 5.4</span></li>
+      <li>Termo de Confidencialidade e LGPD, inclusive para subcontratadas <span class="src">TR 12.21, cap. 16</span></li>
+      <li>Proibição de divulgar fotos ou filmagens das missões (19 deveres do Apêndice III)</li>
+    </ul></div>
+    <div class="card"><h4><span data-icon="oper"></span>Frota e documentação</h4><ul>
+      <li>Veículos em nome da adjudicatária, com CRLV original; leasing aceito se o documento registrar o arrendamento <span class="src">TR 5.9.2.1</span></li>
+      <li>Cores preta, prata, branca ou cinza; sem engate, sem propaganda, sem modelo esportivo ou de táxi <span class="src">TR 5.4, 5.12</span></li>
+      <li>Tanque cheio, manutenção em dia, lavados, TAG de pedágio e cadeirinha infantil sem custo quando pedida <span class="src">TR 12.22–12.23</span></li>
+      <li>Seguro casco 100% FIPE com franquia reduzida e RCFV mínima de R$ 50 mil (materiais), R$ 100 mil (corporais) e R$ 5 mil (morais) <span class="src">TR 12.37</span></li>
+    </ul></div>
+    <div class="card"><h4><span data-icon="decl"></span>Equipe</h4><ul>
+      <li>Preposto formal, exclusivo para o contrato, em regime de prontidão <span class="src">TR 6.6–6.15</span></li>
+      <li>Agente de missão presencial e exclusivo junto ao Coordenador; não acumula missões nem atua remotamente <span class="src">TR 6.21–6.31</span></li>
+      <li>Motoristas com 3 anos de CNH, curso de direção defensiva, aptos a cortejo, de terno e gravata <span class="src">TR 12.26, 12.36</span></li>
+      <li>Capital–interior: ao menos 3 motoristas que conheçam a cidade; revezamento em ônibus acima de 500 km ou 8 h <span class="src">TR 12.35, 5.17</span></li>
+    </ul></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="block">
+      <div class="block-h"><h3>Frota mínima própria</h3><span class="pill elim">Eliminatório na assinatura</span></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Categoria</th><th class="r">Mínimo em propriedade</th></tr></thead><tbody>
+        <tr><td>Executivo II, SUV II ou superior</td><td class="r"><b>6 veículos</b></td></tr>
+        <tr><td>Sedan ou superior</td><td class="r"><b>10 veículos</b></td></tr>
+      </tbody></table></div>
+      <p class="hint">Mantida durante toda a vigência. Sem a comprovação, a empresa perde o direito à contratação <span class="src">TR 5.9.2.1.1</span></p>
+    </div>
+    <div class="block">
+      <div class="block-h"><h3>Idade e quilometragem</h3><span class="src">TR 5.9.2.1.4–6</span></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Tipo</th><th>Limite</th></tr></thead><tbody>
+        <tr><td>Veículos em geral</td><td>5 anos de fabricação ou 100.000 km</td></tr>
+        <tr><td>Van Executiva</td><td>6 anos de fabricação</td></tr>
+        <tr><td>Ônibus, micro-ônibus, microcaminhão, Van Furgão</td><td>10 anos de fabricação</td></tr>
+        <tr><td>Blindados (A a D)</td><td>Mesmos limites + blindagem III-A comprovada por CRLV ou Termo da blindadora</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="card"><h4><span data-icon="risco"></span>Custos que ficam com a contratada</h4>
+    <p>Impostos, seguro total, lavagem, abastecimento, estacionamento e pedágios; diárias e encargos dos motoristas; hospedagem e alimentação de motoristas e agentes (inclusive no hotel da comitiva); dinheiro em espécie para despesas na missão; celular com GPS e créditos, inclusive roaming <span class="src">TR 12.22, 12.25, 12.33, 12.34</span></p>
+  </div>
+</section>
+
+<!-- ======================= 4. QUALIFICAÇÃO ======================= -->
+<section class="sec" id="sec-qualificacao" data-sec="qual" aria-labelledby="h-qual" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="qual"></span><div><p class="eyebrow">Entender o edital · 4 de 7</p><h2 id="h-qual">Qualificação técnica e econômico-financeira</h2><p class="q">O que a empresa precisa comprovar para ser habilitada?</p></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Atestados de locação ou sublocação de veículos que somem <b>1 blindado, 2 caminhonetes ou SUV II, 6 Executivo II e 10 Sedan</b>, ou categorias superiores.</span></li>
+    <li><span>Atestado só vale com contrato <b>concluído ou com 1 ano de execução</b>. Atestados de contratos simultâneos podem ser somados.</span></li>
+    <li><span>Índices <b>LG, LC e SG acima de 1</b> nos dois últimos exercícios. Se algum não alcançar, <b>patrimônio líquido de R$ 2.083.570,67</b> (10%), com regra ambígua (ver Conflitos).</span></li>
+  </ul></div>
+
+  <div class="block">
+    <div class="block-h"><h3>Qualificação técnico-operacional por atestados</h3><span class="pill elim">Eliminatório</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>#</th><th>Categoria exigida no atestado</th><th class="r">Qtde. mínima</th><th>Por que o TR exige</th></tr></thead><tbody>
+      <tr><td>1</td><td><b>Executivo Blindado II</b> ou Camioneta II Blindada (SUV II) ou superior</td><td class="r"><b>1</b></td><td>Parcela acima de 4% do valor total</td></tr>
+      <tr><td>2</td><td><b>Caminhonete 4x4 ou 4x2</b> ou Camioneta II (SUV II)</td><td class="r"><b>2</b></td><td>Mínimo para segurança do comboio em terreno acidentado</td></tr>
+      <tr><td>3</td><td><b>Executivo II</b> ou superior</td><td class="r"><b>6</b></td><td>Categoria indispensável ao comboio presidencial</td></tr>
+      <tr><td>4</td><td><b>Sedan</b> ou superior</td><td class="r"><b>10</b></td><td>Parcela acima de 4% do valor total</td></tr>
+    </tbody></table></div>
+    <p class="hint">Fonte: <span class="src">TR 8.38.1.1–8.38.1.3</span></p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card"><h4><span data-icon="decl"></span>Regras de validade do atestado</h4><ul>
+      <li>Emitido por pessoa jurídica de direito público ou privado <span class="src">TR 8.38</span></li>
+      <li>Serviço dentro da atividade principal ou secundária do contrato social vigente <span class="src">TR 8.38.2</span></li>
+      <li>Só após a conclusão do contrato ou com pelo menos 1 ano de execução <span class="src">TR 8.38.3</span></li>
+      <li>Admitida a soma de atestados de contratos executados ao mesmo tempo <span class="src">TR 8.38.4</span></li>
+      <li>Em nome da matriz ou da filial; o pregoeiro pode pedir cópia do contrato que sustenta o atestado <span class="src">TR 8.38.5–8.38.6</span></li>
+    </ul></div>
+    <div class="card"><h4><span data-icon="risco"></span>Qualificação econômico-financeira</h4><ul>
+      <li>Certidão negativa de falência <span class="src">TR 8.24</span></li>
+      <li>Balanço patrimonial e DRE dos 2 últimos exercícios <span class="src">TR 8.25</span></li>
+      <li><b>LG, LC e SG maiores que 1</b> em cada exercício, atestados por contador habilitado <span class="src">TR 8.25, 8.30</span></li>
+      <li>Se algum índice for 1 ou menos: <b>patrimônio líquido mínimo de R$ 2.083.570,67</b> <span class="src">TR 8.26</span></li>
+      <li>Empresa com menos de 2 anos usa o último exercício; criada no ano, balanço de abertura <span class="src">TR 8.25–8.31</span></li>
+    </ul></div>
+  </div>
+
+  <div class="card" style="background:var(--tint);border-color:transparent"><h4><span data-icon="matriz"></span>Se a empresa não tem tudo isso</h4><ul>
+    <li><b>Consórcio:</b> a qualificação técnica é a soma dos consorciados. Na econômico-financeira há acréscimo de 10% a 30%, sem percentual definido <span class="src">Edital 8.4, 8.4.1</span></li>
+    <li><b>Somar atestados</b> de contratos simultâneos para chegar às quantidades <span class="src">TR 8.38.4</span></li>
+    <li>Registre como cada lacuna será suprida na <a href="#matriz">Matriz de aderência</a>.</li>
+  </ul></div>
+  <p class="hint">Habilitação jurídica, fiscal e trabalhista é verificada no SICAF e não está detalhada aqui <span class="src">Edital 8.10</span></p>
+</section>
+
+<!-- ======================= 5. DECLARAÇÕES ======================= -->
+<section class="sec" id="sec-declaracoes" data-sec="decl" aria-labelledby="h-decl" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="decl"></span><div><p class="eyebrow">Entender o edital · 5 de 7</p><h2 id="h-decl">Declarações adicionais fora do SICAF</h2><p class="q">Quais documentos escritos acompanham a proposta, além do que o sistema já cobre?</p></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span><b>Três declarações</b> seguem com a proposta ajustada, no prazo de <b>2 horas</b> após o pedido do pregoeiro: atendimento em 4 h, atendimento em 6 h e condições de sublocação.</span></li>
+    <li><span>Os <b>Termos de Ciência e de Confidencialidade</b> não têm momento definido. Por cautela, envie junto.</span></li>
+    <li><span>Deixar de entregar documento pedido pelo pregoeiro é infração sujeita a multa <span class="src">Edital 11.1.1</span>.</span></li>
+  </ul></div>
+
+  <div class="block">
+    <div class="block-h"><h3>Com a proposta ajustada ao último lance</h3><span class="pill att">Prazo: 2 horas · Edital 6.23.4</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Documento</th><th>Conteúdo</th><th>Status no edital</th><th>Fonte</th></tr></thead><tbody>
+      <tr><td><b>Declaração de atendimento em 4 horas</b></td><td>Capacidade de disponibilizar os veículos do Apêndice II em até 4 h em eventos na capital ou região metropolitana</td><td><span class="pill att">Exigida</span></td><td><span class="src">TR 5.9.1 · Edital 6.23.4.1</span></td></tr>
+      <tr><td><b>Declaração de atendimento em 6 horas</b></td><td>Mesma capacidade em até 6 h para municípios fora da região metropolitana</td><td><span class="pill att">Exigida</span></td><td><span class="src">TR 5.9.2 · Edital 6.23.4.1</span></td></tr>
+      <tr><td><b>Declaração de condições de sublocar</b></td><td>Condições de sublocar e disponibilizar as demais categorias no local indicado, com as especificações do Apêndice II</td><td><span class="pill info">Momento não fixado</span></td><td><span class="src">TR 5.9.2.1.2</span></td></tr>
+      <tr><td><b>Termo de Ciência e Concordância</b></td><td>Modelo do Apêndice VII do TR</td><td><span class="pill info">Por cautela</span></td><td><span class="src">TR Ap. VII</span></td></tr>
+      <tr><td><b>Termo de Confidencialidade</b></td><td>Modelo do Apêndice V do TR</td><td><span class="pill info">Por cautela</span></td><td><span class="src">TR 12.21 · Ap. V</span></td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="block">
+      <div class="block-h"><h3>Na habilitação</h3><span class="pill att">2 horas · Edital 8.12.1</span></div>
+      <div class="card"><p><b>Declaração do contador habilitado</b> atestando os índices LG, LC e SG <span class="src">TR 8.30</span></p><p class="muted">Não é coberta pelo SICAF.</p></div>
+    </div>
+    <div class="block">
+      <div class="block-h"><h3>Na assinatura do contrato</h3><span class="pill info">5 dias úteis · Edital 9.2</span></div>
+      <div class="card"><ul>
+        <li>CRLV dos 16 veículos próprios <span class="src">TR 5.9.2.1</span></li>
+        <li>Indicação da central e do celular 24 h <span class="src">TR 12.31</span></li>
+        <li>Garantia de 5% (seguro até a assinatura; demais em 10 dias úteis) <span class="src">TR 4.8</span></li>
+        <li>Regularidade no Cadin <span class="src">Edital 9.6</span></li>
+      </ul></div>
+    </div>
+  </div>
+  <p class="hint">Não incluídos: documentos já cobertos pelo SICAF e declarações feitas em campo do sistema (Edital 4.3, 4.8).</p>
+</section>
+
+<!-- ======================= 6. CONFLITOS ======================= -->
+<section class="sec" id="sec-conflitos" data-sec="conf" aria-labelledby="h-conf" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="conf"></span><div><p class="eyebrow">Entender o edital · 6 de 7</p><h2 id="h-conf">Conflitos entre Edital, TR e planilha</h2><p class="q">Onde os documentos se contradizem e o que fazer antes de propor?</p></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span><b id="confAltaTxt">5</b> pontos de alta gravidade afetam preço ou habilitação: seguro-garantia, consórcio, subcontratação, no show (19 de 22 categorias acima do teto) e patrimônio líquido.</span></li>
+    <li><span>Havendo divergência, <b>prevalece o Edital</b> sobre os anexos <span class="src">Edital 13.9</span>. Conflitos internos do TR precisam de esclarecimento.</span></li>
+    <li><span>Pedidos de esclarecimento e impugnação até <b>17/11/2026</b> pelo e-mail cpl@presidencia.gov.br <span class="src">Edital 12.1, 12.3</span>.</span></li>
+  </ul></div>
+  <div class="filters" id="confFilters" role="group" aria-label="Filtrar por gravidade"></div>
+  <div class="conf-list" id="confList"></div>
+  <div class="block">
+    <div class="block-h"><h3>Exemplos: no show acima do teto</h3><span class="src">TR 5.11.3 × Apêndice IV · lista completa em <a href="#planilha">Planilha de custo</a></span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Categoria</th><th class="r">Diária 10 h</th><th class="r">Teto de 70%</th><th class="r">No show na planilha</th><th class="r">Excesso</th></tr></thead><tbody>
+      <tr><td>Executivo II (K)</td><td class="r">R$ 800,00</td><td class="r">R$ 560,00</td><td class="r">R$ 700,00</td><td class="r"><b style="color:var(--bad)">R$ 140,00</b></td></tr>
+      <tr><td>Sedan (L)</td><td class="r">R$ 544,00</td><td class="r">R$ 380,80</td><td class="r">R$ 476,00</td><td class="r"><b style="color:var(--bad)">R$ 95,20</b></td></tr>
+      <tr><td>Van Executiva (N)</td><td class="r">R$ 1.200,00</td><td class="r">R$ 840,00</td><td class="r">R$ 1.050,00</td><td class="r"><b style="color:var(--bad)">R$ 210,00</b></td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<!-- ======================= 7. PLANILHA ======================= -->
+<section class="sec" id="sec-planilha" data-sec="plan" aria-labelledby="h-plan" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="plan"></span><div><p class="eyebrow">Entender o edital · 7 de 7</p><h2 id="h-plan">Planilha de custo de referência</h2><p class="q">Como o órgão chegou aos R$ 20,8 milhões?</p></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Valores do <b>Apêndice IV do TR</b> (p. 42), organizados por bloco. Os preços unitários são os <b>máximos aceitáveis</b> no julgamento.</span></li>
+    <li><span>A versão <b>editável</b> fica no Google Planilhas: você digita os seus preços e ela confere os limites e calcula o desconto sozinha.</span></li>
+    <li><span>A própria planilha do órgão tem falhas: <b>19 de 22 categorias</b> com no show acima do teto de 70% e uma hora extra acima de 20%.</span></li>
+  </ul></div>
+
+  <div class="gs-card">
+    <div class="gs-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 14h16M10 9v12"/></svg></div>
+    <div class="gs-txt">
+      <b>Planilha de custos editável · Google Planilhas</b>
+      <span>Abas Resumo, Locação (220 preços), No show, Mão de obra e Combustível. Edite só as células amarelas: a coluna "Situação" avisa preço acima do máximo ou das regras do TR 5.11, e o Resumo mostra o desconto total.</span>
+      <span class="hint">Abre para quem tiver acesso à planilha no Google Drive. Para a equipe, compartilhe pelo botão Compartilhar do Google.</span>
+    </div>
+    <a class="btn" id="gsLink" href="{{GSHEET_URL}}" target="_blank" rel="noopener">Abrir no Google Planilhas ↗</a>
+  </div>
+
+  <div class="tiles" id="planTiles"></div>
+
+  <div class="block">
+    <div class="block-h"><h3>Locação de veículos por categoria</h3><span class="hint">Preço máximo da diária em cada faixa de prazo e valor anual estimado. Cores das faixas iguais às do Apêndice IV.</span></div>
+    <div class="tbl-wrap"><table class="pl-table" id="plLoc"></table></div>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>No show · teto de 70% da diária de 10 h</h3><span class="pill alta" id="plNsBadge"></span></div>
+    <div class="tbl-wrap"><table class="pl-table tbl-mid" id="plNs"></table></div>
+    <p class="hint">Linhas em vermelho: a planilha do órgão passa do teto do TR 5.11.3. Ao cotar, use no máximo o teto. A hora extra da categoria A (15 a 29 dias, R$ 298,00) também passa de 20% da diária (R$ 288,00).</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="block">
+      <div class="block-h"><h3>Motoristas e agentes de missão</h3></div>
+      <div class="tbl-wrap"><table class="pl-table" id="plMo"></table></div>
+    </div>
+    <div class="block">
+      <div class="block-h"><h3>Combustível · repasse</h3></div>
+      <div class="tbl-wrap"><table class="pl-table" id="plComb"></table></div>
+      <p class="hint">Preço ANP de julho/2026 + 9,45% de tributos. Não entra no seu desconto.</p>
+    </div>
+  </div>
+
+  <details class="orig">
+    <summary>Ver a planilha original do órgão (imagem do Apêndice IV)</summary>
+    <div class="block" style="margin-top:12px">
+      <div class="block-h"><span class="hint">Clique na imagem para ampliar.</span><button class="btn ghost small" id="zoomBtn" type="button">Ampliar</button></div>
+      <div class="sheet" id="sheet"><img src="{{PLANILHA}}" alt="Planilha de custo do Apêndice IV do Termo de Referência, com as 22 categorias, no show, diárias de motoristas e agentes, combustíveis e total de R$ 20.835.706,71" id="sheetImg" loading="lazy"></div>
+    </div>
+  </details>
+</section>
+
+<!-- ======================= 8. MATRIZ ======================= -->
+<section class="sec" id="sec-matriz" data-sec="matriz" aria-labelledby="h-matriz" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="matriz"></span><div><p class="eyebrow">Decidir · 1 de 4</p><h2 id="h-matriz">Matriz de aderência da empresa</h2><p class="q">A empresa cumpre cada exigência? Se não, como vai suprir?</p></div></header>
+  <div class="verdict-bar wait" id="mxVerdict">
+    <div><h3 id="mxTitle">Decisão pendente</h3><p id="mxText"></p><div class="counts" id="mxCounts"></div></div>
+    <svg class="ring" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="32" fill="none" stroke="var(--surface)" stroke-width="9"/><circle id="mxRing" cx="40" cy="40" r="32" fill="none" stroke="var(--strong)" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 201" transform="rotate(-90 40 40)"/><text id="mxRingTxt" x="40" y="45" text-anchor="middle" font-size="15" font-weight="800" fill="var(--ink)">0%</text></svg>
+  </div>
+  <div class="block-h"><p class="hint">Marque cada linha. <b>Atende com ajuste</b> = vai suprir por consórcio, subcontratação, leasing ou outro meio (escreva qual na nota). Itens <span class="pill elim">Eliminatório</span> com "Não atende" geram recomendação de não participar.</p><span class="save-state" id="mxSave">Carregando…</span></div>
+  <div id="mxList" style="display:grid;gap:20px"></div>
+</section>
+
+<!-- ======================= 9. SIMULADOR ======================= -->
+<section class="sec" id="sec-simulador" data-sec="simul" aria-labelledby="h-simul" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="simul"></span><div><p class="eyebrow">Decidir · 2 de 4</p><h2 id="h-simul">Simulador de lance</h2><p class="q">Até onde a empresa pode baixar o preço sem ter prejuízo?</p></div></header>
+  <div class="tldr"><h3>Como usar</h3><ul>
+    <li><span>Informe quanto <b>o seu custo direto representa</b> do valor de referência em cada componente, e os seus percentuais de tributos, despesas e margem.</span></li>
+    <li><span>O simulador calcula o <b>lance mínimo viável</b> e mostra se ele cai na zona de inexequibilidade (abaixo de 50%).</span></li>
+    <li><span>Os números iniciais são <b>exemplos</b>. Substitua pelos custos reais da empresa.</span></li>
+  </ul></div>
+  <div class="sim">
+    <div class="form" id="simForm">
+      <div class="block-h"><h3>Seus custos</h3><span class="example-tag" id="simExample">Valores de exemplo</span></div>
+      <div id="simCosts" class="form"></div>
+      <div class="block-h" style="margin-top:6px"><h3>Seus percentuais</h3></div>
+      <div id="simParams" class="form"></div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="btn ghost small" type="button" id="simReset">Restaurar exemplo</button><span class="save-state" id="simSave">Carregando…</span></div>
+    </div>
+    <div class="out">
+      <div class="out-main">
+        <div class="tile"><span class="k">Lance mínimo viável</span><span class="v" id="oMin">—</span><span class="s" id="oMinS">valor anual do item</span></div>
+        <div class="tile"><span class="k">Desconto máximo sobre a referência</span><span class="v" id="oDesc">—</span><span class="s">referência R$ 20.835.706,71</span></div>
+      </div>
+      <div class="zone">
+        <b style="font-size:14px">Zona de lance</b>
+        <div class="zone-track" id="zoneTrack" role="img" aria-label="Escala de lance"></div>
+        <div class="zone-scale" id="zoneScale"></div>
+        <div class="zone-key"><span><i style="background:var(--bad-bg);border:1px solid var(--bad)"></i>Abaixo de 50%: diligência</span><span><i style="background:var(--neutral-bg)"></i>Abaixo do seu custo</span><span><i style="background:var(--good-bg);border:1px solid var(--good)"></i>Zona viável</span></div>
+      </div>
+      <div class="field big" style="background:var(--surface)"><label for="sim-lance">Lance que pretendo dar</label><small>teste um valor e veja a margem</small><div class="inp"><span class="u">R$</span><input id="sim-lance" inputmode="decimal" data-k="lance"></div></div>
+      <div class="out-main">
+        <div class="tile"><span class="k">Margem líquida nesse lance</span><span class="v" id="oMarg">—</span><span class="s" id="oMargS"></span></div>
+        <div class="tile"><span class="k">Próximo lance mínimo</span><span class="v" id="oNext">—</span><span class="s">intervalo de 0,10% · Edital 6.8</span></div>
+      </div>
+      <div id="simAlerts" style="display:grid;gap:10px"></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Para onde vai o lance</th><th class="r">R$</th><th class="r">%</th></tr></thead><tbody id="simBreak"></tbody></table></div>
+      <p class="hint">Fórmula: lance mínimo = (custo direto + despesas indiretas + custo financeiro) ÷ [(1 − glosa) × (1 − tributos) − margem − custo da garantia]. Ao ajustar a planilha, nenhum preço unitário pode passar do máximo do Apêndice IV.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 10. RISCOS ======================= -->
+<section class="sec" id="sec-riscos" data-sec="risco" aria-labelledby="h-risco" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="risco"></span><div><p class="eyebrow">Decidir · 3 de 4</p><h2 id="h-risco">Caixa, garantia e riscos de execução</h2><p class="q">A empresa aguenta financiar a operação até o primeiro pagamento?</p></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Entre o primeiro dia de serviço e o primeiro pagamento podem passar <b>cerca de 85 dias</b>. A empresa financia frota, motoristas e combustível nesse intervalo.</span></li>
+    <li><span>Garantia de <b>5% do valor anual</b>, apresentada até a assinatura (seguro) ou em 10 dias úteis (demais modalidades).</span></li>
+    <li><span>Cada veículo não atendido reduz o valor da ordem de serviço pelo IMR. No comboio presidencial também abre processo de penalidade.</span></li>
+  </ul></div>
+  <div class="tiles" id="riskTiles"></div>
+  <p class="hint">Valores calculados sobre o lance informado no <a href="#simulador">Simulador</a>.</p>
+
+  <div class="block">
+    <div class="block-h"><h3>Ciclo até o primeiro pagamento</h3><span class="src">TR 7.6–7.30</span></div>
+    <div class="timeline">
+      <div class="tl-step"><span class="tl-dot">1</span><b>Execução do mês</b><span>até 30 dias</span></div>
+      <div class="tl-step"><span class="tl-dot">2</span><b>Recebimento provisório</b><span>até 10 dias úteis</span></div>
+      <div class="tl-step"><span class="tl-dot">3</span><b>Recebimento definitivo</b><span>até 10 dias</span></div>
+      <div class="tl-step"><span class="tl-dot">4</span><b>Liquidação</b><span>até 10 dias úteis</span></div>
+      <div class="tl-step"><span class="tl-dot">5</span><b>Pagamento</b><span>até 10 dias úteis</span></div>
+    </div>
+    <p class="hint">Estimativa de cerca de 85 dias corridos somando os prazos máximos. Atraso de pagamento é corrigido pelo IPCA.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Desconto do IMR na ordem de serviço</h3><span class="src">TR Apêndice I</span></div>
+    <div class="formula">Y = veículos não atendidos ÷ Σ veículos por dia &nbsp;→&nbsp; valor da OS = valor da missão − (valor da missão × Y)</div>
+    <div class="imr">
+      <div class="field"><label for="imr-v">Veículos por dia</label><div class="inp"><input id="imr-v" inputmode="numeric" value="12"></div></div>
+      <div class="field"><label for="imr-d">Dias da missão</label><div class="inp"><input id="imr-d" inputmode="numeric" value="4"></div></div>
+      <div class="field"><label for="imr-n">Não atendidos</label><div class="inp"><input id="imr-n" inputmode="numeric" value="3"></div></div>
+      <div class="field"><label for="imr-m">Valor da missão</label><div class="inp"><span class="u">R$</span><input id="imr-m" inputmode="decimal" value="40.000"></div></div>
+    </div>
+    <div class="alert warn" id="imrOut"></div>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Outros riscos que pesam na decisão</h3></div>
+    <div class="grid-2">
+      <div class="card"><h4><span data-icon="oper"></span>Capital imobilizado em frota</h4><p>16 veículos próprios (6 Executivo II e 10 Sedan) comprovados já na assinatura e mantidos durante o contrato <span class="src">TR 5.9.2.1</span></p></div>
+      <div class="card"><h4><span data-icon="kit"></span>Prazo de 4 e 6 horas nos 4 estados</h4><p>Exige rede de parceiros ou bases no ES, MG, RJ e SP, inclusive no interior. Atraso gera desconto e pode gerar penalidade <span class="src">TR 5.9 · Ap. I</span></p></div>
+      <div class="card"><h4><span data-icon="cond"></span>Preço fixo por 12 meses</h4><p>Reajuste pelo IPCA só depois de 1 ano da data do orçamento (24/09/2026). Custos de convenção coletiva de 2027 precisam caber no lance <span class="src">TR 13</span></p></div>
+      <div class="card"><h4><span data-icon="conf"></span>Regra de pagamento pelo menor cenário</h4><p>O ETP prevê pagar o menor entre até três cenários de diárias, sem detalhar o cálculo. Ver item 8 em Conflitos <span class="src">ETP seção 4</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 11. KIT ======================= -->
+<section class="sec" id="sec-kit" data-sec="kit" aria-labelledby="h-kit" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="kit"></span><div><p class="eyebrow">Decidir · 4 de 4</p><h2 id="h-kit">Kit das 2 horas</h2><p class="q">O que precisa estar pronto antes da sessão para não perder depois de vencer?</p></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Após o lance, o pregoeiro dá <b>2 horas</b> para a proposta ajustada com planilha e declarações <span class="src">Edital 6.23.4</span>.</span></li>
+    <li><span>Na habilitação, mais <b>2 horas</b> para documentos fora do SICAF <span class="src">Edital 8.12.1</span>. Os prazos só são prorrogados com pedido fundamentado no chat, antes de vencerem.</span></li>
+    <li><span>Depois, <b>5 dias úteis</b> para assinar, com frota, garantia e central 24 h prontas.</span></li>
+  </ul></div>
+  <div class="block-h"><p class="hint">Marque cada item quando o documento estiver pronto e revisado.</p><span class="save-state" id="kitSave">Carregando…</span></div>
+  <div class="kit-groups" id="kitGroups"></div>
+</section>
+
+      <nav class="pager" id="pager" aria-label="Navegação entre seções"></nav>
+    </main>
+    <p class="foot">Análise independente elaborada para apoio à decisão do licitante, com base no Edital do Pregão Eletrônico nº 319/2026 (05/11/2026) e no Termo de Referência nº 236/2026 com apêndices. Não é documento oficial da Presidência da República e não substitui a leitura integral do Edital e anexos.</p>
+  </div>
+</div>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* ---------------- ícones ---------------- */
+const ICONS={
+ visao:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+ cond:'<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/>',
+ oper:'<path d="M2.5 6.5h11v9.5h-11zM13.5 9.5h4l3.5 3.5v3h-7.5"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>',
+ qual:'<circle cx="12" cy="9" r="5"/><path d="M8.6 12.8 7 21l5-2.6 5 2.6-1.6-8.2"/>',
+ decl:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/>',
+ conf:'<path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/>',
+ plan:'<rect x="3" y="4" width="18" height="16" rx="1.6"/><path d="M3 9h18M3 14h18M9 4v16"/>',
+ matriz:'<rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><path d="m14.5 17.5 2 2 4-4"/>',
+ simul:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/>',
+ risco:'<path d="M4 7h15a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h11v3"/><path d="M16 13.5h.01"/>',
+ kit:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+ alert:'<circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.3v.2"/>',
+ ok:'<circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/>',
+ cal:'<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>'
+};
+const svg=(k)=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICONS[k]||'')+'</svg>';
+document.querySelectorAll('[data-icon]').forEach(el=>{el.innerHTML=svg(el.dataset.icon)});
+
+/* ---------------- formatação ---------------- */
+const BRL=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+const BRL0=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+const NUM=new Intl.NumberFormat('pt-BR',{maximumFractionDigits:2});
+const fmt=n=>BRL.format(n), fmt0=n=>BRL0.format(n);
+const pct=(n,d=1)=>(n*100).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+const parseNum=s=>{ if(typeof s==='number') return s; s=String(s||'').replace(/[^\d,.-]/g,''); if(s.includes(',')){s=s.replace(/\./g,'').replace(',','.')} else if((s.match(/\./g)||[]).length>1 || /\.\d{3}$/.test(s)){s=s.replace(/\./g,'')} const v=parseFloat(s); return isFinite(v)?v:0; };
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $=id=>document.getElementById(id);
+
+/* ---------------- dados ---------------- */
+const REF=20835706.71;
+const COMPONENTS=[
+ {k:'loc',  nome:'Locação de veículos', det:'22 categorias · 4 faixas de prazo', v:14456136.20, cor:'var(--s-cond)', def:55},
+ {k:'mot',  nome:'Diárias de motoristas', det:'7.501 diárias · 2.658 com adicional · 5.344 h extras', v:4791359.20, cor:'var(--s-oper)', def:85},
+ {k:'age',  nome:'Agente de missão', det:'300 diárias · 178 com adicional de 60%', v:807024.00, cor:'var(--s-qual)', def:70},
+ {k:'comb', nome:'Combustível', det:'repasse pelo preço ANP · não cotado', v:705552.91, cor:'var(--s-plan)', fixed:true},
+ {k:'ns',   nome:'No show', det:'veículo reservado e não usado', v:75634.40, cor:'var(--s-decl)', def:30}
+];
+const CATS=[
+ ['A','Executivo Blindado II',2400,709437.00,'atestado'],
+ ['B','Camioneta I Blindada 4x4 (SUV I)',3200,1176567.00,''],
+ ['C','Camioneta I Blindada 4x2 (SUV I)',3200,1770867.00,''],
+ ['D','Camioneta II Blindada (SUV II)',2980,878869.00,'atestado'],
+ ['E','Camioneta I 4x4 (SUV I)',2300,49764.00,''],
+ ['F','Camioneta I 4x2 (SUV I)',1900,436070.00,''],
+ ['G','Camioneta II (SUV II)',1500,187636.00,'atestado'],
+ ['H','Camioneta III (SUV III)',1400,857142.00,''],
+ ['I','Caminhonete 4x4',1800,279896.00,'atestado'],
+ ['J','Caminhonete 4x2',1500,187558.00,'atestado'],
+ ['K','Executivo II',1000,611295.60,'frota'],
+ ['L','Sedan',680,3046115.00,'frota'],
+ ['M','Van teto baixo',1100,47344.00,''],
+ ['N','Van Executiva',1500,2930554.00,''],
+ ['O','Van Furgão',1500,100874.00,''],
+ ['P','Utilitário Furgão',850,81194.00,''],
+ ['Q','Ônibus Rodoviário',3500,345633.60,''],
+ ['R','Ônibus Urbano',3200,317784.00,''],
+ ['S','Micro-ônibus',2800,116994.00,''],
+ ['T','Microcaminhão',1500,311314.00,''],
+ ['U','Guincho',1300,7994.00,''],
+ ['V','Veículo para transporte de cadeirante',1000,5234.00,'']
+];
+const LOC_TOTAL=14456136.20;
+const PL=/*PLANILHA_DATA*/null;
+
+const CONFLITOS=[
+ {g:'alta',tipo:'Edital × TR',t:'Prazo do seguro-garantia',a:['Edital 9.2–9.4','Assinatura do contrato em 5 dias úteis da convocação.'],b:['TR 4.8–4.8.2','Apólice entregue até a assinatura; se não, perde-se a opção pelo seguro.'],why:'A Lei 14.133 (art. 96, §3º) assegura prazo mínimo de 1 mês entre a homologação e a assinatura para quem escolhe seguro-garantia. O texto não deixa isso expresso.',todo:'Pedir retificação para garantir o prazo legal sem perder a modalidade.'},
+ {g:'alta',tipo:'Edital × TR',t:'Acréscimo indefinido para consórcio',a:['Edital 8.4.1','Acréscimo "entre 10% a 30%" na habilitação econômico-financeira do consórcio.'],b:['TR 8.40.1.1','Repete a faixa sem fixar o percentual.'],why:'Sem o percentual, o consórcio não sabe qual patrimônio ou capital precisa comprovar.',todo:'Pedir que fixem o percentual e a base de cálculo.'},
+ {g:'alta',tipo:'Dentro do TR',t:'Subcontratação × sublocação',a:['TR 4.2–4.5','Subcontratação vedada nas categorias K e L, com autorização prévia nas demais.'],b:['TR 5.9.2.1.2–3','Admite sublocar veículos, com redação que alcança todos os tipos.'],why:'Decide se veículos de terceiros podem atender Executivo II e Sedan, as categorias de maior volume.',todo:'Pedir definição dos dois conceitos e das categorias admitidas em cada um.'},
+ {g:'alta',tipo:'TR × Planilha',t:'No show acima do teto de 70%',a:['TR 5.11.3','No show limitado a 70% da diária de 10 h.'],b:['Apêndice IV','19 das 22 categorias com no show acima desse limite, somando R$ 11.525,60 no ano. A hora extra da categoria A (15 a 29 dias) também passa de 20% da diária.'],why:'Os preços da planilha são máximos aceitáveis. Copiar esses valores viola o próprio TR.',todo:'Na sua planilha, respeite o teto de 70% (a Google Planilha já calcula). Pedir correção da planilha oficial.'},
+ {g:'alta',tipo:'Dentro do TR',t:'Índices contábeis × patrimônio líquido',a:['TR 8.26','Se algum índice for 1 ou menos, aceita patrimônio líquido de 10% (R$ 2.083.570,67).'],b:['TR 8.27','Exige os índices nos dois exercícios, sob pena de inabilitação.'],why:'Não fica claro se o patrimônio líquido substitui índice ruim em um ou nos dois exercícios.',todo:'Pedir esclarecimento antes de contar com a alternativa do patrimônio líquido.'},
+ {g:'media',tipo:'TR × Planilha',t:'Adicional de 60% do agente de missão',a:['TR 5.8','Adicional de 60% calculado sobre a diária do motorista: R$ 1.380 + 60% de R$ 380 = R$ 1.608.'],b:['Apêndice IV','Planilha usa R$ 2.208, que é 60% sobre a diária do próprio agente.'],why:'Diferença de R$ 600 por diária em 178 diárias (R$ 106.800 por ano).',todo:'Pedir uniformização e cotar conforme a resposta.'},
+ {g:'media',tipo:'Edital × TR',t:'Momento das declarações de 4 h e 6 h',a:['Edital 6.23.4.1','Remete aos itens 5.9.1 e 5.9.2 do TR como documentos complementares da proposta ajustada.'],b:['TR 5.9.1–5.9.2','Exige as declarações sem dizer quando. Termos dos Apêndices V e VII também sem momento.'],why:'Documento não entregue quando pedido é infração (Edital 11.1.1).',todo:'Ter tudo pronto no Kit das 2 horas e enviar junto com a proposta ajustada.'},
+ {g:'media',tipo:'ETP × TR',t:'Pagamento pelo menor cenário',a:['ETP seção 4','Compara até três cenários e paga o menor; diz que os parâmetros não podem ser questionados.'],b:['TR 5.11, 17.2','Não detalha os cenários nem a memória de cálculo.'],why:'Afeta a receita real por missão e o direito de contestar medições.',todo:'Pedir fórmulas e exemplos, e que se preserve o direito de contestar erros.'},
+ {g:'media',tipo:'Dentro do TR',t:'Caminhonete 4x2 descrita com tração 4x4',a:['Apêndice II, título','Categoria J: Caminhonete 4x2.'],b:['Apêndice II, descrição','Texto da especificação cita tração 4x4.'],why:'Muda o veículo e o custo a cotar na categoria J.',todo:'Pedir qual especificação será aceita.'},
+ {g:'baixa',tipo:'Dentro do TR',t:'Idade e quilometragem',a:['TR 5.9.2.1.4','Máximo de 5 anos ou 100.000 km.'],b:['Tabela de infrações, item 12','Fala em "menos de 5 anos" e abaixo de 100.000 km.'],why:'Veículo com exatamente 5 anos ou 100.000 km fica em dúvida.',todo:'Usar veículos abaixo dos limites ou pedir esclarecimento.'},
+ {g:'baixa',tipo:'Dentro do TR',t:'Comprovação da blindagem',a:['TR 5.9.2.1.7','CRLV ou Termo de Responsabilidade da blindadora.'],b:['TR 11.18','Pode ser lido como exigência dos dois documentos.'],why:'Risco de recusa de veículo blindado na apresentação.',todo:'Manter os dois documentos de cada blindado.'},
+ {g:'baixa',tipo:'Edital',t:'Falhas de redação no Edital',a:['Edital 1.1','A frase do objeto termina em "conforme" sem complemento.'],b:['Edital 13.1–13.2','Numeração dos itens 13.1 e 13.2 repetida.'],why:'Falhas formais sem efeito no preço.',todo:'Nenhuma ação necessária.'}
+];
+
+const MATRIZ=[
+ {g:'Habilitação',itens:[
+  {id:'sicaf',t:'SICAF e Compras.gov.br regulares',d:'Condições atendidas até 17/11/2026 (3º dia útil antes da sessão)',src:'Edital 2.2',elim:true},
+  {id:'indices',t:'Índices LG, LC e SG acima de 1 nos 2 últimos exercícios',d:'Ou patrimônio líquido de R$ 2.083.570,67, com regra ambígua',src:'TR 8.25–8.27',elim:true},
+  {id:'contador',t:'Declaração do contador com os índices',d:'Documento fora do SICAF, entregue em 2 h',src:'TR 8.30',elim:false},
+  {id:'at-blind',t:'Atestado: 1 Executivo Blindado II ou SUV II blindada',d:'Ou categoria superior',src:'TR 8.38.1.1',elim:true},
+  {id:'at-cam',t:'Atestado: 2 caminhonetes 4x4/4x2 ou SUV II',d:'Locação ou sublocação',src:'TR 8.38.1.1',elim:true},
+  {id:'at-exec',t:'Atestado: 6 Executivo II ou superior',d:'Locação ou sublocação',src:'TR 8.38.1.1',elim:true},
+  {id:'at-sedan',t:'Atestado: 10 Sedan ou superior',d:'Locação ou sublocação',src:'TR 8.38.1.1',elim:true},
+  {id:'at-regras',t:'Atestados válidos',d:'Contrato concluído ou com 1 ano de execução, dentro do objeto social',src:'TR 8.38.2–8.38.3',elim:true}
+ ]},
+ {g:'Frota e operação',itens:[
+  {id:'fr-exec',t:'6 Executivo II ou SUV II próprios',d:'CRLV em nome da empresa na assinatura; leasing documentado aceito',src:'TR 5.9.2.1',elim:true},
+  {id:'fr-sedan',t:'10 Sedan próprios',d:'Mantidos durante toda a vigência',src:'TR 5.9.2.1',elim:true},
+  {id:'idade',t:'Veículos dentro da idade e quilometragem',d:'5 anos ou 100.000 km; vans executivas 6 anos; ônibus 10 anos',src:'TR 5.9.2.1.4–6',elim:false},
+  {id:'blind',t:'Blindados nível III-A com documentação',d:'Categorias A a D',src:'TR 5.9.2.1.7',elim:false},
+  {id:'4h',t:'Atendimento em 4 h nas capitais e RM dos 4 estados',d:'ES, MG, RJ e SP',src:'TR 5.9.1',elim:false},
+  {id:'6h',t:'Atendimento em 6 h no interior',d:'Rede própria ou de parceiros',src:'TR 5.9.2',elim:false},
+  {id:'subloc',t:'Rede de sublocação para as demais categorias',d:'Vans, ônibus, utilitários, guincho, veículo para cadeirante',src:'TR 5.9.2.1.3',elim:false},
+  {id:'central',t:'Central e celular 24 h exclusivos',d:'Indicados na assinatura',src:'TR 12.31',elim:false}
+ ]},
+ {g:'Equipe',itens:[
+  {id:'preposto',t:'Preposto exclusivo para o contrato',d:'Em regime de prontidão',src:'TR 6.6–6.15',elim:false},
+  {id:'agente',t:'Agentes de missão disponíveis',d:'Presenciais e exclusivos por missão',src:'TR 6.21–6.31',elim:false},
+  {id:'motoristas',t:'Motoristas qualificados',d:'3 anos de CNH, direção defensiva, aptos a cortejo, levantamento de segurança',src:'TR 12.26, 12.36, 5.4',elim:false}
+ ]},
+ {g:'Finanças',itens:[
+  {id:'garantia',t:'Garantia de 5% do valor anual',d:'Cerca de R$ 1,04 milhão sobre a referência',src:'TR 4.7–4.8',elim:false},
+  {id:'giro',t:'Capital de giro para cerca de 3 meses de custos',d:'Inclui combustível adiantado',src:'TR 7, 5.3',elim:false},
+  {id:'seguro',t:'Seguro casco 100% FIPE e RCFV',d:'R$ 50 mil, R$ 100 mil e R$ 5 mil',src:'TR 12.37',elim:false},
+  {id:'cadin',t:'Sem registro no Cadin',d:'Impede a contratação',src:'Edital 9.6',elim:true}
+ ]}
+];
+
+const KIT=[
+ {g:'Proposta ajustada ao lance',prazo:'2 horas · Edital 6.23.4',itens:[
+  {id:'k-prop',t:'Proposta de Preços (Anexo II) preenchida',d:'Validade mínima de 60 dias, dados bancários, preposto, assinatura'},
+  {id:'k-plan',t:'Planilha de custos pronta para ajustar',d:'Preços na Google Planilha do painel; versão oficial .xlsx em gov.br/compras'},
+  {id:'k-4h',t:'Declaração de atendimento em 4 horas',d:'TR 5.9.1'},
+  {id:'k-6h',t:'Declaração de atendimento em 6 horas',d:'TR 5.9.2'},
+  {id:'k-sub',t:'Declaração de condições de sublocar',d:'TR 5.9.2.1.2'},
+  {id:'k-ciencia',t:'Termo de Ciência e Concordância',d:'Apêndice VII do TR'},
+  {id:'k-conf',t:'Termo de Confidencialidade',d:'Apêndice V do TR'}
+ ]},
+ {g:'Habilitação',prazo:'2 horas · Edital 8.12.1',itens:[
+  {id:'k-cont',t:'Declaração do contador com LG, LC e SG',d:'TR 8.30'},
+  {id:'k-atest',t:'Atestados de capacidade técnica digitalizados',d:'Com as quantidades da tabela do TR 8.38'},
+  {id:'k-contr',t:'Cópias dos contratos que sustentam os atestados',d:'Podem ser pedidas, TR 8.38.6'},
+  {id:'k-bal',t:'Balanço e DRE dos 2 últimos exercícios',d:'Se não estiverem no SICAF'},
+  {id:'k-fal',t:'Certidão negativa de falência atualizada',d:'Se não estiver no SICAF'},
+  {id:'k-social',t:'Contrato social consolidado',d:'Com atividade compatível com o objeto'}
+ ]},
+ {g:'Assinatura do contrato',prazo:'5 dias úteis · Edital 9.2',itens:[
+  {id:'k-crlv',t:'CRLV dos 16 veículos próprios',d:'6 Executivo II e 10 Sedan, TR 5.9.2.1'},
+  {id:'k-gar',t:'Garantia de 5% contratada',d:'Seguro até a assinatura ou outra modalidade em 10 dias úteis'},
+  {id:'k-24h',t:'Central e celular 24 h definidos',d:'TR 12.31'},
+  {id:'k-cadin',t:'Consulta ao Cadin sem pendência',d:'Edital 9.6'}
+ ]}
+];
+
+const SIM_PARAMS=[
+ {k:'trib',l:'Tributos sobre o faturamento',h:'PIS, COFINS, ISS, IRPJ e CSLL do seu regime',u:'%',def:13},
+ {k:'adm',l:'Despesas indiretas',h:'sobre o custo direto: escritório, central 24 h, preposto',u:'%',def:8},
+ {k:'glosa',l:'Desconto esperado pelo IMR',h:'perda média do faturamento por falhas',u:'%',def:1},
+ {k:'marg',l:'Margem líquida desejada',h:'sobre o valor do lance',u:'%',def:6},
+ {k:'ciclo',l:'Ciclo até receber',h:'dias entre o serviço e o pagamento (TR 7)',u:'dias',def:85},
+ {k:'juros',l:'Custo do capital de giro',h:'taxa mensal do seu financiamento',u:'%/mês',def:1.5},
+ {k:'garan',l:'Custo anual da garantia',h:'prêmio do seguro sobre os 5% garantidos',u:'%/ano',def:1.5}
+];
+const SIM_DEF=()=>{const o={lance:19200000}; COMPONENTS.forEach(c=>{if(!c.fixed)o['c_'+c.k]=c.def}); SIM_PARAMS.forEach(p=>o[p.k]=p.def); return o;};
+
+const SECTIONS=[
+ {id:'visao',sec:'visao',nome:'Visão geral',q:'Capa e decisão',grupo:'Entender'},
+ {id:'condicoes',sec:'cond',nome:'Condições gerais',q:'Regras do contrato e da remuneração',grupo:'Entender'},
+ {id:'operacao',sec:'oper',nome:'Estrutura operacional',q:'O que a empresa precisa ter montado',grupo:'Entender'},
+ {id:'qualificacao',sec:'qual',nome:'Qualificação',q:'O que comprovar para habilitar',grupo:'Entender'},
+ {id:'declaracoes',sec:'decl',nome:'Declarações',q:'Documentos fora do SICAF',grupo:'Entender'},
+ {id:'conflitos',sec:'conf',nome:'Conflitos',q:'Onde os documentos se contradizem',grupo:'Entender'},
+ {id:'planilha',sec:'plan',nome:'Planilha de custo',q:'Como o órgão chegou ao valor',grupo:'Entender'},
+ {id:'matriz',sec:'matriz',nome:'Matriz de aderência',q:'A empresa cumpre cada exigência?',grupo:'Decidir'},
+ {id:'simulador',sec:'simul',nome:'Simulador de lance',q:'Até onde baixar o preço',grupo:'Decidir'},
+ {id:'riscos',sec:'risco',nome:'Caixa e riscos',q:'Fôlego financeiro até receber',grupo:'Decidir'},
+ {id:'kit',sec:'kit',nome:'Kit das 2 horas',q:'O que deixar pronto antes da sessão',grupo:'Decidir'}
+];
+
+/* ---------------- estado e armazenamento ---------------- */
+const state={matriz:{status:{},notas:{}},kit:{done:{}},sim:SIM_DEF()};
+const DOCS={matriz:'analise/matriz',kit:'analise/kit',sim:'analise/simulador'};
+const SAVE_EL={matriz:'mxSave',kit:'kitSave',sim:'simSave'};
+let db=null, mode='local';
+const lsGet=k=>{try{const v=localStorage.getItem('pe319-'+k);return v?JSON.parse(v):null}catch(e){return null}};
+const lsSet=(k,v)=>{try{localStorage.setItem('pe319-'+k,JSON.stringify(v))}catch(e){}};
+function setSave(name,cls,txt){const el=$(SAVE_EL[name]); if(!el)return; el.className='save-state'+(cls?' '+cls:''); el.textContent=txt;}
+const timers={}, writing={}, pending={};
+function persist(name){
+  lsSet(name,state[name]);
+  if(!db){setSave(name,'local','Salvo neste navegador');return;}
+  setSave(name,'busy','Salvando…');
+  clearTimeout(timers[name]);
+  timers[name]=setTimeout(()=>flush(name),700);
+}
+async function flush(name){
+  if(writing[name]){pending[name]=true;return;}
+  writing[name]=true;
+  try{ await db.doc(DOCS[name]).set(JSON.parse(JSON.stringify(state[name]))); setSave(name,'','Salvo para a equipe'); }
+  catch(e){ setSave(name,'err', (e&&(e.code==='permission_denied'||e.code==='not_granted'))?'Somente leitura: salvo só neste navegador':'Não foi possível salvar para a equipe; salvo neste navegador'); }
+  writing[name]=false;
+  if(pending[name]){pending[name]=false;flush(name);}
+}
+function mergeIn(name,data){
+  if(!data) return;
+  if(name==='sim') state.sim=Object.assign(SIM_DEF(),data);
+  else if(name==='matriz') state.matriz={status:Object.assign({},data.status||{}),notas:Object.assign({},data.notas||{})};
+  else if(name==='kit') state.kit={done:Object.assign({},data.done||{})};
+}
+['matriz','kit','sim'].forEach(n=>{const v=lsGet(n); if(v) mergeIn(n,v);});
+
+async function connectDb(){
+  try{ db = window.claude && window.claude.use ? await window.claude.use('db') : null; }catch(e){ db=null; }
+  if(!db){ ['matriz','kit','sim'].forEach(n=>setSave(n,'local','Salvo neste navegador')); return; }
+  mode='db';
+  ['matriz','kit','sim'].forEach(name=>{
+    setSave(name,'','Salvo para a equipe');
+    try{
+      db.doc(DOCS[name]).onSnapshot(snap=>{
+        if(snap.metadata && snap.metadata.hasPendingWrites) return;
+        if(writing[name] || timers[name]&&pending[name]) return;
+        if(snap.exists){ mergeIn(name,snap.data()); lsSet(name,state[name]); rerender(name); }
+      },()=>setSave(name,'local','Sem conexão com a equipe; salvo neste navegador'));
+    }catch(e){ setSave(name,'local','Salvo neste navegador'); }
+  });
+}
+function rerender(name){
+  if(name==='matriz') renderMatriz();
+  if(name==='kit') renderKit();
+  if(name==='sim') renderSim(true);
+  renderOverview();
+}
+
+/* ---------------- navegação ---------------- */
+function buildNav(){
+  const groups={Entender:[],Decidir:[]};
+  SECTIONS.forEach(s=>groups[s.grupo].push(s));
+  let h='';
+  [['Entender','Entender o edital'],['Decidir','Decidir']].forEach(([g,lab])=>{
+    h+='<div class="nav-group"><div class="nav-label">'+lab+'</div>';
+    groups[g].forEach(s=>{h+='<a href="#'+s.id+'" data-sec="'+s.sec+'" data-route="'+s.id+'"><span class="ico">'+svg(s.sec)+'</span><span>'+s.nome+'</span>'+(s.id==='conflitos'?'<span class="badge" id="navConfBadge"></span>':'')+'</a>';});
+    h+='</div>';
+  });
+  $('nav').innerHTML=h;
+  const mapItem=s=>'<a href="#'+s.id+'" data-sec="'+s.sec+'"><span class="mi">'+svg(s.sec)+'</span><span><b>'+s.nome+'</b><span>'+s.q+'</span><em id="map-'+s.id+'"></em></span></a>';
+  $('mapEntender').innerHTML=SECTIONS.filter(s=>s.grupo==='Entender'&&s.id!=='visao').map(mapItem).join('');
+  $('mapDecidir').innerHTML=SECTIONS.filter(s=>s.grupo==='Decidir').map(mapItem).join('');
+}
+function route(){
+  let id=(location.hash||'').replace('#','');
+  if(!SECTIONS.some(s=>s.id===id)) id='visao';
+  const s=SECTIONS.find(x=>x.id===id), i=SECTIONS.indexOf(s);
+  document.querySelectorAll('.sec').forEach(el=>{el.hidden = el.id!=='sec-'+id});
+  document.querySelectorAll('#nav a').forEach(a=>{ if(a.dataset.route===id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+  $('crumb').dataset.sec=s.sec; $('crumbTxt').textContent=(s.grupo==='Decidir'?'Decidir':'Entender o edital')+' · '+s.nome;
+  const prev=SECTIONS[i-1], next=SECTIONS[i+1];
+  $('pager').innerHTML=(prev?'<a href="#'+prev.id+'"><span>← Anterior</span><b>'+prev.nome+'</b></a>':'')+(next?'<a class="next" href="#'+next.id+'"><span>Próxima →</span><b>'+next.nome+'</b></a>':'');
+  const cur=document.querySelector('#nav a[aria-current]'); if(cur&&cur.scrollIntoView&&window.innerWidth<900) cur.scrollIntoView({block:'nearest',inline:'center'});
+  const panel=$('panel'); if(panel.getBoundingClientRect().top<0) panel.scrollIntoView({block:'start'});
+}
+
+/* ---------------- prazos ---------------- */
+function daysUntil(y,m,d){const now=new Date(); const a=new Date(now.getFullYear(),now.getMonth(),now.getDate()); const b=new Date(y,m-1,d); return Math.round((b-a)/86400000);}
+function renderDeadlines(){
+  const D=[
+   {d:[2026,11,17],lbl:'17/11',t:'Último dia para impugnar e pedir esclarecimento',s:'Edital 12.1 · e-mail ',mail:true},
+   {d:[2026,11,17],lbl:'17/11',t:'SICAF com condições atendidas',s:'3º dia útil antes da sessão · Edital 2.2'},
+   {d:[2026,11,19],lbl:'19/11',t:'Limite para o órgão responder',s:'Último dia útil antes da sessão · Edital 12.2'},
+   {d:[2026,11,23],lbl:'23/11 · 9h30',t:'Sessão pública no Compras.gov.br',s:'Envio da proposta até a abertura · Edital 4.2'}
+  ];
+  $('deadlines').innerHTML=D.map(x=>{const n=daysUntil(...x.d); const left=n<0?'encerrado':n===0?'hoje':n===1?'amanhã':'em '+n+' dias'; return '<div class="dl'+(n>=0&&n<=4?' urgent':'')+'"><div class="d"><b>'+x.lbl+'</b><span class="left">'+left+'</span></div><p>'+x.t+'</p><span class="hint">'+x.s+(x.mail?'<span class="mono">cpl@presidencia.gov.br</span> <button class="copy" type="button" data-copy="cpl@presidencia.gov.br">copiar</button>':'')+'</span></div>';}).join('');
+  const n=daysUntil(2026,11,23);
+  $('topChips').innerHTML='<span class="chip'+(n<=10&&n>=0?' hot':'')+'">'+svg('cal')+(n>0?'Sessão em '+n+' dias':n===0?'Sessão hoje':'Sessão realizada')+'</span><span class="chip num">R$ 20,8 mi · item único</span>';
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]'); if(!b) return; const t=b.dataset.copy; const done=()=>{b.textContent='copiado'; setTimeout(()=>b.textContent='copiar',1500)}; try{navigator.clipboard.writeText(t).then(done,()=>{selectText(b.previousElementSibling)})}catch(err){selectText(b.previousElementSibling)}});
+function selectText(el){try{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}catch(e){}}
+
+/* ---------------- condições gerais ---------------- */
+function renderComposition(){
+  $('stack').innerHTML=COMPONENTS.map(c=>'<i style="width:'+(c.v/REF*100)+'%;background:'+c.cor+'" title="'+esc(c.nome)+'"></i>').join('');
+  $('legend').innerHTML=COMPONENTS.map(c=>'<li><span class="sw" style="background:'+c.cor+'"></span><span><b>'+c.nome+'</b> <span class="hint">· '+c.det+'</span></span><span class="r">'+fmt(c.v)+'</span><span class="r p">'+pct(c.v/REF)+'</span></li>').join('')+'<li><span></span><span><b>Total do item</b></span><span class="r"><b>'+fmt(REF)+'</b></span><span class="r p">100%</span></li>';
+  const max=Math.max(...CATS.map(c=>c[3]));
+  $('catTable').querySelector('tbody').innerHTML=CATS.map(c=>{const sh=c[3]/LOC_TOTAL; const tag=c[4]==='frota'?'<span class="pill elim">Atestado + frota própria</span>':c[4]==='atestado'?'<span class="pill att">Atestado</span>':''; return '<tr'+(c[4]?' class="hl"':'')+'><td><span class="cat-code">'+c[0]+'</span></td><td>'+c[1]+'</td><td class="r">'+fmt(c[2])+'</td><td class="r">'+fmt(c[3])+'</td><td><div class="barcell"><div class="bar"><i style="width:'+(c[3]/max*100)+'%"></i></div><span class="num" style="font-size:12.5px;text-align:right">'+pct(sh)+'</span></div></td><td>'+tag+'</td></tr>';}).join('')+'<tr><td></td><td><b>Subtotal locação</b></td><td></td><td class="r"><b>'+fmt(LOC_TOTAL)+'</b></td><td></td><td></td></tr>';
+  $('planTiles').innerHTML=COMPONENTS.map((c,i)=>'<div class="tile t'+(i+1)+'"><span class="k">'+c.nome+'</span><span class="v">'+fmt0(c.v)+'</span><span class="s">'+pct(c.v/REF)+' do total</span></div>').join('')+'<div class="tile t6"><span class="k">Total do item</span><span class="v">'+fmt0(REF)+'</span><span class="s">valor anual estimado</span></div>';
+}
+
+/* ---------------- conflitos ---------------- */
+let confFilter='todos';
+function renderConflitos(){
+  const counts={alta:0,media:0,baixa:0}; CONFLITOS.forEach(c=>counts[c.g]++);
+  const F=[['todos','Todos ('+CONFLITOS.length+')'],['alta','Alta ('+counts.alta+')'],['media','Média ('+counts.media+')'],['baixa','Baixa ('+counts.baixa+')']];
+  $('confFilters').innerHTML=F.map(f=>'<button class="fbtn" type="button" data-f="'+f[0]+'" aria-pressed="'+(confFilter===f[0])+'">'+f[1]+'</button>').join('');
+  const lab={alta:'Alta',media:'Média',baixa:'Baixa'};
+  $('confList').innerHTML=CONFLITOS.map((c,i)=>({c,i})).filter(o=>confFilter==='todos'||o.c.g===confFilter).map(({c,i})=>'<article class="conf '+c.g+'"><span class="stripe"></span><div class="conf-body"><div class="conf-top"><h4>'+(i+1)+'. '+c.t+'</h4><span class="pill info">'+c.tipo+'</span><span class="pill '+c.g+'">'+lab[c.g]+'</span></div><div class="versus"><div class="side-a"><span class="src">'+c.a[0]+'</span><span>'+c.a[1]+'</span></div><div class="vs">×</div><div class="side-b"><span class="src">'+c.b[0]+'</span><span>'+c.b[1]+'</span></div></div><p class="why">'+c.why+'</p><p class="todo"><b>O que fazer:</b> '+c.todo+'</p></div></article>').join('');
+  $('navConfBadge').textContent=counts.alta; $('confAltaTxt').textContent=counts.alta;
+}
+$('confFilters').addEventListener('click',e=>{const b=e.target.closest('[data-f]'); if(!b)return; confFilter=b.dataset.f; renderConflitos();});
+
+/* ---------------- planilha ---------------- */
+function renderPlanilha(){
+  if(!PL) return;
+  const r2=n=>Math.round(n*100)/100;
+  // locação
+  let h='<thead><tr><th rowspan="2">Cód.</th><th rowspan="2">Categoria</th><th class="fx fx1" colspan="3">Até 6 dias</th><th class="fx fx2">7 a 14 dias</th><th class="fx fx3">15 a 29 dias</th><th class="fx fx4">30 dias ou mais</th><th class="r" rowspan="2">Valor anual</th></tr>'
+   +'<tr><th class="fx fx1 r">Diária 24 h</th><th class="fx fx1 r">Diária 10 h</th><th class="fx fx1 r">Hora extra</th><th class="fx fx2 r">Diária 24 h</th><th class="fx fx3 r">Diária 24 h</th><th class="fx fx4 r">Diária 24 h</th></tr></thead><tbody>';
+  PL.cats.forEach(c=>{
+    const [cod,nome,d24,he24,d10,he10,f2,f3,f4,tot]=c;
+    h+='<tr><td><span class="cat-code">'+cod+'</span></td><td>'+esc(nome)+'</td>'
+      +'<td class="r fx1">'+fmt(d24[1])+'<span class="sub">'+NUM.format(d24[0])+' diárias</span></td>'
+      +'<td class="r fx1">'+fmt(d10[1])+'<span class="sub">'+NUM.format(d10[0])+' diárias</span></td>'
+      +'<td class="r fx1">'+fmt(he24[1])+'<span class="sub">'+NUM.format(he24[0]+he10[0])+' h</span></td>'
+      +'<td class="r fx2">'+fmt(f2[1])+'</td>'
+      +'<td class="r fx3'+(f3[2]>r2(f3[1]*0.2)+0.004?' warn':'')+'">'+fmt(f3[1])+(f3[2]>r2(f3[1]*0.2)+0.004?'<span class="sub" style="color:var(--bad)">HE '+fmt(f3[2])+' &gt; 20%</span>':'')+'</td>'
+      +'<td class="r fx4">'+fmt(f4[1])+'</td><td class="r"><b>'+fmt(tot)+'</b></td></tr>';
+  });
+  h+='<tr class="tot"><td></td><td>Total da locação</td><td colspan="6"></td><td class="r">'+fmt(PL.totais.loc)+'</td></tr></tbody>';
+  $('plLoc').innerHTML=h;
+  // no show
+  let bad=0, exc=0;
+  let n='<thead><tr><th>Cód.</th><th>Categoria</th><th class="r">Qtde</th><th class="r">Diária 10 h</th><th class="r">Teto 70%</th><th class="r">Planilha do órgão</th><th class="r">Excesso por unidade</th></tr></thead><tbody>';
+  PL.cats.forEach(c=>{
+    const cod=c[0], d10=c[4][1], teto=r2(d10*0.7), ns=PL.noshow[cod], ex=r2(Math.max(0,ns[1]-teto));
+    if(ex>0){bad++; exc+=ex*ns[0];}
+    n+='<tr'+(ex>0?' class="bad"':'')+'><td><span class="cat-code">'+cod+'</span></td><td>'+esc(c[1])+'</td><td class="r">'+NUM.format(ns[0])+'</td><td class="r">'+fmt(d10)+'</td><td class="r">'+fmt(teto)+'</td><td class="r">'+fmt(ns[1])+'</td><td class="r'+(ex>0?' warn':'')+'">'+(ex>0?fmt(ex):'—')+'</td></tr>';
+  });
+  n+='<tr class="tot"><td></td><td>Total no ano</td><td colspan="3"></td><td class="r">'+fmt(PL.totais.ns)+'</td><td class="r">'+fmt(exc)+'</td></tr></tbody>';
+  $('plNs').innerHTML=n; $('plNsBadge').textContent=bad+' de '+PL.cats.length+' acima do teto';
+  // mão de obra
+  $('plMo').innerHTML='<thead><tr><th>Item</th><th class="r">Qtde</th><th class="r">Preço máximo</th><th class="r">Total</th></tr></thead><tbody>'
+    +PL.mao.map(m=>'<tr><td>'+esc(m[0])+'<span class="sub">por '+m[1]+'</span></td><td class="r">'+NUM.format(m[2])+'</td><td class="r">'+fmt(m[3])+'</td><td class="r">'+fmt(r2(m[2]*m[3]))+'</td></tr>').join('')
+    +'<tr class="tot"><td>Total</td><td></td><td></td><td class="r">'+fmt(PL.totais.mot+PL.totais.age)+'</td></tr></tbody>';
+  $('plMo').style.minWidth='0';
+  $('plComb').innerHTML='<thead><tr><th>Combustível</th><th class="r">Litros</th><th class="r">ANP (R$/L)</th><th class="r">Total</th></tr></thead><tbody>'
+    +PL.comb.map(c=>'<tr><td>'+esc(c[0])+'</td><td class="r">'+NUM.format(c[1])+'</td><td class="r">'+fmt(c[2])+'</td><td class="r">'+fmt(r2(c[1]*c[2]*1.0945))+'</td></tr>').join('')
+    +'<tr class="tot"><td>Total</td><td></td><td></td><td class="r">'+fmt(PL.totais.comb)+'</td></tr></tbody>';
+  $('plComb').style.minWidth='0';
+}
+function toggleZoom(){const s=$('sheet'); s.classList.toggle('zoom'); $('zoomBtn').textContent=s.classList.contains('zoom')?'Ajustar à largura':'Ampliar';}
+$('zoomBtn').addEventListener('click',toggleZoom); $('sheetImg').addEventListener('click',toggleZoom);
+
+/* ---------------- matriz ---------------- */
+const ST=[['atende','Atende'],['ajuste','Atende com ajuste'],['nao','Não atende'],['verificar','A verificar']];
+function matrizSummary(){
+  const all=MATRIZ.flatMap(g=>g.itens); let c={atende:0,ajuste:0,nao:0,verificar:0}; const blockers=[];
+  all.forEach(it=>{const v=state.matriz.status[it.id]||'verificar'; c[v]++; if(v==='nao'&&it.elim) blockers.push(it.t);});
+  const evaluated=all.length-c.verificar;
+  let kind='wait',title='Decisão pendente',text='';
+  if(blockers.length){kind='nogo';title='Não participar nas condições atuais';text='Exigência eliminatória não atendida: '+blockers.join('; ')+'. Avalie consórcio ou parceria antes de desistir.';}
+  else if(c.verificar>0){kind='wait';title='Decisão pendente';text=c.verificar+' de '+all.length+' requisitos ainda sem avaliação.'+(c.nao?' Há '+c.nao+' item(ns) não eliminatório(s) sem atendimento.':'');}
+  else if(c.nao>0){kind='wait';title='Participar com plano de ação';text='Nenhum eliminatório bloqueia, mas '+c.nao+' requisito(s) precisam de solução até a assinatura.';}
+  else {kind='go';title='Apta a participar';text=c.ajuste?c.ajuste+' requisito(s) dependem de ajuste: confirme os parceiros antes da sessão.':'Todos os requisitos avaliados como atendidos.';}
+  return {all,c,blockers,evaluated,kind,title,text};
+}
+function renderMatriz(){
+  const list=$('mxList');
+  if(!list.dataset.built){
+    list.innerHTML=MATRIZ.map(g=>'<div class="req-group"><div class="group-title">'+g.g+'</div>'+g.itens.map(it=>'<div class="req" id="req-'+it.id+'"><div class="req-txt"><b>'+it.t+' '+(it.elim?'<span class="pill elim">Eliminatório</span>':'')+'</b><span>'+it.d+' · <span class="src">'+it.src+'</span></span></div><div class="seg" role="group" aria-label="Situação: '+esc(it.t)+'">'+ST.map(s=>'<button type="button" data-id="'+it.id+'" data-v="'+s[0]+'">'+s[1]+'</button>').join('')+'</div><input class="note" id="note-'+it.id+'" data-note="'+it.id+'" placeholder="Nota: como vai suprir, quem é o parceiro, documento…" aria-label="Nota sobre '+esc(it.t)+'"></div>').join('')+'</div>').join('');
+    list.dataset.built='1';
+  }
+  MATRIZ.flatMap(g=>g.itens).forEach(it=>{
+    const v=state.matriz.status[it.id]||'verificar';
+    const row=$('req-'+it.id); row.className='req st-'+v;
+    row.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===v)));
+    const n=$('note-'+it.id); if(document.activeElement!==n) n.value=state.matriz.notas[it.id]||'';
+  });
+  const s=matrizSummary();
+  const vb=$('mxVerdict'); vb.className='verdict-bar '+s.kind; $('mxTitle').textContent=s.title; $('mxText').textContent=s.text;
+  $('mxCounts').innerHTML='<span class="pill ok">'+s.c.atende+' atende</span><span class="pill att">'+s.c.ajuste+' com ajuste</span><span class="pill elim">'+s.c.nao+' não atende</span><span class="pill info">'+s.c.verificar+' a verificar</span>';
+  const p=s.evaluated/s.all.length; $('mxRing').setAttribute('stroke-dasharray',(201*p).toFixed(1)+' 201'); $('mxRingTxt').textContent=Math.round(p*100)+'%';
+}
+$('mxList').addEventListener('click',e=>{const b=e.target.closest('.seg button'); if(!b)return; state.matriz.status[b.dataset.id]=b.dataset.v; renderMatriz(); renderOverview(); persist('matriz');});
+$('mxList').addEventListener('input',e=>{const n=e.target.closest('[data-note]'); if(!n)return; state.matriz.notas[n.dataset.note]=n.value.slice(0,500); persist('matriz');});
+
+/* ---------------- simulador ---------------- */
+function calc(sv){
+  let cdir=0; const parts=[];
+  COMPONENTS.forEach(c=>{const share=c.fixed?1:(Math.max(0,sv['c_'+c.k])/100); const v=c.v*share; cdir+=v; parts.push({c,v});});
+  const ind=cdir*sv.adm/100, C=cdir+ind;
+  const K=C/12*(sv.ciclo/30), F=K*(sv.juros/100)*12;
+  const g=sv.glosa/100,t=sv.trib/100,m=sv.marg/100,rg=sv.garan/100;
+  const den=(1-g)*(1-t)-m-0.05*rg;
+  const Pmin=den>0?(C+F)/den:Infinity;
+  const L=sv.lance;
+  const margL=L>0?((L*(1-g)*(1-t))-C-F-0.05*L*rg)/L:NaN;
+  return {cdir,ind,C,K,F,Pmin,L,margL,g,t,m,rg,parts};
+}
+function buildSimForm(){
+  $('simCosts').innerHTML=COMPONENTS.map(c=>c.fixed?'<div class="field"><label>'+c.nome+'</label><small>'+fmt0(c.v)+' · repasse, custo igual à receita</small><div class="inp" style="background:transparent;border-style:dashed"><input value="100" disabled aria-label="'+c.nome+' em % da referência"><span class="u">%</span></div></div>':'<div class="field"><label for="sim-c_'+c.k+'">'+c.nome+'</label><small>referência '+fmt0(c.v)+' · seu custo = <b id="simv-'+c.k+'"></b></small><div class="inp"><input id="sim-c_'+c.k+'" inputmode="decimal" data-k="c_'+c.k+'"><span class="u">%</span></div></div>').join('');
+  $('simParams').innerHTML=SIM_PARAMS.map(p=>'<div class="field"><label for="sim-'+p.k+'">'+p.l+'</label><small>'+p.h+'</small><div class="inp"><input id="sim-'+p.k+'" inputmode="decimal" data-k="'+p.k+'"><span class="u">'+p.u+'</span></div></div>').join('');
+}
+function isDefault(){const d=SIM_DEF(); return Object.keys(d).every(k=>Math.abs((state.sim[k]??d[k])-d[k])<1e-9);}
+function renderSim(fromRemote){
+  document.querySelectorAll('#sec-simulador [data-k]').forEach(inp=>{ if(document.activeElement===inp && fromRemote!=='force') return; const k=inp.dataset.k; const v=state.sim[k]; inp.value = k==='lance'? NUM.format(Math.round(v)) : NUM.format(v); });
+  const r=calc(state.sim);
+  COMPONENTS.forEach(c=>{const el=$('simv-'+c.k); if(el) el.textContent=fmt0(c.v*state.sim['c_'+c.k]/100);});
+  $('simExample').hidden=!isDefault();
+  const ok=isFinite(r.Pmin);
+  $('oMin').textContent=ok?fmt0(r.Pmin):'Inviável'; $('oMinS').textContent=ok?'≈ '+fmt0(r.Pmin/12)+' por mês':'margem + tributos + glosa passam de 100%';
+  $('oDesc').textContent=ok?(r.Pmin<REF?pct(1-r.Pmin/REF):'sem desconto'):'—';
+  $('oMarg').textContent=isFinite(r.margL)?pct(r.margL):'—'; $('oMarg').style.color=r.margL<0?'var(--bad)':r.margL<state.sim.marg/100?'var(--warn)':'var(--good)';
+  $('oMargS').textContent=isFinite(r.margL)?'≈ '+fmt0(r.margL*r.L)+' por ano':'';
+  $('oNext').textContent=r.L>0?fmt0(r.L*0.999):'—';
+  // zona
+  const max=REF*1.06, X=v=>Math.max(0,Math.min(100,v/max*100));
+  const half=REF*0.5, pm=ok?Math.min(r.Pmin,max):max;
+  let z='<span class="zone-seg" style="left:0;width:'+X(half)+'%;background:var(--bad-bg);border-radius:10px 0 0 10px"></span>';
+  z+='<span class="zone-seg" style="left:'+X(half)+'%;width:'+Math.max(0,X(Math.max(pm,half))-X(half))+'%;background:var(--neutral-bg)"></span>';
+  if(ok&&r.Pmin<REF) z+='<span class="zone-seg" style="left:'+X(Math.max(r.Pmin,half))+'%;width:'+(X(REF)-X(Math.max(r.Pmin,half)))+'%;background:var(--good-bg)"></span>';
+  z+='<span class="zone-mark" style="left:'+X(REF)+'%;background:var(--ink)" title="Referência"></span>';
+  if(ok) z+='<span class="zone-mark" style="left:'+X(r.Pmin)+'%;background:var(--s-simul)" title="Lance mínimo"></span>';
+  if(r.L>0) z+='<span class="zone-mark" style="left:'+X(r.L)+'%;background:var(--warn);width:5px;transform:translateX(-2.5px)" title="Seu lance"></span>';
+  $('zoneTrack').innerHTML=z;
+  const lab=(v,t,cls)=>'<span class="'+(cls||'')+'" style="left:'+X(v)+'%">'+t+'</span>';
+  let sc=lab(0,'R$ 0','start')+lab(half,'50%<br>'+fmt0(half).replace(/\s/g,' '));
+  sc+=lab(REF,'Referência<br>R$ 20,8 mi','end');
+  $('zoneScale').innerHTML=sc;
+  // alertas
+  const A=[]; const ico=k=>svg(k);
+  if(!ok) A.push(['bad','Com esses percentuais nenhum preço cobre os custos. Reduza margem, tributos ou glosa.']);
+  else if(r.Pmin>REF) A.push(['bad','Seu lance mínimo ('+fmt0(r.Pmin)+') passa do valor máximo. Nas condições informadas, a empresa não consegue competir.']);
+  else if(r.Pmin<half) A.push(['warn','Seu lance mínimo fica abaixo de 50% da referência. O pregoeiro vai exigir prova de exequibilidade (Edital 7.8–7.10).']);
+  else A.push(['ok','Há espaço para disputar entre '+fmt0(r.Pmin)+' e '+fmt0(REF)+' ('+pct(1-r.Pmin/REF)+' de desconto máximo).']);
+  if(r.L>0){
+    if(r.L>REF) A.push(['bad','O lance informado está acima do valor máximo e seria desclassificado (Edital 7.7.3).']);
+    else if(r.L<half) A.push(['warn','O lance informado está abaixo de 50% da referência: indício de inexequibilidade.']);
+    else if(ok&&r.L<r.Pmin) A.push(['bad','O lance informado está abaixo do seu mínimo: a margem fica em '+pct(r.margL)+'.']);
+  }
+  $('simAlerts').innerHTML=A.map(a=>'<div class="alert '+a[0]+'">'+ico(a[0]==='ok'?'ok':'alert')+'<p>'+a[1]+'</p></div>').join('');
+  // decomposição do lance informado
+  const L=r.L>0?r.L:(ok?r.Pmin:REF);
+  const rows=[['Custo direto',r.cdir],['Despesas indiretas',r.ind],['Custo financeiro do capital de giro',r.F],['Garantia contratual (prêmio)',0.05*L*r.rg],['Tributos',L*(1-r.g)*r.t],['Desconto esperado do IMR',L*r.g]];
+  const used=rows.reduce((a,b)=>a+b[1],0); rows.push(['Margem líquida',L-used]);
+  $('simBreak').innerHTML=rows.map(x=>'<tr><td>'+x[0]+'</td><td class="r"'+(x[1]<0?' style="color:var(--bad)"':'')+'>'+fmt0(x[1])+'</td><td class="r">'+pct(x[1]/L)+'</td></tr>').join('')+'<tr><td><b>Lance analisado</b></td><td class="r"><b>'+fmt0(L)+'</b></td><td class="r">100%</td></tr>';
+  renderRiscos(r);
+}
+$('sec-simulador').addEventListener('input',e=>{const i=e.target.closest('[data-k]'); if(!i)return; state.sim[i.dataset.k]=parseNum(i.value); renderSim(); renderOverview(); persist('sim');});
+$('sec-simulador').addEventListener('change',e=>{const i=e.target.closest('[data-k]'); if(!i)return; renderSim('force');});
+$('simReset').addEventListener('click',()=>{state.sim=SIM_DEF(); renderSim('force'); renderOverview(); persist('sim');});
+
+/* ---------------- riscos ---------------- */
+function renderRiscos(r){
+  const L=r.L>0?r.L:REF;
+  const T=[
+   ['Faturamento mensal médio',fmt0(L/12),'lance ÷ 12','t4'],
+   ['Garantia de 5%',fmt0(L*0.05),'até a assinatura ou 10 dias úteis','t1'],
+   ['Capital de giro estimado',fmt0(r.K),'custos de '+NUM.format(state.sim.ciclo)+' dias','t5'],
+   ['Combustível adiantado',fmt0(705552.91/12),'por mês, reembolsado depois','t3']
+  ];
+  $('riskTiles').innerHTML=T.map(t=>'<div class="tile '+t[3]+'"><span class="k">'+t[0]+'</span><span class="v">'+t[1]+'</span><span class="s">'+t[2]+'</span></div>').join('');
+}
+function renderImr(){
+  const v=parseNum($('imr-v').value), d=parseNum($('imr-d').value), n=parseNum($('imr-n').value), m=parseNum($('imr-m').value);
+  const tot=v*d; const y=tot>0?Math.min(1,n/tot):0;
+  $('imrOut').innerHTML=svg('alert')+'<p>Total de '+NUM.format(tot)+' veículos-dia. Y = '+pct(y,2)+'. A ordem de serviço cai de '+fmt(m)+' para <b>'+fmt(m*(1-y))+'</b> (desconto de '+fmt(m*y)+'). No comboio presidencial, abre também processo de penalidade.</p>';
+}
+['imr-v','imr-d','imr-n','imr-m'].forEach(id=>$(id).addEventListener('input',renderImr));
+
+/* ---------------- kit ---------------- */
+function renderKit(){
+  const box=$('kitGroups');
+  if(!box.dataset.built){
+    box.innerHTML=KIT.map((g,gi)=>'<div class="kit-g"><div class="kit-g-h"><h4>'+g.g+' <span class="pill att">'+g.prazo+'</span></h4><div style="display:flex;align-items:center;gap:10px;flex:1;justify-content:flex-end"><div class="prog"><i id="kp-'+gi+'"></i></div><span class="num" id="kc-'+gi+'" style="font-size:13px;font-weight:700"></span></div></div>'+g.itens.map(it=>'<div class="check" id="chk-'+it.id+'"><input type="checkbox" id="cb-'+it.id+'" data-kit="'+it.id+'"><label for="cb-'+it.id+'">'+it.t+'<span>'+it.d+'</span></label></div>').join('')+'</div>').join('');
+    box.dataset.built='1';
+  }
+  KIT.forEach((g,gi)=>{let d=0; g.itens.forEach(it=>{const on=!!state.kit.done[it.id]; if(on)d++; $('cb-'+it.id).checked=on; $('chk-'+it.id).classList.toggle('done',on);}); $('kp-'+gi).style.width=(d/g.itens.length*100)+'%'; $('kc-'+gi).textContent=d+'/'+g.itens.length;});
+}
+$('kitGroups').addEventListener('change',e=>{const c=e.target.closest('[data-kit]'); if(!c)return; if(c.checked) state.kit.done[c.dataset.kit]=true; else delete state.kit.done[c.dataset.kit]; renderKit(); renderOverview(); persist('kit');});
+
+/* ---------------- visão geral ---------------- */
+function renderOverview(){
+  const s=matrizSummary();
+  const v=$('ovVerdict'); v.className='verdict '+s.kind; v.textContent=s.title;
+  $('ovVerdictTxt').textContent=s.evaluated? s.text : 'Avalie os requisitos na Matriz de aderência para gerar a recomendação.';
+  $('ovMatriz').textContent=s.evaluated+' de '+s.all.length;
+  const r=calc(state.sim); $('ovLance').textContent=isFinite(r.Pmin)?fmt0(r.Pmin)+(isDefault()?' (exemplo)':''):'inviável';
+  const allK=KIT.flatMap(g=>g.itens), dk=allK.filter(i=>state.kit.done[i.id]).length; $('ovKit').textContent=Math.round(dk/allK.length*100)+'%';
+  const alta=CONFLITOS.filter(c=>c.g==='alta').length; $('ovConf').textContent=alta;
+  const M={condicoes:'22 categorias · R$ 20,8 mi',operacao:'4 h / 6 h · 16 veículos próprios',qualificacao:'4 atestados · PL R$ 2,08 mi',declaracoes:'3 declarações + 2 termos',conflitos:alta+' de alta gravidade',planilha:'Editável no Google Planilhas',matriz:s.title,simulador:isFinite(r.Pmin)?'Mínimo '+fmt0(r.Pmin):'Revise os percentuais',riscos:'Ciclo de ~85 dias até receber',kit:dk+' de '+allK.length+' prontos'};
+  Object.keys(M).forEach(k=>{const el=$('map-'+k); if(el) el.textContent=M[k];});
+}
+
+/* ---------------- início ---------------- */
+buildNav(); buildSimForm(); renderDeadlines(); renderComposition(); renderPlanilha(); renderConflitos(); renderMatriz(); renderKit(); renderSim('force'); renderImr(); renderOverview(); route();
+window.addEventListener('hashchange',route);
+connectDb();
+})();
+</script>

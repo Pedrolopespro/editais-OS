@@ -268,6 +268,26 @@ tr.hl td{background:color-mix(in srgb, var(--tint) 55%, transparent)}
 .sheet img{display:block;max-width:none;width:100%;height:auto;cursor:zoom-in}
 .sheet.zoom img{width:2157px;max-width:none;cursor:zoom-out}
 
+/* planilha nativa */
+.gs-card{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:16px;align-items:center;border-radius:var(--r-lg);padding:18px 20px;background:var(--good-bg)}
+.gs-ico{width:52px;height:52px;border-radius:14px;background:var(--surface);color:var(--good);display:grid;place-items:center}
+.gs-ico svg{width:26px;height:26px}
+.gs-txt{display:grid;gap:4px;min-width:0}
+.gs-txt b{font-size:16px}
+.gs-txt span{font-size:13.5px}
+.pl-table{min-width:760px}
+.pl-table th.fx{text-align:center;color:#1E2530}
+.pl-table th.fx1{background:#DDF3F9}.pl-table th.fx2{background:#E2F0D9}.pl-table th.fx3{background:#DCE6F7}.pl-table th.fx4{background:#FBF5D2}
+.pl-table td.fx1{background:color-mix(in srgb,#DDF3F9 35%,transparent)}.pl-table td.fx2{background:color-mix(in srgb,#E2F0D9 35%,transparent)}
+.pl-table td.fx3{background:color-mix(in srgb,#DCE6F7 35%,transparent)}.pl-table td.fx4{background:color-mix(in srgb,#FBF5D2 35%,transparent)}
+.pl-table tr.bad td{background:color-mix(in srgb,var(--bad-bg) 60%,transparent)}
+.pl-table tr.tot td{background:var(--surface-2);font-weight:800}
+.pl-table .sub{display:block;font-size:11.5px;color:var(--muted);font-weight:500}
+.pl-table td.warn{color:var(--bad);font-weight:700}
+details.orig{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 16px}
+details.orig summary{cursor:pointer;font-weight:700;font-size:14px}
+@media (max-width:700px){.gs-card{grid-template-columns:minmax(0,1fr)}.gs-ico{display:none}}
+
 /* matriz */
 .verdict-bar{border-radius:var(--r-lg);padding:18px 22px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center}
 .verdict-bar.go{background:var(--good-bg)} .verdict-bar.nogo{background:var(--bad-bg)} .verdict-bar.wait{background:var(--warn-bg)}
@@ -665,14 +685,14 @@ tr.hl td{background:color-mix(in srgb, var(--tint) 55%, transparent)}
 <section class="sec" id="sec-conflitos" data-sec="conf" aria-labelledby="h-conf" hidden>
   <header class="sec-head"><span class="sec-ico" data-icon="conf"></span><div><p class="eyebrow">Entender o edital · 6 de 7</p><h2 id="h-conf">Conflitos entre Edital, TR e planilha</h2><p class="q">Onde os documentos se contradizem e o que fazer antes de propor?</p></div></header>
   <div class="tldr"><h3>Em resumo</h3><ul>
-    <li><span><b id="confAltaTxt">5</b> pontos de alta gravidade afetam preço ou habilitação: seguro-garantia, consórcio, subcontratação, no show e patrimônio líquido.</span></li>
+    <li><span><b id="confAltaTxt">5</b> pontos de alta gravidade afetam preço ou habilitação: seguro-garantia, consórcio, subcontratação, no show (19 de 22 categorias acima do teto) e patrimônio líquido.</span></li>
     <li><span>Havendo divergência, <b>prevalece o Edital</b> sobre os anexos <span class="src">Edital 13.9</span>. Conflitos internos do TR precisam de esclarecimento.</span></li>
     <li><span>Pedidos de esclarecimento e impugnação até <b>17/11/2026</b> pelo e-mail cpl@presidencia.gov.br <span class="src">Edital 12.1, 12.3</span>.</span></li>
   </ul></div>
   <div class="filters" id="confFilters" role="group" aria-label="Filtrar por gravidade"></div>
   <div class="conf-list" id="confList"></div>
   <div class="block">
-    <div class="block-h"><h3>Detalhe: no show acima do teto</h3><span class="src">TR 5.11.3 × Apêndice IV</span></div>
+    <div class="block-h"><h3>Exemplos: no show acima do teto</h3><span class="src">TR 5.11.3 × Apêndice IV · lista completa em <a href="#planilha">Planilha de custo</a></span></div>
     <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Categoria</th><th class="r">Diária 10 h</th><th class="r">Teto de 70%</th><th class="r">No show na planilha</th><th class="r">Excesso</th></tr></thead><tbody>
       <tr><td>Executivo II (K)</td><td class="r">R$ 800,00</td><td class="r">R$ 560,00</td><td class="r">R$ 700,00</td><td class="r"><b style="color:var(--bad)">R$ 140,00</b></td></tr>
       <tr><td>Sedan (L)</td><td class="r">R$ 544,00</td><td class="r">R$ 380,80</td><td class="r">R$ 476,00</td><td class="r"><b style="color:var(--bad)">R$ 95,20</b></td></tr>
@@ -685,16 +705,53 @@ tr.hl td{background:color-mix(in srgb, var(--tint) 55%, transparent)}
 <section class="sec" id="sec-planilha" data-sec="plan" aria-labelledby="h-plan" hidden>
   <header class="sec-head"><span class="sec-ico" data-icon="plan"></span><div><p class="eyebrow">Entender o edital · 7 de 7</p><h2 id="h-plan">Planilha de custo de referência</h2><p class="q">Como o órgão chegou aos R$ 20,8 milhões?</p></div></header>
   <div class="tldr"><h3>Em resumo</h3><ul>
-    <li><span>Reprodução do <b>Apêndice IV do TR</b> (p. 42). Os preços unitários são os <b>máximos aceitáveis</b> no julgamento.</span></li>
-    <li><span>Combustível com preços ANP de julho/2026, já com 9,45% de tributos. <b>Não é cotado</b> pelo licitante.</span></li>
-    <li><span>A planilha editável (.xlsx) que o vencedor preenche está em gov.br/compras e <b>não veio nos anexos</b> analisados.</span></li>
+    <li><span>Valores do <b>Apêndice IV do TR</b> (p. 42), organizados por bloco. Os preços unitários são os <b>máximos aceitáveis</b> no julgamento.</span></li>
+    <li><span>A versão <b>editável</b> fica no Google Planilhas: você digita os seus preços e ela confere os limites e calcula o desconto sozinha.</span></li>
+    <li><span>A própria planilha do órgão tem falhas: <b>19 de 22 categorias</b> com no show acima do teto de 70% e uma hora extra acima de 20%.</span></li>
   </ul></div>
-  <div class="block">
-    <div class="block-h"><h3>Apêndice IV · Planilha de custo</h3><button class="btn ghost small" id="zoomBtn" type="button">Ampliar</button></div>
-    <div class="sheet" id="sheet"><img src="assets/planilha-apendice-iv.jpg" alt="Planilha de custo do Apêndice IV do Termo de Referência, com as 22 categorias, no show, diárias de motoristas e agentes, combustíveis e total de R$ 20.835.706,71" id="sheetImg"></div>
-    <p class="hint">Clique na imagem ou em Ampliar para ver em tamanho real e rolar.</p>
+
+  <div class="gs-card">
+    <div class="gs-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 14h16M10 9v12"/></svg></div>
+    <div class="gs-txt">
+      <b>Planilha de custos editável · Google Planilhas</b>
+      <span>Abas Resumo, Locação (220 preços), No show, Mão de obra e Combustível. Edite só as células amarelas: a coluna "Situação" avisa preço acima do máximo ou das regras do TR 5.11, e o Resumo mostra o desconto total.</span>
+      <span class="hint">Abre para quem tiver acesso à planilha no Google Drive. Para a equipe, compartilhe pelo botão Compartilhar do Google.</span>
+    </div>
+    <a class="btn" id="gsLink" href="https://docs.google.com/spreadsheets/d/1cFpcnjMYYELUrMDFoKkHnlAA4HsiHpNEj_zaELSsDgk/edit" target="_blank" rel="noopener">Abrir no Google Planilhas ↗</a>
   </div>
+
   <div class="tiles" id="planTiles"></div>
+
+  <div class="block">
+    <div class="block-h"><h3>Locação de veículos por categoria</h3><span class="hint">Preço máximo da diária em cada faixa de prazo e valor anual estimado. Cores das faixas iguais às do Apêndice IV.</span></div>
+    <div class="tbl-wrap"><table class="pl-table" id="plLoc"></table></div>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>No show · teto de 70% da diária de 10 h</h3><span class="pill alta" id="plNsBadge"></span></div>
+    <div class="tbl-wrap"><table class="pl-table tbl-mid" id="plNs"></table></div>
+    <p class="hint">Linhas em vermelho: a planilha do órgão passa do teto do TR 5.11.3. Ao cotar, use no máximo o teto. A hora extra da categoria A (15 a 29 dias, R$ 298,00) também passa de 20% da diária (R$ 288,00).</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="block">
+      <div class="block-h"><h3>Motoristas e agentes de missão</h3></div>
+      <div class="tbl-wrap"><table class="pl-table" id="plMo"></table></div>
+    </div>
+    <div class="block">
+      <div class="block-h"><h3>Combustível · repasse</h3></div>
+      <div class="tbl-wrap"><table class="pl-table" id="plComb"></table></div>
+      <p class="hint">Preço ANP de julho/2026 + 9,45% de tributos. Não entra no seu desconto.</p>
+    </div>
+  </div>
+
+  <details class="orig">
+    <summary>Ver a planilha original do órgão (imagem do Apêndice IV)</summary>
+    <div class="block" style="margin-top:12px">
+      <div class="block-h"><span class="hint">Clique na imagem para ampliar.</span><button class="btn ghost small" id="zoomBtn" type="button">Ampliar</button></div>
+      <div class="sheet" id="sheet"><img src="assets/planilha-apendice-iv.jpg" alt="Planilha de custo do Apêndice IV do Termo de Referência, com as 22 categorias, no show, diárias de motoristas e agentes, combustíveis e total de R$ 20.835.706,71" id="sheetImg" loading="lazy"></div>
+    </div>
+  </details>
 </section>
 
 <!-- ======================= 8. MATRIZ ======================= -->
@@ -879,12 +936,13 @@ const CATS=[
  ['V','Veículo para transporte de cadeirante',1000,5234.00,'']
 ];
 const LOC_TOTAL=14456136.20;
+const PL={"cats": [["A", "Executivo Blindado II", [168, 2400], [87, 300], [137, 1920], [39, 300], [1, 1920, 299], [1, 1440, 298], [1, 1200, 240], 709437.0], ["B", "Camioneta I Blindada 4x4 (SUV I)", [265, 3200], [150, 350], [100, 2560], [27, 350], [1, 2560, 349], [2, 1920, 348], [2, 1600, 320], 1176567.0], ["C", "Camioneta I Blindada 4x2 (SUV I)", [384, 3200], [111, 330], [186, 2560], [46, 330], [1, 2560, 329], [3, 1920, 328], [3, 1600, 320], 1770867.0], ["D", "Camioneta II Blindada (SUV II)", [169, 2980], [88, 310], [138, 2384], [40, 310], [1, 2384, 309], [1, 1788, 308], [1, 1490, 298], 878869.0], ["E", "Camioneta I 4x4 (SUV I)", [10, 2300], [6, 230], [9, 1840], [2, 230], [1, 2048, 229], [2, 1536, 228], [2, 1280, 227], 49764.0], ["F", "Camioneta I 4x2 (SUV I)", [153, 1900], [41, 190], [84, 1520], [17, 190], [1, 1890, 189], [2, 1488, 188], [1, 1240, 187], 436070.0], ["G", "Camioneta II (SUV II)", [100, 1500], [44, 150], [22, 1200], [1, 150], [1, 1490, 149], [1, 1392, 148], [1, 1160, 147], 187636.0], ["H", "Camioneta III (SUV III)", [383, 1400], [225, 140], [248, 1120], [55, 140], [1, 1390, 139], [1, 1188, 138], [1, 990, 137], 857142.0], ["I", "Caminhonete 4x4", [115, 1800], [54, 180], [38, 1440], [4, 180], [1, 1790, 179], [2, 1476, 178], [2, 1230, 177], 279896.0], ["J", "Caminhonete 4x2", [100, 1500], [43, 150], [22, 1200], [1, 150], [1, 1452, 149], [1, 1452, 148], [1, 1210, 147], 187558.0], ["K", "Executivo II", [382, 1000], [225, 100], [248, 800], [55, 100], [1, 960, 99], [1, 864, 98], [1, 777.6, 97], 611295.6], ["L", "Sedan", [2801, 680], [412, 68], [2014, 544], [221, 68], [1, 670, 67], [2, 528, 66], [2, 440, 36], 3046115.0], ["M", "Van teto baixo", [23, 1100], [7, 110], [20, 880], [1, 110], [1, 1090, 109], [1, 1080, 108], [1, 1070, 107], 47344.0], ["N", "Van Executiva", [1128, 1500], [356, 150], [974, 1200], [78, 150], [1, 1490, 149], [1, 1480, 148], [1, 1240, 147], 2930554.0], ["O", "Van Furgão", [37, 1500], [12, 150], [32, 1200], [4, 150], [1, 1490, 149], [1, 1440, 148], [1, 1200, 147], 100874.0], ["P", "Utilitário Furgão", [50, 850], [88, 85], [39, 680], [23, 85], [1, 840, 84], [1, 830, 83], [1, 820, 82], 81194.0], ["Q", "Ônibus Rodoviário", [24, 3500], [82, 350], [75, 2800], [33, 350], [1, 3490, 349], [1, 3480, 348], [1, 3369.6, 347], 345633.6], ["R", "Ônibus Urbano", [25, 3200], [82, 320], [75, 2560], [33, 320], [1, 3190, 319], [1, 2640, 318], [1, 2200, 317], 317784.0], ["S", "Micro-ônibus", [8, 2800], [50, 280], [31, 2240], [10, 280], [1, 2790, 279], [1, 2580, 278], [1, 2150, 277], 116994.0], ["T", "Microcaminhão", [50, 1500], [137, 150], [173, 1200], [12, 150], [1, 1490, 149], [2, 1480, 148], [1, 1470, 147], 311314.0], ["U", "Guincho", [1, 1300], [1, 130], [2, 1040], [2, 130], [1, 1290, 129], [1, 1280, 128], [1, 1270, 127], 7994.0], ["V", "Veículo para transporte de cadeirante", [1, 1000], [1, 100], [1, 800], [1, 100], [1, 990, 99], [1, 980, 98], [1, 970, 97], 5234.0]], "noshow": {"A": [1, 1344], "B": [7, 1792], "C": [1, 1792], "D": [1, 1680.8], "E": [1, 1433.6], "F": [7, 1330], "G": [1, 1050], "H": [1, 980], "I": [1, 1260], "J": [1, 1050], "K": [1, 700], "L": [30, 476], "M": [1, 770], "N": [14, 1050], "O": [1, 1050], "P": [4, 595], "Q": [1, 2450], "R": [1, 2240], "S": [1, 1960], "T": [1, 1050], "U": [1, 910], "V": [1, 700]}, "mao": [["Motorista", "diária", 7501, 380.0], ["Motorista com adicional de 60%", "diária", 2658, 608.0], ["Hora extra de motorista", "hora", 5344, 60.8], ["Agente de missão", "diária", 300, 1380.0], ["Agente de missão com adicional de 60%", "diária", 178, 2208.0]], "comb": [["Etanol", 43078, 3.88], ["Diesel S10", 48008, 6.91], ["Gasolina", 22739, 6.41]], "totais": {"loc": 14456136.2, "ns": 75634.4, "mot": 4791359.2, "age": 807024.0, "comb": 705552.91, "total": 20835706.71}};
 
 const CONFLITOS=[
  {g:'alta',tipo:'Edital × TR',t:'Prazo do seguro-garantia',a:['Edital 9.2–9.4','Assinatura do contrato em 5 dias úteis da convocação.'],b:['TR 4.8–4.8.2','Apólice entregue até a assinatura; se não, perde-se a opção pelo seguro.'],why:'A Lei 14.133 (art. 96, §3º) assegura prazo mínimo de 1 mês entre a homologação e a assinatura para quem escolhe seguro-garantia. O texto não deixa isso expresso.',todo:'Pedir retificação para garantir o prazo legal sem perder a modalidade.'},
  {g:'alta',tipo:'Edital × TR',t:'Acréscimo indefinido para consórcio',a:['Edital 8.4.1','Acréscimo "entre 10% a 30%" na habilitação econômico-financeira do consórcio.'],b:['TR 8.40.1.1','Repete a faixa sem fixar o percentual.'],why:'Sem o percentual, o consórcio não sabe qual patrimônio ou capital precisa comprovar.',todo:'Pedir que fixem o percentual e a base de cálculo.'},
  {g:'alta',tipo:'Dentro do TR',t:'Subcontratação × sublocação',a:['TR 4.2–4.5','Subcontratação vedada nas categorias K e L, com autorização prévia nas demais.'],b:['TR 5.9.2.1.2–3','Admite sublocar veículos, com redação que alcança todos os tipos.'],why:'Decide se veículos de terceiros podem atender Executivo II e Sedan, as categorias de maior volume.',todo:'Pedir definição dos dois conceitos e das categorias admitidas em cada um.'},
- {g:'alta',tipo:'TR × Planilha',t:'No show acima do teto de 70%',a:['TR 5.11.3','No show limitado a 70% da diária de 10 h.'],b:['Apêndice IV','Executivo II, Sedan e Van Executiva com no show acima desse limite (tabela abaixo).'],why:'Os preços da planilha são máximos aceitáveis. Copiar esses valores viola o próprio TR.',todo:'Na sua planilha, respeite o teto de 70%. Pedir correção da planilha oficial.'},
+ {g:'alta',tipo:'TR × Planilha',t:'No show acima do teto de 70%',a:['TR 5.11.3','No show limitado a 70% da diária de 10 h.'],b:['Apêndice IV','19 das 22 categorias com no show acima desse limite, somando R$ 11.525,60 no ano. A hora extra da categoria A (15 a 29 dias) também passa de 20% da diária.'],why:'Os preços da planilha são máximos aceitáveis. Copiar esses valores viola o próprio TR.',todo:'Na sua planilha, respeite o teto de 70% (a Google Planilha já calcula). Pedir correção da planilha oficial.'},
  {g:'alta',tipo:'Dentro do TR',t:'Índices contábeis × patrimônio líquido',a:['TR 8.26','Se algum índice for 1 ou menos, aceita patrimônio líquido de 10% (R$ 2.083.570,67).'],b:['TR 8.27','Exige os índices nos dois exercícios, sob pena de inabilitação.'],why:'Não fica claro se o patrimônio líquido substitui índice ruim em um ou nos dois exercícios.',todo:'Pedir esclarecimento antes de contar com a alternativa do patrimônio líquido.'},
  {g:'media',tipo:'TR × Planilha',t:'Adicional de 60% do agente de missão',a:['TR 5.8','Adicional de 60% calculado sobre a diária do motorista: R$ 1.380 + 60% de R$ 380 = R$ 1.608.'],b:['Apêndice IV','Planilha usa R$ 2.208, que é 60% sobre a diária do próprio agente.'],why:'Diferença de R$ 600 por diária em 178 diárias (R$ 106.800 por ano).',todo:'Pedir uniformização e cotar conforme a resposta.'},
  {g:'media',tipo:'Edital × TR',t:'Momento das declarações de 4 h e 6 h',a:['Edital 6.23.4.1','Remete aos itens 5.9.1 e 5.9.2 do TR como documentos complementares da proposta ajustada.'],b:['TR 5.9.1–5.9.2','Exige as declarações sem dizer quando. Termos dos Apêndices V e VII também sem momento.'],why:'Documento não entregue quando pedido é infração (Edital 11.1.1).',todo:'Ter tudo pronto no Kit das 2 horas e enviar junto com a proposta ajustada.'},
@@ -932,7 +990,7 @@ const MATRIZ=[
 const KIT=[
  {g:'Proposta ajustada ao lance',prazo:'2 horas · Edital 6.23.4',itens:[
   {id:'k-prop',t:'Proposta de Preços (Anexo II) preenchida',d:'Validade mínima de 60 dias, dados bancários, preposto, assinatura'},
-  {id:'k-plan',t:'Planilha de custos (.xlsx) pronta para ajustar',d:'Baixar em gov.br/compras; respeitar máximos e teto do no show'},
+  {id:'k-plan',t:'Planilha de custos pronta para ajustar',d:'Preços na Google Planilha do painel; versão oficial .xlsx em gov.br/compras'},
   {id:'k-4h',t:'Declaração de atendimento em 4 horas',d:'TR 5.9.1'},
   {id:'k-6h',t:'Declaração de atendimento em 6 horas',d:'TR 5.9.2'},
   {id:'k-sub',t:'Declaração de condições de sublocar',d:'TR 5.9.2.1.2'},
@@ -1100,6 +1158,44 @@ function renderConflitos(){
 $('confFilters').addEventListener('click',e=>{const b=e.target.closest('[data-f]'); if(!b)return; confFilter=b.dataset.f; renderConflitos();});
 
 /* ---------------- planilha ---------------- */
+function renderPlanilha(){
+  if(!PL) return;
+  const r2=n=>Math.round(n*100)/100;
+  // locação
+  let h='<thead><tr><th rowspan="2">Cód.</th><th rowspan="2">Categoria</th><th class="fx fx1" colspan="3">Até 6 dias</th><th class="fx fx2">7 a 14 dias</th><th class="fx fx3">15 a 29 dias</th><th class="fx fx4">30 dias ou mais</th><th class="r" rowspan="2">Valor anual</th></tr>'
+   +'<tr><th class="fx fx1 r">Diária 24 h</th><th class="fx fx1 r">Diária 10 h</th><th class="fx fx1 r">Hora extra</th><th class="fx fx2 r">Diária 24 h</th><th class="fx fx3 r">Diária 24 h</th><th class="fx fx4 r">Diária 24 h</th></tr></thead><tbody>';
+  PL.cats.forEach(c=>{
+    const [cod,nome,d24,he24,d10,he10,f2,f3,f4,tot]=c;
+    h+='<tr><td><span class="cat-code">'+cod+'</span></td><td>'+esc(nome)+'</td>'
+      +'<td class="r fx1">'+fmt(d24[1])+'<span class="sub">'+NUM.format(d24[0])+' diárias</span></td>'
+      +'<td class="r fx1">'+fmt(d10[1])+'<span class="sub">'+NUM.format(d10[0])+' diárias</span></td>'
+      +'<td class="r fx1">'+fmt(he24[1])+'<span class="sub">'+NUM.format(he24[0]+he10[0])+' h</span></td>'
+      +'<td class="r fx2">'+fmt(f2[1])+'</td>'
+      +'<td class="r fx3'+(f3[2]>r2(f3[1]*0.2)+0.004?' warn':'')+'">'+fmt(f3[1])+(f3[2]>r2(f3[1]*0.2)+0.004?'<span class="sub" style="color:var(--bad)">HE '+fmt(f3[2])+' &gt; 20%</span>':'')+'</td>'
+      +'<td class="r fx4">'+fmt(f4[1])+'</td><td class="r"><b>'+fmt(tot)+'</b></td></tr>';
+  });
+  h+='<tr class="tot"><td></td><td>Total da locação</td><td colspan="6"></td><td class="r">'+fmt(PL.totais.loc)+'</td></tr></tbody>';
+  $('plLoc').innerHTML=h;
+  // no show
+  let bad=0, exc=0;
+  let n='<thead><tr><th>Cód.</th><th>Categoria</th><th class="r">Qtde</th><th class="r">Diária 10 h</th><th class="r">Teto 70%</th><th class="r">Planilha do órgão</th><th class="r">Excesso por unidade</th></tr></thead><tbody>';
+  PL.cats.forEach(c=>{
+    const cod=c[0], d10=c[4][1], teto=r2(d10*0.7), ns=PL.noshow[cod], ex=r2(Math.max(0,ns[1]-teto));
+    if(ex>0){bad++; exc+=ex*ns[0];}
+    n+='<tr'+(ex>0?' class="bad"':'')+'><td><span class="cat-code">'+cod+'</span></td><td>'+esc(c[1])+'</td><td class="r">'+NUM.format(ns[0])+'</td><td class="r">'+fmt(d10)+'</td><td class="r">'+fmt(teto)+'</td><td class="r">'+fmt(ns[1])+'</td><td class="r'+(ex>0?' warn':'')+'">'+(ex>0?fmt(ex):'—')+'</td></tr>';
+  });
+  n+='<tr class="tot"><td></td><td>Total no ano</td><td colspan="3"></td><td class="r">'+fmt(PL.totais.ns)+'</td><td class="r">'+fmt(exc)+'</td></tr></tbody>';
+  $('plNs').innerHTML=n; $('plNsBadge').textContent=bad+' de '+PL.cats.length+' acima do teto';
+  // mão de obra
+  $('plMo').innerHTML='<thead><tr><th>Item</th><th class="r">Qtde</th><th class="r">Preço máximo</th><th class="r">Total</th></tr></thead><tbody>'
+    +PL.mao.map(m=>'<tr><td>'+esc(m[0])+'<span class="sub">por '+m[1]+'</span></td><td class="r">'+NUM.format(m[2])+'</td><td class="r">'+fmt(m[3])+'</td><td class="r">'+fmt(r2(m[2]*m[3]))+'</td></tr>').join('')
+    +'<tr class="tot"><td>Total</td><td></td><td></td><td class="r">'+fmt(PL.totais.mot+PL.totais.age)+'</td></tr></tbody>';
+  $('plMo').style.minWidth='0';
+  $('plComb').innerHTML='<thead><tr><th>Combustível</th><th class="r">Litros</th><th class="r">ANP (R$/L)</th><th class="r">Total</th></tr></thead><tbody>'
+    +PL.comb.map(c=>'<tr><td>'+esc(c[0])+'</td><td class="r">'+NUM.format(c[1])+'</td><td class="r">'+fmt(c[2])+'</td><td class="r">'+fmt(r2(c[1]*c[2]*1.0945))+'</td></tr>').join('')
+    +'<tr class="tot"><td>Total</td><td></td><td></td><td class="r">'+fmt(PL.totais.comb)+'</td></tr></tbody>';
+  $('plComb').style.minWidth='0';
+}
 function toggleZoom(){const s=$('sheet'); s.classList.toggle('zoom'); $('zoomBtn').textContent=s.classList.contains('zoom')?'Ajustar à largura':'Ampliar';}
 $('zoomBtn').addEventListener('click',toggleZoom); $('sheetImg').addEventListener('click',toggleZoom);
 
@@ -1240,12 +1336,12 @@ function renderOverview(){
   const r=calc(state.sim); $('ovLance').textContent=isFinite(r.Pmin)?fmt0(r.Pmin)+(isDefault()?' (exemplo)':''):'inviável';
   const allK=KIT.flatMap(g=>g.itens), dk=allK.filter(i=>state.kit.done[i.id]).length; $('ovKit').textContent=Math.round(dk/allK.length*100)+'%';
   const alta=CONFLITOS.filter(c=>c.g==='alta').length; $('ovConf').textContent=alta;
-  const M={condicoes:'22 categorias · R$ 20,8 mi',operacao:'4 h / 6 h · 16 veículos próprios',qualificacao:'4 atestados · PL R$ 2,08 mi',declaracoes:'3 declarações + 2 termos',conflitos:alta+' de alta gravidade',planilha:'Apêndice IV como imagem',matriz:s.title,simulador:isFinite(r.Pmin)?'Mínimo '+fmt0(r.Pmin):'Revise os percentuais',riscos:'Ciclo de ~85 dias até receber',kit:dk+' de '+allK.length+' prontos'};
+  const M={condicoes:'22 categorias · R$ 20,8 mi',operacao:'4 h / 6 h · 16 veículos próprios',qualificacao:'4 atestados · PL R$ 2,08 mi',declaracoes:'3 declarações + 2 termos',conflitos:alta+' de alta gravidade',planilha:'Editável no Google Planilhas',matriz:s.title,simulador:isFinite(r.Pmin)?'Mínimo '+fmt0(r.Pmin):'Revise os percentuais',riscos:'Ciclo de ~85 dias até receber',kit:dk+' de '+allK.length+' prontos'};
   Object.keys(M).forEach(k=>{const el=$('map-'+k); if(el) el.textContent=M[k];});
 }
 
 /* ---------------- início ---------------- */
-buildNav(); buildSimForm(); renderDeadlines(); renderComposition(); renderConflitos(); renderMatriz(); renderKit(); renderSim('force'); renderImr(); renderOverview(); route();
+buildNav(); buildSimForm(); renderDeadlines(); renderComposition(); renderPlanilha(); renderConflitos(); renderMatriz(); renderKit(); renderSim('force'); renderImr(); renderOverview(); route();
 window.addEventListener('hashchange',route);
 connectDb();
 })();

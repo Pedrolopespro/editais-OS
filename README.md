@@ -10,6 +10,20 @@ O site é estático: um `index.html` com CSS e JavaScript embutidos e as imagens
 
 **Decidir:** Matriz de aderência, Simulador de lance, Caixa e riscos, Kit das 2 horas.
 
+## Planilha de custos
+
+A seção **Planilha de custo** mostra os valores do Apêndice IV organizados por bloco e tem um botão para a versão editável no Google Planilhas (abas Resumo, Locação, No show, Mão de obra e Combustível, com verificação automática dos limites do TR 5.11).
+
+## Como atualizar o painel
+
+O conteúdo fica em `fonte/painel_template.html` e os números da planilha em `fonte/planilha_dados.py`. Depois de editar, gere o `index.html`:
+
+```bash
+python fonte/build.py
+```
+
+`fonte/build_planilha.py` gera o arquivo .xlsx da planilha de custos a partir dos mesmos dados.
+
 ## Onde ficam as marcações
 
 Fora do Claude, a matriz, o kit e o simulador salvam no **navegador de quem está usando** (`localStorage`). Cada pessoa e cada computador têm as próprias marcações. Para compartilhar as marcações com a equipe, é preciso ligar o painel a um banco de dados (por exemplo, Supabase).
