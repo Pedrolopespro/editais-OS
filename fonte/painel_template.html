@@ -530,6 +530,16 @@ th{background:var(--surface-2)}
 .doc-dl{justify-self:start;font-size:12.5px;font-weight:700;color:var(--on-light);background:var(--gold);padding:5px 12px;border-radius:99px;margin-top:4px}
 @media (max-width:1000px){.docs-grid{grid-template-columns:minmax(0,1fr)}}
 @media (prefers-reduced-motion:reduce){.doc-card,.doc-card:hover{transition:none;transform:none}}
+
+/* ===== cartão de conflitos: borda vermelha iridescente girando ===== */
+@property --ring{syntax:'<angle>';inherits:false;initial-value:0deg}
+.tcard.alert-ring{border-color:rgba(255,92,97,.18);box-shadow:var(--shadow),0 0 28px -10px rgba(255,92,97,.45)}
+.tcard.alert-ring::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.6px;pointer-events:none;z-index:2;opacity:.9;
+  background:conic-gradient(from var(--ring),rgba(255,92,97,0) 0deg,rgba(255,92,97,.95) 50deg,#FF9F8E 95deg,#E56FB4 140deg,#FF5C61 185deg,rgba(255,92,97,0) 235deg,rgba(255,92,97,0) 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+  animation:ring-spin 4.8s linear infinite}
+@keyframes ring-spin{to{--ring:360deg}}
+@media (prefers-reduced-motion:reduce){.tcard.alert-ring::after{animation:none}}
 </style>
 
 <div class="shell">
@@ -1265,7 +1275,7 @@ let currentId='painel';
 const fmtMi=n=>'R$ '+(n/1e6).toLocaleString('pt-BR',{maximumFractionDigits:n<1e7?2:1})+' mi';
 function buildNav(){
   $('homeArt').innerHTML=HOME_ART;
-  $('cards').innerHTML=SECTIONS.map(s=>'<a class="tcard" href="#'+s.id+'" data-sec="'+s.sec+'"><span class="art">'+ill(s.sec)+'<span class="done" id="cd-'+s.id+'" hidden>✓ concluída</span></span><span class="body"><span class="et">Etapa '+s.etapa+' · '+ETAPAS[s.etapa-1].nome+'</span><h3>'+s.nome+'</h3><span class="m" id="cm-'+s.id+'"></span><span class="s" id="cs-'+s.id+'"></span><span class="go">Abrir →</span></span></a>').join('');
+  $('cards').innerHTML=SECTIONS.map(s=>'<a class="tcard'+(s.id==='conflitos'?' alert-ring':'')+'" href="#'+s.id+'" data-sec="'+s.sec+'"><span class="art">'+ill(s.sec)+'<span class="done" id="cd-'+s.id+'" hidden>✓ concluída</span></span><span class="body"><span class="et">Etapa '+s.etapa+' · '+ETAPAS[s.etapa-1].nome+'</span><h3>'+s.nome+'</h3><span class="m" id="cm-'+s.id+'"></span><span class="s" id="cs-'+s.id+'"></span><span class="go">Abrir →</span></span></a>').join('');
 }
 function route(){
   let id=(location.hash||'').replace('#','');
