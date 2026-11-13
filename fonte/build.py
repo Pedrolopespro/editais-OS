@@ -13,14 +13,15 @@ GSHEET_URL = "https://docs.google.com/spreadsheets/d/1cFpcnjMYYELUrMDFoKkHnlAA4H
 dados = {"cats": [list(c) for c in CATS], "noshow": NOSHOW, "mao": MAO, "comb": COMB, "totais": TOTAIS}
 t = open(os.path.join(AQUI, "painel_template.html"), encoding="utf-8").read()
 t = t.replace("/*PLANILHA_DATA*/null", json.dumps(dados, ensure_ascii=False)).replace("{{GSHEET_URL}}", GSHEET_URL)
+DOCS_SITE, DOCS_ABS = "docs/", "https://editais-os.vercel.app/docs/"
 
 if "--inline" in sys.argv:
     out = sys.argv[sys.argv.index("--inline") + 1]
     b64 = lambda p, m: f"data:{m};base64," + base64.b64encode(open(os.path.join(RAIZ, p), "rb").read()).decode()
-    s = t.replace("{{LOGO}}", b64("assets/brasao.png", "image/png")).replace("{{PLANILHA}}", b64("assets/planilha-apendice-iv.jpg", "image/jpeg"))
+    s = t.replace("{{DOCS}}", DOCS_ABS).replace("{{LOGO}}", b64("assets/brasao.png", "image/png")).replace("{{PLANILHA}}", b64("assets/planilha-apendice-iv.jpg", "image/jpeg"))
     open(out, "w", encoding="utf-8", newline="\n").write(s); print("gerado", out); sys.exit()
 
-s = t.replace("{{LOGO}}", "assets/brasao.png").replace("{{PLANILHA}}", "assets/planilha-apendice-iv.jpg")
+s = t.replace("{{DOCS}}", DOCS_SITE).replace("{{LOGO}}", "assets/brasao.png").replace("{{PLANILHA}}", "assets/planilha-apendice-iv.jpg")
 s = s.replace('<meta name="claude:viewport-fit-sides" content="cover">\n', "")
 head = ('<!doctype html>\n<html lang="pt-BR">\n<head>\n<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'

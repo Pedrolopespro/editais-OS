@@ -518,6 +518,18 @@ th{background:var(--surface-2)}
 @keyframes drive-l{from{transform:translateX(-70px);opacity:0}to{transform:none;opacity:1}}
 @keyframes drive-r{from{transform:translateX(70px);opacity:0}to{transform:none;opacity:1}}
 @media (prefers-reduced-motion:reduce){.ill-in *{animation:none!important}}
+
+/* ===== documentos para baixar ===== */
+.docs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.doc-card{display:grid;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto;gap:6px 14px;align-items:start;padding:16px 18px;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);text-decoration:none;transition:border-color .15s,transform .15s}
+.doc-card:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.doc-ico{width:44px;height:44px;border-radius:50%;background:var(--ice);color:var(--on-light);display:grid;place-items:center;font-family:var(--font-num);font-weight:700;font-size:17px;grid-row:1/3}
+.doc-txt{display:grid;gap:3px;min-width:0}
+.doc-txt b{font-size:15px}
+.doc-txt span{font-size:13px;color:var(--muted)}
+.doc-dl{justify-self:start;font-size:12.5px;font-weight:700;color:var(--on-light);background:var(--gold);padding:5px 12px;border-radius:99px;margin-top:4px}
+@media (max-width:1000px){.docs-grid{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.doc-card,.doc-card:hover{transition:none;transform:none}}
 </style>
 
 <div class="shell">
@@ -781,6 +793,26 @@ th{background:var(--surface-2)}
     <li><span>Havendo divergência, <b>prevalece o Edital</b> sobre os anexos <span class="src">Edital 13.9</span>. Conflitos internos do TR precisam de esclarecimento.</span></li>
     <li><span>Pedidos de esclarecimento e impugnação até <b>17/11/2026</b> pelo e-mail cpl@presidencia.gov.br <span class="src">Edital 12.1, 12.3</span>.</span></li>
   </ul></div>
+  <div class="block">
+    <div class="block-h"><h3>Documentos prontos para protocolar</h3><span class="pill alta">Prazo: 17/11/2026</span></div>
+    <div class="docs-grid">
+      <a class="doc-card" href="{{DOCS}}Impugnacao_Edital_PE_319-2026.docx" download><span class="doc-ico" aria-hidden="true">W</span><span class="doc-txt"><b>Impugnação ao Edital</b><span>5 pontos: seguro-garantia, consórcio, no show e hora extra, subcontratação e patrimônio líquido. Com anexos de conferência.</span></span><span class="doc-dl">Baixar .docx</span></a>
+      <a class="doc-card" href="{{DOCS}}Pedido_Esclarecimento_PE_319-2026.docx" download><span class="doc-ico" aria-hidden="true">W</span><span class="doc-txt"><b>Pedido de esclarecimento</b><span>12 perguntas técnicas: agente de missão, declarações, IMR, combustível, frota e outras.</span></span><span class="doc-dl">Baixar .docx</span></a>
+      <a class="doc-card" href="{{DOCS}}Pre-analise_Impugnacoes_PE_319-2026.docx" download><span class="doc-ico" aria-hidden="true">W</span><span class="doc-txt"><b>Pré-análise das impugnações</b><span>Recomendação, prioridades, análise ponto a ponto e passo a passo do protocolo.</span></span><span class="doc-dl">Baixar .docx</span></a>
+    </div>
+    <p class="hint">Minutas técnicas: complete os campos destacados em amarelo e peça revisão do jurídico antes de assinar.</p>
+  </div>
+  <div class="block" data-fold="Revisar, assinar, enviar por e-mail até 17/11 e acompanhar a resposta até 19/11" data-fold-icon="decl">
+    <div class="block-h"><h3>Como protocolar</h3></div>
+    <ol class="steps">
+      <li><span><b>Complete os campos em amarelo</b> nos dois documentos: razão social, CNPJ, endereço, e-mail para resposta, representante legal, cidade e data.</span></li>
+      <li><span><b>Ajuste à estratégia da empresa.</b> Retire pontos que não interessam (por exemplo, o de patrimônio líquido se os índices contábeis estiverem acima de 1).</span></li>
+      <li><span><b>Revisão do jurídico</b> e assinatura digital (ICP-Brasil ou gov.br) pelo representante legal, com contrato social ou procuração anexos.</span></li>
+      <li><span><b>Envie dois e-mails separados</b> para <span class="mono">cpl@presidencia.gov.br</span>: um com a impugnação e outro com o pedido de esclarecimento, com o número do pregão no assunto <span class="src">Edital 12.3</span></span></li>
+      <li><span><b>Prazo: até 17/11/2026</b>, dentro do expediente. Guarde o e-mail enviado e peça confirmação de recebimento <span class="src">Edital 12.1</span></span></li>
+      <li><span><b>Acompanhe a resposta até 19/11/2026</b> no Compras.gov.br e no PNCP. O protocolo não suspende o pregão: continue preparando a proposta <span class="src">Edital 12.2, 12.4</span></span></li>
+    </ol>
+  </div>
   <div class="filters" id="confFilters" role="group" aria-label="Filtrar por gravidade"></div>
   <div class="conf-list" id="confList"></div>
   <div class="block">
