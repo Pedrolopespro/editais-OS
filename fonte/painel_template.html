@@ -1,7 +1,7 @@
 <title>Pregão 319/2026 · Painel de Decisão</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: tela inicial com números e cartões (um por assunto); cada cartão abre uma página com números no topo, conclusão em uma frase e detalhes recolhidos. Tema escuro fixo; cor só com significado: dourado = dinheiro e recomendação, azul = preço e informação, verde = ok, vermelho = risco e prazo. */
 :root{
@@ -395,6 +395,90 @@ a.card.ev:hover{border-color:var(--line-2)}
 }
 @media (max-width:600px){.kpi{padding:12px 14px}.kpi .v{font-size:24px}}
 @media (max-width:330px){.kpis{grid-template-columns:minmax(0,1fr)}}
+
+/* ===== acabamento: estética aurora (cartão de destaque em degradê, carvão arredondado, números pastel) ===== */
+:root{
+  --bg:#0D0D0F; --surface:#18181B; --surface-2:#1F1F23; --surface-3:#29292E; --line:rgba(255,255,255,.06); --line-2:rgba(255,255,255,.11);
+  --ink:#F4F4F1; --muted:#A4A4AA; --dim:#74747B; --ill:#9C9CA3;
+  --gold:#E3E8AE; --gold-bg:rgba(227,232,174,.12); --blue:#C3C8F3; --blue-bg:rgba(195,200,243,.12);
+  --green:#B4E2CD; --green-bg:rgba(180,226,205,.12); --red:#F4A39C; --red-bg:rgba(244,163,156,.13); --red-ink:#F7B9B3;
+  --amber:#EBD08A; --amber-bg:rgba(235,208,138,.13); --steel:#DADADE; --ice:#D4EBEA; --on-light:#141416;
+  --aurora:linear-gradient(118deg,#E3E8B2 0%,#D6DCC8 34%,#C9CCE8 68%,#D5E7E2 100%);
+  --aurora-bar:linear-gradient(90deg,#E3E8B2,#C9CCE8);
+  --font-num:"Sora", "Inter", "Segoe UI", system-ui, sans-serif;
+  --r-lg:28px; --r-md:22px; --r-sm:14px;
+  --shadow:0 18px 40px -20px rgba(0,0,0,.65);
+}
+body{background:radial-gradient(1100px 520px at 88% -8%,rgba(227,232,178,.07),transparent 62%),radial-gradient(900px 480px at -8% 4%,rgba(201,204,232,.06),transparent 60%),var(--bg);background-attachment:fixed}
+.brand-mark{border-radius:50%}
+.chip{border-radius:99px;background:var(--surface);border-color:var(--line-2)}
+.crumbbar{border-top:0;padding-top:0}
+.crumbbar a.back{border-radius:99px;background:var(--surface-2);border-color:var(--line)}
+.foot{border-top:0}
+
+/* topo da tela inicial: cartão aurora com texto escuro */
+.home-hero{background:var(--aurora);color:var(--on-light);border-radius:var(--r-lg);padding:30px 32px;box-shadow:var(--shadow);grid-template-columns:minmax(0,1fr) 300px;align-items:end}
+.home-hero .eyebrow{color:#45472F!important}
+.home-hero h1{font-weight:300;color:var(--on-light);letter-spacing:-.035em}
+.home-hero h1 b{font-weight:700}
+.home-hero .lead{color:#3B3C42}
+.home-hero .lead b{color:var(--on-light)}
+.home-hero .hero-art{color:#34353B;align-self:center}
+.home-hero .acc{stroke:var(--on-light)}
+.home-hero .reco{margin-top:20px;background:#141416;border:0;box-shadow:none;color:var(--ink);border-radius:var(--r-md)}
+.home-hero .reco:hover{background:#1A1A1D}
+
+/* números */
+.kpi{border-radius:var(--r-md);background:var(--surface);border-color:var(--line);box-shadow:var(--shadow);padding:18px 20px}
+.kpi .v,.tcard .m,.hn .v,.tile .v,.reco b,.dl .d b,.sec-head h2,.home-hero h1,.org h1,.verdict-bar h3{font-family:var(--font-num)}
+.kpi .v{font-weight:600}
+
+/* cartões de assunto */
+.tcard{border-radius:var(--r-lg);background:var(--surface);border-color:var(--line);box-shadow:var(--shadow);position:relative}
+.tcard .art{background:transparent;border-bottom:0;height:92px;padding:18px 20px 0;place-items:center start}
+.tcard .art svg{height:66px;max-width:none}
+.tcard .body{padding:8px 20px 20px;padding-right:66px}
+.tcard .done{background:var(--green-bg);color:var(--green);top:16px;right:16px}
+.tcard .go{position:absolute;right:16px;bottom:16px;width:40px;height:40px;border-radius:50%;background:var(--ice);color:var(--on-light);display:grid;place-items:center;font-size:0;margin:0;transition:background .15s}
+.tcard .go::after{content:"→";font-size:17px;font-weight:600;line-height:1}
+.tcard:hover .go{background:#FFFFFF}
+.tcard:hover{border-color:var(--line-2)}
+
+/* topo das páginas: o primeiro número vira cartão aurora */
+.sec-head{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px 28px;box-shadow:var(--shadow)}
+.hn{background:var(--surface-2);border:0;border-radius:var(--r-md);padding:14px 16px}
+.hero-nums .hn:first-child{background:var(--aurora)}
+.hero-nums .hn:first-child .v{color:var(--on-light)!important}
+.hero-nums .hn:first-child .l{color:#3B3C42}
+
+/* superfícies, botões e controles */
+.card,.tldr,details.fold,.tbl-wrap,.kit-g,.out,.cover-main,.dl,.verdict-bar,.gs-card,.req,.field,.steps li,.tile{border-radius:var(--r-md);border-color:var(--line)}
+.card,.tldr,details.fold,.tbl-wrap,.kit-g,.out,.cover-main,.dl,.verdict-bar,.gs-card{box-shadow:var(--shadow)}
+details.fold>summary{border-radius:var(--r-md)}
+details.fold[open]>summary{border-radius:var(--r-md) var(--r-md) 0 0}
+.fold-ico,.gs-ico{border-radius:50%;background:var(--ice);color:var(--on-light)}
+.fold-more{border:0;background:var(--surface-3);color:var(--ink)}
+.btn{background:var(--ice);color:var(--on-light);border-radius:99px;padding:11px 20px}
+.btn:hover{background:#FFFFFF}
+.btn.ghost{background:var(--surface-3);color:var(--ink);border:1px solid var(--line-2)}
+.seg,.seg button,.fbtn,.pill,.example-tag{border-radius:99px}
+.fbtn[aria-pressed="true"]{background:var(--ice);border-color:var(--ice);color:var(--on-light)}
+.reco-prog .bar i,.mini-prog i,.prog i,.bar i{background:var(--aurora-bar)}
+.zone-track{border-radius:99px;overflow:hidden}
+.tl-dot,.steps li::before{background:var(--ice);color:var(--on-light)}
+.cat-code{border-radius:50%}
+.fact,.objeto{border-radius:var(--r-sm);border-color:var(--line)}
+.org-logo{border-radius:50%}
+.pager a{border-radius:var(--r-md);border-color:var(--line)}
+th{background:var(--surface-2)}
+@media (max-width:1000px){.home-hero{grid-template-columns:minmax(0,1fr);padding:24px 22px}}
+@media (max-width:600px){
+  .tcard .art{border-right:0;padding:12px 0 12px 14px;place-items:center}
+  .tcard .art svg{height:50px}
+  .tcard .body{padding:12px 56px 14px 12px}
+  .tcard .go{width:34px;height:34px;right:12px;bottom:auto;top:50%;transform:translateY(-50%)}
+  .sec-head{padding:20px 18px}
+}
 </style>
 
 <div class="shell">
@@ -410,13 +494,13 @@ a.card.ev:hover{border-color:var(--line-2)}
   <div class="home-hero">
     <div>
       <p class="eyebrow" style="color:var(--gold)">Painel de decisão</p>
-      <h1 id="h-painel">Vale a pena disputar este pregão?</h1>
+      <h1 id="h-painel">Vale a pena disputar<br><b>este pregão?</b></h1>
       <p class="lead">Locação de veículos com e sem motorista para a Presidência da República nos 4 estados do Sudeste. <b>Sessão pública em 23/11/2026, às 9h30.</b></p>
+      <a class="reco" id="reco" href="#parecer"></a>
     </div>
-    <figure class="hero-art" id="homeArt" style="--strong:var(--gold)"></figure>
+    <figure class="hero-art" id="homeArt"></figure>
   </div>
   <div class="kpis" id="kpis"></div>
-  <a class="reco" id="reco" href="#parecer"></a>
   <div class="deadlines" id="deadlines"></div>
   <div class="block">
     <div class="block-h home"><h3>Assuntos da análise</h3><span class="hint">Siga na ordem das etapas ou abra direto o que precisar.</span></div>
