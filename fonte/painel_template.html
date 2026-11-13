@@ -267,6 +267,9 @@ tr.hl td{background:color-mix(in srgb, var(--tint) 55%, transparent)}
 .gs-txt b{font-size:16px}
 .gs-txt span{font-size:13.5px}
 .pl-table{min-width:760px}
+.pl-table td:nth-child(2){min-width:210px}
+.tiles.six{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:700px){.tiles.six{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .pl-table th.fx{text-align:center;color:#1E2530}
 .pl-table th.fx1{background:#DDF3F9}.pl-table th.fx2{background:#E2F0D9}.pl-table th.fx3{background:#DCE6F7}.pl-table th.fx4{background:#FBF5D2}
 .pl-table td.fx1{background:color-mix(in srgb,#DDF3F9 35%,transparent)}.pl-table td.fx2{background:color-mix(in srgb,#E2F0D9 35%,transparent)}
@@ -491,7 +494,7 @@ details.orig summary{cursor:pointer;font-weight:700;font-size:14px}
     <li><span>Consórcio permitido. Subcontratação parcial permitida, <b>exceto Executivo II (K) e Sedan (L)</b>.</span></li>
   </ul></div>
 
-  <div class="tiles">
+  <div class="tiles six">
     <div class="tile t4"><span class="k">Vigência</span><span class="v">12 meses</span><span class="s">até 10 anos · TR 1.4</span></div>
     <div class="tile t1"><span class="k">Garantia contratual</span><span class="v num">R$ 1.041.785</span><span class="s">5% do valor anual · TR 4.7</span></div>
     <div class="tile t2"><span class="k">Consórcio</span><span class="v">Permitido</span><span class="s">soma de atestados · TR 4.10</span></div>
@@ -710,7 +713,7 @@ details.orig summary{cursor:pointer;font-weight:700;font-size:14px}
     <a class="btn" id="gsLink" href="{{GSHEET_URL}}" target="_blank" rel="noopener">Abrir no Google Planilhas ↗</a>
   </div>
 
-  <div class="tiles" id="planTiles"></div>
+  <div class="tiles six" id="planTiles"></div>
 
   <div class="block">
     <div class="block-h"><h3>Locação de veículos por categoria</h3><span class="hint">Preço máximo da diária em cada faixa de prazo e valor anual estimado. Cores das faixas iguais às do Apêndice IV.</span></div>
