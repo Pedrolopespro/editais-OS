@@ -21,6 +21,7 @@
   --t-simul:#E1E3FA; --s-simul:#3F46AD;
   --t-risco:#F5E6CF; --s-risco:#8D5C14;
   --t-kit:#E4F0D1;   --s-kit:#4F7410;
+  --t-parecer:#E4E7F3;--s-parecer:#2D3B6B;
   --font-ui:"Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-mono:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
   --r-lg:22px; --r-md:14px; --r-sm:9px;
@@ -34,7 +35,7 @@
   --t-visao:#1E2A40; --s-visao:#9DB8EC; --t-cond:#17303D; --s-cond:#83C3E6; --t-oper:#173326; --s-oper:#7CCFA0;
   --t-qual:#2A2240; --s-qual:#BDA6F0; --t-decl:#352D12; --s-decl:#E5C25E; --t-conf:#3D1C1E; --s-conf:#F09A9A;
   --t-plan:#3A2616; --s-plan:#F0A970; --t-matriz:#123430; --s-matriz:#6FD3C7; --t-simul:#22254A; --s-simul:#A9AEF6;
-  --t-risco:#382A15; --s-risco:#E8B465; --t-kit:#26321A; --s-kit:#B5D97A;
+  --t-risco:#382A15; --s-risco:#E8B465; --t-kit:#26321A; --s-kit:#B5D97A; --t-parecer:#1E2338; --s-parecer:#B3BDEB;
   color-scheme:dark; } }
 :root[data-theme="dark"]{
   --bg:#0E1014; --surface:#17191E; --surface-2:#1F2228; --ink:#ECEEF2; --muted:#9AA1AE; --line:#2B2F37;
@@ -45,7 +46,7 @@
   --t-visao:#1E2A40; --s-visao:#9DB8EC; --t-cond:#17303D; --s-cond:#83C3E6; --t-oper:#173326; --s-oper:#7CCFA0;
   --t-qual:#2A2240; --s-qual:#BDA6F0; --t-decl:#352D12; --s-decl:#E5C25E; --t-conf:#3D1C1E; --s-conf:#F09A9A;
   --t-plan:#3A2616; --s-plan:#F0A970; --t-matriz:#123430; --s-matriz:#6FD3C7; --t-simul:#22254A; --s-simul:#A9AEF6;
-  --t-risco:#382A15; --s-risco:#E8B465; --t-kit:#26321A; --s-kit:#B5D97A;
+  --t-risco:#382A15; --s-risco:#E8B465; --t-kit:#26321A; --s-kit:#B5D97A; --t-parecer:#1E2338; --s-parecer:#B3BDEB;
   color-scheme:dark; }
 
 [data-sec="visao"]{--tint:var(--t-visao);--strong:var(--s-visao)}
@@ -59,6 +60,7 @@
 [data-sec="simul"]{--tint:var(--t-simul);--strong:var(--s-simul)}
 [data-sec="risco"]{--tint:var(--t-risco);--strong:var(--s-risco)}
 [data-sec="kit"]{--tint:var(--t-kit);--strong:var(--s-kit)}
+[data-sec="parecer"]{--tint:var(--t-parecer);--strong:var(--s-parecer)}
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -372,6 +374,48 @@ details.orig summary{cursor:pointer;font-weight:700;font-size:14px}
 .pager a.next{text-align:right;margin-left:auto}
 .foot{font-size:12px;color:var(--muted);padding:0 32px 22px}
 
+/* banners de seção (abertura de capítulo) */
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;background:var(--tint);border-radius:var(--r-lg);padding:20px 24px;margin-top:4px}
+.bn-txt{display:grid;gap:4px;min-width:0}
+.bn-meta{font-size:12.5px;font-weight:700;color:var(--strong);letter-spacing:.02em}
+.bn-done{color:var(--good)}
+.sec-head h2{font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.02em;color:var(--ink);margin:0}
+.bn-q{color:var(--muted);font-size:15px}
+.bn-take{margin-top:10px;background:var(--surface);border-radius:var(--r-md);padding:10px 14px;display:grid;gap:2px;max-width:82ch}
+.bn-take span{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--strong)}
+.bn-take p{font-size:14.5px;font-weight:500}
+.bn-ico{width:76px;height:76px;border-radius:22px;background:var(--surface);color:var(--strong);display:grid;place-items:center}
+.bn-ico svg{width:36px;height:36px}
+/* jornada da análise */
+.journey{padding:6px 32px 0}
+.jr{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 16px;display:grid;gap:10px}
+.jr-h{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--muted)}
+.jr-h b{color:var(--ink);font-variant-numeric:tabular-nums}
+.jr-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.jr-step{display:grid;gap:6px;text-decoration:none;color:var(--muted);font-size:12.5px;font-weight:600;min-width:0}
+.jr-bar{height:7px;border-radius:99px;background:var(--surface-2);overflow:hidden;display:block}
+.jr-bar i{display:block;height:100%;background:var(--focus);border-radius:99px;transition:width .3s}
+.jr-step.done{color:var(--good)} .jr-step.done .jr-bar i{background:var(--good)}
+.jr-step.cur{color:var(--ink)}
+.jr-step.cur .jr-lab{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+.jr-lab{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav a .done-ic{margin-left:auto;width:18px;height:18px;color:#7FE0AE;display:inline-grid;place-items:center}
+.nav a .done-ic svg{width:16px;height:16px}
+.pager .next-btn{margin-left:auto}
+/* parecer */
+a.card.ev{text-decoration:none;color:var(--ink);transition:border-color .15s}
+a.card.ev:hover{border-color:var(--strong)}
+.steps{margin:0;padding:0;list-style:none;display:grid;gap:8px;counter-reset:st}
+.steps li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:12px;font-size:14px}
+.steps li::before{counter-increment:st;content:counter(st);width:28px;height:28px;border-radius:50%;background:var(--tint);color:var(--strong);display:grid;place-items:center;font-weight:800;font-size:13px}
+.par-dec .card{gap:12px}
+.par-dec textarea{width:100%;min-height:90px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface);resize:vertical;font-size:14px}
+.seg button[aria-pressed="true"][data-d="participar"]{background:var(--good-bg);color:var(--good)}
+.seg button[aria-pressed="true"][data-d="condicoes"]{background:var(--warn-bg);color:var(--warn)}
+.seg button[aria-pressed="true"][data-d="nao"]{background:var(--bad-bg);color:var(--bad)}
+@media (max-width:900px){.journey{padding:4px 18px 0}}
+@media (max-width:560px){.sec-head{grid-template-columns:minmax(0,1fr);padding:16px 18px}.bn-ico{display:none}.jr-steps{gap:5px}.jr-step{font-size:11px}}
+
 /* ---------- responsivo ---------- */
 @media (max-width:1100px){
   .cover,.sim{grid-template-columns:minmax(0,1fr)}
@@ -424,10 +468,12 @@ details.orig summary{cursor:pointer;font-weight:700;font-size:14px}
       <div class="crumb" id="crumb"><i class="dot"></i><span id="crumbTxt">Visão geral</span></div>
       <div class="top-chips" id="topChips"></div>
     </div>
+    <div class="journey" id="journey" aria-label="Progresso da análise"></div>
     <main class="content" id="content">
 
 <!-- ======================= 1. VISÃO GERAL ======================= -->
 <section class="sec" id="sec-visao" data-sec="visao" aria-labelledby="h-visao">
+  <header class="sec-head"></header>
   <div class="cover">
     <div class="cover-main">
       <div class="org">
@@ -467,8 +513,9 @@ details.orig summary{cursor:pointer;font-weight:700;font-size:14px}
         <a href="#simulador"><span>Lance mínimo viável</span><b id="ovLance">—</b></a>
         <a href="#kit"><span>Kit das 2 horas pronto</span><b id="ovKit">0%</b></a>
         <a href="#conflitos"><span>Conflitos de alta gravidade</span><b id="ovConf">—</b></a>
+        <a href="#parecer"><span>Parecer registrado</span><b id="ovPar">—</b></a>
       </div>
-      <a class="btn" href="#matriz" style="position:relative;z-index:1;width:max-content">Avaliar requisitos</a>
+      <a class="btn" id="ovCont" href="#condicoes" style="position:relative;z-index:1;width:max-content">Continuar a análise</a>
     </aside>
   </div>
 
@@ -478,10 +525,8 @@ details.orig summary{cursor:pointer;font-weight:700;font-size:14px}
   </div>
 
   <div class="block">
-    <div class="group-title">Entender o edital</div>
-    <div class="map" id="mapEntender"></div>
-    <div class="group-title" style="margin-top:8px">Decidir e se preparar</div>
-    <div class="map" id="mapDecidir"></div>
+    <div class="block-h"><h3>Roteiro da análise</h3><span class="hint">5 etapas, da leitura do edital ao parecer final.</span></div>
+    <div id="mapEtapas" style="display:grid;gap:18px"></div>
   </div>
 </section>
 
@@ -855,6 +900,26 @@ details.orig summary{cursor:pointer;font-weight:700;font-size:14px}
   <div class="kit-groups" id="kitGroups"></div>
 </section>
 
+<!-- ======================= 12. PARECER ======================= -->
+<section class="sec" id="sec-parecer" data-sec="parecer" hidden>
+  <header class="sec-head"></header>
+  <div class="verdict-bar wait" id="parVerdict">
+    <div><p class="eyebrow" style="color:inherit">Recomendação calculada a partir da sua análise</p><h3 id="parTitle">—</h3><p id="parText"></p></div>
+    <svg class="ring" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="32" fill="none" stroke="var(--surface)" stroke-width="9"/><circle id="parRing" cx="40" cy="40" r="32" fill="none" stroke="var(--strong)" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 201" transform="rotate(-90 40 40)"/><text id="parRingTxt" x="40" y="45" text-anchor="middle" font-size="15" font-weight="800" fill="var(--ink)">0%</text></svg>
+  </div>
+  <div class="block"><div class="block-h"><h3>O que sustenta a recomendação</h3><span class="hint">Cada cartão leva à seção de origem.</span></div><div class="grid-2" id="parEvid"></div></div>
+  <div class="block"><div class="block-h"><h3>Próximos passos</h3><span class="hint">Gerados a partir do que ainda está pendente.</span></div><ol class="steps" id="parSteps"></ol></div>
+  <div class="block par-dec">
+    <div class="block-h"><h3>Decisão da empresa</h3><span class="save-state" id="parSave">Carregando…</span></div>
+    <div class="card">
+      <div class="seg" role="group" aria-label="Decisão da empresa" id="parSeg"><button type="button" data-d="participar">Participar</button><button type="button" data-d="condicoes">Participar com condições</button><button type="button" data-d="nao">Não participar</button></div>
+      <label for="parNota" class="hint">Justificativa e responsáveis</label>
+      <textarea id="parNota" placeholder="Participar em consórcio com a empresa parceira; o jurídico envia os pedidos de esclarecimento até 17/11."></textarea>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn" type="button" id="parBtn">Registrar parecer</button><span class="hint" id="parReg"></span></div>
+    </div>
+  </div>
+</section>
+
       <nav class="pager" id="pager" aria-label="Navegação entre seções"></nav>
     </main>
     <p class="foot">Análise independente elaborada para apoio à decisão do licitante, com base no Edital do Pregão Eletrônico nº 319/2026 (05/11/2026) e no Termo de Referência nº 236/2026 com apêndices. Não é documento oficial da Presidência da República e não substitui a leitura integral do Edital e anexos.</p>
@@ -880,6 +945,8 @@ const ICONS={
  kit:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
  alert:'<circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.3v.2"/>',
  ok:'<circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/>',
+ parecer:'<path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/>',
+ check:'<path d="m5 12.5 4.5 4.5L19 7.5"/>',
  cal:'<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>'
 };
 const svg=(k)=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICONS[k]||'')+'</svg>';
@@ -1017,24 +1084,26 @@ const SIM_PARAMS=[
 ];
 const SIM_DEF=()=>{const o={lance:19200000}; COMPONENTS.forEach(c=>{if(!c.fixed)o['c_'+c.k]=c.def}); SIM_PARAMS.forEach(p=>o[p.k]=p.def); return o;};
 
+const ETAPAS=[{n:1,nome:'Entender'},{n:2,nome:'Riscos'},{n:3,nome:'Aderência'},{n:4,nome:'Preço'},{n:5,nome:'Parecer'}];
 const SECTIONS=[
- {id:'visao',sec:'visao',nome:'Visão geral',q:'Capa e decisão',grupo:'Entender'},
- {id:'condicoes',sec:'cond',nome:'Condições gerais',q:'Regras do contrato e da remuneração',grupo:'Entender'},
- {id:'operacao',sec:'oper',nome:'Estrutura operacional',q:'O que a empresa precisa ter montado',grupo:'Entender'},
- {id:'qualificacao',sec:'qual',nome:'Qualificação',q:'O que comprovar para habilitar',grupo:'Entender'},
- {id:'declaracoes',sec:'decl',nome:'Declarações',q:'Documentos fora do SICAF',grupo:'Entender'},
- {id:'conflitos',sec:'conf',nome:'Conflitos',q:'Onde os documentos se contradizem',grupo:'Entender'},
- {id:'planilha',sec:'plan',nome:'Planilha de custo',q:'Como o órgão chegou ao valor',grupo:'Entender'},
- {id:'matriz',sec:'matriz',nome:'Matriz de aderência',q:'A empresa cumpre cada exigência?',grupo:'Decidir'},
- {id:'simulador',sec:'simul',nome:'Simulador de lance',q:'Até onde baixar o preço',grupo:'Decidir'},
- {id:'riscos',sec:'risco',nome:'Caixa e riscos',q:'Fôlego financeiro até receber',grupo:'Decidir'},
- {id:'kit',sec:'kit',nome:'Kit das 2 horas',q:'O que deixar pronto antes da sessão',grupo:'Decidir'}
+ {id:'visao',sec:'visao',nome:'Visão geral',q:'O que está em jogo neste pregão?',etapa:1,min:2},
+ {id:'condicoes',sec:'cond',nome:'Condições gerais',q:'Quais regras valem para o contrato e como a empresa é paga?',etapa:1,min:4},
+ {id:'operacao',sec:'oper',nome:'Estrutura operacional',q:'O que a empresa precisa ter montado para atender a Presidência?',etapa:1,min:3},
+ {id:'qualificacao',sec:'qual',nome:'Qualificação',q:'O que a empresa precisa comprovar para ser habilitada?',etapa:2,min:3},
+ {id:'declaracoes',sec:'decl',nome:'Declarações',q:'Quais documentos escritos acompanham a proposta, além do SICAF?',etapa:2,min:2},
+ {id:'conflitos',sec:'conf',nome:'Conflitos',q:'Onde os documentos se contradizem e o que fazer antes de propor?',etapa:2,min:4},
+ {id:'planilha',sec:'plan',nome:'Planilha de custo',q:'Como o órgão chegou aos R$ 20,8 milhões?',etapa:2,min:3},
+ {id:'matriz',sec:'matriz',nome:'Matriz de aderência',q:'A empresa cumpre cada exigência? Se não, como vai suprir?',etapa:3,min:6},
+ {id:'kit',sec:'kit',nome:'Kit das 2 horas',q:'O que precisa estar pronto antes da sessão para não perder depois de vencer?',etapa:3,min:4},
+ {id:'simulador',sec:'simul',nome:'Simulador de lance',q:'Até onde a empresa pode baixar o preço sem ter prejuízo?',etapa:4,min:5},
+ {id:'riscos',sec:'risco',nome:'Caixa e riscos',q:'A empresa aguenta financiar a operação até o primeiro pagamento?',etapa:4,min:3},
+ {id:'parecer',sec:'parecer',nome:'Parecer final',q:'Participar ou não participar?',etapa:5,min:3}
 ];
 
 /* ---------------- estado e armazenamento ---------------- */
-const state={matriz:{status:{},notas:{}},kit:{done:{}},sim:SIM_DEF()};
-const DOCS={matriz:'analise/matriz',kit:'analise/kit',sim:'analise/simulador'};
-const SAVE_EL={matriz:'mxSave',kit:'kitSave',sim:'simSave'};
+const state={matriz:{status:{},notas:{}},kit:{done:{}},sim:SIM_DEF(),parecer:{decisao:'',nota:'',em:''},prog:{done:{}}};
+const DOCS={matriz:'analise/matriz',kit:'analise/kit',sim:'analise/simulador',parecer:'analise/parecer'};
+const SAVE_EL={matriz:'mxSave',kit:'kitSave',sim:'simSave',parecer:'parSave'};
 let db=null, mode='local';
 const lsGet=k=>{try{const v=localStorage.getItem('pe319-'+k);return v?JSON.parse(v):null}catch(e){return null}};
 const lsSet=(k,v)=>{try{localStorage.setItem('pe319-'+k,JSON.stringify(v))}catch(e){}};
@@ -1060,14 +1129,16 @@ function mergeIn(name,data){
   if(name==='sim') state.sim=Object.assign(SIM_DEF(),data);
   else if(name==='matriz') state.matriz={status:Object.assign({},data.status||{}),notas:Object.assign({},data.notas||{})};
   else if(name==='kit') state.kit={done:Object.assign({},data.done||{})};
+  else if(name==='parecer') state.parecer=Object.assign({decisao:'',nota:'',em:''},data);
 }
-['matriz','kit','sim'].forEach(n=>{const v=lsGet(n); if(v) mergeIn(n,v);});
+['matriz','kit','sim','parecer'].forEach(n=>{const v=lsGet(n); if(v) mergeIn(n,v);});
+{const pg=lsGet('prog'); if(pg&&pg.done) state.prog.done=pg.done;}
 
 async function connectDb(){
   try{ db = window.claude && window.claude.use ? await window.claude.use('db') : null; }catch(e){ db=null; }
-  if(!db){ ['matriz','kit','sim'].forEach(n=>setSave(n,'local','Salvo neste navegador')); return; }
+  if(!db){ ['matriz','kit','sim','parecer'].forEach(n=>setSave(n,'local','Salvo neste navegador')); return; }
   mode='db';
-  ['matriz','kit','sim'].forEach(name=>{
+  ['matriz','kit','sim','parecer'].forEach(name=>{
     setSave(name,'','Salvo para a equipe');
     try{
       db.doc(DOCS[name]).onSnapshot(snap=>{
@@ -1082,36 +1153,41 @@ function rerender(name){
   if(name==='matriz') renderMatriz();
   if(name==='kit') renderKit();
   if(name==='sim') renderSim(true);
+  if(name==='parecer') renderParecer();
   renderOverview();
 }
 
 /* ---------------- navegação ---------------- */
+let currentId='visao';
 function buildNav(){
-  const groups={Entender:[],Decidir:[]};
-  SECTIONS.forEach(s=>groups[s.grupo].push(s));
   let h='';
-  [['Entender','Entender o edital'],['Decidir','Decidir']].forEach(([g,lab])=>{
-    h+='<div class="nav-group"><div class="nav-label">'+lab+'</div>';
-    groups[g].forEach(s=>{h+='<a href="#'+s.id+'" data-sec="'+s.sec+'" data-route="'+s.id+'"><span class="ico">'+svg(s.sec)+'</span><span>'+s.nome+'</span>'+(s.id==='conflitos'?'<span class="badge" id="navConfBadge"></span>':'')+'</a>';});
+  ETAPAS.forEach(e=>{
+    h+='<div class="nav-group"><div class="nav-label">'+e.n+' · '+e.nome+'</div>';
+    SECTIONS.filter(s=>s.etapa===e.n).forEach(s=>{h+='<a href="#'+s.id+'" data-sec="'+s.sec+'" data-route="'+s.id+'"><span class="ico">'+svg(s.sec)+'</span><span>'+s.nome+'</span>'+(s.id==='conflitos'?'<span class="badge" id="navConfBadge"></span>':'')+'<span class="done-ic" id="nd-'+s.id+'" hidden title="Concluída">'+svg('check')+'</span></a>';});
     h+='</div>';
   });
   $('nav').innerHTML=h;
   const mapItem=s=>'<a href="#'+s.id+'" data-sec="'+s.sec+'"><span class="mi">'+svg(s.sec)+'</span><span><b>'+s.nome+'</b><span>'+s.q+'</span><em id="map-'+s.id+'"></em></span></a>';
-  $('mapEntender').innerHTML=SECTIONS.filter(s=>s.grupo==='Entender'&&s.id!=='visao').map(mapItem).join('');
-  $('mapDecidir').innerHTML=SECTIONS.filter(s=>s.grupo==='Decidir').map(mapItem).join('');
+  $('mapEtapas').innerHTML=ETAPAS.map(e=>'<div class="block"><div class="group-title">Etapa '+e.n+' · '+e.nome+' <span id="mapp-'+e.n+'" style="letter-spacing:0;text-transform:none;font-weight:600"></span></div><div class="map">'+SECTIONS.filter(s=>s.etapa===e.n&&s.id!=='visao').map(mapItem).join('')+'</div></div>').join('');
 }
 function route(){
   let id=(location.hash||'').replace('#','');
   if(!SECTIONS.some(s=>s.id===id)) id='visao';
+  currentId=id;
   const s=SECTIONS.find(x=>x.id===id), i=SECTIONS.indexOf(s);
   document.querySelectorAll('.sec').forEach(el=>{el.hidden = el.id!=='sec-'+id});
   document.querySelectorAll('#nav a').forEach(a=>{ if(a.dataset.route===id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
-  $('crumb').dataset.sec=s.sec; $('crumbTxt').textContent=(s.grupo==='Decidir'?'Decidir':'Entender o edital')+' · '+s.nome;
+  $('crumb').dataset.sec=s.sec; $('crumbTxt').textContent='Etapa '+s.etapa+' · '+ETAPAS[s.etapa-1].nome+' · '+s.nome;
   const prev=SECTIONS[i-1], next=SECTIONS[i+1];
-  $('pager').innerHTML=(prev?'<a href="#'+prev.id+'"><span>← Anterior</span><b>'+prev.nome+'</b></a>':'')+(next?'<a class="next" href="#'+next.id+'"><span>Próxima →</span><b>'+next.nome+'</b></a>':'');
+  let ph=prev?'<a href="#'+prev.id+'"><span>← Anterior</span><b>'+prev.nome+'</b></a>':'';
+  if(next){ const auto=(id==='matriz'||id==='kit'); const done=secProgress(id)>=1;
+    ph+='<button class="btn next-btn" type="button" data-next="'+next.id+'" data-mark="'+(auto?'':id)+'">'+((done||auto)?'Seguir para ':'Concluir e seguir para ')+next.nome+' →</button>'; }
+  $('pager').innerHTML=ph;
+  refreshProgress();
   const cur=document.querySelector('#nav a[aria-current]'); if(cur&&cur.scrollIntoView&&window.innerWidth<900) cur.scrollIntoView({block:'nearest',inline:'center'});
   const panel=$('panel'); if(panel.getBoundingClientRect().top<0) panel.scrollIntoView({block:'start'});
 }
+$('pager').addEventListener('click',e=>{const b=e.target.closest('.next-btn'); if(!b)return; if(b.dataset.mark){state.prog.done[b.dataset.mark]=true; lsSet('prog',state.prog);} location.hash='#'+b.dataset.next;});
 
 /* ---------------- prazos ---------------- */
 function daysUntil(y,m,d){const now=new Date(); const a=new Date(now.getFullYear(),now.getMonth(),now.getDate()); const b=new Date(y,m-1,d); return Math.round((b-a)/86400000);}
@@ -1322,16 +1398,118 @@ $('kitGroups').addEventListener('change',e=>{const c=e.target.closest('[data-kit
 
 /* ---------------- visão geral ---------------- */
 function renderOverview(){
-  const s=matrizSummary();
-  const v=$('ovVerdict'); v.className='verdict '+s.kind; v.textContent=s.title;
-  $('ovVerdictTxt').textContent=s.evaluated? s.text : 'Avalie os requisitos na Matriz de aderência para gerar a recomendação.';
+  const s=matrizSummary(); const pc=parecerCalc();
+  const v=$('ovVerdict'); v.className='verdict '+pc.kind; v.textContent=pc.title;
+  const labD={participar:'Participar',condicoes:'Participar com condições',nao:'Não participar'};
+  $('ovVerdictTxt').textContent=state.parecer.decisao?('Parecer registrado: '+labD[state.parecer.decisao]+'. '+pc.text):pc.text;
+  $('ovPar').textContent=state.parecer.decisao?labD[state.parecer.decisao]:'—';
+  const nxt=SECTIONS.find(x=>x.id!=='visao'&&secProgress(x.id)<1); $('ovCont').href='#'+(nxt?nxt.id:'parecer'); $('ovCont').textContent=nxt?'Continuar: '+nxt.nome:'Ver parecer final';
   $('ovMatriz').textContent=s.evaluated+' de '+s.all.length;
   const r=calc(state.sim); $('ovLance').textContent=isFinite(r.Pmin)?fmt0(r.Pmin)+(isDefault()?' (exemplo)':''):'inviável';
   const allK=KIT.flatMap(g=>g.itens), dk=allK.filter(i=>state.kit.done[i.id]).length; $('ovKit').textContent=Math.round(dk/allK.length*100)+'%';
   const alta=CONFLITOS.filter(c=>c.g==='alta').length; $('ovConf').textContent=alta;
-  const M={condicoes:'22 categorias · R$ 20,8 mi',operacao:'4 h / 6 h · 16 veículos próprios',qualificacao:'4 atestados · PL R$ 2,08 mi',declaracoes:'3 declarações + 2 termos',conflitos:alta+' de alta gravidade',planilha:'Editável no Google Planilhas',matriz:s.title,simulador:isFinite(r.Pmin)?'Mínimo '+fmt0(r.Pmin):'Revise os percentuais',riscos:'Ciclo de ~85 dias até receber',kit:dk+' de '+allK.length+' prontos'};
+  const M={condicoes:'22 categorias · R$ 20,8 mi',operacao:'4 h / 6 h · 16 veículos próprios',qualificacao:'4 atestados · PL R$ 2,08 mi',declaracoes:'3 declarações + 2 termos',conflitos:alta+' de alta gravidade',planilha:'Editável no Google Planilhas',matriz:s.title,simulador:isFinite(r.Pmin)?'Mínimo '+fmt0(r.Pmin):'Revise os percentuais',riscos:'Ciclo de ~85 dias até receber',kit:dk+' de '+allK.length+' prontos',parecer:pc.title};
   Object.keys(M).forEach(k=>{const el=$('map-'+k); if(el) el.textContent=M[k];});
+  refreshProgress();
 }
+
+/* ---------------- jornada, banners e parecer ---------------- */
+function secProgress(id){
+  if(id==='matriz'){const s=matrizSummary(); return s.evaluated/s.all.length;}
+  if(id==='kit'){const a=KIT.flatMap(g=>g.itens); return a.filter(i=>state.kit.done[i.id]).length/a.length;}
+  if(id==='parecer') return state.parecer.decisao?1:0;
+  return state.prog.done[id]?1:0;
+}
+const overallProgress=()=>SECTIONS.reduce((a,s)=>a+secProgress(s.id),0)/SECTIONS.length;
+const pl=(n,um,varios)=>n===1?um:varios.replace('#',n);
+const leftTxt=n=>n<0?'encerrado':n===0?'hoje':n===1?'amanhã':'em '+n+' dias';
+const TAKE={
+ visao:()=>'Pregão de R$ 20,8 milhões, item único, com sessão em 23/11. Aqui estão os dados básicos e o andamento da sua decisão.',
+ condicoes:()=>'Contrato de 12 meses (até 10 anos), garantia de 5% e pagamento por diária. Sedan e Van Executiva somam 41% da locação.',
+ operacao:()=>'Exige atender em 4 h nas capitais e 6 h no interior dos 4 estados, com 16 veículos próprios já na assinatura.',
+ qualificacao:()=>'Para habilitar: atestados com 1 blindado, 2 caminhonetes, 6 Executivo II e 10 Sedan, e índices contábeis acima de 1.',
+ declaracoes:()=>'3 declarações e 2 termos precisam estar prontos para enviar em até 2 horas depois do lance.',
+ conflitos:()=>CONFLITOS.filter(c=>c.g==='alta').length+' pontos podem mudar seu preço ou te inabilitar. O prazo para questionar o órgão vence em 17/11 ('+leftTxt(daysUntil(2026,11,17))+').',
+ planilha:()=>'Os preços do órgão são o teto da sua proposta. A própria planilha tem no show acima do limite em 19 de 22 categorias.',
+ matriz:()=>{const s=matrizSummary(); return s.title+': '+s.evaluated+' de '+s.all.length+' requisitos avaliados.';},
+ kit:()=>{const a=KIT.flatMap(g=>g.itens),d=a.filter(i=>state.kit.done[i.id]).length; return d+' de '+a.length+' documentos prontos. Cada um que faltar no prazo de 2 horas pode custar o contrato.';},
+ simulador:()=>{const r=calc(state.sim); return isFinite(r.Pmin)?'Com os custos informados, seu lance mínimo é '+fmt0(r.Pmin)+' (desconto máximo de '+pct(Math.max(0,1-r.Pmin/REF))+')'+(isDefault()?', ainda com custos de exemplo.':'.'):'Com os percentuais atuais, nenhum preço cobre os custos.';},
+ riscos:()=>{const r=calc(state.sim); const L=r.L>0?r.L:REF; return 'Antes de assinar, reserve cerca de '+fmt0(r.K)+' de capital de giro e '+fmt0(L*0.05)+' de garantia.';},
+ parecer:()=>{const p=parecerCalc(); return p.title+(p.title.endsWith('…')?' ':'. ')+(state.parecer.decisao?'O parecer da empresa já foi registrado.':'Registre a decisão da empresa no fim desta página.');}
+};
+function renderBanners(){
+  SECTIONS.forEach(s=>{
+    const sec=$('sec-'+s.id); const el=sec&&sec.querySelector('.sec-head'); if(!el) return;
+    const done=secProgress(s.id)>=1;
+    el.innerHTML='<div class="bn-txt"><p class="bn-meta">Etapa '+s.etapa+' de 5 · '+ETAPAS[s.etapa-1].nome+' · '+s.min+' min'+(done?' · <span class="bn-done">✓ concluída</span>':'')+'</p><h2 id="bn-'+s.id+'">'+s.nome+'</h2><p class="bn-q">'+s.q+'</p><div class="bn-take"><span>O que você leva desta seção</span><p>'+TAKE[s.id]()+'</p></div></div><span class="bn-ico">'+svg(s.sec)+'</span>';
+    sec.setAttribute('aria-labelledby','bn-'+s.id);
+  });
+}
+function renderJourney(){
+  const cur=(SECTIONS.find(x=>x.id===currentId)||SECTIONS[0]).etapa;
+  let h='<div class="jr"><div class="jr-h"><span>Sua análise</span><b>'+Math.round(overallProgress()*100)+'% concluída</b></div><div class="jr-steps">';
+  ETAPAS.forEach(e=>{
+    const ss=SECTIONS.filter(s=>s.etapa===e.n); const p=ss.reduce((a,s)=>a+secProgress(s.id),0)/ss.length;
+    const target=(ss.find(s=>secProgress(s.id)<1)||ss[0]).id;
+    h+='<a class="jr-step'+(p>=1?' done':'')+(e.n===cur?' cur':'')+'" href="#'+target+'" aria-label="Etapa '+e.n+', '+e.nome+', '+Math.round(p*100)+'%"><span class="jr-bar"><i style="width:'+(p*100)+'%"></i></span><span class="jr-lab">'+(p>=1?'✓ ':'')+e.n+' '+e.nome+'</span></a>';
+    const mp=$('mapp-'+e.n); if(mp) mp.textContent='· '+Math.round(p*100)+'%';
+  });
+  $('journey').innerHTML=h+'</div></div>';
+}
+function renderNavMarks(){SECTIONS.forEach(s=>{const el=$('nd-'+s.id); if(el) el.hidden=secProgress(s.id)<1;});}
+function refreshProgress(){renderBanners(); renderJourney(); renderNavMarks(); renderParecer();}
+
+function parecerCalc(){
+  const s=matrizSummary(), r=calc(state.sim), allK=KIT.flatMap(g=>g.itens), kd=allK.filter(i=>state.kit.done[i.id]).length;
+  const leitura=SECTIONS.filter(x=>!['matriz','kit','parecer'].includes(x.id)), lidas=leitura.filter(x=>state.prog.done[x.id]).length;
+  const alta=CONFLITOS.filter(c=>c.g==='alta').length, dImp=daysUntil(2026,11,17);
+  const ok=isFinite(r.Pmin), precoOk=ok&&r.Pmin<=REF, exemplo=isDefault();
+  const L=r.L>0?r.L:REF;
+  const evid=[
+   {href:'matriz',icon:'matriz',t:'Aderência',kind:s.kind,status:s.kind==='go'?'Atende':s.kind==='nogo'?'Bloqueio':(s.c.verificar?'Pendente':'Com ajustes'),txt:s.evaluated+' de '+s.all.length+' requisitos avaliados: '+s.c.atende+' atende, '+s.c.ajuste+' com ajuste, '+s.c.nao+' não atende.'},
+   {href:'simulador',icon:'simul',t:'Preço',kind:!precoOk?'nogo':(exemplo?'wait':'go'),status:!precoOk?'Inviável':(exemplo?'Custos de exemplo':'Viável'),txt:ok?'Lance mínimo de '+fmt0(r.Pmin)+', desconto máximo de '+pct(Math.max(0,1-r.Pmin/REF))+'.'+(r.Pmin<0.5*REF?' Abaixo de 50% da referência: exige prova de exequibilidade.':''):'Com os percentuais atuais, nenhum preço cobre os custos.'},
+   {href:'conflitos',icon:'conf',t:'Riscos do edital',kind:'wait',status:alta+' de alta gravidade',txt:'Seguro-garantia, consórcio, subcontratação, no show e patrimônio líquido. Prazo para questionar: 17/11 ('+leftTxt(dImp)+').'},
+   {href:'kit',icon:'kit',t:'Preparação',kind:kd===allK.length?'go':'wait',status:kd+' de '+allK.length,txt:'Documentos do kit das 2 horas prontos. Caixa: cerca de '+fmt0(r.K)+' de capital de giro e '+fmt0(L*0.05)+' de garantia.'}
+  ];
+  const steps=[];
+  let kind,title,text;
+  if(s.kind==='nogo'||!precoOk){
+    kind='nogo'; title='Não participar nas condições atuais';
+    text=s.blockers.length?'Há exigência eliminatória sem solução: '+s.blockers.join('; ')+'.':'Seu custo não cabe no preço máximo do edital.';
+    s.blockers.forEach(b=>steps.push('Resolver o requisito eliminatório: '+b+'.'));
+    if(s.blockers.length) steps.push('Avaliar consórcio ou parceria que supra essas exigências antes de desistir.');
+    if(!precoOk) steps.push('Rever os custos e percentuais no Simulador de lance.');
+  } else {
+    if(s.c.verificar>0) steps.push(pl(s.c.verificar,'Avaliar o requisito ainda pendente','Avaliar os # requisitos ainda pendentes')+' na Matriz de aderência.');
+    if(s.c.nao>0) steps.push(pl(s.c.nao,'Definir como resolver o requisito não atendido','Definir como resolver os # requisitos não atendidos')+' até a assinatura.');
+    if(s.c.ajuste>0) steps.push(pl(s.c.ajuste,'Confirmar o parceiro ou arranjo do requisito com ajuste.','Confirmar os parceiros ou arranjos dos # requisitos com ajuste.'));
+    if(exemplo) steps.push('Trocar os custos de exemplo do Simulador pelos custos reais da empresa.');
+    if(ok&&r.Pmin<0.5*REF) steps.push('Preparar a prova de exequibilidade do preço (Edital 7.8 a 7.10).');
+    if(kd<allK.length) steps.push('Completar o Kit das 2 horas: '+pl(allK.length-kd,'falta 1 documento.','faltam # documentos.'));
+    if(dImp>=0) steps.push('Decidir até 17/11 se vai pedir esclarecimento ou impugnar os '+alta+' pontos de alta gravidade.');
+    if(steps.length){kind='wait'; title='Participar se…'; text='A análise indica que dá para participar, desde que você resolva as pendências listadas em Próximos passos.';}
+    else {kind='go'; title='Participar'; text='Requisitos atendidos, preço viável e documentos prontos.';}
+  }
+  if(lidas<leitura.length) steps.push('Concluir a leitura das seções: '+lidas+' de '+leitura.length+' revisadas.');
+  if(kind==='go'){steps.push('Revisar os preços finais na Google Planilha.'); steps.push('Cadastrar a proposta no Compras.gov.br antes de 23/11, às 9h30.');}
+  return {kind,title,text,evid,steps};
+}
+let parDraft=null;
+function renderParecer(){
+  const p=parecerCalc();
+  $('parVerdict').className='verdict-bar '+p.kind; $('parTitle').textContent=p.title; $('parText').textContent=p.text;
+  const tot=overallProgress(); $('parRing').setAttribute('stroke-dasharray',(201*tot).toFixed(1)+' 201'); $('parRingTxt').textContent=Math.round(tot*100)+'%';
+  const pc={go:'ok',wait:'att',nogo:'elim'};
+  $('parEvid').innerHTML=p.evid.map(e=>'<a class="card ev" href="#'+e.href+'"><h4>'+svg(e.icon)+e.t+' <span class="pill '+pc[e.kind]+'" style="margin-left:auto">'+e.status+'</span></h4><p>'+e.txt+'</p></a>').join('');
+  $('parSteps').innerHTML=p.steps.map(x=>'<li><span>'+x+'</span></li>').join('');
+  const d=parDraft!==null?parDraft:state.parecer.decisao;
+  $('parSeg').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.d===d)));
+  const nota=$('parNota'); if(document.activeElement!==nota && parDraft===null) nota.value=state.parecer.nota||'';
+  const lab={participar:'Participar',condicoes:'Participar com condições',nao:'Não participar'};
+  $('parReg').textContent=state.parecer.decisao?('Registrado: '+lab[state.parecer.decisao]+' · '+new Date(state.parecer.em).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'})):'Nenhum parecer registrado ainda.';
+}
+$('parSeg').addEventListener('click',e=>{const b=e.target.closest('[data-d]'); if(!b)return; parDraft=b.dataset.d; renderParecer();});
+$('parBtn').addEventListener('click',()=>{const d=parDraft!==null?parDraft:state.parecer.decisao; if(!d){$('parReg').textContent='Escolha uma decisão antes de registrar.'; return;} state.parecer={decisao:d,nota:$('parNota').value.slice(0,1500),em:new Date().toISOString()}; parDraft=null; renderOverview(); persist('parecer');});
 
 /* ---------------- início ---------------- */
 buildNav(); buildSimForm(); renderDeadlines(); renderComposition(); renderPlanilha(); renderConflitos(); renderMatriz(); renderKit(); renderSim('force'); renderImr(); renderOverview(); route();
