@@ -479,6 +479,33 @@ th{background:var(--surface-2)}
   .tcard .go{width:34px;height:34px;right:12px;bottom:auto;top:50%;transform:translateY(-50%)}
   .sec-head{padding:20px 18px}
 }
+
+/* ===== tela inicial: respiro, títulos de seção e destaque ao passar o mouse ===== */
+#sec-painel{gap:44px}
+#sec-painel .block{gap:18px}
+.block-h.home{margin-top:0;align-items:end}
+.block-h.home h3{font-family:var(--font-num);font-size:clamp(26px,3vw,34px);font-weight:300;letter-spacing:-.03em;line-height:1.15}
+.block-h.home h3 b{font-weight:700}
+.cards{gap:18px}
+.kpis,.deadlines{gap:14px}
+.tcard::before{content:"";position:absolute;inset:0;background:var(--aurora);opacity:0;transition:opacity .28s ease;pointer-events:none}
+.tcard .art,.tcard .body{position:relative;z-index:1}
+.tcard .art,.tcard .et,.tcard h3,.tcard .m,.tcard .s{transition:color .2s ease}
+.tcard .acc{transition:stroke .2s ease}
+.tcard:hover,.tcard:focus-visible{border-color:transparent;transform:translateY(-3px);box-shadow:0 26px 50px -22px rgba(201,204,232,.35)}
+.tcard:hover::before,.tcard:focus-visible::before{opacity:1}
+.tcard:hover .art,.tcard:focus-visible .art{color:#3A3B40}
+.tcard:hover .acc,.tcard:focus-visible .acc{stroke:var(--on-light)}
+.tcard:hover .et,.tcard:focus-visible .et{color:#5A5B52}
+.tcard:hover h3,.tcard:focus-visible h3{color:#3A3B40}
+.tcard:hover .m,.tcard:focus-visible .m{color:var(--on-light)}
+.tcard:hover .s,.tcard:focus-visible .s{color:#3A3B40!important}
+.tcard:hover .go,.tcard:focus-visible .go{background:var(--on-light);color:var(--ice)}
+.tcard:hover .done,.tcard:focus-visible .done{background:rgba(20,20,22,.1);color:#1E5A40}
+.kpi{transition:background .2s, transform .2s, border-color .2s}
+.kpi:hover{background:var(--surface-2);border-color:var(--line-2);transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.tcard::before,.kpi{transition:none}.tcard:hover,.kpi:hover{transform:none}}
+@media (max-width:600px){#sec-painel{gap:30px}}
 </style>
 
 <div class="shell">
@@ -501,9 +528,12 @@ th{background:var(--surface-2)}
     <figure class="hero-art" id="homeArt"></figure>
   </div>
   <div class="kpis" id="kpis"></div>
-  <div class="deadlines" id="deadlines"></div>
   <div class="block">
-    <div class="block-h home"><h3>Assuntos da análise</h3><span class="hint">Siga na ordem das etapas ou abra direto o que precisar.</span></div>
+    <div class="block-h home"><h3>Prazos até a <b>sessão</b></h3><span class="hint">Contagem a partir de hoje. 20/11 é feriado nacional (Lei 14.759/2023).</span></div>
+    <div class="deadlines" id="deadlines"></div>
+  </div>
+  <div class="block">
+    <div class="block-h home"><h3>Assuntos da <b>análise</b></h3><span class="hint">Siga na ordem das etapas ou abra direto o que precisar.</span></div>
     <div class="cards" id="cards"></div>
   </div>
 </section>
