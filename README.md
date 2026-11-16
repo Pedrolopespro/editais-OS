@@ -1,28 +1,43 @@
-# Painel de Decisão · Pregão Eletrônico nº 319/2026
+# Sistema de Análise de Editais
 
-Painel de análise do Pregão Eletrônico nº 319/2026 (Secretaria de Administração da Casa Civil, UASG 110001), feito para apoiar a decisão de participar ou não da licitação.
+Painéis de decisão para licitações e dispensas. A página inicial lista os editais em análise, ordenados pelo prazo mais próximo; cada edital tem seu painel com números principais, riscos, conflitos, simulador de lance e parecer final.
 
-O site é estático: um `index.html` com CSS e JavaScript embutidos e as imagens na pasta `assets/`. Não precisa de build.
+| Endereço | Conteúdo |
+|---|---|
+| `/` | Lista de editais |
+| `/pe-319-2026/` | Pregão Eletrônico 319/2026 · Casa Civil · locação de veículos |
+| `/de-70025-40-2026/` | Dispensa Eletrônica 70025-40/2026 · TRE-DF · vídeo animado 2D |
 
-## Seções
+Links antigos do Pregão 319 (`/#conflitos` etc.) redirecionam para `/pe-319-2026/`.
 
-**Entender o edital:** Visão geral (capa com os dados básicos), Condições gerais, Estrutura operacional, Qualificação, Declarações, Conflitos e Planilha de custo.
+## Como o sistema é organizado
 
-**Decidir:** Matriz de aderência, Simulador de lance, Caixa e riscos, Kit das 2 horas.
+- `fonte/core/modelo.html`: desenho e motor comuns a todos os painéis (estilo, navegação, matriz, kit, simulador, parecer, animações).
+- `fonte/core/sistema.html`: página inicial com a lista de editais.
+- `fonte/editais/<slug>/`: um pacote por edital.
+  - `meta.json`: títulos, textos do topo, cartão da lista e arquivos usados.
+  - `secoes.html`: seções próprias do edital (ficha, condições, conflitos, simulador, kit…).
+  - `edital.js`: dados e regras do edital (seções, conflitos, matriz, kit, custos do simulador, números do topo) no objeto `E`.
+
+## Como adicionar um edital
+
+1. Copie a pasta de um edital parecido em `fonte/editais/` com o novo slug (ex.: `pe-123-2027`).
+2. Preencha `meta.json`, `secoes.html` e `edital.js` com os dados do novo edital. Use `lsPrefix` e `docPrefix` próprios para não misturar as marcações.
+3. Rode `python fonte/build.py`. O painel sai em `/<slug>/` e entra na lista automaticamente.
 
 ## Planilha de custos
 
 A seção **Planilha de custo** mostra os valores do Apêndice IV organizados por bloco e tem um botão para a versão editável no Google Planilhas (abas Resumo, Locação, No show, Mão de obra e Combustível, com verificação automática dos limites do TR 5.11).
 
-## Como atualizar o painel
+## Como atualizar
 
-O conteúdo fica em `fonte/painel_template.html` e os números da planilha em `fonte/planilha_dados.py`. Depois de editar, gere o `index.html`:
+Depois de editar qualquer arquivo em `fonte/`, gere as páginas:
 
 ```bash
 python fonte/build.py
 ```
 
-`fonte/build_planilha.py` gera o arquivo .xlsx da planilha de custos a partir dos mesmos dados.
+No Pregão 319, os números da planilha ficam em `fonte/planilha_dados.py`, e `fonte/build_planilha.py` gera o .xlsx da planilha de custos.
 
 ## Onde ficam as marcações
 

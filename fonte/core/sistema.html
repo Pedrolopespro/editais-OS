@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+{{SOCIAL}}
+<title>Sistema de Análise de Editais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+{{CSS}}
+<style>
+/* Lista de editais: um cartão por edital, ordenados pelo prazo mais próximo */
+.sys-mark{width:44px;height:44px;flex:none}
+.ed-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.ed-card .body{padding-right:66px}
+.ed-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.ed-chip{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--surface-3);color:var(--muted)}
+.ed-chip.hot{background:var(--red-bg);color:var(--red-ink)}
+.ed-chip.st-go{background:var(--green-bg);color:var(--green)} .ed-chip.st-wait{background:var(--amber-bg);color:var(--amber)} .ed-chip.st-nogo{background:var(--red-bg);color:var(--red-ink)}
+.tcard:hover .ed-chip{background:rgba(20,20,22,.1);color:#2A2B30}
+.ed-new{border:1.5px dashed var(--line-2);border-radius:var(--r-lg);padding:22px;display:grid;gap:6px;align-content:center;color:var(--muted)}
+.ed-new b{color:var(--ink);font-size:16px}
+@media (max-width:900px){.ed-grid{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="top">
+    <a class="brand" href="/"><img class="sys-mark" src="/favicon.svg" alt=""><span class="brand-txt"><b>Sistema de Análise de Editais</b><span>Painéis de decisão para licitações e dispensas</span></span></a>
+    <div class="top-chips" id="topChips"></div>
+  </header>
+  <main class="content">
+  <section class="sec" id="sec-painel" style="gap:44px">
+    <div class="home-hero">
+      <div>
+        <p class="eyebrow" style="color:var(--gold)">Sistema de análise</p>
+        <h1>Quais editais<br><b>valem a disputa?</b></h1>
+        <p class="lead">Cada edital vira um painel com os números principais, os riscos, os conflitos, o simulador de lance e o parecer final. <b>Ordenados pelo prazo mais próximo.</b></p>
+      </div>
+      <figure class="hero-art" id="homeArt"></figure>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="block">
+      <div class="block-h home"><h3>Editais em <b>análise</b></h3><span class="hint">Clique num edital para abrir o painel completo.</span></div>
+      <div class="ed-grid" id="lista"></div>
+    </div>
+  </section>
+  </main>
+  <p class="foot">Análises independentes para apoio à decisão do licitante. Não são documentos oficiais dos órgãos contratantes.</p>
+</div>
+<script>
+(function(){
+"use strict";
+// links antigos do Pregão 319 (ex.: /#conflitos) continuam funcionando
+const antigos=['ficha','condicoes','operacao','qualificacao','declaracoes','conflitos','planilha','matriz','kit','simulador','riscos','parecer'];
+const h=(location.hash||'').replace('#','');
+if(h&&antigos.includes(h)){ location.replace('/pe-319-2026/#'+h); return; }
+const EDITAIS=/*EDITAIS*/[];
+const ART={
+ oper:'<path d="M8 72h144" opacity=".4"/><path d="M24 60V51c0-3 2-5 5-6l20-5 18-13c3-2 6-3 10-3h26c4 0 7 1 10 4l15 13 15 4c3 1 5 3 5 6v9"/><path d="M24 60h19M61 60h48M127 60h21"/><path d="M68 40l11-9h18v9zM102 31h6c2 0 4 1 5 2l8 7h-19z"/><circle class="acc" cx="52" cy="60" r="9"/><circle class="acc" cx="118" cy="60" r="9"/>',
+ anim:'<rect x="30" y="34" width="74" height="46" rx="4"/><path d="M30 34l70-15 4 12-70 15z"/><path class="acc" d="M44 30l6 10M62 26l6 10M80 22l6 10"/><path d="M42 54h30M42 64h40M42 72h22" opacity=".6"/><circle class="acc" cx="128" cy="58" r="14"/><path class="acc" d="M124 51v14l11-7z"/>',
+ doc:'<rect x="52" y="10" width="56" height="72" rx="5"/><path d="M62 24h36M62 33h36M62 42h24M62 51h30"/><circle class="acc" cx="96" cy="68" r="9"/><path class="acc" d="M92 68l3 3 5-6"/>'
+};
+const svg=(p,vb)=>'<svg class="ill" viewBox="'+(vb||'0 0 160 90')+'" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+p+'</svg>';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function daysUntil(d){const n=new Date(); const a=new Date(n.getFullYear(),n.getMonth(),n.getDate()); const b=new Date(d[0],d[1]-1,d[2]); return Math.round((b-a)/86400000);}
+const left=n=>n<0?'encerrado':n===0?'hoje':n===1?'amanhã':'em '+n+' dias';
+function parecer(ls){try{const v=JSON.parse(localStorage.getItem(ls+'parecer')||'null'); return v&&v.decisao?v.decisao:null;}catch(e){return null;}}
+const LAB={participar:['Parecer: participar','st-go'],condicoes:['Parecer: participar com condições','st-wait'],nao:['Parecer: não participar','st-nogo']};
+const lista=EDITAIS.slice().sort((a,b)=>{const da=daysUntil(a.data),db=daysUntil(b.data); return (da<0)-(db<0)||da-db;});
+document.getElementById('homeArt').innerHTML=svg('<path d="M4 150h312" opacity=".45"/><rect x="40" y="26" width="110" height="120" rx="8"/><path d="M58 50h74M58 64h74M58 78h50M58 92h62M58 106h40"/><circle class="acc" cx="128" cy="124" r="13"/><path class="acc" d="M122 124l4 4 8-9"/><rect x="176" y="46" width="110" height="100" rx="8" opacity=".55"/><path d="M194 70h74M194 84h60M194 98h66M194 112h40" opacity=".55"/>','0 0 320 170');
+const prox=lista.find(e=>daysUntil(e.data)>=0);
+const pareceres=EDITAIS.filter(e=>parecer(e.ls)).length;
+const K=[
+ {k:'Editais no sistema',v:String(EDITAIS.length),c:'gold',s:'cada um com seu painel'},
+ {k:'Próximo prazo',v:prox?prox.data_lbl.split(' · ')[0]:'—',c:'red',s:prox?prox.evento+' · '+left(daysUntil(prox.data)):'nenhum prazo futuro'},
+ {k:'Pareceres registrados',v:pareceres+' de '+EDITAIS.length,c:'green',s:'decisão da empresa por edital'},
+ {k:'Abertos agora',v:String(EDITAIS.filter(e=>daysUntil(e.data)>=0).length),c:'blue',s:'com sessão ou disputa por vir'}
+];
+document.getElementById('kpis').innerHTML=K.map(k=>'<div class="kpi"><span class="k">'+k.k+'</span><span class="v c-'+k.c+'">'+k.v+'</span><span class="s">'+k.s+'</span></div>').join('');
+if(prox){const n=daysUntil(prox.data); document.getElementById('topChips').innerHTML='<span class="chip'+(n<=3?' hot':'')+'">Próximo prazo: '+esc(prox.data_lbl)+' · '+left(n)+'</span>';}
+document.getElementById('lista').innerHTML=lista.map(e=>{
+  const n=daysUntil(e.data), p=parecer(e.ls), st=p?LAB[p]:['Em análise',''];
+  return '<a class="tcard ed-card'+(n>=0&&n<=2?' alert-ring':'')+'" href="/'+e.slug+'/" data-sec="ficha"><span class="art">'+svg(ART[e.art]||ART.doc)+'</span><span class="body"><span class="et">'+esc(e.modalidade)+' · '+esc(e.numero)+'</span><h3>'+esc(e.orgao)+'</h3><span class="m">'+esc(e.objeto)+'</span><span class="s">'+esc(e.valor)+' · '+esc(e.valor_s)+'</span><span class="ed-meta"><span class="ed-chip'+(n>=0&&n<=2?' hot':'')+'">'+esc(e.evento)+': '+esc(e.data_lbl)+' · '+left(n)+'</span><span class="ed-chip '+st[1]+'">'+st[0]+'</span></span><span class="go">Abrir →</span></span></a>';
+}).join('')+'<div class="ed-new"><b>Novo edital</b><span>Envie o edital e o termo de referência em PDF na conversa. O painel é montado no mesmo formato e aparece aqui.</span></div>';
+})();
+</script>
+</body>
+</html>

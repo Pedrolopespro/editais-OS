@@ -1,8 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Painel de decisão do Pregão Eletrônico 319/2026 da Casa Civil: valores, riscos, conflitos do edital, simulador de lance e parecer final para decidir se vale a pena disputar.">
+<meta name="theme-color" content="#0D0D0F">
+<link rel="canonical" href="https://editais-os.vercel.app/pe-319-2026/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Sistema de Análise de Editais">
+<meta property="og:title" content="Vale a pena disputar o Pregão 319/2026?">
+<meta property="og:description" content="Painel de decisão do Pregão Eletrônico 319/2026 da Casa Civil: valores, riscos, conflitos do edital, simulador de lance e parecer final para decidir se vale a pena disputar.">
+<meta property="og:url" content="https://editais-os.vercel.app/pe-319-2026/">
+<meta property="og:image" content="https://editais-os.vercel.app/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vale a pena disputar o Pregão 319/2026?">
+<meta name="twitter:description" content="Painel de decisão do Pregão Eletrônico 319/2026 da Casa Civil: valores, riscos, conflitos do edital, simulador de lance e parecer final para decidir se vale a pena disputar.">
+<meta name="twitter:image" content="https://editais-os.vercel.app/og-image.jpg">
 <title>Pregão 319/2026 · Painel de Decisão</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
 /* Layout: tela inicial com números e cartões (um por assunto); cada cartão abre uma página com números no topo, conclusão em uma frase e detalhes recolhidos. Tema escuro fixo; cor só com significado: dourado = dinheiro e recomendação, azul = preço e informação, verde = ok, vermelho = risco e prazo. */
 :root{
   color-scheme:dark;
@@ -540,11 +569,17 @@ th{background:var(--surface-2)}
   animation:ring-spin 4.8s linear infinite}
 @keyframes ring-spin{to{--ring:360deg}}
 @media (prefers-reduced-motion:reduce){.tcard.alert-ring::after{animation:none}}
-</style>
 
+/* ===== sistema: voltar à lista de editais ===== */
+.sys-back{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:99px;border:1px solid var(--line-2);background:var(--surface)}
+.sys-back:hover{color:var(--ink);border-color:var(--ink)}
+.top-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap;min-width:0}
+</style>
+</head>
+<body>
 <div class="shell">
   <header class="top">
-    <a class="brand" href="#painel"><span class="brand-mark"><img src="{{LOGO}}" alt="Brasão da República"></span><span class="brand-txt"><b>Pregão Eletrônico 319/2026</b><span>Casa Civil da Presidência · Locação de veículos no Sudeste</span></span></a>
+    <div class="top-left"><a class="sys-back" href="/">← Editais</a><a class="brand" href="#painel"><span class="brand-mark"><img src="/assets/brasao.png" alt="Brasão da República"></span><span class="brand-txt"><b>Pregão Eletrônico 319/2026</b><span>Casa Civil da Presidência · Locação de veículos no Sudeste</span></span></a></div>
     <div class="top-chips" id="topChips"></div>
   </header>
   <nav class="crumbbar" id="crumbbar" aria-label="Localização" hidden></nav>
@@ -578,7 +613,7 @@ th{background:var(--surface-2)}
   <div class="cover">
     <div class="cover-main">
       <div class="org">
-        <div class="org-logo"><img src="{{LOGO}}" alt="Brasão da República Federativa do Brasil"></div>
+        <div class="org-logo"><img src="/assets/brasao.png" alt="Brasão da República Federativa do Brasil"></div>
         <div>
           <p>Presidência da República · Casa Civil · Secretaria de Administração · UASG 110001</p>
           <h1 id="h-visao">Pregão Eletrônico nº 319/2026</h1>
@@ -806,9 +841,9 @@ th{background:var(--surface-2)}
   <div class="block">
     <div class="block-h"><h3>Documentos prontos para protocolar</h3><span class="pill alta">Prazo: 17/11/2026</span></div>
     <div class="docs-grid">
-      <a class="doc-card" href="{{DOCS}}Impugnacao_Edital_PE_319-2026.docx" download><span class="doc-ico" aria-hidden="true">W</span><span class="doc-txt"><b>Impugnação ao Edital</b><span>5 pontos: seguro-garantia, consórcio, no show e hora extra, subcontratação e patrimônio líquido. Com anexos de conferência.</span></span><span class="doc-dl">Baixar .docx</span></a>
-      <a class="doc-card" href="{{DOCS}}Pedido_Esclarecimento_PE_319-2026.docx" download><span class="doc-ico" aria-hidden="true">W</span><span class="doc-txt"><b>Pedido de esclarecimento</b><span>12 perguntas técnicas: agente de missão, declarações, IMR, combustível, frota e outras.</span></span><span class="doc-dl">Baixar .docx</span></a>
-      <a class="doc-card" href="{{DOCS}}Pre-analise_Impugnacoes_PE_319-2026.docx" download><span class="doc-ico" aria-hidden="true">W</span><span class="doc-txt"><b>Pré-análise das impugnações</b><span>Recomendação, prioridades, análise ponto a ponto e passo a passo do protocolo.</span></span><span class="doc-dl">Baixar .docx</span></a>
+      <a class="doc-card" href="/docs/Impugnacao_Edital_PE_319-2026.docx" download><span class="doc-ico" aria-hidden="true">W</span><span class="doc-txt"><b>Impugnação ao Edital</b><span>5 pontos: seguro-garantia, consórcio, no show e hora extra, subcontratação e patrimônio líquido. Com anexos de conferência.</span></span><span class="doc-dl">Baixar .docx</span></a>
+      <a class="doc-card" href="/docs/Pedido_Esclarecimento_PE_319-2026.docx" download><span class="doc-ico" aria-hidden="true">W</span><span class="doc-txt"><b>Pedido de esclarecimento</b><span>12 perguntas técnicas: agente de missão, declarações, IMR, combustível, frota e outras.</span></span><span class="doc-dl">Baixar .docx</span></a>
+      <a class="doc-card" href="/docs/Pre-analise_Impugnacoes_PE_319-2026.docx" download><span class="doc-ico" aria-hidden="true">W</span><span class="doc-txt"><b>Pré-análise das impugnações</b><span>Recomendação, prioridades, análise ponto a ponto e passo a passo do protocolo.</span></span><span class="doc-dl">Baixar .docx</span></a>
     </div>
     <p class="hint">Minutas técnicas: complete os campos destacados em amarelo e peça revisão do jurídico antes de assinar.</p>
   </div>
@@ -851,7 +886,7 @@ th{background:var(--surface-2)}
       <span>Abas Resumo, Locação (220 preços), No show, Mão de obra e Combustível. Edite só as células amarelas: a coluna "Situação" avisa preço acima do máximo ou das regras do TR 5.11, e o Resumo mostra o desconto total.</span>
       <span class="hint">Abre para quem tiver acesso à planilha no Google Drive. Para a equipe, compartilhe pelo botão Compartilhar do Google.</span>
     </div>
-    <a class="btn" id="gsLink" href="{{GSHEET_URL}}" target="_blank" rel="noopener">Abrir no Google Planilhas ↗</a>
+    <a class="btn" id="gsLink" href="https://docs.google.com/spreadsheets/d/1cFpcnjMYYELUrMDFoKkHnlAA4HsiHpNEj_zaELSsDgk/edit" target="_blank" rel="noopener">Abrir no Google Planilhas ↗</a>
   </div>
 
   <div class="tiles six" id="planTiles"></div>
@@ -883,20 +918,9 @@ th{background:var(--surface-2)}
     <div class="block-h"><h3>Planilha original do órgão</h3></div>
     <div class="block">
       <div class="block-h"><span class="hint">Clique na imagem para ampliar.</span><button class="btn ghost small" id="zoomBtn" type="button">Ampliar</button></div>
-      <div class="sheet" id="sheet"><img src="{{PLANILHA}}" alt="Planilha de custo do Apêndice IV do Termo de Referência, com as 22 categorias, no show, diárias de motoristas e agentes, combustíveis e total de R$ 20.835.706,71" id="sheetImg" loading="lazy"></div>
+      <div class="sheet" id="sheet"><img src="/assets/planilha-apendice-iv.jpg" alt="Planilha de custo do Apêndice IV do Termo de Referência, com as 22 categorias, no show, diárias de motoristas e agentes, combustíveis e total de R$ 20.835.706,71" id="sheetImg" loading="lazy"></div>
     </div>
   </div>
-</section>
-
-<!-- ======================= 8. MATRIZ ======================= -->
-<section class="sec" id="sec-matriz" data-sec="matriz" aria-labelledby="h-matriz" hidden>
-  <header class="sec-head"><span class="sec-ico" data-icon="matriz"></span><div><p class="eyebrow">Decidir · 1 de 4</p><h2 id="h-matriz">Matriz de aderência da empresa</h2><p class="q">A empresa cumpre cada exigência? Se não, como vai suprir?</p></div></header>
-  <div class="verdict-bar wait" id="mxVerdict">
-    <div><h3 id="mxTitle">Decisão pendente</h3><p id="mxText"></p><div class="counts" id="mxCounts"></div></div>
-    <svg class="ring" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="32" fill="none" stroke="var(--surface)" stroke-width="9"/><circle id="mxRing" cx="40" cy="40" r="32" fill="none" stroke="var(--strong)" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 201" transform="rotate(-90 40 40)"/><text id="mxRingTxt" x="40" y="45" text-anchor="middle" font-size="15" font-weight="800" fill="var(--ink)">0%</text></svg>
-  </div>
-  <div class="block-h"><p class="hint">Marque cada linha. <b>Atende com ajuste</b> = vai suprir por consórcio, subcontratação, leasing ou outro meio (escreva qual na nota). Itens <span class="pill elim">Eliminatório</span> com "Não atende" geram recomendação de não participar.</p><span class="save-state" id="mxSave">Carregando…</span></div>
-  <div id="mxList" style="display:grid;gap:20px"></div>
 </section>
 
 <!-- ======================= 9. SIMULADOR ======================= -->
@@ -996,6 +1020,18 @@ th{background:var(--surface-2)}
   <div class="kit-groups" id="kitGroups"></div>
 </section>
 
+
+<!-- ======================= 8. MATRIZ ======================= -->
+<section class="sec" id="sec-matriz" data-sec="matriz" aria-labelledby="h-matriz" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="matriz"></span><div><p class="eyebrow">Decidir · 1 de 4</p><h2 id="h-matriz">Matriz de aderência da empresa</h2><p class="q">A empresa cumpre cada exigência? Se não, como vai suprir?</p></div></header>
+  <div class="verdict-bar wait" id="mxVerdict">
+    <div><h3 id="mxTitle">Decisão pendente</h3><p id="mxText"></p><div class="counts" id="mxCounts"></div></div>
+    <svg class="ring" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="32" fill="none" stroke="var(--surface)" stroke-width="9"/><circle id="mxRing" cx="40" cy="40" r="32" fill="none" stroke="var(--strong)" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 201" transform="rotate(-90 40 40)"/><text id="mxRingTxt" x="40" y="45" text-anchor="middle" font-size="15" font-weight="800" fill="var(--ink)">0%</text></svg>
+  </div>
+  <div class="block-h"><p class="hint">Marque cada linha. <b>Atende com ajuste</b> = vai suprir por parceria, contratação ou outro meio (escreva qual na nota). Itens <span class="pill elim">Eliminatório</span> com "Não atende" geram recomendação de não participar.</p><span class="save-state" id="mxSave">Carregando…</span></div>
+  <div id="mxList" style="display:grid;gap:20px"></div>
+</section>
+
 <!-- ======================= 12. PARECER ======================= -->
 <section class="sec" id="sec-parecer" data-sec="parecer" hidden>
   <header class="sec-head"></header>
@@ -1010,7 +1046,7 @@ th{background:var(--surface-2)}
     <div class="card">
       <div class="seg" role="group" aria-label="Decisão da empresa" id="parSeg"><button type="button" data-d="participar">Participar</button><button type="button" data-d="condicoes">Participar com condições</button><button type="button" data-d="nao">Não participar</button></div>
       <label for="parNota" class="hint">Justificativa e responsáveis</label>
-      <textarea id="parNota" placeholder="Participar em consórcio com a empresa parceira; o jurídico envia os pedidos de esclarecimento até 17/11."></textarea>
+      <textarea id="parNota" placeholder="Participar; responsável pela proposta e pelos documentos; prazos combinados com a equipe."></textarea>
       <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn" type="button" id="parBtn">Registrar parecer</button><span class="hint" id="parReg"></span></div>
     </div>
   </div>
@@ -1063,7 +1099,7 @@ const ILLU={
  parecer:'<path d="M80 18v58M60 80h40"/><circle cx="80" cy="16" r="3"/><path class="acc" d="M38 30h84"/><path d="M38 30l-12 24h24zM122 30l-12 24h24z"/><path d="M24 54a14 5 0 0 0 28 0M108 54a14 5 0 0 0 28 0"/>'
 };
 const ill=k=>'<svg class="ill" viewBox="0 0 160 90" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ILLU[k]||'')+'</svg>';
-const HOME_ART='<svg class="ill" viewBox="0 0 320 170" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 120V64h26v56M52 120V44h30v76M88 120V72h22v48M236 120V52h28v68M270 120V80h24v40" opacity=".28"/><path d="M4 136h312" opacity=".45"/><g class="drive-l"><g transform="translate(-6 74)">'+SEDAN+'</g></g><g class="drive-r"><g transform="translate(150 0)"><path d="M10 134V92c0-5 4-9 9-9h82c6 0 11 3 14 7l20 24c2 3 3 6 3 9v11"/><path d="M10 134h20M54 134h56M134 134h4"/><path d="M24 92h22v18H24zM54 92h22v18H54zM84 92h17c3 0 5 1 7 3l12 15H84z"/><circle class="acc" cx="42" cy="134" r="11"/><circle class="acc" cx="122" cy="134" r="11"/></g></g></svg>';
+let HOME_ART='<svg class="ill" viewBox="0 0 320 170" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 120V64h26v56M52 120V44h30v76M88 120V72h22v48M236 120V52h28v68M270 120V80h24v40" opacity=".28"/><path d="M4 136h312" opacity=".45"/><g class="drive-l"><g transform="translate(-6 74)">'+SEDAN+'</g></g><g class="drive-r"><g transform="translate(150 0)"><path d="M10 134V92c0-5 4-9 9-9h82c6 0 11 3 14 7l20 24c2 3 3 6 3 9v11"/><path d="M10 134h20M54 134h56M134 134h4"/><path d="M24 92h22v18H24zM54 92h22v18H54zM84 92h17c3 0 5 1 7 3l12 15H84z"/><circle class="acc" cx="42" cy="134" r="11"/><circle class="acc" cx="122" cy="134" r="11"/></g></g></svg>';
 
 /* ---------------- formatação ---------------- */
 const BRL=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
@@ -1075,6 +1111,7 @@ const parseNum=s=>{ if(typeof s==='number') return s; s=String(s||'').replace(/[
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const $=id=>document.getElementById(id);
 
+/* ===== Edital: Pregão Eletrônico 319/2026 (Casa Civil) ===== */
 /* ---------------- dados ---------------- */
 const REF=20835706.71;
 const COMPONENTS=[
@@ -1109,7 +1146,7 @@ const CATS=[
  ['V','Veículo para transporte de cadeirante',1000,5234.00,'']
 ];
 const LOC_TOTAL=14456136.20;
-const PL=/*PLANILHA_DATA*/null;
+const PL={"cats": [["A", "Executivo Blindado II", [168, 2400], [87, 300], [137, 1920], [39, 300], [1, 1920, 299], [1, 1440, 298], [1, 1200, 240], 709437.0], ["B", "Camioneta I Blindada 4x4 (SUV I)", [265, 3200], [150, 350], [100, 2560], [27, 350], [1, 2560, 349], [2, 1920, 348], [2, 1600, 320], 1176567.0], ["C", "Camioneta I Blindada 4x2 (SUV I)", [384, 3200], [111, 330], [186, 2560], [46, 330], [1, 2560, 329], [3, 1920, 328], [3, 1600, 320], 1770867.0], ["D", "Camioneta II Blindada (SUV II)", [169, 2980], [88, 310], [138, 2384], [40, 310], [1, 2384, 309], [1, 1788, 308], [1, 1490, 298], 878869.0], ["E", "Camioneta I 4x4 (SUV I)", [10, 2300], [6, 230], [9, 1840], [2, 230], [1, 2048, 229], [2, 1536, 228], [2, 1280, 227], 49764.0], ["F", "Camioneta I 4x2 (SUV I)", [153, 1900], [41, 190], [84, 1520], [17, 190], [1, 1890, 189], [2, 1488, 188], [1, 1240, 187], 436070.0], ["G", "Camioneta II (SUV II)", [100, 1500], [44, 150], [22, 1200], [1, 150], [1, 1490, 149], [1, 1392, 148], [1, 1160, 147], 187636.0], ["H", "Camioneta III (SUV III)", [383, 1400], [225, 140], [248, 1120], [55, 140], [1, 1390, 139], [1, 1188, 138], [1, 990, 137], 857142.0], ["I", "Caminhonete 4x4", [115, 1800], [54, 180], [38, 1440], [4, 180], [1, 1790, 179], [2, 1476, 178], [2, 1230, 177], 279896.0], ["J", "Caminhonete 4x2", [100, 1500], [43, 150], [22, 1200], [1, 150], [1, 1452, 149], [1, 1452, 148], [1, 1210, 147], 187558.0], ["K", "Executivo II", [382, 1000], [225, 100], [248, 800], [55, 100], [1, 960, 99], [1, 864, 98], [1, 777.6, 97], 611295.6], ["L", "Sedan", [2801, 680], [412, 68], [2014, 544], [221, 68], [1, 670, 67], [2, 528, 66], [2, 440, 36], 3046115.0], ["M", "Van teto baixo", [23, 1100], [7, 110], [20, 880], [1, 110], [1, 1090, 109], [1, 1080, 108], [1, 1070, 107], 47344.0], ["N", "Van Executiva", [1128, 1500], [356, 150], [974, 1200], [78, 150], [1, 1490, 149], [1, 1480, 148], [1, 1240, 147], 2930554.0], ["O", "Van Furgão", [37, 1500], [12, 150], [32, 1200], [4, 150], [1, 1490, 149], [1, 1440, 148], [1, 1200, 147], 100874.0], ["P", "Utilitário Furgão", [50, 850], [88, 85], [39, 680], [23, 85], [1, 840, 84], [1, 830, 83], [1, 820, 82], 81194.0], ["Q", "Ônibus Rodoviário", [24, 3500], [82, 350], [75, 2800], [33, 350], [1, 3490, 349], [1, 3480, 348], [1, 3369.6, 347], 345633.6], ["R", "Ônibus Urbano", [25, 3200], [82, 320], [75, 2560], [33, 320], [1, 3190, 319], [1, 2640, 318], [1, 2200, 317], 317784.0], ["S", "Micro-ônibus", [8, 2800], [50, 280], [31, 2240], [10, 280], [1, 2790, 279], [1, 2580, 278], [1, 2150, 277], 116994.0], ["T", "Microcaminhão", [50, 1500], [137, 150], [173, 1200], [12, 150], [1, 1490, 149], [2, 1480, 148], [1, 1470, 147], 311314.0], ["U", "Guincho", [1, 1300], [1, 130], [2, 1040], [2, 130], [1, 1290, 129], [1, 1280, 128], [1, 1270, 127], 7994.0], ["V", "Veículo para transporte de cadeirante", [1, 1000], [1, 100], [1, 800], [1, 100], [1, 990, 99], [1, 980, 98], [1, 970, 97], 5234.0]], "noshow": {"A": [1, 1344], "B": [7, 1792], "C": [1, 1792], "D": [1, 1680.8], "E": [1, 1433.6], "F": [7, 1330], "G": [1, 1050], "H": [1, 980], "I": [1, 1260], "J": [1, 1050], "K": [1, 700], "L": [30, 476], "M": [1, 770], "N": [14, 1050], "O": [1, 1050], "P": [4, 595], "Q": [1, 2450], "R": [1, 2240], "S": [1, 1960], "T": [1, 1050], "U": [1, 910], "V": [1, 700]}, "mao": [["Motorista", "diária", 7501, 380.0], ["Motorista com adicional de 60%", "diária", 2658, 608.0], ["Hora extra de motorista", "hora", 5344, 60.8], ["Agente de missão", "diária", 300, 1380.0], ["Agente de missão com adicional de 60%", "diária", 178, 2208.0]], "comb": [["Etanol", 43078, 3.88], ["Diesel S10", 48008, 6.91], ["Gasolina", 22739, 6.41]], "totais": {"loc": 14456136.2, "ns": 75634.4, "mot": 4791359.2, "age": 807024.0, "comb": 705552.91, "total": 20835706.71}};
 
 const CONFLITOS=[
  {g:'alta',tipo:'Edital × TR',t:'Prazo do seguro-garantia',a:['Edital 9.2–9.4','Assinatura do contrato em 5 dias úteis da convocação.'],b:['TR 4.8–4.8.2','Apólice entregue até a assinatura; se não, perde-se a opção pelo seguro.'],why:'A Lei 14.133 (art. 96, §3º) assegura prazo mínimo de 1 mês entre a homologação e a assinatura para quem escolhe seguro-garantia. O texto não deixa isso expresso.',todo:'Pedir retificação para garantir o prazo legal sem perder a modalidade.'},
@@ -1197,7 +1234,6 @@ const SIM_PARAMS=[
 ];
 const SIM_DEF=()=>{const o={lance:19200000}; COMPONENTS.forEach(c=>{if(!c.fixed)o['c_'+c.k]=c.def}); SIM_PARAMS.forEach(p=>o[p.k]=p.def); return o;};
 
-const ETAPAS=[{n:1,nome:'Entender'},{n:2,nome:'Riscos'},{n:3,nome:'Aderência'},{n:4,nome:'Preço'},{n:5,nome:'Parecer'}];
 const SECTIONS=[
  {id:'ficha',sec:'ficha',nome:'Ficha do edital',q:'Quais são os dados básicos do pregão?',etapa:1,min:2},
  {id:'condicoes',sec:'cond',nome:'Condições gerais',q:'Quais regras valem para o contrato e como a empresa é paga?',etapa:1,min:4},
@@ -1213,13 +1249,162 @@ const SECTIONS=[
  {id:'parecer',sec:'parecer',nome:'Parecer final',q:'Participar ou não participar?',etapa:5,min:3}
 ];
 
+const TAKE={
+ ficha:()=>'Pregão eletrônico de menor preço, item único, sem benefício para ME/EPP. Os 11 dados básicos e o objeto completo estão abaixo.',
+ condicoes:()=>'Contrato de 12 meses (até 10 anos), garantia de 5% e pagamento por diária. Sedan e Van Executiva somam 41% da locação.',
+ operacao:()=>'Exige atender em 4 h nas capitais e 6 h no interior dos 4 estados, com 16 veículos próprios já na assinatura.',
+ qualificacao:()=>'Para habilitar: atestados com 1 blindado, 2 caminhonetes, 6 Executivo II e 10 Sedan, e índices contábeis acima de 1.',
+ declaracoes:()=>'3 declarações e 2 termos precisam estar prontos para enviar em até 2 horas depois do lance.',
+ conflitos:()=>CONFLITOS.filter(c=>c.g==='alta').length+' pontos podem mudar seu preço ou te inabilitar. O prazo para questionar o órgão vence em 17/11 ('+leftTxt(daysUntil(2026,11,17))+').',
+ planilha:()=>'Os preços do órgão são o teto da sua proposta. A própria planilha tem no show acima do limite em 19 de 22 categorias.',
+ matriz:()=>{const s=matrizSummary(); return s.title+': '+s.evaluated+' de '+s.all.length+' requisitos avaliados.';},
+ kit:()=>{const a=KIT.flatMap(g=>g.itens),d=a.filter(i=>state.kit.done[i.id]).length; return d+' de '+a.length+' documentos prontos. Cada um que faltar no prazo de 2 horas pode custar o contrato.';},
+ simulador:()=>{const r=calc(state.sim); return isFinite(r.Pmin)?'Com os custos informados, seu lance mínimo é '+fmt0(r.Pmin)+' (desconto máximo de '+pct(Math.max(0,1-r.Pmin/REF))+')'+(isDefault()?', ainda com custos de exemplo.':'.'):'Com os percentuais atuais, nenhum preço cobre os custos.';},
+ riscos:()=>{const r=calc(state.sim); const L=r.L>0?r.L:REF; return 'Antes de assinar, reserve cerca de '+fmt0(r.K)+' de capital de giro e '+fmt0(L*0.05)+' de garantia.';},
+ parecer:()=>{const p=parecerCalc(); return p.title+(p.title.endsWith('…')?' ':'. ')+(state.parecer.decisao?'O parecer da empresa já foi registrado.':'Registre a decisão da empresa no fim desta página.');}
+};
+const HN={
+ ficha:()=>[{v:'R$ 20,8 mi',l:'valor anual estimado',c:'gold'},{v:'23/11',l:'sessão pública, às 9h30',c:'ink'},{v:'12 meses',l:'vigência, prorrogável até 10 anos',c:'ink'}],
+ condicoes:()=>[{v:'R$ 1,04 mi',l:'garantia contratual de 5%',c:'gold'},{v:'41%',l:'da locação em Sedan e Van Executiva',c:'blue'},{v:'IPCA',l:'reajuste após 12 meses',c:'ink'}],
+ operacao:()=>[{v:'16',l:'veículos próprios na assinatura',c:'ink'},{v:'4 h',l:'para atender nas capitais',c:'blue'},{v:'6 h',l:'para atender no interior',c:'blue'}],
+ qualificacao:()=>[{v:'19',l:'veículos a comprovar em atestados',c:'red'},{v:'> 1',l:'índices LG, LC e SG exigidos',c:'ink'},{v:'R$ 2,08 mi',l:'patrimônio líquido alternativo',c:'gold'}],
+ declaracoes:()=>[{v:'3',l:'declarações exigidas',c:'ink'},{v:'2',l:'termos enviados por cautela',c:'ink'},{v:'2 h',l:'prazo depois do lance',c:'red'}],
+ conflitos:()=>{const n=daysUntil(2026,11,17); return [{v:String(CONFLITOS.filter(c=>c.g==='alta').length),l:'de alta gravidade',c:'red'},{v:String(CONFLITOS.length),l:'pontos no total',c:'ink'},{v:n<0?'encerrado':n===0?'hoje':n+(n===1?' dia':' dias'),l:'para questionar (até 17/11)',c:'red'}];},
+ planilha:()=>[{v:'R$ 20,8 mi',l:'total de referência',c:'gold'},{v:'220',l:'preços de locação a cotar',c:'ink'},{v:'19 de 22',l:'no show acima do teto',c:'red'}],
+ matriz:()=>{const s=matrizSummary(); return [{v:(s.c.atende+s.c.ajuste)+' de '+s.all.length,l:'atendidos, com ou sem ajuste',c:'green'},{v:String(s.c.verificar),l:'a verificar',c:'ink'},{v:String(s.blockers.length),l:'bloqueios eliminatórios',c:'red'}];},
+ kit:()=>{const g=KIT.map(x=>x.itens.filter(i=>state.kit.done[i.id]).length+' de '+x.itens.length); const a=KIT.flatMap(x=>x.itens); return [{v:a.filter(i=>state.kit.done[i.id]).length+' de '+a.length,l:'documentos prontos',c:'green'},{v:g[0],l:'proposta ajustada',c:'ink'},{v:g[1],l:'habilitação',c:'ink'}];},
+ simulador:()=>{const r=calc(state.sim), ok=isFinite(r.Pmin); return [{v:ok?fmtMi(r.Pmin):'—',l:'lance mínimo viável',c:'blue'},{v:ok?pct(Math.max(0,1-r.Pmin/REF)):'—',l:'desconto máximo',c:'blue'},{v:isFinite(r.margL)?pct(r.margL):'—',l:'margem no lance testado',c:r.margL<0?'red':'green'}];},
+ riscos:()=>{const r=calc(state.sim), L=r.L>0?r.L:REF; return [{v:fmtMi(r.K),l:'capital de giro estimado',c:'gold'},{v:fmtMi(L*0.05),l:'garantia contratual',c:'gold'},{v:'~85 dias',l:'até o primeiro pagamento',c:'ink'}];},
+ parecer:()=>{const p=parecerCalc(); return [{v:p.title,l:'recomendação calculada',c:'gold'},{v:Math.round(overallProgress()*100)+'%',l:'da análise concluída',c:'ink'},{v:String(p.steps.length),l:'próximos passos',c:'ink'}];}
+};
+const CARD={
+ ficha:()=>({m:'R$ 20,8 mi',s:'sessão em 23/11 · 9h30'}),
+ condicoes:()=>({m:'12 meses',s:'garantia de 5% · até 10 anos'}),
+ operacao:()=>({m:'16 veículos',s:'4 h nas capitais · 6 h no interior'}),
+ qualificacao:()=>({m:'4 atestados',s:'eliminatório',c:'alert'}),
+ declaracoes:()=>({m:'5 documentos',s:'enviar em até 2 horas',c:'warn'}),
+ conflitos:()=>({m:CONFLITOS.length+' pontos',s:CONFLITOS.filter(c=>c.g==='alta').length+' de alta gravidade',c:'alert'}),
+ planilha:()=>({m:'220 preços',s:'19 de 22 no show acima do teto',c:'alert'}),
+ matriz:()=>{const s=matrizSummary(); return {m:(s.c.atende+s.c.ajuste)+' de '+s.all.length,s:s.title,c:s.kind==='go'?'ok':s.kind==='nogo'?'alert':'warn'};},
+ kit:()=>{const a=KIT.flatMap(x=>x.itens), d=a.filter(i=>state.kit.done[i.id]).length; return {m:d+' de '+a.length,s:'documentos prontos',c:d===a.length?'ok':''};},
+ simulador:()=>{const r=calc(state.sim); return {m:isFinite(r.Pmin)?fmtMi(r.Pmin):'—',s:'lance mínimo viável'+(isDefault()?' · exemplo':'')};},
+ riscos:()=>{const r=calc(state.sim); return {m:fmtMi(r.K),s:'capital de giro até receber'};},
+ parecer:()=>{const p=parecerCalc(); return {m:p.title,s:state.parecer.decisao?'decisão registrada':'registrar a decisão',c:p.kind==='go'?'ok':p.kind==='nogo'?'alert':'warn'};}
+};
+/* ---------------- condições gerais ---------------- */
+function renderComposition(){
+  $('stack').innerHTML=COMPONENTS.map(c=>'<i style="width:'+(c.v/REF*100)+'%;background:'+c.cor+'" title="'+esc(c.nome)+'"></i>').join('');
+  $('legend').innerHTML=COMPONENTS.map(c=>'<li><span class="sw" style="background:'+c.cor+'"></span><span><b>'+c.nome+'</b> <span class="hint">· '+c.det+'</span></span><span class="r">'+fmt(c.v)+'</span><span class="r p">'+pct(c.v/REF)+'</span></li>').join('')+'<li><span></span><span><b>Total do item</b></span><span class="r"><b>'+fmt(REF)+'</b></span><span class="r p">100%</span></li>';
+  const max=Math.max(...CATS.map(c=>c[3]));
+  $('catTable').querySelector('tbody').innerHTML=CATS.map(c=>{const sh=c[3]/LOC_TOTAL; const tag=c[4]==='frota'?'<span class="pill elim">Atestado + frota própria</span>':c[4]==='atestado'?'<span class="pill att">Atestado</span>':''; return '<tr'+(c[4]?' class="hl"':'')+'><td><span class="cat-code">'+c[0]+'</span></td><td>'+c[1]+'</td><td class="r">'+fmt(c[2])+'</td><td class="r">'+fmt(c[3])+'</td><td><div class="barcell"><div class="bar"><i style="width:'+(c[3]/max*100)+'%"></i></div><span class="num" style="font-size:12.5px;text-align:right">'+pct(sh)+'</span></div></td><td>'+tag+'</td></tr>';}).join('')+'<tr><td></td><td><b>Subtotal locação</b></td><td></td><td class="r"><b>'+fmt(LOC_TOTAL)+'</b></td><td></td><td></td></tr>';
+  $('planTiles').innerHTML=COMPONENTS.map((c,i)=>'<div class="tile t'+(i+1)+'"><span class="k">'+c.nome+'</span><span class="v">'+fmt0(c.v)+'</span><span class="s">'+pct(c.v/REF)+' do total</span></div>').join('')+'<div class="tile t6"><span class="k">Total do item</span><span class="v">'+fmt0(REF)+'</span><span class="s">valor anual estimado</span></div>';
+}
+
+/* ---------------- planilha ---------------- */
+function renderPlanilha(){
+  if(!PL) return;
+  const r2=n=>Math.round(n*100)/100;
+  // locação
+  let h='<thead><tr><th rowspan="2">Cód.</th><th rowspan="2">Categoria</th><th class="fx fx1" colspan="3">Até 6 dias</th><th class="fx fx2">7 a 14 dias</th><th class="fx fx3">15 a 29 dias</th><th class="fx fx4">30 dias ou mais</th><th class="r" rowspan="2">Valor anual</th></tr>'
+   +'<tr><th class="fx fx1 r">Diária 24 h</th><th class="fx fx1 r">Diária 10 h</th><th class="fx fx1 r">Hora extra</th><th class="fx fx2 r">Diária 24 h</th><th class="fx fx3 r">Diária 24 h</th><th class="fx fx4 r">Diária 24 h</th></tr></thead><tbody>';
+  PL.cats.forEach(c=>{
+    const [cod,nome,d24,he24,d10,he10,f2,f3,f4,tot]=c;
+    h+='<tr><td><span class="cat-code">'+cod+'</span></td><td>'+esc(nome)+'</td>'
+      +'<td class="r fx1">'+fmt(d24[1])+'<span class="sub">'+NUM.format(d24[0])+' diárias</span></td>'
+      +'<td class="r fx1">'+fmt(d10[1])+'<span class="sub">'+NUM.format(d10[0])+' diárias</span></td>'
+      +'<td class="r fx1">'+fmt(he24[1])+'<span class="sub">'+NUM.format(he24[0]+he10[0])+' h</span></td>'
+      +'<td class="r fx2">'+fmt(f2[1])+'</td>'
+      +'<td class="r fx3'+(f3[2]>r2(f3[1]*0.2)+0.004?' warn':'')+'">'+fmt(f3[1])+(f3[2]>r2(f3[1]*0.2)+0.004?'<span class="sub" style="color:var(--bad)">HE '+fmt(f3[2])+' &gt; 20%</span>':'')+'</td>'
+      +'<td class="r fx4">'+fmt(f4[1])+'</td><td class="r"><b>'+fmt(tot)+'</b></td></tr>';
+  });
+  h+='<tr class="tot"><td></td><td>Total da locação</td><td colspan="6"></td><td class="r">'+fmt(PL.totais.loc)+'</td></tr></tbody>';
+  $('plLoc').innerHTML=h;
+  // no show
+  let bad=0, exc=0;
+  let n='<thead><tr><th>Cód.</th><th>Categoria</th><th class="r">Qtde</th><th class="r">Diária 10 h</th><th class="r">Teto 70%</th><th class="r">Planilha do órgão</th><th class="r">Excesso por unidade</th></tr></thead><tbody>';
+  PL.cats.forEach(c=>{
+    const cod=c[0], d10=c[4][1], teto=r2(d10*0.7), ns=PL.noshow[cod], ex=r2(Math.max(0,ns[1]-teto));
+    if(ex>0){bad++; exc+=ex*ns[0];}
+    n+='<tr'+(ex>0?' class="bad"':'')+'><td><span class="cat-code">'+cod+'</span></td><td>'+esc(c[1])+'</td><td class="r">'+NUM.format(ns[0])+'</td><td class="r">'+fmt(d10)+'</td><td class="r">'+fmt(teto)+'</td><td class="r">'+fmt(ns[1])+'</td><td class="r'+(ex>0?' warn':'')+'">'+(ex>0?fmt(ex):'—')+'</td></tr>';
+  });
+  n+='<tr class="tot"><td></td><td>Total no ano</td><td colspan="3"></td><td class="r">'+fmt(PL.totais.ns)+'</td><td class="r">'+fmt(exc)+'</td></tr></tbody>';
+  $('plNs').innerHTML=n; $('plNsBadge').textContent=bad+' de '+PL.cats.length+' acima do teto';
+  // mão de obra
+  $('plMo').innerHTML='<thead><tr><th>Item</th><th class="r">Qtde</th><th class="r">Preço máximo</th><th class="r">Total</th></tr></thead><tbody>'
+    +PL.mao.map(m=>'<tr><td>'+esc(m[0])+'<span class="sub">por '+m[1]+'</span></td><td class="r">'+NUM.format(m[2])+'</td><td class="r">'+fmt(m[3])+'</td><td class="r">'+fmt(r2(m[2]*m[3]))+'</td></tr>').join('')
+    +'<tr class="tot"><td>Total</td><td></td><td></td><td class="r">'+fmt(PL.totais.mot+PL.totais.age)+'</td></tr></tbody>';
+  $('plMo').style.minWidth='0';
+  $('plComb').innerHTML='<thead><tr><th>Combustível</th><th class="r">Litros</th><th class="r">ANP (R$/L)</th><th class="r">Total</th></tr></thead><tbody>'
+    +PL.comb.map(c=>'<tr><td>'+esc(c[0])+'</td><td class="r">'+NUM.format(c[1])+'</td><td class="r">'+fmt(c[2])+'</td><td class="r">'+fmt(r2(c[1]*c[2]*1.0945))+'</td></tr>').join('')
+    +'<tr class="tot"><td>Total</td><td></td><td></td><td class="r">'+fmt(PL.totais.comb)+'</td></tr></tbody>';
+  $('plComb').style.minWidth='0';
+}
+function toggleZoom(){const s=$('sheet'); s.classList.toggle('zoom'); $('zoomBtn').textContent=s.classList.contains('zoom')?'Ajustar à largura':'Ampliar';}
+$('zoomBtn').addEventListener('click',toggleZoom); $('sheetImg').addEventListener('click',toggleZoom);
+
+/* ---------------- riscos ---------------- */
+function renderRiscos(r){
+  const L=r.L>0?r.L:REF;
+  const T=[
+   ['Faturamento mensal médio',fmt0(L/12),'lance ÷ 12','t4'],
+   ['Garantia de 5%',fmt0(L*0.05),'até a assinatura ou 10 dias úteis','t1'],
+   ['Capital de giro estimado',fmt0(r.K),'custos de '+NUM.format(state.sim.ciclo)+' dias','t5'],
+   ['Combustível adiantado',fmt0(705552.91/12),'por mês, reembolsado depois','t3']
+  ];
+  $('riskTiles').innerHTML=T.map(t=>'<div class="tile '+t[3]+'"><span class="k">'+t[0]+'</span><span class="v">'+t[1]+'</span><span class="s">'+t[2]+'</span></div>').join('');
+}
+function renderImr(){
+  const v=parseNum($('imr-v').value), d=parseNum($('imr-d').value), n=parseNum($('imr-n').value), m=parseNum($('imr-m').value);
+  const tot=v*d; const y=tot>0?Math.min(1,n/tot):0;
+  $('imrOut').innerHTML=svg('alert')+'<p>Total de '+NUM.format(tot)+' veículos-dia. Y = '+pct(y,2)+'. A ordem de serviço cai de '+fmt(m)+' para <b>'+fmt(m*(1-y))+'</b> (desconto de '+fmt(m*y)+'). No comboio presidencial, abre também processo de penalidade.</p>';
+}
+['imr-v','imr-d','imr-n','imr-m'].forEach(id=>$(id).addEventListener('input',renderImr));
+
+
+const E={
+  slug:'pe-319-2026', docPrefix:'', lsPrefix:'pe319-',
+  ref:REF, teto:REF, garantiaPct:0.05, giro:'mensal',
+  sessao:[2026,11,23], sessaoNome:'Sessão', chip:'R$ 20,8 mi · item único',
+  deadlines:[
+   {d:[2026,11,17],lbl:'17/11',t:'Último dia para impugnar e pedir esclarecimento',s:'Edital 12.1 · e-mail ',mail:'cpl@presidencia.gov.br'},
+   {d:[2026,11,17],lbl:'17/11',t:'SICAF com condições atendidas',s:'3º dia útil antes da sessão · Edital 2.2'},
+   {d:[2026,11,19],lbl:'19/11',t:'Limite para o órgão responder',s:'Último dia útil antes da sessão · Edital 12.2'},
+   {d:[2026,11,23],lbl:'23/11 · 9h30',t:'Sessão pública no Compras.gov.br',s:'Envio da proposta até a abertura · Edital 4.2'}
+  ],
+  prazoQuestionar:[2026,11,17],
+  sim:{
+    tetoNome:'valor máximo', refNome:'referência', artExeq:'Edital 7.8–7.10', artAcima:'Edital 7.7.3',
+    tetoLabel:()=>'Referência<br>R$ 20,8 mi',
+    minSub:r=>'≈ '+fmt0(r.Pmin/12)+' por mês',
+    margSub:r=>'≈ '+fmt0(r.margL*r.L)+' por ano',
+    descValue:(r,ok,ref)=>ok?(r.Pmin<ref?pct(1-r.Pmin/ref):'sem desconto'):'—',
+    passo:L=>L*0.001
+  },
+  kpis(x){ const {s,r,exemplo,ok}=x; const dImp=daysUntil(2026,11,17); return [
+   {href:'planilha',k:'Valor anual estimado',v:'R$ 20,8 mi',c:'gold',s:'item único · 22 categorias de veículos'},
+   {href:'simulador',k:'Desconto máximo viável',v:ok?pct(Math.max(0,1-r.Pmin/REF)):'—',c:'blue',s:ok?'lance mínimo '+fmtMi(r.Pmin)+(exemplo?' (custos de exemplo)':''):'revise o simulador'},
+   {href:'conflitos',k:'Conflitos graves',v:String(CONFLITOS.filter(c=>c.g==='alta').length),c:'red',s:'questionar até 17/11 ('+leftTxt(dImp)+')'},
+   {href:'matriz',k:'Requisitos atendidos',v:(s.c.atende+s.c.ajuste)+' de '+s.all.length,c:'green',s:s.c.verificar?s.c.verificar+' a verificar na matriz':(s.blockers.length?s.blockers.length+' bloqueio(s)':'todos avaliados')}
+  ]; },
+  precoTxt:r=>'Lance mínimo de '+fmt0(r.Pmin)+', desconto máximo de '+pct(Math.max(0,1-r.Pmin/REF))+'.'+(r.Pmin<0.5*REF?' Abaixo de 50% da referência: exige prova de exequibilidade.':''),
+  riscosTxt:d=>'Seguro-garantia, consórcio, subcontratação, no show e patrimônio líquido. Prazo para questionar: 17/11 ('+leftTxt(d)+').',
+  prepTxt:(r,L)=>'Documentos do kit das 2 horas prontos. Caixa: cerca de '+fmt0(r.K)+' de capital de giro e '+fmt0(L*0.05)+' de garantia.',
+  passoBloqueio:'Avaliar consórcio ou parceria que supra essas exigências antes de desistir.',
+  exeqStep:'Preparar a prova de exequibilidade do preço (Edital 7.8 a 7.10).',
+  questionarStep:a=>'Decidir até 17/11 se vai pedir esclarecimento ou impugnar os '+a+' pontos de alta gravidade.',
+  stepsGo:['Revisar os preços finais na Google Planilha.','Cadastrar a proposta no Compras.gov.br antes de 23/11, às 9h30.'],
+  init(){ renderComposition(); renderPlanilha(); renderImr(); },
+  onSim(r){ renderRiscos(r); }
+};
+
+const ETAPAS=[{n:1,nome:'Entender'},{n:2,nome:'Riscos'},{n:3,nome:'Aderência'},{n:4,nome:'Preço'},{n:5,nome:'Parecer'}];
 /* ---------------- estado e armazenamento ---------------- */
 const state={matriz:{status:{},notas:{}},kit:{done:{}},sim:SIM_DEF(),parecer:{decisao:'',nota:'',em:''},prog:{done:{}}};
-const DOCS={matriz:'analise/matriz',kit:'analise/kit',sim:'analise/simulador',parecer:'analise/parecer'};
+const DOCS={matriz:E.docPrefix+'analise/matriz',kit:E.docPrefix+'analise/kit',sim:E.docPrefix+'analise/simulador',parecer:E.docPrefix+'analise/parecer'};
 const SAVE_EL={matriz:'mxSave',kit:'kitSave',sim:'simSave',parecer:'parSave'};
 let db=null, mode='local';
-const lsGet=k=>{try{const v=localStorage.getItem('pe319-'+k);return v?JSON.parse(v):null}catch(e){return null}};
-const lsSet=(k,v)=>{try{localStorage.setItem('pe319-'+k,JSON.stringify(v))}catch(e){}};
+const lsGet=k=>{try{const v=localStorage.getItem(E.lsPrefix+k);return v?JSON.parse(v):null}catch(e){return null}};
+const lsSet=(k,v)=>{try{localStorage.setItem(E.lsPrefix+k,JSON.stringify(v))}catch(e){}};
 function setSave(name,cls,txt){const el=$(SAVE_EL[name]); if(!el)return; el.className='save-state'+(cls?' '+cls:''); el.textContent=txt;}
 const timers={}, writing={}, pending={};
 function persist(name){
@@ -1275,7 +1460,7 @@ let currentId='painel';
 const fmtMi=n=>'R$ '+(n/1e6).toLocaleString('pt-BR',{maximumFractionDigits:n<1e7?2:1})+' mi';
 function buildNav(){
   $('homeArt').innerHTML=HOME_ART;
-  $('cards').innerHTML=SECTIONS.map(s=>'<a class="tcard'+(s.id==='conflitos'?' alert-ring':'')+'" href="#'+s.id+'" data-sec="'+s.sec+'"><span class="art">'+ill(s.sec)+'<span class="done" id="cd-'+s.id+'" hidden>✓ concluída</span></span><span class="body"><span class="et">Etapa '+s.etapa+' · '+ETAPAS[s.etapa-1].nome+'</span><h3>'+s.nome+'</h3><span class="m" id="cm-'+s.id+'"></span><span class="s" id="cs-'+s.id+'"></span><span class="go">Abrir →</span></span></a>').join('');
+  $('cards').innerHTML=SECTIONS.map(s=>'<a class="tcard'+(s.id==='conflitos'?' alert-ring':'')+'" href="#'+s.id+'" data-sec="'+s.sec+'"><span class="art">'+ill(s.art||s.sec)+'<span class="done" id="cd-'+s.id+'" hidden>✓ concluída</span></span><span class="body"><span class="et">Etapa '+s.etapa+' · '+ETAPAS[s.etapa-1].nome+'</span><h3>'+s.nome+'</h3><span class="m" id="cm-'+s.id+'"></span><span class="s" id="cs-'+s.id+'"></span><span class="go">Abrir →</span></span></a>').join('');
 }
 function route(){
   let id=(location.hash||'').replace('#','');
@@ -1301,27 +1486,12 @@ $('pager').addEventListener('click',e=>{const b=e.target.closest('.next-btn[data
 /* ---------------- prazos ---------------- */
 function daysUntil(y,m,d){const now=new Date(); const a=new Date(now.getFullYear(),now.getMonth(),now.getDate()); const b=new Date(y,m-1,d); return Math.round((b-a)/86400000);}
 function renderDeadlines(){
-  const D=[
-   {d:[2026,11,17],lbl:'17/11',t:'Último dia para impugnar e pedir esclarecimento',s:'Edital 12.1 · e-mail ',mail:true},
-   {d:[2026,11,17],lbl:'17/11',t:'SICAF com condições atendidas',s:'3º dia útil antes da sessão · Edital 2.2'},
-   {d:[2026,11,19],lbl:'19/11',t:'Limite para o órgão responder',s:'Último dia útil antes da sessão · Edital 12.2'},
-   {d:[2026,11,23],lbl:'23/11 · 9h30',t:'Sessão pública no Compras.gov.br',s:'Envio da proposta até a abertura · Edital 4.2'}
-  ];
-  $('deadlines').innerHTML=D.map(x=>{const n=daysUntil(...x.d); const left=n<0?'encerrado':n===0?'hoje':n===1?'amanhã':'em '+n+' dias'; return '<div class="dl'+(n>=0&&n<=4?' urgent':'')+'"><div class="d"><b>'+x.lbl+'</b><span class="left">'+left+'</span></div><p>'+x.t+'</p><span class="hint">'+x.s+(x.mail?'<span class="mono">cpl@presidencia.gov.br</span> <button class="copy" type="button" data-copy="cpl@presidencia.gov.br">copiar</button>':'')+'</span></div>';}).join('');
-  const n=daysUntil(2026,11,23);
-  $('topChips').innerHTML='<span class="chip'+(n<=10&&n>=0?' hot':'')+'">'+svg('cal')+(n>0?'Sessão em '+n+' dias':n===0?'Sessão hoje':'Sessão realizada')+'</span><span class="chip num">R$ 20,8 mi · item único</span>';
+  $('deadlines').innerHTML=E.deadlines.map(x=>{const n=daysUntil(...x.d); const left=n<0?'encerrado':n===0?'hoje':n===1?'amanhã':'em '+n+' dias'; return '<div class="dl'+(n>=0&&n<=2?' urgent':'')+'"><div class="d"><b>'+x.lbl+'</b><span class="left">'+left+'</span></div><p>'+x.t+'</p><span class="hint">'+x.s+(x.mail?'<span class="mono">'+x.mail+'</span> <button class="copy" type="button" data-copy="'+x.mail+'">copiar</button>':'')+'</span></div>';}).join('');
+  const n=daysUntil(...E.sessao);
+  $('topChips').innerHTML='<span class="chip'+(n<=10&&n>=0?' hot':'')+'">'+svg('cal')+(n>0?E.sessaoNome+' em '+n+(n===1?' dia':' dias'):n===0?E.sessaoNome+' hoje':E.sessaoNome+' realizada')+'</span><span class="chip num">'+E.chip+'</span>';
 }
 document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]'); if(!b) return; const t=b.dataset.copy; const done=()=>{b.textContent='copiado'; setTimeout(()=>b.textContent='copiar',1500)}; try{navigator.clipboard.writeText(t).then(done,()=>{selectText(b.previousElementSibling)})}catch(err){selectText(b.previousElementSibling)}});
 function selectText(el){try{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}catch(e){}}
-
-/* ---------------- condições gerais ---------------- */
-function renderComposition(){
-  $('stack').innerHTML=COMPONENTS.map(c=>'<i style="width:'+(c.v/REF*100)+'%;background:'+c.cor+'" title="'+esc(c.nome)+'"></i>').join('');
-  $('legend').innerHTML=COMPONENTS.map(c=>'<li><span class="sw" style="background:'+c.cor+'"></span><span><b>'+c.nome+'</b> <span class="hint">· '+c.det+'</span></span><span class="r">'+fmt(c.v)+'</span><span class="r p">'+pct(c.v/REF)+'</span></li>').join('')+'<li><span></span><span><b>Total do item</b></span><span class="r"><b>'+fmt(REF)+'</b></span><span class="r p">100%</span></li>';
-  const max=Math.max(...CATS.map(c=>c[3]));
-  $('catTable').querySelector('tbody').innerHTML=CATS.map(c=>{const sh=c[3]/LOC_TOTAL; const tag=c[4]==='frota'?'<span class="pill elim">Atestado + frota própria</span>':c[4]==='atestado'?'<span class="pill att">Atestado</span>':''; return '<tr'+(c[4]?' class="hl"':'')+'><td><span class="cat-code">'+c[0]+'</span></td><td>'+c[1]+'</td><td class="r">'+fmt(c[2])+'</td><td class="r">'+fmt(c[3])+'</td><td><div class="barcell"><div class="bar"><i style="width:'+(c[3]/max*100)+'%"></i></div><span class="num" style="font-size:12.5px;text-align:right">'+pct(sh)+'</span></div></td><td>'+tag+'</td></tr>';}).join('')+'<tr><td></td><td><b>Subtotal locação</b></td><td></td><td class="r"><b>'+fmt(LOC_TOTAL)+'</b></td><td></td><td></td></tr>';
-  $('planTiles').innerHTML=COMPONENTS.map((c,i)=>'<div class="tile t'+(i+1)+'"><span class="k">'+c.nome+'</span><span class="v">'+fmt0(c.v)+'</span><span class="s">'+pct(c.v/REF)+' do total</span></div>').join('')+'<div class="tile t6"><span class="k">Total do item</span><span class="v">'+fmt0(REF)+'</span><span class="s">valor anual estimado</span></div>';
-}
 
 /* ---------------- conflitos ---------------- */
 let confFilter='todos';
@@ -1334,48 +1504,6 @@ function renderConflitos(){
   const nb=$('navConfBadge'); if(nb) nb.textContent=counts.alta; $('confAltaTxt').textContent=counts.alta;
 }
 $('confFilters').addEventListener('click',e=>{const b=e.target.closest('[data-f]'); if(!b)return; confFilter=b.dataset.f; renderConflitos();});
-
-/* ---------------- planilha ---------------- */
-function renderPlanilha(){
-  if(!PL) return;
-  const r2=n=>Math.round(n*100)/100;
-  // locação
-  let h='<thead><tr><th rowspan="2">Cód.</th><th rowspan="2">Categoria</th><th class="fx fx1" colspan="3">Até 6 dias</th><th class="fx fx2">7 a 14 dias</th><th class="fx fx3">15 a 29 dias</th><th class="fx fx4">30 dias ou mais</th><th class="r" rowspan="2">Valor anual</th></tr>'
-   +'<tr><th class="fx fx1 r">Diária 24 h</th><th class="fx fx1 r">Diária 10 h</th><th class="fx fx1 r">Hora extra</th><th class="fx fx2 r">Diária 24 h</th><th class="fx fx3 r">Diária 24 h</th><th class="fx fx4 r">Diária 24 h</th></tr></thead><tbody>';
-  PL.cats.forEach(c=>{
-    const [cod,nome,d24,he24,d10,he10,f2,f3,f4,tot]=c;
-    h+='<tr><td><span class="cat-code">'+cod+'</span></td><td>'+esc(nome)+'</td>'
-      +'<td class="r fx1">'+fmt(d24[1])+'<span class="sub">'+NUM.format(d24[0])+' diárias</span></td>'
-      +'<td class="r fx1">'+fmt(d10[1])+'<span class="sub">'+NUM.format(d10[0])+' diárias</span></td>'
-      +'<td class="r fx1">'+fmt(he24[1])+'<span class="sub">'+NUM.format(he24[0]+he10[0])+' h</span></td>'
-      +'<td class="r fx2">'+fmt(f2[1])+'</td>'
-      +'<td class="r fx3'+(f3[2]>r2(f3[1]*0.2)+0.004?' warn':'')+'">'+fmt(f3[1])+(f3[2]>r2(f3[1]*0.2)+0.004?'<span class="sub" style="color:var(--bad)">HE '+fmt(f3[2])+' &gt; 20%</span>':'')+'</td>'
-      +'<td class="r fx4">'+fmt(f4[1])+'</td><td class="r"><b>'+fmt(tot)+'</b></td></tr>';
-  });
-  h+='<tr class="tot"><td></td><td>Total da locação</td><td colspan="6"></td><td class="r">'+fmt(PL.totais.loc)+'</td></tr></tbody>';
-  $('plLoc').innerHTML=h;
-  // no show
-  let bad=0, exc=0;
-  let n='<thead><tr><th>Cód.</th><th>Categoria</th><th class="r">Qtde</th><th class="r">Diária 10 h</th><th class="r">Teto 70%</th><th class="r">Planilha do órgão</th><th class="r">Excesso por unidade</th></tr></thead><tbody>';
-  PL.cats.forEach(c=>{
-    const cod=c[0], d10=c[4][1], teto=r2(d10*0.7), ns=PL.noshow[cod], ex=r2(Math.max(0,ns[1]-teto));
-    if(ex>0){bad++; exc+=ex*ns[0];}
-    n+='<tr'+(ex>0?' class="bad"':'')+'><td><span class="cat-code">'+cod+'</span></td><td>'+esc(c[1])+'</td><td class="r">'+NUM.format(ns[0])+'</td><td class="r">'+fmt(d10)+'</td><td class="r">'+fmt(teto)+'</td><td class="r">'+fmt(ns[1])+'</td><td class="r'+(ex>0?' warn':'')+'">'+(ex>0?fmt(ex):'—')+'</td></tr>';
-  });
-  n+='<tr class="tot"><td></td><td>Total no ano</td><td colspan="3"></td><td class="r">'+fmt(PL.totais.ns)+'</td><td class="r">'+fmt(exc)+'</td></tr></tbody>';
-  $('plNs').innerHTML=n; $('plNsBadge').textContent=bad+' de '+PL.cats.length+' acima do teto';
-  // mão de obra
-  $('plMo').innerHTML='<thead><tr><th>Item</th><th class="r">Qtde</th><th class="r">Preço máximo</th><th class="r">Total</th></tr></thead><tbody>'
-    +PL.mao.map(m=>'<tr><td>'+esc(m[0])+'<span class="sub">por '+m[1]+'</span></td><td class="r">'+NUM.format(m[2])+'</td><td class="r">'+fmt(m[3])+'</td><td class="r">'+fmt(r2(m[2]*m[3]))+'</td></tr>').join('')
-    +'<tr class="tot"><td>Total</td><td></td><td></td><td class="r">'+fmt(PL.totais.mot+PL.totais.age)+'</td></tr></tbody>';
-  $('plMo').style.minWidth='0';
-  $('plComb').innerHTML='<thead><tr><th>Combustível</th><th class="r">Litros</th><th class="r">ANP (R$/L)</th><th class="r">Total</th></tr></thead><tbody>'
-    +PL.comb.map(c=>'<tr><td>'+esc(c[0])+'</td><td class="r">'+NUM.format(c[1])+'</td><td class="r">'+fmt(c[2])+'</td><td class="r">'+fmt(r2(c[1]*c[2]*1.0945))+'</td></tr>').join('')
-    +'<tr class="tot"><td>Total</td><td></td><td></td><td class="r">'+fmt(PL.totais.comb)+'</td></tr></tbody>';
-  $('plComb').style.minWidth='0';
-}
-function toggleZoom(){const s=$('sheet'); s.classList.toggle('zoom'); $('zoomBtn').textContent=s.classList.contains('zoom')?'Ajustar à largura':'Ampliar';}
-$('zoomBtn').addEventListener('click',toggleZoom); $('sheetImg').addEventListener('click',toggleZoom);
 
 /* ---------------- matriz ---------------- */
 const ST=[['atende','Atende'],['ajuste','Atende com ajuste'],['nao','Não atende'],['verificar','A verificar']];
@@ -1411,88 +1539,78 @@ $('mxList').addEventListener('click',e=>{const b=e.target.closest('.seg button')
 $('mxList').addEventListener('input',e=>{const n=e.target.closest('[data-note]'); if(!n)return; state.matriz.notas[n.dataset.note]=n.value.slice(0,500); persist('matriz');});
 
 /* ---------------- simulador ---------------- */
+const RV=()=>E.ref!=null?E.ref:(state.sim.mercado||0);
+function compCost(c,sv){ if(c.fixed) return c.v; const x=Math.max(0,sv['c_'+c.k]||0); if(c.v==null) return x*(c.mult?Math.max(0,sv[c.mult]||0):1); return c.v*x/100; }
 function calc(sv){
-  let cdir=0; const parts=[];
-  COMPONENTS.forEach(c=>{const share=c.fixed?1:(Math.max(0,sv['c_'+c.k])/100); const v=c.v*share; cdir+=v; parts.push({c,v});});
-  const ind=cdir*sv.adm/100, C=cdir+ind;
-  const K=C/12*(sv.ciclo/30), F=K*(sv.juros/100)*12;
-  const g=sv.glosa/100,t=sv.trib/100,m=sv.marg/100,rg=sv.garan/100;
-  const den=(1-g)*(1-t)-m-0.05*rg;
+  let cdir=0; COMPONENTS.forEach(c=>{cdir+=compCost(c,sv);});
+  const ind=cdir*(sv.adm||0)/100, C=cdir+ind;
+  const unico=E.giro==='unico', ciclo=sv.ciclo||0, j=(sv.juros||0)/100;
+  const K=unico?C:C/12*(ciclo/30), F=unico?C*j*(ciclo/30):K*j*12;
+  const g=(sv.glosa||0)/100,t=(sv.trib||0)/100,m=(sv.marg||0)/100,rg=(sv.garan||0)/100, gp=E.garantiaPct||0;
+  const den=(1-g)*(1-t)-m-gp*rg;
   const Pmin=den>0?(C+F)/den:Infinity;
   const L=sv.lance;
-  const margL=L>0?((L*(1-g)*(1-t))-C-F-0.05*L*rg)/L:NaN;
-  return {cdir,ind,C,K,F,Pmin,L,margL,g,t,m,rg,parts};
+  const margL=L>0?((L*(1-g)*(1-t))-C-F-gp*L*rg)/L:NaN;
+  return {cdir,ind,C,K,F,Pmin,L,margL,g,t,m,rg,gp};
 }
 function buildSimForm(){
-  $('simCosts').innerHTML=COMPONENTS.map(c=>c.fixed?'<div class="field"><label>'+c.nome+'</label><small>'+fmt0(c.v)+' · repasse, custo igual à receita</small><div class="inp" style="background:transparent;border-style:dashed"><input value="100" disabled aria-label="'+c.nome+' em % da referência"><span class="u">%</span></div></div>':'<div class="field"><label for="sim-c_'+c.k+'">'+c.nome+'</label><small>referência '+fmt0(c.v)+' · seu custo = <b id="simv-'+c.k+'"></b></small><div class="inp"><input id="sim-c_'+c.k+'" inputmode="decimal" data-k="c_'+c.k+'"><span class="u">%</span></div></div>').join('');
-  $('simParams').innerHTML=SIM_PARAMS.map(p=>'<div class="field"><label for="sim-'+p.k+'">'+p.l+'</label><small>'+p.h+'</small><div class="inp"><input id="sim-'+p.k+'" inputmode="decimal" data-k="'+p.k+'"><span class="u">'+p.u+'</span></div></div>').join('');
+  $('simCosts').innerHTML=COMPONENTS.map(c=>{
+    if(c.fixed) return '<div class="field"><label>'+c.nome+'</label><small>'+fmt0(c.v)+' · repasse, custo igual à receita</small><div class="inp" style="background:transparent;border-style:dashed"><input value="100" disabled aria-label="'+c.nome+' em % da referência"><span class="u">%</span></div></div>';
+    const abs=c.v==null;
+    return '<div class="field"><label for="sim-c_'+c.k+'">'+c.nome+'</label><small>'+(abs?(c.det?c.det+' · ':''):'referência '+fmt0(c.v)+' · ')+'seu custo = <b id="simv-'+c.k+'"></b></small><div class="inp">'+(abs?'<span class="u">R$</span>':'')+'<input id="sim-c_'+c.k+'" inputmode="decimal" data-k="c_'+c.k+'">'+(abs?(c.mult?'<span class="u">/'+c.multU+'</span>':''):'<span class="u">%</span>')+'</div></div>';
+  }).join('');
+  $('simParams').innerHTML=SIM_PARAMS.map(p=>'<div class="field"><label for="sim-'+p.k+'">'+p.l+'</label><small>'+p.h+'</small><div class="inp">'+(p.u==='R$'?'<span class="u">R$</span>':'')+'<input id="sim-'+p.k+'" inputmode="decimal" data-k="'+p.k+'">'+(p.u==='R$'?'':'<span class="u">'+p.u+'</span>')+'</div></div>').join('');
 }
 function isDefault(){const d=SIM_DEF(); return Object.keys(d).every(k=>Math.abs((state.sim[k]??d[k])-d[k])<1e-9);}
 function renderSim(fromRemote){
-  document.querySelectorAll('#sec-simulador [data-k]').forEach(inp=>{ if(document.activeElement===inp && fromRemote!=='force') return; const k=inp.dataset.k; const v=state.sim[k]; inp.value = k==='lance'? NUM.format(Math.round(v)) : NUM.format(v); });
-  const r=calc(state.sim);
-  COMPONENTS.forEach(c=>{const el=$('simv-'+c.k); if(el) el.textContent=fmt0(c.v*state.sim['c_'+c.k]/100);});
+  document.querySelectorAll('#sec-simulador [data-k]').forEach(inp=>{ if(document.activeElement===inp && fromRemote!=='force') return; const k=inp.dataset.k; const v=state.sim[k]; inp.value = (k==='lance'||k==='mercado')? NUM.format(Math.round(v)) : NUM.format(v); });
+  const r=calc(state.sim), S=E.sim, REFV=RV(), TETO=E.teto;
+  COMPONENTS.forEach(c=>{const el=$('simv-'+c.k); if(el) el.textContent=fmt0(compCost(c,state.sim));});
   $('simExample').hidden=!isDefault();
   const ok=isFinite(r.Pmin);
-  $('oMin').textContent=ok?fmt0(r.Pmin):'Inviável'; $('oMinS').textContent=ok?'≈ '+fmt0(r.Pmin/12)+' por mês':'margem + tributos + glosa passam de 100%';
-  $('oDesc').textContent=ok?(r.Pmin<REF?pct(1-r.Pmin/REF):'sem desconto'):'—';
-  $('oMarg').textContent=isFinite(r.margL)?pct(r.margL):'—'; $('oMarg').style.color=r.margL<0?'var(--bad)':r.margL<state.sim.marg/100?'var(--warn)':'var(--good)';
-  $('oMargS').textContent=isFinite(r.margL)?'≈ '+fmt0(r.margL*r.L)+' por ano':'';
-  $('oNext').textContent=r.L>0?fmt0(r.L*0.999):'—';
-  // zona
-  const max=REF*1.06, X=v=>Math.max(0,Math.min(100,v/max*100));
-  const half=REF*0.5, pm=ok?Math.min(r.Pmin,max):max;
-  let z='<span class="zone-seg" style="left:0;width:'+X(half)+'%;background:var(--bad-bg);border-radius:10px 0 0 10px"></span>';
+  $('oMin').textContent=ok?fmt0(r.Pmin):'Inviável'; $('oMinS').textContent=ok?S.minSub(r):'margem e tributos passam de 100%';
+  $('oDesc').textContent=S.descValue(r,ok,REFV,TETO);
+  $('oMarg').textContent=isFinite(r.margL)?pct(r.margL):'—'; $('oMarg').style.color=r.margL<0?'var(--bad)':r.margL<(state.sim.marg||0)/100?'var(--warn)':'var(--good)';
+  $('oMargS').textContent=isFinite(r.margL)?S.margSub(r):'';
+  $('oNext').textContent=r.L>0?fmt0(Math.max(0,r.L-S.passo(r.L))):'—';
+  const max=Math.max(REFV,TETO)*1.06, X=v=>Math.max(0,Math.min(100,v/max*100));
+  const half=REFV*0.5, pm=ok?Math.min(r.Pmin,max):max;
+  let z='<span class="zone-seg" style="left:0;width:'+X(half)+'%;background:var(--bad-bg)"></span>';
   z+='<span class="zone-seg" style="left:'+X(half)+'%;width:'+Math.max(0,X(Math.max(pm,half))-X(half))+'%;background:var(--neutral-bg)"></span>';
-  if(ok&&r.Pmin<REF) z+='<span class="zone-seg" style="left:'+X(Math.max(r.Pmin,half))+'%;width:'+(X(REF)-X(Math.max(r.Pmin,half)))+'%;background:var(--good-bg)"></span>';
-  z+='<span class="zone-mark" style="left:'+X(REF)+'%;background:var(--ink)" title="Referência"></span>';
+  if(ok&&r.Pmin<TETO) z+='<span class="zone-seg" style="left:'+X(Math.max(r.Pmin,half))+'%;width:'+(X(TETO)-X(Math.max(r.Pmin,half)))+'%;background:var(--good-bg)"></span>';
+  z+='<span class="zone-mark" style="left:'+X(TETO)+'%;background:var(--ink)" title="'+S.tetoNome+'"></span>';
+  if(Math.abs(REFV-TETO)>1) z+='<span class="zone-mark" style="left:'+X(REFV)+'%;background:var(--muted)" title="'+S.refNome+'"></span>';
   if(ok) z+='<span class="zone-mark" style="left:'+X(r.Pmin)+'%;background:var(--blue)" title="Lance mínimo"></span>';
   if(r.L>0) z+='<span class="zone-mark" style="left:'+X(r.L)+'%;background:var(--warn);width:5px;transform:translateX(-2.5px)" title="Seu lance"></span>';
   $('zoneTrack').innerHTML=z;
   const lab=(v,t,cls)=>'<span class="'+(cls||'')+'" style="left:'+X(v)+'%">'+t+'</span>';
   let sc=lab(0,'R$ 0','start')+lab(half,'50%<br>'+fmt0(half).replace(/\s/g,' '));
-  sc+=lab(REF,'Referência<br>R$ 20,8 mi','end');
+  sc+=lab(TETO,S.tetoLabel(TETO),'end');
   $('zoneScale').innerHTML=sc;
-  // alertas
   const A=[]; const ico=k=>svg(k);
-  if(!ok) A.push(['bad','Com esses percentuais nenhum preço cobre os custos. Reduza margem, tributos ou glosa.']);
-  else if(r.Pmin>REF) A.push(['bad','Seu lance mínimo ('+fmt0(r.Pmin)+') passa do valor máximo. Nas condições informadas, a empresa não consegue competir.']);
-  else if(r.Pmin<half) A.push(['warn','Seu lance mínimo fica abaixo de 50% da referência. O pregoeiro vai exigir prova de exequibilidade (Edital 7.8–7.10).']);
-  else A.push(['ok','Há espaço para disputar entre '+fmt0(r.Pmin)+' e '+fmt0(REF)+' ('+pct(1-r.Pmin/REF)+' de desconto máximo).']);
+  if(!ok) A.push(['bad','Com esses percentuais nenhum preço cobre os custos. Reduza margem ou tributos.']);
+  else if(r.Pmin>TETO) A.push(['bad','Seu lance mínimo ('+fmt0(r.Pmin)+') passa do '+S.tetoNome+'. Nas condições informadas, a empresa não consegue competir.']);
+  else if(r.Pmin<half) A.push(['warn','Seu lance mínimo fica abaixo de 50% da '+S.refNome+'. O órgão pode exigir prova de exequibilidade ('+S.artExeq+').']);
+  else A.push(['ok','Há espaço para disputar entre '+fmt0(r.Pmin)+' e '+fmt0(TETO)+'.']);
   if(r.L>0){
-    if(r.L>REF) A.push(['bad','O lance informado está acima do valor máximo e seria desclassificado (Edital 7.7.3).']);
-    else if(r.L<half) A.push(['warn','O lance informado está abaixo de 50% da referência: indício de inexequibilidade.']);
+    if(r.L>TETO) A.push(['bad','O lance informado está acima do '+S.tetoNome+' ('+S.artAcima+').']);
+    else if(r.L<half) A.push(['warn','O lance informado está abaixo de 50% da '+S.refNome+': indício de inexequibilidade.']);
     else if(ok&&r.L<r.Pmin) A.push(['bad','O lance informado está abaixo do seu mínimo: a margem fica em '+pct(r.margL)+'.']);
   }
+  (S.extraAlerts?S.extraAlerts(r):[]).forEach(a=>A.push(a));
   $('simAlerts').innerHTML=A.map(a=>'<div class="alert '+a[0]+'">'+ico(a[0]==='ok'?'ok':'alert')+'<p>'+a[1]+'</p></div>').join('');
-  // decomposição do lance informado
-  const L=r.L>0?r.L:(ok?r.Pmin:REF);
-  const rows=[['Custo direto',r.cdir],['Despesas indiretas',r.ind],['Custo financeiro do capital de giro',r.F],['Garantia contratual (prêmio)',0.05*L*r.rg],['Tributos',L*(1-r.g)*r.t],['Desconto esperado do IMR',L*r.g]];
+  const L=r.L>0?r.L:(ok?r.Pmin:TETO);
+  const rows=[['Custo direto',r.cdir],['Despesas indiretas',r.ind],['Custo financeiro do capital de giro',r.F]];
+  if(r.gp) rows.push(['Garantia contratual (prêmio)',r.gp*L*r.rg]);
+  rows.push(['Tributos',L*(1-r.g)*r.t]);
+  if(r.g) rows.push(['Desconto esperado do IMR',L*r.g]);
   const used=rows.reduce((a,b)=>a+b[1],0); rows.push(['Margem líquida',L-used]);
   $('simBreak').innerHTML=rows.map(x=>'<tr><td>'+x[0]+'</td><td class="r"'+(x[1]<0?' style="color:var(--bad)"':'')+'>'+fmt0(x[1])+'</td><td class="r">'+pct(x[1]/L)+'</td></tr>').join('')+'<tr><td><b>Lance analisado</b></td><td class="r"><b>'+fmt0(L)+'</b></td><td class="r">100%</td></tr>';
-  renderRiscos(r);
+  if(E.onSim) E.onSim(r);
 }
 $('sec-simulador').addEventListener('input',e=>{const i=e.target.closest('[data-k]'); if(!i)return; state.sim[i.dataset.k]=parseNum(i.value); renderSim(); renderOverview(); persist('sim');});
 $('sec-simulador').addEventListener('change',e=>{const i=e.target.closest('[data-k]'); if(!i)return; renderSim('force');});
 $('simReset').addEventListener('click',()=>{state.sim=SIM_DEF(); renderSim('force'); renderOverview(); persist('sim');});
-
-/* ---------------- riscos ---------------- */
-function renderRiscos(r){
-  const L=r.L>0?r.L:REF;
-  const T=[
-   ['Faturamento mensal médio',fmt0(L/12),'lance ÷ 12','t4'],
-   ['Garantia de 5%',fmt0(L*0.05),'até a assinatura ou 10 dias úteis','t1'],
-   ['Capital de giro estimado',fmt0(r.K),'custos de '+NUM.format(state.sim.ciclo)+' dias','t5'],
-   ['Combustível adiantado',fmt0(705552.91/12),'por mês, reembolsado depois','t3']
-  ];
-  $('riskTiles').innerHTML=T.map(t=>'<div class="tile '+t[3]+'"><span class="k">'+t[0]+'</span><span class="v">'+t[1]+'</span><span class="s">'+t[2]+'</span></div>').join('');
-}
-function renderImr(){
-  const v=parseNum($('imr-v').value), d=parseNum($('imr-d').value), n=parseNum($('imr-n').value), m=parseNum($('imr-m').value);
-  const tot=v*d; const y=tot>0?Math.min(1,n/tot):0;
-  $('imrOut').innerHTML=svg('alert')+'<p>Total de '+NUM.format(tot)+' veículos-dia. Y = '+pct(y,2)+'. A ordem de serviço cai de '+fmt(m)+' para <b>'+fmt(m*(1-y))+'</b> (desconto de '+fmt(m*y)+'). No comboio presidencial, abre também processo de penalidade.</p>';
-}
-['imr-v','imr-d','imr-n','imr-m'].forEach(id=>$(id).addEventListener('input',renderImr));
 
 /* ---------------- kit ---------------- */
 function renderKit(){
@@ -1508,13 +1626,8 @@ $('kitGroups').addEventListener('change',e=>{const c=e.target.closest('[data-kit
 /* ---------------- visão geral ---------------- */
 function renderOverview(){
   const s=matrizSummary(), pc=parecerCalc(), r=calc(state.sim), exemplo=isDefault();
-  const ok=isFinite(r.Pmin), dImp=daysUntil(2026,11,17);
-  const K=[
-   {href:'planilha',k:'Valor anual estimado',v:'R$ 20,8 mi',c:'gold',s:'item único · 22 categorias de veículos'},
-   {href:'simulador',k:'Desconto máximo viável',v:ok?pct(Math.max(0,1-r.Pmin/REF)):'—',c:'blue',s:ok?'lance mínimo '+fmtMi(r.Pmin)+(exemplo?' (custos de exemplo)':''):'revise o simulador'},
-   {href:'conflitos',k:'Conflitos graves',v:String(CONFLITOS.filter(c=>c.g==='alta').length),c:'red',s:'questionar até 17/11 ('+leftTxt(dImp)+')'},
-   {href:'matriz',k:'Requisitos atendidos',v:(s.c.atende+s.c.ajuste)+' de '+s.all.length,c:'green',s:s.c.verificar?s.c.verificar+' a verificar na matriz':(s.blockers.length?s.blockers.length+' bloqueio(s)':'todos avaliados')}
-  ];
+  const ok=isFinite(r.Pmin);
+  const K=E.kpis({s,pc,r,exemplo,ok});
   $('kpis').innerHTML=K.map(k=>'<a class="kpi" href="#'+k.href+'"><span class="k">'+k.k+'</span><span class="v c-'+k.c+'">'+k.v+'</span><span class="s">'+k.s+'</span></a>').join('');
   const labD={participar:'Participar',condicoes:'Participar com condições',nao:'Não participar'};
   const tot=overallProgress();
@@ -1532,52 +1645,10 @@ function secProgress(id){
 const overallProgress=()=>SECTIONS.reduce((a,s)=>a+secProgress(s.id),0)/SECTIONS.length;
 const pl=(n,um,varios)=>n===1?um:varios.replace('#',n);
 const leftTxt=n=>n<0?'encerrado':n===0?'hoje':n===1?'amanhã':'em '+n+' dias';
-const TAKE={
- ficha:()=>'Pregão eletrônico de menor preço, item único, sem benefício para ME/EPP. Os 11 dados básicos e o objeto completo estão abaixo.',
- condicoes:()=>'Contrato de 12 meses (até 10 anos), garantia de 5% e pagamento por diária. Sedan e Van Executiva somam 41% da locação.',
- operacao:()=>'Exige atender em 4 h nas capitais e 6 h no interior dos 4 estados, com 16 veículos próprios já na assinatura.',
- qualificacao:()=>'Para habilitar: atestados com 1 blindado, 2 caminhonetes, 6 Executivo II e 10 Sedan, e índices contábeis acima de 1.',
- declaracoes:()=>'3 declarações e 2 termos precisam estar prontos para enviar em até 2 horas depois do lance.',
- conflitos:()=>CONFLITOS.filter(c=>c.g==='alta').length+' pontos podem mudar seu preço ou te inabilitar. O prazo para questionar o órgão vence em 17/11 ('+leftTxt(daysUntil(2026,11,17))+').',
- planilha:()=>'Os preços do órgão são o teto da sua proposta. A própria planilha tem no show acima do limite em 19 de 22 categorias.',
- matriz:()=>{const s=matrizSummary(); return s.title+': '+s.evaluated+' de '+s.all.length+' requisitos avaliados.';},
- kit:()=>{const a=KIT.flatMap(g=>g.itens),d=a.filter(i=>state.kit.done[i.id]).length; return d+' de '+a.length+' documentos prontos. Cada um que faltar no prazo de 2 horas pode custar o contrato.';},
- simulador:()=>{const r=calc(state.sim); return isFinite(r.Pmin)?'Com os custos informados, seu lance mínimo é '+fmt0(r.Pmin)+' (desconto máximo de '+pct(Math.max(0,1-r.Pmin/REF))+')'+(isDefault()?', ainda com custos de exemplo.':'.'):'Com os percentuais atuais, nenhum preço cobre os custos.';},
- riscos:()=>{const r=calc(state.sim); const L=r.L>0?r.L:REF; return 'Antes de assinar, reserve cerca de '+fmt0(r.K)+' de capital de giro e '+fmt0(L*0.05)+' de garantia.';},
- parecer:()=>{const p=parecerCalc(); return p.title+(p.title.endsWith('…')?' ':'. ')+(state.parecer.decisao?'O parecer da empresa já foi registrado.':'Registre a decisão da empresa no fim desta página.');}
-};
-const HN={
- ficha:()=>[{v:'R$ 20,8 mi',l:'valor anual estimado',c:'gold'},{v:'23/11',l:'sessão pública, às 9h30',c:'ink'},{v:'12 meses',l:'vigência, prorrogável até 10 anos',c:'ink'}],
- condicoes:()=>[{v:'R$ 1,04 mi',l:'garantia contratual de 5%',c:'gold'},{v:'41%',l:'da locação em Sedan e Van Executiva',c:'blue'},{v:'IPCA',l:'reajuste após 12 meses',c:'ink'}],
- operacao:()=>[{v:'16',l:'veículos próprios na assinatura',c:'ink'},{v:'4 h',l:'para atender nas capitais',c:'blue'},{v:'6 h',l:'para atender no interior',c:'blue'}],
- qualificacao:()=>[{v:'19',l:'veículos a comprovar em atestados',c:'red'},{v:'> 1',l:'índices LG, LC e SG exigidos',c:'ink'},{v:'R$ 2,08 mi',l:'patrimônio líquido alternativo',c:'gold'}],
- declaracoes:()=>[{v:'3',l:'declarações exigidas',c:'ink'},{v:'2',l:'termos enviados por cautela',c:'ink'},{v:'2 h',l:'prazo depois do lance',c:'red'}],
- conflitos:()=>{const n=daysUntil(2026,11,17); return [{v:String(CONFLITOS.filter(c=>c.g==='alta').length),l:'de alta gravidade',c:'red'},{v:String(CONFLITOS.length),l:'pontos no total',c:'ink'},{v:n<0?'encerrado':n===0?'hoje':n+(n===1?' dia':' dias'),l:'para questionar (até 17/11)',c:'red'}];},
- planilha:()=>[{v:'R$ 20,8 mi',l:'total de referência',c:'gold'},{v:'220',l:'preços de locação a cotar',c:'ink'},{v:'19 de 22',l:'no show acima do teto',c:'red'}],
- matriz:()=>{const s=matrizSummary(); return [{v:(s.c.atende+s.c.ajuste)+' de '+s.all.length,l:'atendidos, com ou sem ajuste',c:'green'},{v:String(s.c.verificar),l:'a verificar',c:'ink'},{v:String(s.blockers.length),l:'bloqueios eliminatórios',c:'red'}];},
- kit:()=>{const g=KIT.map(x=>x.itens.filter(i=>state.kit.done[i.id]).length+' de '+x.itens.length); const a=KIT.flatMap(x=>x.itens); return [{v:a.filter(i=>state.kit.done[i.id]).length+' de '+a.length,l:'documentos prontos',c:'green'},{v:g[0],l:'proposta ajustada',c:'ink'},{v:g[1],l:'habilitação',c:'ink'}];},
- simulador:()=>{const r=calc(state.sim), ok=isFinite(r.Pmin); return [{v:ok?fmtMi(r.Pmin):'—',l:'lance mínimo viável',c:'blue'},{v:ok?pct(Math.max(0,1-r.Pmin/REF)):'—',l:'desconto máximo',c:'blue'},{v:isFinite(r.margL)?pct(r.margL):'—',l:'margem no lance testado',c:r.margL<0?'red':'green'}];},
- riscos:()=>{const r=calc(state.sim), L=r.L>0?r.L:REF; return [{v:fmtMi(r.K),l:'capital de giro estimado',c:'gold'},{v:fmtMi(L*0.05),l:'garantia contratual',c:'gold'},{v:'~85 dias',l:'até o primeiro pagamento',c:'ink'}];},
- parecer:()=>{const p=parecerCalc(); return [{v:p.title,l:'recomendação calculada',c:'gold'},{v:Math.round(overallProgress()*100)+'%',l:'da análise concluída',c:'ink'},{v:String(p.steps.length),l:'próximos passos',c:'ink'}];}
-};
-const CARD={
- ficha:()=>({m:'R$ 20,8 mi',s:'sessão em 23/11 · 9h30'}),
- condicoes:()=>({m:'12 meses',s:'garantia de 5% · até 10 anos'}),
- operacao:()=>({m:'16 veículos',s:'4 h nas capitais · 6 h no interior'}),
- qualificacao:()=>({m:'4 atestados',s:'eliminatório',c:'alert'}),
- declaracoes:()=>({m:'5 documentos',s:'enviar em até 2 horas',c:'warn'}),
- conflitos:()=>({m:CONFLITOS.length+' pontos',s:CONFLITOS.filter(c=>c.g==='alta').length+' de alta gravidade',c:'alert'}),
- planilha:()=>({m:'220 preços',s:'19 de 22 no show acima do teto',c:'alert'}),
- matriz:()=>{const s=matrizSummary(); return {m:(s.c.atende+s.c.ajuste)+' de '+s.all.length,s:s.title,c:s.kind==='go'?'ok':s.kind==='nogo'?'alert':'warn'};},
- kit:()=>{const a=KIT.flatMap(x=>x.itens), d=a.filter(i=>state.kit.done[i.id]).length; return {m:d+' de '+a.length,s:'documentos prontos',c:d===a.length?'ok':''};},
- simulador:()=>{const r=calc(state.sim); return {m:isFinite(r.Pmin)?fmtMi(r.Pmin):'—',s:'lance mínimo viável'+(isDefault()?' · exemplo':'')};},
- riscos:()=>{const r=calc(state.sim); return {m:fmtMi(r.K),s:'capital de giro até receber'};},
- parecer:()=>{const p=parecerCalc(); return {m:p.title,s:state.parecer.decisao?'decisão registrada':'registrar a decisão',c:p.kind==='go'?'ok':p.kind==='nogo'?'alert':'warn'};}
-};
 function renderHeroes(){
   SECTIONS.forEach(s=>{
     const sec=$('sec-'+s.id); const el=sec&&sec.querySelector('.sec-head'); if(!el) return;
-    if(!el.querySelector('.hero-art')){ el.innerHTML='<div class="hero-txt"></div><figure class="hero-art">'+ill(s.sec)+'</figure>'; sec.setAttribute('aria-labelledby','bn-'+s.id); }
+    if(!el.querySelector('.hero-art')){ el.innerHTML='<div class="hero-txt"></div><figure class="hero-art">'+ill(s.art||s.sec)+'</figure>'; sec.setAttribute('aria-labelledby','bn-'+s.id); }
     const done=secProgress(s.id)>=1;
     el.querySelector('.hero-txt').innerHTML='<p class="eyebrow">Etapa '+s.etapa+' de 5 · '+ETAPAS[s.etapa-1].nome+(done?' · <span class="done-tag">✓ concluída</span>':'')+'</p><h2 id="bn-'+s.id+'">'+s.nome+'</h2><div class="hero-nums">'+HN[s.id]().map(n=>'<div class="hn"><span class="v c-'+n.c+'">'+n.v+'</span><span class="l">'+n.l+'</span></div>').join('')+'</div><p class="lead"><b>Conclusão:</b> '+TAKE[s.id]()+'</p>';
   });
@@ -1594,36 +1665,36 @@ function refreshProgress(){renderHeroes(); renderCards(); renderParecer(); prepI
 function parecerCalc(){
   const s=matrizSummary(), r=calc(state.sim), allK=KIT.flatMap(g=>g.itens), kd=allK.filter(i=>state.kit.done[i.id]).length;
   const leitura=SECTIONS.filter(x=>!['matriz','kit','parecer'].includes(x.id)), lidas=leitura.filter(x=>state.prog.done[x.id]).length;
-  const alta=CONFLITOS.filter(c=>c.g==='alta').length, dImp=daysUntil(2026,11,17);
-  const ok=isFinite(r.Pmin), precoOk=ok&&r.Pmin<=REF, exemplo=isDefault();
-  const L=r.L>0?r.L:REF;
+  const alta=CONFLITOS.filter(c=>c.g==='alta').length, dImp=E.prazoQuestionar?daysUntil(...E.prazoQuestionar):-1;
+  const ok=isFinite(r.Pmin), precoOk=ok&&r.Pmin<=E.teto, exemplo=isDefault();
+  const L=r.L>0?r.L:E.teto;
   const evid=[
    {href:'matriz',icon:'matriz',t:'Aderência',kind:s.kind,status:s.kind==='go'?'Atende':s.kind==='nogo'?'Bloqueio':(s.c.verificar?'Pendente':'Com ajustes'),txt:s.evaluated+' de '+s.all.length+' requisitos avaliados: '+s.c.atende+' atende, '+s.c.ajuste+' com ajuste, '+s.c.nao+' não atende.'},
-   {href:'simulador',icon:'simul',t:'Preço',kind:!precoOk?'nogo':(exemplo?'wait':'go'),status:!precoOk?'Inviável':(exemplo?'Custos de exemplo':'Viável'),txt:ok?'Lance mínimo de '+fmt0(r.Pmin)+', desconto máximo de '+pct(Math.max(0,1-r.Pmin/REF))+'.'+(r.Pmin<0.5*REF?' Abaixo de 50% da referência: exige prova de exequibilidade.':''):'Com os percentuais atuais, nenhum preço cobre os custos.'},
-   {href:'conflitos',icon:'conf',t:'Riscos do edital',kind:'wait',status:alta+' de alta gravidade',txt:'Seguro-garantia, consórcio, subcontratação, no show e patrimônio líquido. Prazo para questionar: 17/11 ('+leftTxt(dImp)+').'},
-   {href:'kit',icon:'kit',t:'Preparação',kind:kd===allK.length?'go':'wait',status:kd+' de '+allK.length,txt:'Documentos do kit das 2 horas prontos. Caixa: cerca de '+fmt0(r.K)+' de capital de giro e '+fmt0(L*0.05)+' de garantia.'}
+   {href:'simulador',icon:'simul',t:'Preço',kind:!precoOk?'nogo':(exemplo?'wait':'go'),status:!precoOk?'Inviável':(exemplo?'Custos de exemplo':'Viável'),txt:ok?E.precoTxt(r):'Com os percentuais atuais, nenhum preço cobre os custos.'},
+   {href:'conflitos',icon:'conf',t:'Riscos do edital',kind:'wait',status:alta+' de alta gravidade',txt:E.riscosTxt(dImp)},
+   {href:'kit',icon:'kit',t:'Preparação',kind:kd===allK.length?'go':'wait',status:kd+' de '+allK.length,txt:E.prepTxt(r,L)}
   ];
   const steps=[];
   let kind,title,text;
   if(s.kind==='nogo'||!precoOk){
     kind='nogo'; title='Não participar nas condições atuais';
-    text=s.blockers.length?'Há exigência eliminatória sem solução: '+s.blockers.join('; ')+'.':'Seu custo não cabe no preço máximo do edital.';
+    text=s.blockers.length?'Há exigência eliminatória sem solução: '+s.blockers.join('; ')+'.':'Seu custo não cabe no '+E.sim.tetoNome+'.';
     s.blockers.forEach(b=>steps.push('Resolver o requisito eliminatório: '+b+'.'));
-    if(s.blockers.length) steps.push('Avaliar consórcio ou parceria que supra essas exigências antes de desistir.');
+    if(s.blockers.length) steps.push(E.passoBloqueio);
     if(!precoOk) steps.push('Rever os custos e percentuais no Simulador de lance.');
   } else {
     if(s.c.verificar>0) steps.push(pl(s.c.verificar,'Avaliar o requisito ainda pendente','Avaliar os # requisitos ainda pendentes')+' na Matriz de aderência.');
     if(s.c.nao>0) steps.push(pl(s.c.nao,'Definir como resolver o requisito não atendido','Definir como resolver os # requisitos não atendidos')+' até a assinatura.');
     if(s.c.ajuste>0) steps.push(pl(s.c.ajuste,'Confirmar o parceiro ou arranjo do requisito com ajuste.','Confirmar os parceiros ou arranjos dos # requisitos com ajuste.'));
     if(exemplo) steps.push('Trocar os custos de exemplo do Simulador pelos custos reais da empresa.');
-    if(ok&&r.Pmin<0.5*REF) steps.push('Preparar a prova de exequibilidade do preço (Edital 7.8 a 7.10).');
-    if(kd<allK.length) steps.push('Completar o Kit das 2 horas: '+pl(allK.length-kd,'falta 1 documento.','faltam # documentos.'));
-    if(dImp>=0) steps.push('Decidir até 17/11 se vai pedir esclarecimento ou impugnar os '+alta+' pontos de alta gravidade.');
+    if(ok&&r.Pmin<0.5*RV()) steps.push(E.exeqStep);
+    if(kd<allK.length) steps.push('Completar o '+(SECTIONS.find(x=>x.id==='kit')||{nome:'kit'}).nome+': '+pl(allK.length-kd,'falta 1 item.','faltam # itens.'));
+    if(dImp>=0) steps.push(E.questionarStep(alta));
     if(steps.length){kind='wait'; title='Participar se…'; text='A análise indica que dá para participar, desde que você resolva as pendências listadas em Próximos passos.';}
     else {kind='go'; title='Participar'; text='Requisitos atendidos, preço viável e documentos prontos.';}
   }
   if(lidas<leitura.length) steps.push('Concluir a leitura das seções: '+lidas+' de '+leitura.length+' revisadas.');
-  if(kind==='go'){steps.push('Revisar os preços finais na Google Planilha.'); steps.push('Cadastrar a proposta no Compras.gov.br antes de 23/11, às 9h30.');}
+  if(kind==='go') E.stepsGo.forEach(x=>steps.push(x));
   return {kind,title,text,evid,steps};
 }
 let parDraft=null;
@@ -1686,8 +1757,11 @@ function initFolds(){
 }
 
 /* ---------------- início ---------------- */
-initFolds(); buildNav(); buildSimForm(); renderDeadlines(); renderComposition(); renderPlanilha(); renderConflitos(); renderMatriz(); renderKit(); renderSim('force'); renderImr(); renderOverview(); route();
+initFolds(); buildNav(); buildSimForm(); renderDeadlines(); renderConflitos(); renderMatriz(); renderKit(); if(E.init) E.init(); renderSim('force'); renderOverview(); route();
 window.addEventListener('hashchange',route);
 connectDb();
 })();
 </script>
+
+</body>
+</html>

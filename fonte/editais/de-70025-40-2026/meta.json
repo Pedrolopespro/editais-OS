@@ -1,0 +1,15 @@
+{
+ "slug": "de-70025-40-2026",
+ "titulo": "Dispensa 70025-40/2026 · Painel de Decisão",
+ "nome": "Dispensa Eletrônica 70025-40/2026",
+ "sub": "TRE-DF · Vídeo animado 2D \"Ele, Heitor no Folclore\"",
+ "pergunta": "Vale a pena disputar<br><b>esta dispensa?</b>",
+ "lead": "Produção de um vídeo animado em 2D, de cerca de 5 minutos, para a Escola Judiciária Eleitoral do DF. Exclusiva para ME/EPP. <b>Lances em 18/11/2026, das 12h às 18h.</b>",
+ "prazos_hint": "Contagem a partir de hoje. A fase de lances encerra às 18h em ponto, sem prorrogação.",
+ "foot": "Análise independente elaborada para apoio à decisão do licitante, com base no Aviso de Contratação Direta nº 70025-40/2026 do TRE-DF (Termo de Referência e minuta de contrato anexos) e no roteiro do Projeto \"Ele, Heitor no Folclore\". Não é documento oficial do Tribunal e não substitui a leitura integral do Aviso e anexos.",
+ "og_title": "Vale a pena disputar a Dispensa 70025-40/2026 do TRE-DF?",
+ "descricao": "Painel de decisão da Dispensa Eletrônica 70025-40/2026 do TRE-DF (vídeo animado 2D): teto, riscos do roteiro, habilitação, formação de preço e parecer final.",
+ "card": {"orgao": "Tribunal Regional Eleitoral do DF", "modalidade": "Dispensa eletrônica", "numero": "70025-40/2026", "objeto": "Vídeo animado 2D de cerca de 5 minutos", "valor": "Até R$ 65,5 mil", "valor_s": "teto legal · sem preço máximo", "data": [2026, 11, 18], "data_lbl": "18/11 · 12h às 18h", "evento": "Lances", "art": "anim", "ls": "de70025-"},
+ "replace": {"{{LOGO}}": "/assets/brasao.png", "{{DOCS}}": "/docs/"},
+ "artifact": false
+}
