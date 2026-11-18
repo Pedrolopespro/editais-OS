@@ -190,7 +190,7 @@ tfoot td.v{color:var(--blue)}
   </nav>
 
   <header class="hero">
-    <span class="logo"><img src="/assets/brasao.png" alt="Brasão da República"></span>
+    <span class="logo"><img src="/assets/brasao.png" alt="" id="logoImg"></span>
     <div>
       <p class="eyebrow" id="pregao"></p>
       <h1 id="orgao"></h1>
@@ -210,18 +210,18 @@ tfoot td.v{color:var(--blue)}
 
   <section class="kpis" aria-label="Valores do contrato">
     <div class="kpi main"><span class="k">Valor total do contrato</span><span class="v n" id="kTot"></span><span class="s" id="kTotS"></span></div>
-    <div class="kpi"><span class="k">Por mês</span><span class="v n" id="kMes"></span><span class="s">média em 12 meses</span></div>
+    <div class="kpi"><span class="k">Por mês</span><span class="v n" id="kMes"></span><span class="s" id="kMesS"></span></div>
     <div class="kpi"><span class="k">Vigência</span><span class="v n" id="kVig"></span><span class="s" id="kVigS"></span></div>
     <div class="kpi"><span class="k">Garantia do contrato</span><span class="v n" id="kGar"></span><span class="s" id="kGarS"></span></div>
   </section>
 
   <div class="cols">
     <section class="card" aria-labelledby="tObj">
-      <h2 id="tObj">O que será contratado <small>valores máximos por ano</small></h2>
+      <h2 id="tObj">O que será contratado <small id="tObjS"></small></h2>
       <div class="stack" id="stack" role="img"></div>
       <ul class="sleg" id="sleg"></ul>
       <table>
-        <thead><tr><th>Veículos</th><th class="r">Diárias/ano</th><th class="r">Valor/ano</th><th class="sh">Participação</th></tr></thead>
+        <thead><tr><th id="thItem">Veículos</th><th class="r" id="thQtd">Diárias/ano</th><th class="r" id="thVal">Valor/ano</th><th class="sh">Participação</th></tr></thead>
         <tbody id="grupos"></tbody>
         <tfoot><tr><td id="gTotN"></td><td class="r v" id="gTotD"></td><td class="r v" id="gTotV"></td><td class="sh"></td></tr></tfoot>
       </table>
@@ -241,9 +241,9 @@ tfoot td.v{color:var(--blue)}
         <div class="seg" id="seg" role="group" aria-label="Valor do lance"></div>
       </div>
       <div class="rnums">
-        <div class="rn pos"><span class="k">Lucro líquido no ano</span><span class="v n" id="rLuc"></span><span class="s" id="rLucS"></span></div>
-        <div class="rn"><span class="k">Capital para começar</span><span class="v n" id="rCap"></span><span class="s">capital de giro + 16 carros</span></div>
-        <div class="rn pos"><span class="k">Cada R$ 100 colocados</span><span class="v n" id="rRoi"></span><span class="s" id="rRoiS"></span></div>
+        <div class="rn pos"><span class="k" id="rLucK">Lucro líquido no ano</span><span class="v n" id="rLuc"></span><span class="s" id="rLucS"></span></div>
+        <div class="rn"><span class="k">Capital de giro</span><span class="v n" id="rCap"></span><span class="s" id="rCapS"></span></div>
+        <div class="rn pos"><span class="k">Cada R$ 100 de giro</span><span class="v n" id="rRoi"></span><span class="s" id="rRoiS"></span></div>
         <div class="rn"><span class="k">1º pagamento</span><span class="v n" id="rPag"></span><span class="s">depois de começar</span></div>
       </div>
       <p class="limit" id="limit"></p>
@@ -260,20 +260,22 @@ tfoot td.v{color:var(--blue)}
   </footer>
 </div>
 <script>
-const D={"titulo": "Pregão 319/2026 · Resumo", "orgao": "Casa Civil da Presidência da República", "unidade": "Secretaria de Administração · UASG 110001", "pregao": "Pregão Eletrônico nº 319/2026", "sessao": {"data": [2026, 11, 23], "hora": "9h30", "fuso": "horário de Brasília", "plataforma": "Compras.gov.br", "url": "https://www.gov.br/compras"}, "objeto": "Aluguel de carros, vans, ônibus e veículos blindados, com e sem motorista, para a Presidência da República e a segurança do Presidente e do Vice-Presidente nos 4 estados do Sudeste.", "condicoes": ["Menor preço por item", "Disputa aberta e fechada", "Sem preferência para ME/EPP", "Sem margem de preferência", "Orçamento público"], "referencia": 20835706.71, "contrato_meses": 12, "vigencia": {"v": "12 meses", "s": "renovável por até 10 anos"}, "garantia": {"pct": 5, "s": "do valor anual · seguro-garantia até a assinatura"}, "grupos": [{"nome": "Sedans e executivos", "ex": "sedan e executivo", "cats": "K, L", "d24": 3191, "d10": 2262, "v": 3657410.6}, {"nome": "Blindados", "ex": "executivos e SUVs blindados", "cats": "A–D", "d24": 1004, "d10": 561, "v": 4535740.0}, {"nome": "Vans e furgões", "ex": "vans de passageiros e furgões", "cats": "M–P", "d24": 1250, "d10": 1065, "v": 3159966.0}, {"nome": "SUVs", "ex": "SUVs de três portes", "cats": "E–H", "d24": 661, "d10": 363, "v": 1530612.0}, {"nome": "Ônibus", "ex": "rodoviário, urbano e micro-ônibus", "cats": "Q–S", "d24": 66, "d10": 181, "v": 780411.6}, {"nome": "Caminhonetes", "ex": "4x4 e 4x2", "cats": "I, J", "d24": 223, "d10": 60, "v": 467454.0}, {"nome": "Especiais", "ex": "microcaminhão, guincho e adaptado", "cats": "T–V", "d24": 62, "d10": 176, "v": 324542.0}], "custos": [{"nome": "Aluguel dos veículos", "curto": "Veículos", "ref": 14456136.2, "pct": 55, "cor": "var(--blue)"}, {"nome": "Motoristas", "curto": "Motoristas", "ref": 4791359.2, "pct": 85, "cor": "var(--green)"}, {"nome": "Agentes de missão", "curto": "Agentes de missão", "ref": 807024.0, "pct": 70, "cor": "var(--steel)"}, {"nome": "Combustível (reembolsado)", "curto": "Combustível", "ref": 705552.91, "pct": 100, "cor": "var(--gold)"}, {"nome": "Reservas não usadas", "curto": "Reservas não usadas", "ref": 75634.4, "pct": 30, "cor": "var(--amber)"}], "locais": {"estados": [{"uf": "SP", "nome": "São Paulo"}, {"uf": "RJ", "nome": "Rio de Janeiro"}, {"uf": "MG", "nome": "Minas Gerais"}, {"uf": "ES", "nome": "Espírito Santo"}], "itens": [{"k": "Onde", "v": "Capital e interior dos 4 estados"}, {"k": "Prazo para o carro chegar", "v": "4 h na capital e região metropolitana · 6 h no interior"}, {"k": "Frota própria", "v": "16 veículos em nome da empresa (6 executivos ou SUVs e 10 sedans) · leasing aceito"}, {"k": "Atendimento", "v": "Central e celular 24 h exclusivos · não exige escritório local"}]}, "parametros": {"indiretas": 8, "tributos": 13, "glosa": 1, "ciclo_dias": 85, "juros_mes": 1.5, "garantia_pct": 5, "garantia_custo_ano": 1.5}, "cenarios": [{"id": "alto", "nome": "Conservador", "lance": 20000000}, {"id": "base", "nome": "Provável", "lance": 19200000, "padrao": true}, {"id": "agressivo", "nome": "Agressivo", "lance": 18400000}], "veredito": {"txt": "Vale disputar, com condições", "nivel": "medio", "risco": "risco médio"}, "cuidados": [{"t": "Pagamento em cerca de 85 dias", "d": "por isso é preciso capital de giro"}, {"t": "Preço travado por 12 meses", "d": "reajuste salarial dos motoristas sai do lucro"}, {"t": "Exigências que eliminam", "d": "atestados de experiência e 16 carros próprios"}], "nota": "Valores do contrato: Edital e Termo de Referência nº 236/2026, Apêndice IV (preços máximos). Retorno: estimativa com os custos de exemplo do simulador da análise completa, já descontados impostos, despesas indiretas, custo do dinheiro (1,5% ao mês) e garantia. Antes de decidir, troque pelos custos reais da empresa."};
+const D={"titulo": "Pregão 319/2026 · Resumo", "orgao": "Casa Civil da Presidência da República", "unidade": "Secretaria de Administração · UASG 110001", "pregao": "Pregão Eletrônico nº 319/2026", "sessao": {"data": [2026, 11, 23], "hora": "9h30", "fuso": "horário de Brasília", "plataforma": "Compras.gov.br", "url": "https://www.gov.br/compras"}, "objeto": "Aluguel de carros, vans, ônibus e veículos blindados, com e sem motorista, para a Presidência da República e a segurança do Presidente e do Vice-Presidente nos 4 estados do Sudeste.", "condicoes": ["Menor preço por item", "Disputa aberta e fechada", "Sem preferência para ME/EPP", "Sem margem de preferência", "Orçamento público"], "referencia": 20835706.71, "contrato_meses": 12, "vigencia": {"v": "12 meses", "s": "renovável por até 10 anos"}, "garantia": {"pct": 5, "s": "do valor anual · seguro-garantia até a assinatura"}, "tabela": {"item": "Veículos", "qtd": "Diárias/ano", "valor": "Valor/ano", "sub": "valores máximos por ano", "total": "Aluguel dos veículos · 7 grupos, 22 categorias"}, "capital_sub": "capital de giro · fora os 16 carros próprios", "valor_periodo": "por ano · valor bruto máximo", "grupos": [{"nome": "Sedans e executivos", "ex": "sedan e executivo", "cats": "K, L", "d24": 3191, "d10": 2262, "v": 3657410.6}, {"nome": "Blindados", "ex": "executivos e SUVs blindados", "cats": "A–D", "d24": 1004, "d10": 561, "v": 4535740.0}, {"nome": "Vans e furgões", "ex": "vans de passageiros e furgões", "cats": "M–P", "d24": 1250, "d10": 1065, "v": 3159966.0}, {"nome": "SUVs", "ex": "SUVs de três portes", "cats": "E–H", "d24": 661, "d10": 363, "v": 1530612.0}, {"nome": "Ônibus", "ex": "rodoviário, urbano e micro-ônibus", "cats": "Q–S", "d24": 66, "d10": 181, "v": 780411.6}, {"nome": "Caminhonetes", "ex": "4x4 e 4x2", "cats": "I, J", "d24": 223, "d10": 60, "v": 467454.0}, {"nome": "Especiais", "ex": "microcaminhão, guincho e adaptado", "cats": "T–V", "d24": 62, "d10": 176, "v": 324542.0}], "custos": [{"nome": "Aluguel dos veículos", "curto": "Veículos", "ref": 14456136.2, "pct": 55, "cor": "var(--blue)"}, {"nome": "Motoristas", "curto": "Motoristas", "ref": 4791359.2, "pct": 85, "cor": "var(--green)"}, {"nome": "Agentes de missão", "curto": "Agentes de missão", "ref": 807024.0, "pct": 70, "cor": "var(--steel)"}, {"nome": "Combustível (reembolsado)", "curto": "Combustível", "ref": 705552.91, "pct": 100, "cor": "var(--gold)"}, {"nome": "Reservas não usadas", "curto": "Reservas não usadas", "ref": 75634.4, "pct": 30, "cor": "var(--amber)"}], "locais": {"estados": [{"uf": "SP", "nome": "São Paulo"}, {"uf": "RJ", "nome": "Rio de Janeiro"}, {"uf": "MG", "nome": "Minas Gerais"}, {"uf": "ES", "nome": "Espírito Santo"}], "itens": [{"k": "Onde", "v": "Capital e interior dos 4 estados"}, {"k": "Prazo para o carro chegar", "v": "4 h na capital e região metropolitana · 6 h no interior"}, {"k": "Frota própria", "v": "16 veículos em nome da empresa (6 executivos ou SUVs e 10 sedans) · leasing aceito"}, {"k": "Atendimento", "v": "Central e celular 24 h exclusivos · não exige escritório local"}]}, "parametros": {"indiretas": 8, "tributos": 13, "glosa": 1, "ciclo_dias": 85, "juros_mes": 1.5, "garantia_pct": 5, "garantia_custo_ano": 1.5}, "cenarios": [{"id": "alto", "nome": "Conservador", "lance": 20000000}, {"id": "base", "nome": "Provável", "lance": 19200000, "padrao": true}, {"id": "agressivo", "nome": "Agressivo", "lance": 18400000}], "veredito": {"txt": "Vale disputar, com condições", "nivel": "medio", "risco": "risco médio"}, "cuidados": [{"t": "Pagamento em cerca de 85 dias", "d": "por isso é preciso capital de giro"}, {"t": "Preço travado por 12 meses", "d": "reajuste salarial dos motoristas sai do lucro"}, {"t": "Exigências que eliminam", "d": "atestados de experiência e 16 carros próprios"}], "nota": "Valores do contrato: Edital e Termo de Referência nº 236/2026, Apêndice IV (preços máximos). Retorno: estimativa com os custos de exemplo do simulador da análise completa, já descontados impostos, despesas indiretas, custo do dinheiro (1,5% ao mês) e garantia. Antes de decidir, troque pelos custos reais da empresa."};
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const dec=(v,d)=>v.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
-const mi=v=>'R$ '+dec(v/1e6,2)+' mi';
+const mi=v=>Math.abs(v)<1e6?'R$ '+dec(Math.round(v/1e3),0)+' mil':'R$ '+dec(v/1e6,2)+' mi';
 const mil=v=>'R$ '+dec(Math.round(v/1e3),0)+' mil';
 const brl=v=>'R$ '+dec(v,2);
 const P=D.parametros, REF=D.referencia;
+const qtd=g=>g.qtd!=null?g.qtd:(g.d24||0)+(g.d10||0);
 
 function calc(L){
   const cdir=D.custos.reduce((s,c)=>s+c.ref*c.pct/100,0);
   const C=cdir*(1+P.indiretas/100);
-  const K=C/12*(P.ciclo_dias/30), F=K*(P.juros_mes/100)*12;
-  const g=P.glosa/100,t=P.tributos/100,gp=P.garantia_pct/100,rg=P.garantia_custo_ano/100;
+  const M=D.contrato_meses||12;
+  const K=C/M*(P.ciclo_dias/30), F=K*(P.juros_mes/100)*M;
+  const g=P.glosa/100,t=P.tributos/100,gp=P.garantia_pct/100,rg=P.garantia_custo_ano/100*(M/12);
   const lucro=L*(1-g)*(1-t)-C-F-gp*L*rg;
   const zero=(C+F)/((1-g)*(1-t)-gp*rg);
   return {K,lucro,zero,L};
@@ -286,7 +288,7 @@ function render(id){
   $('rLucS').textContent=mil(r.lucro/meses)+'/mês · lance de '+mi(r.L);
   $('rCap').textContent=mi(r.K);
   $('rRoi').textContent='viram R$ '+dec(Math.round(100*(1+r.lucro/r.K)),0);
-  $('rRoiS').textContent='em cerca de '+(meses+Math.round(P.ciclo_dias/30))+' meses';
+  $('rRoiS').textContent='em cerca de '+(meses+Math.round(P.ciclo_dias/30))+' meses · sem a compra da frota';
 }
 
 (function init(){
@@ -302,10 +304,13 @@ function render(id){
   $('conds').innerHTML=D.condicoes.map(c=>'<span>'+esc(c)+'</span>').join('');
 
   $('kTot').textContent=mi(REF);
-  $('kTotS').innerHTML='<b>'+brl(REF)+'</b> por ano · valor bruto máximo';
-  $('kMes').textContent=mi(REF/12);
+  $('kTotS').innerHTML='<b>'+brl(REF)+'</b> '+esc(D.valor_periodo||'por ano · valor bruto máximo');
+  $('kMes').textContent=mi(REF/D.contrato_meses);
+  $('kMesS').textContent='média em '+D.contrato_meses+' meses';
   $('kVig').textContent=D.vigencia.v; $('kVigS').textContent=D.vigencia.s;
-  $('kGar').textContent=mi(REF*D.garantia.pct/100); $('kGarS').textContent=D.garantia.pct+'% '+D.garantia.s;
+  if(D.garantia.pct>0){$('kGar').textContent=mi(REF*D.garantia.pct/100); $('kGarS').textContent=D.garantia.pct+'% '+D.garantia.s;}else{$('kGar').textContent=D.garantia.v||'Não informada'; $('kGarS').textContent=D.garantia.s;}
+  $('logoImg').alt='Logo de '+D.orgao;
+  $('rLucK').textContent=D.contrato_meses===12?'Lucro líquido no ano':'Lucro líquido em '+D.contrato_meses+' meses';
 
   $('stack').innerHTML=D.custos.map(c=>'<i style="width:'+(c.ref/REF*100)+'%;background:'+c.cor+'" title="'+esc(c.nome)+'"></i>').join('');
   $('stack').setAttribute('aria-label','Composição do valor: '+D.custos.map(c=>c.curto+' '+dec(c.ref/REF*100,0)+'%').join(', '));
@@ -313,9 +318,11 @@ function render(id){
 
   const tot=D.grupos.reduce((s,g)=>s+g.v,0), mx=Math.max(...D.grupos.map(g=>g.v));
   const GR=[...D.grupos].sort((a,b)=>b.v-a.v);
-  $('grupos').innerHTML=GR.map(g=>'<tr><td><span class="nm">'+esc(g.nome)+'</span> <span class="ex">· '+esc(g.ex)+'</span></td><td class="r v">'+dec(g.d24+g.d10,0)+'</td><td class="r v">'+mi(g.v)+'</td><td class="sh"><span class="mini"><i style="width:'+(g.v/mx*70)+'%"></i>'+dec(g.v/tot*100,0)+'%</span></td></tr>').join('');
-  $('gTotN').textContent='Aluguel dos veículos · '+D.grupos.length+' grupos, 22 categorias';
-  $('gTotD').textContent=dec(D.grupos.reduce((s,g)=>s+g.d24+g.d10,0),0);
+  $('grupos').innerHTML=GR.map(g=>'<tr><td><span class="nm">'+esc(g.nome)+'</span> <span class="ex">· '+esc(g.ex)+'</span></td><td class="r v">'+(g.qtd_txt||dec(qtd(g),0))+'</td><td class="r v">'+mi(g.v)+'</td><td class="sh"><span class="mini"><i style="width:'+(g.v/mx*70)+'%"></i>'+dec(g.v/tot*100,0)+'%</span></td></tr>').join('');
+  const T=Object.assign({item:'Veículos',qtd:'Diárias/ano',valor:'Valor/ano',sub:'valores máximos por ano',total:'Aluguel dos veículos · '+D.grupos.length+' grupos',total_qtd:null},D.tabela||{});
+  $('thItem').textContent=T.item; $('thQtd').textContent=T.qtd; $('thVal').textContent=T.valor; $('tObjS').textContent=T.sub;
+  $('gTotN').textContent=T.total;
+  $('gTotD').textContent=T.total_qtd||dec(D.grupos.reduce((s,g)=>s+qtd(g),0),0);
   $('gTotV').textContent=mi(tot);
 
   $('ufs').innerHTML=D.locais.estados.map(e=>'<div class="uf"><b>'+esc(e.uf)+'</b><span>'+esc(e.nome)+'</span></div>').join('');
@@ -326,6 +333,7 @@ function render(id){
   $('seg').addEventListener('click',e=>{const b=e.target.closest('button'); if(b) render(b.dataset.id);});
   $('limit').innerHTML='Lance abaixo de <b class="n">'+mi(calc(REF).zero)+'</b> dá prejuízo.';
   $('rPag').textContent='~'+P.ciclo_dias+' dias';
+  $('rCapS').textContent=(D.capital_sub||'até o primeiro pagamento').replace(/^capital de giro\s*[·+]\s*/i,'');
   $('care').innerHTML=D.cuidados.map((c,i)=>'<li><span class="ic">'+(i+1)+'</span><span><b>'+esc(c.t)+'</b>'+esc(c.d)+'</span></li>').join('');
   $('nota').textContent=D.nota;
   render((D.cenarios.find(s=>s.padrao)||D.cenarios[0]).id);

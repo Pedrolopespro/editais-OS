@@ -1,0 +1,44 @@
+{
+ "titulo": "Pregão 18/2026 · Resumo",
+ "orgao": "Secretaria de Estado da Casa Militar de Goiás",
+ "unidade": "Superintendência de Gestão Integrada · Processo SEI 202600005031988",
+ "pregao": "Pregão Eletrônico nº 18/2026",
+ "sessao": {"data": [2026, 11, 30], "hora": "9h", "fuso": "horário de Brasília", "plataforma": "SISLOG", "url": "https://sislog.go.gov.br/"},
+ "objeto": "Aluguel de 12 SUVs grandes blindadas (nível III-A), 0 km, pretas, a diesel e com tração 4x4, sem motorista, por 30 meses, com rastreador, manutenção, guincho, seguro e quilometragem livre, para a Casa Militar do Governo de Goiás.",
+ "condicoes": ["Menor preço por lote (lote único)", "Disputa aberta", "Ampla participação, com desempate para ME/EPP", "Sem margem de preferência", "Valor estimado público"],
+ "referencia": 9122090.40,
+ "contrato_meses": 30,
+ "vigencia": {"v": "30 meses", "s": "prorrogável · preço fixo até 06/10/2027"},
+ "garantia": {"pct": 0, "v": "Não informada", "s": "não consta no edital · TR e minuta não anexados"},
+ "tabela": {"item": "Veículo", "qtd": "Veículos", "valor": "Valor em 30 meses", "sub": "valor máximo do contrato", "total": "Aluguel por 30 meses · lote único"},
+ "capital_sub": "capital de giro · fora a compra dos 12 blindados",
+ "valor_periodo": "em 30 meses · valor bruto máximo",
+ "grupos": [
+  {"nome": "SUV grande blindada", "ex": "7 lugares, diesel, 4x4, blindagem III-A, R$ 25.339,14 por mês cada", "qtd": 12, "v": 9122090.40}
+ ],
+ "custos": [
+  {"nome": "Custo dos 12 blindados nos 30 meses", "curto": "Frota blindada", "ref": 9122090.40, "pct": 68, "cor": "var(--blue)"}
+ ],
+ "locais": {
+  "estados": [{"uf": "GO", "nome": "Goiás"}],
+  "itens": [
+   {"k": "Entrega dos veículos", "v": "Palácio das Esmeraldas, em Goiânia"},
+   {"k": "Prazo de entrega", "v": "Definido no Termo de Referência, que não estava entre os arquivos"},
+   {"k": "Uso", "v": "Transporte de autoridades pela Casa Militar · quilometragem livre"},
+   {"k": "Estrutura", "v": "Não exige escritório local · manutenção, guincho e seguro por conta da empresa"}
+  ]
+ },
+ "parametros": {"indiretas": 5, "tributos": 11, "glosa": 1, "ciclo_dias": 45, "juros_mes": 1.5, "garantia_pct": 0, "garantia_custo_ano": 0},
+ "cenarios": [
+  {"id": "alto", "nome": "Conservador", "lance": 8900000},
+  {"id": "base", "nome": "Provável", "lance": 8600000, "padrao": true},
+  {"id": "agressivo", "nome": "Agressivo", "lance": 8300000}
+ ],
+ "veredito": {"txt": "Pode valer, só depois de ler o TR", "nivel": "medio", "risco": "risco alto"},
+ "cuidados": [
+  {"t": "Comprar 12 blindados antes de faturar", "d": "a frota inteira é paga antes do primeiro mês de aluguel"},
+  {"t": "Faltam o TR e a minuta do contrato", "d": "prazo de entrega, pagamento e multas não foram conferidos"},
+  {"t": "Exigências que eliminam", "d": "atestado com blindados e certificado do Exército"}
+ ],
+ "nota": "Valores do contrato: Edital do Pregão 18/2026-SECAMI, item 2.8 (12 veículos × 30 meses × R$ 25.339,14). Retorno: estimativa com os custos de exemplo do simulador da análise completa (custo da frota em 68% do valor), já descontados impostos, despesas indiretas e custo do dinheiro (1,5% ao mês). O lucro se refere aos 30 meses do contrato; o capital mostrado não inclui a compra dos veículos. Antes de decidir, troque pelos custos reais da empresa."
+}

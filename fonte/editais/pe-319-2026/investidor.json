@@ -10,6 +10,9 @@
  "contrato_meses": 12,
  "vigencia": {"v": "12 meses", "s": "renovável por até 10 anos"},
  "garantia": {"pct": 5, "s": "do valor anual · seguro-garantia até a assinatura"},
+ "tabela": {"item": "Veículos", "qtd": "Diárias/ano", "valor": "Valor/ano", "sub": "valores máximos por ano", "total": "Aluguel dos veículos · 7 grupos, 22 categorias"},
+ "capital_sub": "capital de giro · fora os 16 carros próprios",
+ "valor_periodo": "por ano · valor bruto máximo",
  "grupos": [
   {"nome": "Sedans e executivos", "ex": "sedan e executivo", "cats": "K, L", "d24": 3191, "d10": 2262, "v": 3657410.60},
   {"nome": "Blindados", "ex": "executivos e SUVs blindados", "cats": "A–D", "d24": 1004, "d10": 561, "v": 4535740.00},

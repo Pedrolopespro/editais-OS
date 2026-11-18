@@ -1,0 +1,53 @@
+{
+ "titulo": "Pregão 25/2026 ARTESP · Resumo",
+ "orgao": "ARTESP · Agência Reguladora de Serviços Públicos Delegados de Transporte do Estado de São Paulo",
+ "unidade": "Superintendência de Administração Interna · UASG 392601",
+ "pregao": "Pregão Eletrônico nº 25/2026",
+ "sessao": {"data": [2026, 11, 25], "hora": "9h30", "fuso": "horário de Brasília", "plataforma": "Compras.gov.br", "url": "https://www.gov.br/compras"},
+ "objeto": "Aluguel de 103 carros zero quilômetro por 30 meses para a agência que fiscaliza o transporte em São Paulo: 50 com motorista e combustível e 53 sem motorista (um deles uma van adaptada como base móvel de fiscalização), com central de operações 24 horas e gestão completa da frota.",
+ "condicoes": ["Menor preço global", "Disputa aberta", "Sem preferência para ME/EPP", "Sem margem de preferência", "Orçamento público"],
+ "referencia": 74357769.52,
+ "contrato_meses": 30,
+ "vigencia": {"v": "30 meses", "s": "renovável por até 10 anos"},
+ "garantia": {"pct": 5, "s": "do valor total · R$ 1,49 mi se a base for anual"},
+ "tabela": {"item": "Veículos", "qtd": "Quantidade", "valor": "Valor em 30 meses", "sub": "valores máximos em 30 meses", "total": "Aluguel dos veículos · 6 grupos"},
+ "capital_sub": "capital de giro · sem a compra dos 103 carros",
+ "valor_periodo": "em 30 meses · valor bruto máximo",
+ "grupos": [
+  {"nome": "Hatches com motorista", "ex": "carros de fiscalização com giroflex e GPS", "cats": "S-4", "qtd": 28, "v": 26736780.00},
+  {"nome": "Sedãs com motorista", "ex": "sedãs brancos de serviço", "cats": "S-1", "qtd": 17, "v": 16276781.33},
+  {"nome": "Hatches sem motorista", "ex": "carros de fiscalização, km livre", "cats": "S-4", "qtd": 52, "v": 10685407.20},
+  {"nome": "Caminhonetes com motorista", "ex": "cabine dupla 4x2", "cats": "S-2", "qtd": 4, "v": 5112466.80},
+  {"nome": "Sedã executivo com motorista", "ex": "carro de representação, todos os dias", "cats": "B", "qtd": 1, "v": 1228207.50},
+  {"nome": "Van base móvel", "ex": "escritório móvel de fiscalização", "cats": "S-4 Cat. 2", "qtd": 1, "v": 759836.18}
+ ],
+ "custos": [
+  {"nome": "Veículos com motorista e combustível", "curto": "Com motorista", "ref": 49354235.63, "pct": 75, "cor": "var(--blue)"},
+  {"nome": "Veículos sem motorista", "curto": "Sem motorista", "ref": 11445243.38, "pct": 65, "cor": "var(--steel)"},
+  {"nome": "Horas adicionais", "curto": "Horas extras", "ref": 7806465.00, "pct": 70, "cor": "var(--amber)"},
+  {"nome": "Base operacional fixa", "curto": "Central 24 h", "ref": 5678247.53, "pct": 65, "cor": "var(--green)"},
+  {"nome": "Despesas eventuais e pernoites (reembolso)", "curto": "Despesas", "ref": 73577.98, "pct": 100, "cor": "var(--gold)"}
+ ],
+ "locais": {
+  "estados": [{"uf": "SP", "nome": "São Paulo"}],
+  "itens": [
+   {"k": "Onde", "v": "Todo o Estado de São Paulo, a partir da sede da ARTESP no Itaim Bibi (capital)"},
+   {"k": "Base", "v": "Central de operações 24 h · metade da frota a até 15 min da sede"},
+   {"k": "Prazos", "v": "Início em 10 dias úteis (seminovos aceitos) · troca de carro em 3 h na capital"},
+   {"k": "Horário", "v": "12 h por dia, de segunda a sexta · plantão noturno de 5 carros"}
+  ]
+ },
+ "parametros": {"indiretas": 5, "tributos": 9, "glosa": 1, "ciclo_dias": 70, "juros_mes": 1.5, "garantia_pct": 5, "garantia_custo_ano": 1.5},
+ "cenarios": [
+  {"id": "alto", "nome": "Conservador", "lance": 72000000},
+  {"id": "base", "nome": "Provável", "lance": 70000000, "padrao": true},
+  {"id": "agressivo", "nome": "Agressivo", "lance": 68500000}
+ ],
+ "veredito": {"txt": "Vale disputar só para locadora de grande porte", "nivel": "medio", "risco": "risco alto"},
+ "cuidados": [
+  {"t": "Exigência financeira alta", "d": "R$ 12,4 mi de capital de giro e R$ 7,4 mi de patrimônio para ser aceito"},
+  {"t": "Frota nova e início rápido", "d": "103 carros zero km, reserva de 12% e começo em 10 dias úteis"},
+  {"t": "Regras em conflito no edital", "d": "troca da frota em 24 meses e carros reserva sem preço podem comer o lucro"}
+ ],
+ "nota": "Valores do contrato: Edital, Termo de Referência nº 48/2026 e Anexo VIII (Planilha Orçamentária, preços máximos em 30 meses). Retorno: estimativa com os custos de exemplo do simulador da análise completa, já descontados impostos, despesas indiretas, custo do dinheiro (1,5% ao mês) e garantia. O capital mostrado não inclui a compra dos carros. Antes de decidir, troque pelos custos reais da empresa."
+}

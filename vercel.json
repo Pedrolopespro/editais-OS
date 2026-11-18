@@ -1,5 +1,7 @@
 {
   "redirects": [
+    { "source": "/de-70025-40-2026", "destination": "/", "permanent": false },
+    { "source": "/de-70025-40-2026/", "destination": "/", "permanent": false },
     { "source": "/pe-319-2026/investidor", "destination": "/resumo/pe-319-2026/", "permanent": true },
     { "source": "/pe-319-2026/investidor/", "destination": "/resumo/pe-319-2026/", "permanent": true }
   ],

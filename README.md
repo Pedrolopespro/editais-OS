@@ -7,7 +7,11 @@ Painéis de decisão para licitações e dispensas. A página inicial lista os e
 | `/` | Lista de editais |
 | `/pe-319-2026/` | Pregão Eletrônico 319/2026 · Casa Civil · locação de veículos |
 | `/resumo/pe-319-2026/` | Resumo do Pregão 319 para o investidor: órgão, sessão, valor do contrato, veículos, locais e retorno em uma tela |
-| `/de-70025-40-2026/` | Dispensa Eletrônica 70025-40/2026 · TRE-DF · vídeo animado 2D |
+| `/pe-27-2026-anvisa/` | Pregão Eletrônico 90029/2026 (Edital 27/2026) · Anvisa · lotes Goiás e Norte |
+| `/pe-25-2026-artesp/` | Pregão Eletrônico 25/2026 · ARTESP · 103 veículos com e sem motorista |
+| `/pe-106-2026-hortolandia/` | Pregão Eletrônico 106/2026 · Prefeitura de Hortolândia (SP) · 173 veículos em 24 itens |
+| `/pe-18-2026-casa-militar-go/` | Pregão Eletrônico 18/2026 · Casa Militar de Goiás · 12 SUVs blindados |
+| `/resumo/<edital>/` | Resumo de cada edital para o investidor |
 
 Links antigos do Pregão 319 (`/#conflitos` etc.) redirecionam para `/pe-319-2026/`.
 
@@ -16,6 +20,7 @@ Links antigos do Pregão 319 (`/#conflitos` etc.) redirecionam para `/pe-319-202
 - `fonte/core/modelo.html`: desenho e motor comuns a todos os painéis (estilo, navegação, matriz, kit, simulador, parecer, animações).
 - `fonte/core/sistema.html`: página inicial com a lista de editais.
 - `fonte/editais/<slug>/`: um pacote por edital.
+- `fonte/arquivo/<slug>/`: editais retirados do painel (não entram no build). O endereço antigo redireciona para a lista.
   - `meta.json`: títulos, textos do topo, cartão da lista e arquivos usados.
   - `secoes.html`: seções próprias do edital (ficha, condições, conflitos, simulador, kit…).
   - `edital.js`: dados e regras do edital (seções, conflitos, matriz, kit, custos do simulador, números do topo) no objeto `E`.

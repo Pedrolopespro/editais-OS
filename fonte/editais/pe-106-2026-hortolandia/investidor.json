@@ -1,0 +1,50 @@
+{
+ "titulo": "Pregão 106/2026 Hortolândia · Resumo",
+ "orgao": "Prefeitura Municipal de Hortolândia (SP)",
+ "unidade": "Secretaria Municipal de Administração e Gestão de Pessoal · Departamento de Suprimentos",
+ "pregao": "Pregão Eletrônico nº 106/2026",
+ "sessao": {"data": [2026, 11, 27], "hora": "8h30", "fuso": "horário de Brasília", "plataforma": "BBMNET", "url": "https://www.bbmnet.com.br"},
+ "objeto": "Aluguel de 173 veículos sem motorista e sem combustível, com quilometragem livre, para as secretarias de Hortolândia: carros, vans, picapes, caminhões, viaturas da Guarda, ambulâncias e veículos adaptados, em 24 itens disputados separadamente.",
+ "condicoes": ["Menor preço por item", "Disputa aberta", "24 itens independentes", "Empate ficto para ME/EPP", "Sem margem de preferência", "Orçamento público"],
+ "referencia": 18579013.56,
+ "contrato_meses": 12,
+ "vigencia": {"v": "12 meses", "s": "da assinatura · prorrogável"},
+ "garantia": {"pct": 0, "v": "Não exige", "s": "só garantia de proposta de 1% por item"},
+ "tabela": {"item": "Veículos", "qtd": "Veículos", "valor": "Valor/ano", "sub": "valores máximos por ano", "total": "Aluguel dos veículos · 24 itens em 4 grupos"},
+ "capital_sub": "capital de giro · compra ou leasing da frota à parte",
+ "valor_periodo": "por ano · valor bruto máximo",
+ "grupos": [
+  {"nome": "Passeio e passageiros", "ex": "hatch, sedan, 7 lugares e vans", "qtd": 96, "v": 7325859.36},
+  {"nome": "Carga e utilitários", "ex": "picapes, furgões, VUC e caminhões", "qtd": 38, "v": 4986335.88},
+  {"nome": "Viaturas sinalizadas", "ex": "Guarda Municipal e Mobilidade", "qtd": 29, "v": 3883035.36},
+  {"nome": "Saúde e acessibilidade", "ex": "ambulâncias, van PcD, refrigerado e consultório", "qtd": 10, "v": 2383782.96}
+ ],
+ "custos": [
+  {"nome": "Passeio e passageiros", "curto": "Passeio", "ref": 7325859.36, "pct": 62, "cor": "var(--blue)"},
+  {"nome": "Carga e utilitários", "curto": "Carga", "ref": 4986335.88, "pct": 62, "cor": "var(--green)"},
+  {"nome": "Viaturas sinalizadas", "curto": "Viaturas", "ref": 3883035.36, "pct": 68, "cor": "var(--steel)"},
+  {"nome": "Saúde e acessibilidade", "curto": "Saúde", "ref": 2383782.96, "pct": 70, "cor": "var(--gold)"}
+ ],
+ "locais": {
+  "estados": [{"uf": "SP", "nome": "Hortolândia"}],
+  "itens": [
+   {"k": "Onde", "v": "Locais indicados pela Prefeitura, dentro de Hortolândia"},
+   {"k": "Prazo para entregar", "v": "30 dias após cada ordem de serviço · 90 dias para os 42 veículos adaptados"},
+   {"k": "Frota", "v": "173 veículos 2026 ou mais novos (caminhão-plataforma 2020+) · não exige frota em nome da empresa"},
+   {"k": "Atendimento", "v": "Assistência 24 h e troca do veículo em 24 h · não exige escritório local"}
+  ]
+ },
+ "parametros": {"indiretas": 8, "tributos": 11, "glosa": 2, "ciclo_dias": 60, "juros_mes": 1.5, "garantia_pct": 0, "garantia_custo_ano": 0},
+ "cenarios": [
+  {"id": "alto", "nome": "Conservador", "lance": 17600000},
+  {"id": "base", "nome": "Provável", "lance": 17200000, "padrao": true},
+  {"id": "agressivo", "nome": "Agressivo", "lance": 16800000}
+ ],
+ "veredito": {"txt": "Vale disputar itens escolhidos, com condições", "nivel": "medio", "risco": "risco alto"},
+ "cuidados": [
+  {"t": "Contrato de só 12 meses com carros 0 km", "d": "a Prefeitura pode encerrar no aniversário com 2 meses de aviso"},
+  {"t": "Até 90 dias sem faturar", "d": "o prazo corre desde a assinatura, mas cada veículo só fatura depois de entregue"},
+  {"t": "Garantia antes da disputa", "d": "1% de cada item anexado até 27/11, 8h; no item 1 o edital traz valor 10 vezes menor"}
+ ],
+ "nota": "Valores do contrato: quadro de preços do Termo de Referência (Anexo I, p. 28–31) do Pregão 106/2026; o total é a soma dos 24 itens. Retorno: estimativa com os custos de exemplo do simulador da análise completa, já descontados impostos, despesas indiretas, faturamento perdido e custo do dinheiro (1,5% ao mês). O capital mostrado é só o de giro: a compra ou o arrendamento dos veículos é à parte. Antes de decidir, troque pelos custos reais da empresa."
+}

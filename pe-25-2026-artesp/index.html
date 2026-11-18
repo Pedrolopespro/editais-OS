@@ -1,0 +1,1830 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Painel de decisão do Pregão Eletrônico 25/2026 da ARTESP: locação de 103 veículos novos por 30 meses, valores, riscos, conflitos do edital, simulador de lance e parecer final.">
+<meta name="theme-color" content="#0D0D0F">
+<link rel="canonical" href="https://editais-os.vercel.app/pe-25-2026-artesp/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Sistema de Análise de Editais">
+<meta property="og:title" content="Vale a pena disputar o Pregão 25/2026 da ARTESP?">
+<meta property="og:description" content="Painel de decisão do Pregão Eletrônico 25/2026 da ARTESP: locação de 103 veículos novos por 30 meses, valores, riscos, conflitos do edital, simulador de lance e parecer final.">
+<meta property="og:url" content="https://editais-os.vercel.app/pe-25-2026-artesp/">
+<meta property="og:image" content="https://editais-os.vercel.app/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vale a pena disputar o Pregão 25/2026 da ARTESP?">
+<meta name="twitter:description" content="Painel de decisão do Pregão Eletrônico 25/2026 da ARTESP: locação de 103 veículos novos por 30 meses, valores, riscos, conflitos do edital, simulador de lance e parecer final.">
+<meta name="twitter:image" content="https://editais-os.vercel.app/og-image.jpg">
+<title>Pregão 25/2026 ARTESP · Painel de Decisão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+/* Layout: tela inicial com números e cartões (um por assunto); cada cartão abre uma página com números no topo, conclusão em uma frase e detalhes recolhidos. Tema escuro fixo; cor só com significado: dourado = dinheiro e recomendação, azul = preço e informação, verde = ok, vermelho = risco e prazo. */
+:root{
+  color-scheme:dark;
+  --bg:#0A0B0D; --surface:#121316; --surface-2:#17191D; --surface-3:#1E2126; --line:#262930; --line-2:#363A42;
+  --ink:#F2F3F5; --muted:#9BA1AB; --dim:#6E747E; --ill:#8A909A;
+  --gold:#CDAA61; --gold-bg:rgba(205,170,97,.12); --blue:#5B9BFF; --blue-bg:rgba(91,155,255,.12);
+  --green:#3CCB8B; --green-bg:rgba(60,203,139,.12); --red:#FF5C61; --red-bg:rgba(255,92,97,.13); --red-ink:#FF8F93;
+  --amber:#E7AE45; --amber-bg:rgba(231,174,69,.13); --steel:#B9BEC7;
+  --good:var(--green); --good-bg:var(--green-bg); --warn:var(--amber); --warn-bg:var(--amber-bg); --bad:var(--red); --bad-bg:var(--red-bg); --neutral-bg:var(--surface-3);
+  --focus:var(--blue); --tint:var(--surface-3); --strong:var(--steel);
+  --font-ui:"Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-num:"Inter Tight", "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --r-lg:18px; --r-md:14px; --r-sm:9px;
+}
+[data-sec="ficha"],[data-sec="plan"],[data-sec="risco"],[data-sec="parecer"]{--strong:var(--gold)}
+[data-sec="cond"],[data-sec="simul"]{--strong:var(--blue)}
+[data-sec="qual"],[data-sec="conf"]{--strong:var(--red)}
+[data-sec="matriz"],[data-sec="kit"]{--strong:var(--green)}
+[data-sec="oper"],[data-sec="decl"]{--strong:var(--steel)}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-ui);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;line-height:1.2;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.num{font-variant-numeric:tabular-nums}
+.mono{font-family:var(--font-mono)}
+.c-gold{color:var(--gold)} .c-blue{color:var(--blue)} .c-green{color:var(--green)} .c-red{color:var(--red)} .c-ink{color:var(--ink)}
+.acc{stroke:var(--strong)}
+
+/* ---------- estrutura ---------- */
+.shell{max-width:1240px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:20px 28px;display:grid;gap:18px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand-mark{width:44px;height:44px;border-radius:12px;background:#F2F3F5;display:grid;place-items:center;flex:none}
+.brand-mark img{width:32px;height:32px;object-fit:contain}
+.brand-txt{display:grid;min-width:0}
+.brand-txt b{font-size:15px;font-weight:700}
+.brand-txt span{font-size:12.5px;color:var(--muted)}
+.top-chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:99px;border:1px solid var(--line-2);font-size:12.5px;font-weight:600;white-space:nowrap;color:var(--muted)}
+.chip svg{width:15px;height:15px}
+.chip.hot{border-color:color-mix(in srgb,var(--red) 55%,transparent);color:var(--red-ink)}
+.crumbbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px}
+.crumbbar a.back{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:14px;padding:8px 14px;border-radius:10px;background:var(--surface-2);border:1px solid var(--line)}
+.crumbbar a.back:hover{border-color:var(--line-2);background:var(--surface-3)}
+.crumb-info{font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.mini-prog{width:110px;height:5px;border-radius:99px;background:var(--surface-3);overflow:hidden;display:inline-block}
+.mini-prog i{display:block;height:100%;background:var(--gold)}
+.content{display:grid;min-width:0}
+.sec{display:grid;gap:22px;min-width:0;animation:fade .25s ease}
+@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.sec{animation:none}}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--strong)}
+.hint{font-size:13px;color:var(--muted);max-width:75ch}
+.src{display:inline-block;font-family:var(--font-mono);font-size:11px;padding:1px 7px;border-radius:6px;background:var(--surface-3);color:var(--muted);white-space:nowrap;vertical-align:1px}
+.foot{font-size:12px;color:var(--dim);padding-top:14px;border-top:1px solid var(--line)}
+
+/* ---------- tela inicial ---------- */
+.home-hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;align-items:center;padding:6px 0 2px}
+.home-hero h1{font-family:var(--font-num);font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-.03em;margin-top:8px}
+.lead{color:var(--muted);font-size:16px;max-width:64ch;margin-top:10px}
+.lead b{color:var(--ink);font-weight:600}
+.hero-art{color:var(--ill);margin:0;display:grid;place-items:center}
+.hero-art svg{width:100%;height:auto;display:block;max-height:180px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:16px 18px;display:grid;gap:4px;text-decoration:none;min-width:0;transition:border-color .15s}
+.kpi:hover{border-color:var(--line-2)}
+.kpi .k{font-size:12.5px;color:var(--muted)}
+.kpi .v{font-family:var(--font-num);font-size:clamp(26px,3vw,36px);font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1;overflow-wrap:anywhere}
+.kpi .s{font-size:12.5px;color:var(--dim)}
+.reco{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;background:var(--surface);border:1px solid color-mix(in srgb,var(--gold) 55%,transparent);border-radius:var(--r-md);padding:16px 20px;text-decoration:none}
+.reco:hover{background:var(--surface-2)}
+.reco .k{font-size:11.5px;color:var(--gold);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.reco b{display:block;font-family:var(--font-num);font-size:20px;font-weight:700;margin-top:2px}
+.reco p{font-size:13.5px;color:var(--muted);margin-top:2px}
+.reco-prog{display:grid;gap:6px;justify-items:end;font-size:12.5px;color:var(--muted)}
+.reco-prog .bar{width:170px;height:6px;border-radius:99px;background:var(--surface-3);overflow:hidden}
+.reco-prog .bar i{display:block;height:100%;background:var(--gold);border-radius:99px}
+.deadlines{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.dl{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;display:grid;gap:3px;align-content:start;background:var(--surface)}
+.dl .d{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.dl .d b{font-family:var(--font-num);font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
+.dl .left{font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--surface-3);color:var(--muted)}
+.dl.urgent{border-color:color-mix(in srgb,var(--red) 45%,var(--line))}
+.dl.urgent .left{background:var(--red-bg);color:var(--red-ink)}
+.dl p{font-size:13.5px}
+.copy{border:1px solid var(--line-2);background:transparent;border-radius:8px;padding:1px 8px;font-size:11.5px;cursor:pointer;color:var(--muted)}
+.block-h.home{margin-top:6px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;display:grid;grid-template-rows:auto 1fr;transition:border-color .15s, transform .15s;min-width:0}
+.tcard:hover{border-color:color-mix(in srgb,var(--strong) 60%,var(--line));transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.tcard,.tcard:hover{transition:none;transform:none}}
+.tcard .art{height:108px;background:var(--surface-2);border-bottom:1px solid var(--line);display:grid;place-items:center;color:var(--ill);position:relative}
+.tcard .art svg{height:86px;width:auto;max-width:90%}
+.tcard .done{position:absolute;top:10px;right:10px;font-size:11.5px;font-weight:700;color:var(--green);background:var(--green-bg);padding:2px 9px;border-radius:99px}
+.tcard .body{padding:14px 16px 16px;display:grid;gap:3px;align-content:start}
+.tcard .et{font-size:11px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.tcard h3{font-size:14.5px;font-weight:600;color:var(--muted);margin-top:2px}
+.tcard .m{font-family:var(--font-num);font-size:24px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;line-height:1.2}
+.tcard .s{font-size:12.5px;color:var(--dim)}
+.tcard .s.st-alert{color:var(--red-ink)} .tcard .s.st-ok{color:var(--green)} .tcard .s.st-warn{color:var(--amber)}
+.tcard .go{margin-top:10px;font-size:13px;font-weight:600;color:var(--strong)}
+
+/* ---------- topo das páginas ---------- */
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:28px;align-items:center;padding:4px 0 2px}
+.sec-head h2{font-family:var(--font-num);font-size:clamp(28px,3.6vw,42px);font-weight:700;letter-spacing:-.03em;margin-top:6px}
+.hero-nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:10px;margin-top:16px}
+.hn{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;display:grid;gap:2px;min-width:0}
+.hn .v{font-family:var(--font-num);font-size:26px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.15;overflow-wrap:anywhere}
+.hn .l{font-size:12.5px;color:var(--muted)}
+.done-tag{color:var(--green);letter-spacing:0;text-transform:none}
+
+/* ---------- blocos ---------- */
+.tldr{border:1px solid var(--line);border-radius:var(--r-md);padding:16px 20px;display:grid;gap:10px;background:var(--surface)}
+.tldr h3{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.tldr ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.tldr li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:8px;align-items:start}
+.tldr li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--strong);margin:8px 0 0 3px}
+.tldr b{font-weight:700}
+.block{display:grid;gap:12px;min-width:0}
+.block-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.block-h h3{font-size:17px;font-weight:600}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:var(--r-md);padding:16px 18px;display:grid;gap:8px;align-content:start;min-width:0;background:var(--surface)}
+.card h4{font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
+.card h4 svg{width:18px;height:18px;color:var(--strong);flex:none}
+.card p,.card li{font-size:14px}
+.card ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.card li::marker{color:var(--dim)}
+.card .muted{color:var(--muted);font-size:13px}
+.card a{color:var(--blue)}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.pill.elim,.pill.alta{background:var(--red-bg);color:var(--red-ink)}
+.pill.att,.pill.media{background:var(--amber-bg);color:var(--amber)}
+.pill.ok{background:var(--green-bg);color:var(--green)}
+.pill.info,.pill.baixa{background:var(--surface-3);color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px}
+.tiles.six{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tile{border-radius:var(--r-md);padding:14px 16px;display:grid;gap:4px;align-content:start;background:var(--surface);border:1px solid var(--line);min-width:0}
+.tile .k{font-size:12.5px;color:var(--muted)}
+.tile .v{font-family:var(--font-num);font-size:22px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.tile .s{font-size:12.5px;color:var(--dim)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:11px;padding:10px 18px;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;background:var(--ink);color:#0A0B0D}
+.btn:hover{background:#FFFFFF}
+.btn.ghost{background:var(--surface-3);color:var(--ink);border:1px solid var(--line-2)}
+.btn.ghost:hover{background:var(--surface-2)}
+.btn.small{padding:7px 12px;font-size:13px;border-radius:9px}
+
+/* ---------- tabelas ---------- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding:11px 14px;background:var(--surface-2);border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl-min{min-width:720px}
+.tbl-mid{min-width:560px}
+.cat-code{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--surface-3);font-weight:700;font-size:12.5px}
+.barcell{display:grid;grid-template-columns:minmax(60px,1fr) 52px;gap:8px;align-items:center}
+.bar{height:6px;border-radius:99px;background:var(--surface-3);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:var(--strong)}
+tr.hl td{background:rgba(255,255,255,.025)}
+
+/* ---------- ficha ---------- */
+.cover{display:grid;gap:18px}
+.cover-main{border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);padding:22px;display:grid;gap:18px}
+.org{display:flex;gap:16px;align-items:center}
+.org-logo{width:64px;height:64px;border-radius:16px;background:#F2F3F5;display:grid;place-items:center;flex:none}
+.org-logo img{width:48px;height:48px;object-fit:contain}
+.org h1{font-family:var(--font-num);font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.02em}
+.org p{color:var(--muted);font-size:13.5px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:10px}
+.fact{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;display:grid;gap:3px;align-content:start;min-width:0}
+.fact .k,.objeto .k{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}
+.fact .v{font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.fact .s{font-size:12.5px;color:var(--muted)}
+.fact.no .v{color:var(--red)}
+.objeto{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;display:grid;gap:6px}
+.objeto p{font-size:14.5px;max-width:95ch}
+
+/* ---------- composição e filtros ---------- */
+.stack{display:flex;height:14px;border-radius:99px;overflow:hidden;background:var(--surface-3);gap:2px}
+.stack i{display:block;height:100%}
+.legend{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.legend li{display:grid;grid-template-columns:12px minmax(0,1fr) auto 56px;gap:10px;align-items:center;font-size:14px}
+.legend .sw{width:12px;height:12px;border-radius:4px}
+.legend .r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.legend .p{color:var(--muted)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.fbtn{border:1px solid var(--line-2);background:transparent;border-radius:99px;padding:6px 14px;font-size:13px;font-weight:600;cursor:pointer;color:var(--muted)}
+.fbtn[aria-pressed="true"]{background:var(--ink);color:#0A0B0D;border-color:var(--ink)}
+
+/* ---------- conflitos ---------- */
+.conf-list{display:grid;gap:12px}
+details.fold.conf-f>summary{grid-template-columns:minmax(0,1fr) auto auto}
+.fold-body.conf{display:grid;gap:10px}
+.conf .stripe{background:var(--line-2)}
+.conf.alta .stripe{background:var(--red)} .conf.media .stripe{background:var(--amber)}
+.conf-body{padding:14px 18px;display:grid;gap:10px}
+.conf-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.conf-top h4{font-size:16px;font-weight:600;margin-right:auto}
+.versus{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr);gap:8px;align-items:stretch}
+.versus .side-a,.versus .side-b{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px;display:grid;gap:4px;align-content:start}
+.versus .vs{display:grid;place-items:center;font-size:11px;font-weight:800;color:var(--dim)}
+.conf .why{font-size:13.5px;color:var(--muted)}
+.conf .todo{font-size:13.5px}
+.conf .todo b{color:var(--strong)}
+
+/* ---------- planilha ---------- */
+.sheet{border:1px solid var(--line);border-radius:var(--r-md);overflow:auto;background:#FFFFFF;max-height:72vh}
+.sheet img{display:block;max-width:none;width:100%;height:auto;cursor:zoom-in}
+.sheet.zoom img{width:2157px;max-width:none;cursor:zoom-out}
+.gs-card{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:16px;align-items:center;border-radius:var(--r-md);padding:16px 18px;background:var(--surface);border:1px solid color-mix(in srgb,var(--green) 40%,var(--line))}
+.gs-ico{width:52px;height:52px;border-radius:14px;background:var(--green-bg);color:var(--green);display:grid;place-items:center}
+.gs-ico svg{width:26px;height:26px}
+.gs-txt{display:grid;gap:4px;min-width:0}
+.gs-txt b{font-size:16px}
+.gs-txt span{font-size:13.5px;color:var(--muted)}
+.pl-table{min-width:760px}
+.pl-table td:nth-child(2){min-width:210px}
+.pl-table th.fx{text-align:center;color:var(--ink)}
+.pl-table th.fx1{background:rgba(91,155,255,.16)} .pl-table th.fx2{background:rgba(60,203,139,.14)} .pl-table th.fx3{background:rgba(160,140,255,.16)} .pl-table th.fx4{background:rgba(205,170,97,.16)}
+.pl-table td.fx1{background:rgba(91,155,255,.05)} .pl-table td.fx2{background:rgba(60,203,139,.045)} .pl-table td.fx3{background:rgba(160,140,255,.05)} .pl-table td.fx4{background:rgba(205,170,97,.05)}
+.pl-table tr.bad td{background:rgba(255,92,97,.07)}
+.pl-table tr.tot td{background:var(--surface-2);font-weight:700}
+.pl-table .sub{display:block;font-size:11.5px;color:var(--dim);font-weight:500}
+.pl-table td.warn{color:var(--red-ink);font-weight:700}
+
+/* ---------- matriz ---------- */
+.verdict-bar{border-radius:var(--r-md);padding:18px 22px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line)}
+.verdict-bar.go{border-color:color-mix(in srgb,var(--green) 55%,var(--line))}
+.verdict-bar.nogo{border-color:color-mix(in srgb,var(--red) 55%,var(--line))}
+.verdict-bar.wait{border-color:color-mix(in srgb,var(--amber) 55%,var(--line))}
+.verdict-bar h3{font-family:var(--font-num);font-size:21px;font-weight:700}
+.verdict-bar.go h3{color:var(--green)} .verdict-bar.nogo h3{color:var(--red)} .verdict-bar.wait h3{color:var(--amber)}
+.verdict-bar p{font-size:14px;color:var(--muted)}
+.ring{width:74px;height:74px}
+.counts{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.req-group{display:grid;gap:8px}
+.group-title{display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.group-title::after{content:"";height:1px;background:var(--line);flex:1}
+.req{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;align-items:center;background:var(--surface)}
+.req.st-nao{border-color:color-mix(in srgb,var(--red) 50%,var(--line))}
+.req.st-atende{border-color:color-mix(in srgb,var(--green) 40%,var(--line))}
+.req.st-ajuste{border-color:color-mix(in srgb,var(--amber) 45%,var(--line))}
+.req-txt{display:grid;gap:3px;min-width:0}
+.req-txt b{font-size:14.5px;font-weight:600}
+.req-txt span{font-size:13px;color:var(--muted)}
+.seg{display:inline-flex;background:var(--surface-2);border:1px solid var(--line);border-radius:11px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;border-radius:8px;padding:6px 10px;font-size:12.5px;font-weight:600;cursor:pointer;color:var(--muted);white-space:nowrap}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"][data-v="atende"],.seg button[aria-pressed="true"][data-d="participar"]{background:var(--green-bg);color:var(--green)}
+.seg button[aria-pressed="true"][data-v="ajuste"],.seg button[aria-pressed="true"][data-d="condicoes"]{background:var(--amber-bg);color:var(--amber)}
+.seg button[aria-pressed="true"][data-v="nao"],.seg button[aria-pressed="true"][data-d="nao"]{background:var(--red-bg);color:var(--red-ink)}
+.seg button[aria-pressed="true"][data-v="verificar"]{background:var(--surface-3);color:var(--ink)}
+.note{grid-column:1/-1;width:100%;border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:13px;background:var(--surface-2)}
+.save-state{font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.save-state::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
+.save-state.local::before{background:var(--amber)} .save-state.busy::before{background:var(--blue)} .save-state.err::before{background:var(--red)}
+
+/* ---------- simulador ---------- */
+.sim{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:18px;align-items:start}
+.form{display:grid;gap:10px}
+.field{display:grid;grid-template-columns:minmax(0,1fr) 116px;gap:4px 12px;align-items:center;padding:10px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
+.field label{font-size:13.5px;font-weight:600}
+.field small{grid-column:1/2;font-size:12px;color:var(--muted)}
+.field .inp{grid-row:1/3;grid-column:2;display:flex;align-items:center;gap:4px;background:var(--surface-2);border:1px solid var(--line-2);border-radius:9px;padding:0 8px}
+.field input{width:100%;border:0;background:transparent;padding:8px 0;text-align:right;font-variant-numeric:tabular-nums;font-weight:700;outline:none}
+.field .u{font-size:12px;color:var(--muted)}
+.field.big{grid-template-columns:minmax(0,1fr) 180px}
+.out{border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);padding:20px;display:grid;gap:16px}
+.out-main{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px}
+.out-main .tile{background:var(--surface-2)}
+.zone{display:grid;gap:8px}
+.zone-track{position:relative;height:30px;border-radius:9px;background:var(--surface-3)}
+.zone-seg{position:absolute;top:0;bottom:0}
+.zone-mark{position:absolute;top:-6px;bottom:-6px;width:3px;border-radius:3px;transform:translateX(-1.5px)}
+.zone-scale{position:relative;height:34px;font-size:11.5px;color:var(--muted)}
+.zone-scale span{position:absolute;transform:translateX(-50%);white-space:nowrap;text-align:center;line-height:1.25}
+.zone-scale span.end{transform:translateX(-100%);text-align:right}
+.zone-scale span.start{transform:none;text-align:left}
+.zone-key{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.zone-key i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.alert{border-radius:12px;padding:12px 14px;font-size:14px;display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start;border:1px solid var(--line)}
+.alert svg{width:20px;height:20px}
+.alert.ok{background:var(--green-bg);color:var(--green)} .alert.warn{background:var(--amber-bg);color:var(--amber)} .alert.bad{background:var(--red-bg);color:var(--red-ink)}
+.alert p{color:var(--ink)}
+.example-tag{font-size:11.5px;font-weight:700;color:var(--amber);background:var(--amber-bg);padding:3px 9px;border-radius:99px}
+
+/* ---------- riscos ---------- */
+.timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
+.tl-step{display:grid;gap:6px;padding:0 8px;position:relative;text-align:center;justify-items:center}
+.tl-step::before{content:"";position:absolute;top:15px;left:0;right:0;height:2px;background:var(--line-2);z-index:0}
+.tl-step:first-child::before{left:50%}.tl-step:last-child::before{right:50%}
+.tl-dot{width:32px;height:32px;border-radius:50%;background:var(--surface-3);color:var(--strong);display:grid;place-items:center;font-weight:800;font-size:13px;position:relative;z-index:1;border:3px solid var(--bg)}
+.tl-step b{font-size:13.5px}
+.tl-step span{font-size:12.5px;color:var(--muted)}
+.imr{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px}
+.formula{font-family:var(--font-mono);font-size:13px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;overflow-x:auto}
+
+/* ---------- kit ---------- */
+.kit-groups{display:grid;gap:16px}
+.kit-g{border:1px solid var(--line);border-radius:var(--r-md);padding:16px 18px;display:grid;gap:12px;background:var(--surface)}
+.kit-g-h{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.kit-g-h h4{font-size:16px;font-weight:600}
+.prog{height:6px;border-radius:99px;background:var(--surface-3);overflow:hidden;min-width:120px;flex:1;max-width:240px}
+.prog i{display:block;height:100%;background:var(--green);border-radius:99px;transition:width .2s}
+.check{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:10px;align-items:start;padding:8px 4px;border-top:1px solid var(--line)}
+.check:first-of-type{border-top:0}
+.check input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--green)}
+.check label{font-size:14px;cursor:pointer}
+.check label span{display:block;font-size:12.5px;color:var(--muted)}
+.check.done label{color:var(--dim);text-decoration:line-through}
+
+/* ---------- navegação entre páginas ---------- */
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:18px;margin-top:24px}
+.pager a{display:grid;gap:2px;text-decoration:none;padding:10px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--line);min-width:0;max-width:48%}
+.pager a:hover{border-color:var(--line-2)}
+.pager a span{font-size:12px;color:var(--muted)}
+.pager a b{font-size:14px}
+.pager .next-btn{margin-left:auto}
+
+/* ---------- blocos recolhíveis ---------- */
+details.fold{border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);min-width:0}
+details.fold>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:40px minmax(0,1fr) auto auto;gap:14px;align-items:center;padding:14px 16px;border-radius:var(--r-md);transition:background .15s}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary:hover{background:var(--surface-2)}
+details.fold[open]>summary{border-bottom:1px solid var(--line);border-radius:var(--r-md) var(--r-md) 0 0}
+.fold-ico{width:40px;height:40px;border-radius:12px;background:var(--surface-3);color:var(--strong);display:grid;place-items:center}
+.fold-ico svg{width:20px;height:20px}
+.fold-txt{display:grid;gap:2px;min-width:0}
+.fold-txt b{font-size:15.5px;font-weight:600}
+.fold-txt>span{font-size:13px;color:var(--muted)}
+.fold-meta{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.fold-meta:empty{display:none}
+.fold-more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap;padding:6px 12px;border-radius:99px;border:1px solid var(--line-2)}
+.fold-more .chev{width:16px;height:16px;transition:transform .2s}
+details.fold[open] .fold-more .chev{transform:rotate(180deg)}
+details.fold[open] .m-open,details.fold:not([open]) .m-close{display:none}
+.fold-body{padding:16px;display:grid;gap:12px;min-width:0}
+details.fold[open] .fold-body{animation:fade .2s ease}
+@media (prefers-reduced-motion:reduce){details.fold[open] .fold-body{animation:none}.fold-more .chev{transition:none}}
+
+/* ---------- parecer ---------- */
+a.card.ev{text-decoration:none;color:var(--ink);transition:border-color .15s}
+a.card.ev:hover{border-color:var(--line-2)}
+.steps{margin:0;padding:0;list-style:none;display:grid;gap:8px;counter-reset:st}
+.steps li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:12px;font-size:14px;background:var(--surface)}
+.steps li::before{counter-increment:st;content:counter(st);width:28px;height:28px;border-radius:50%;background:var(--surface-3);color:var(--gold);display:grid;place-items:center;font-weight:800;font-size:13px}
+.par-dec .card{gap:12px}
+.par-dec textarea{width:100%;min-height:90px;border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;background:var(--surface-2);resize:vertical;font-size:14px}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1000px){
+  .kpis,.deadlines{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .home-hero,.sec-head{grid-template-columns:minmax(0,1fr)}
+  .hero-art{display:none}
+  .sim{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){
+  .shell{padding-block:14px 22px;gap:14px}
+  .cards{grid-template-columns:minmax(0,1fr)}
+  .tcard{grid-template-columns:96px minmax(0,1fr);grid-template-rows:auto}
+  .tcard .art{height:auto;border-bottom:0;border-right:1px solid var(--line)}
+  .tcard .art svg{height:56px}
+  .tcard .done{top:6px;right:6px;font-size:10.5px;padding:1px 6px}
+  .tiles.six{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .versus,.req,.verdict-bar,.reco,.gs-card{grid-template-columns:minmax(0,1fr)}
+  .versus .vs{padding:2px 0}
+  .reco-prog{justify-items:start}
+  .gs-ico{display:none}
+  .field,.field.big{grid-template-columns:minmax(0,1fr) 110px}
+  .timeline{grid-template-columns:minmax(0,1fr);gap:10px}
+  .tl-step{grid-template-columns:32px minmax(0,1fr);text-align:left;justify-items:start;column-gap:12px}
+  .tl-step::before{display:none}
+  .tl-dot{grid-row:1/3}
+  .pager a{max-width:100%}
+  details.fold>summary{grid-template-columns:minmax(0,1fr);gap:8px;padding:14px}
+  .fold-ico{display:none}
+  .fold-meta{justify-content:flex-start}
+  .fold-more{justify-self:start}
+}
+@media (max-width:600px){.kpi{padding:12px 14px}.kpi .v{font-size:24px}}
+@media (max-width:330px){.kpis{grid-template-columns:minmax(0,1fr)}}
+
+/* ===== acabamento: estética aurora (cartão de destaque em degradê, carvão arredondado, números pastel) ===== */
+:root{
+  --bg:#0D0D0F; --surface:#18181B; --surface-2:#1F1F23; --surface-3:#29292E; --line:rgba(255,255,255,.06); --line-2:rgba(255,255,255,.11);
+  --ink:#F4F4F1; --muted:#A4A4AA; --dim:#74747B; --ill:#9C9CA3;
+  --gold:#E3E8AE; --gold-bg:rgba(227,232,174,.12); --blue:#C3C8F3; --blue-bg:rgba(195,200,243,.12);
+  --green:#B4E2CD; --green-bg:rgba(180,226,205,.12); --red:#F4A39C; --red-bg:rgba(244,163,156,.13); --red-ink:#F7B9B3;
+  --amber:#EBD08A; --amber-bg:rgba(235,208,138,.13); --steel:#DADADE; --ice:#D4EBEA; --on-light:#141416;
+  --aurora:linear-gradient(118deg,#E3E8B2 0%,#D6DCC8 34%,#C9CCE8 68%,#D5E7E2 100%);
+  --aurora-bar:linear-gradient(90deg,#E3E8B2,#C9CCE8);
+  --font-num:"Sora", "Inter", "Segoe UI", system-ui, sans-serif;
+  --r-lg:28px; --r-md:22px; --r-sm:14px;
+  --shadow:0 18px 40px -20px rgba(0,0,0,.65);
+}
+body{background:radial-gradient(1100px 520px at 88% -8%,rgba(227,232,178,.07),transparent 62%),radial-gradient(900px 480px at -8% 4%,rgba(201,204,232,.06),transparent 60%),var(--bg);background-attachment:fixed}
+.brand-mark{border-radius:50%}
+.chip{border-radius:99px;background:var(--surface);border-color:var(--line-2)}
+.crumbbar{border-top:0;padding-top:0}
+.crumbbar a.back{border-radius:99px;background:var(--surface-2);border-color:var(--line)}
+.foot{border-top:0}
+
+/* topo da tela inicial: cartão aurora com texto escuro */
+.home-hero{background:var(--aurora);color:var(--on-light);border-radius:var(--r-lg);padding:30px 32px;box-shadow:var(--shadow);grid-template-columns:minmax(0,1fr) 300px;align-items:end}
+.home-hero .eyebrow{color:#45472F!important}
+.home-hero h1{font-weight:300;color:var(--on-light);letter-spacing:-.035em}
+.home-hero h1 b{font-weight:700}
+.home-hero .lead{color:#3B3C42}
+.home-hero .lead b{color:var(--on-light)}
+.home-hero .hero-art{color:#34353B;align-self:center}
+.home-hero .acc{stroke:var(--on-light)}
+.home-hero .reco{margin-top:20px;background:#141416;border:0;box-shadow:none;color:var(--ink);border-radius:var(--r-md)}
+.home-hero .reco:hover{background:#1A1A1D}
+
+/* números */
+.kpi{border-radius:var(--r-md);background:var(--surface);border-color:var(--line);box-shadow:var(--shadow);padding:18px 20px}
+.kpi .v,.tcard .m,.hn .v,.tile .v,.reco b,.dl .d b,.sec-head h2,.home-hero h1,.org h1,.verdict-bar h3{font-family:var(--font-num)}
+.kpi .v{font-weight:600}
+
+/* cartões de assunto */
+.tcard{border-radius:var(--r-lg);background:var(--surface);border-color:var(--line);box-shadow:var(--shadow);position:relative}
+.tcard .art{background:transparent;border-bottom:0;height:92px;padding:18px 20px 0;place-items:center start}
+.tcard .art svg{height:66px;max-width:none}
+.tcard .body{padding:8px 20px 20px;padding-right:66px}
+.tcard .done{background:var(--green-bg);color:var(--green);top:16px;right:16px}
+.tcard .go{position:absolute;right:16px;bottom:16px;width:40px;height:40px;border-radius:50%;background:var(--ice);color:var(--on-light);display:grid;place-items:center;font-size:0;margin:0;transition:background .15s}
+.tcard .go::after{content:"→";font-size:17px;font-weight:600;line-height:1}
+.tcard:hover .go{background:#FFFFFF}
+.tcard:hover{border-color:var(--line-2)}
+
+/* topo das páginas: o primeiro número vira cartão aurora */
+.sec-head{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px 28px;box-shadow:var(--shadow)}
+.hn{background:var(--surface-2);border:0;border-radius:var(--r-md);padding:14px 16px}
+.hero-nums .hn:first-child{background:var(--aurora)}
+.hero-nums .hn:first-child .v{color:var(--on-light)!important}
+.hero-nums .hn:first-child .l{color:#3B3C42}
+
+/* superfícies, botões e controles */
+.card,.tldr,details.fold,.tbl-wrap,.kit-g,.out,.cover-main,.dl,.verdict-bar,.gs-card,.req,.field,.steps li,.tile{border-radius:var(--r-md);border-color:var(--line)}
+.card,.tldr,details.fold,.tbl-wrap,.kit-g,.out,.cover-main,.dl,.verdict-bar,.gs-card{box-shadow:var(--shadow)}
+details.fold>summary{border-radius:var(--r-md)}
+details.fold[open]>summary{border-radius:var(--r-md) var(--r-md) 0 0}
+.fold-ico,.gs-ico{border-radius:50%;background:var(--ice);color:var(--on-light)}
+.fold-more{border:0;background:var(--surface-3);color:var(--ink)}
+.btn{background:var(--ice);color:var(--on-light);border-radius:99px;padding:11px 20px}
+.btn:hover{background:#FFFFFF}
+.btn.ghost{background:var(--surface-3);color:var(--ink);border:1px solid var(--line-2)}
+.seg,.seg button,.fbtn,.pill,.example-tag{border-radius:99px}
+.fbtn[aria-pressed="true"]{background:var(--ice);border-color:var(--ice);color:var(--on-light)}
+.reco-prog .bar i,.mini-prog i,.prog i,.bar i{background:var(--aurora-bar)}
+.zone-track{border-radius:99px;overflow:hidden}
+.tl-dot,.steps li::before{background:var(--ice);color:var(--on-light)}
+.cat-code{border-radius:50%}
+.fact,.objeto{border-radius:var(--r-sm);border-color:var(--line)}
+.org-logo{border-radius:50%}
+.pager a{border-radius:var(--r-md);border-color:var(--line)}
+th{background:var(--surface-2)}
+@media (max-width:1000px){.home-hero{grid-template-columns:minmax(0,1fr);padding:24px 22px}}
+@media (max-width:600px){
+  .tcard .art{border-right:0;padding:12px 0 12px 14px;place-items:center}
+  .tcard .art svg{height:50px}
+  .tcard .body{padding:12px 56px 14px 12px}
+  .tcard .go{width:34px;height:34px;right:12px;bottom:auto;top:50%;transform:translateY(-50%)}
+  .sec-head{padding:20px 18px}
+}
+
+/* ===== tela inicial: respiro, títulos de seção e destaque ao passar o mouse ===== */
+#sec-painel{gap:44px}
+#sec-painel .block{gap:18px}
+.block-h.home{margin-top:0;align-items:end}
+.block-h.home h3{font-family:var(--font-num);font-size:clamp(26px,3vw,34px);font-weight:300;letter-spacing:-.03em;line-height:1.15}
+.block-h.home h3 b{font-weight:700}
+.cards{gap:18px}
+.kpis,.deadlines{gap:14px}
+.tcard::before{content:"";position:absolute;inset:0;background:var(--aurora);opacity:0;transition:opacity .28s ease;pointer-events:none}
+.tcard .art,.tcard .body{position:relative;z-index:1}
+.tcard .art,.tcard .et,.tcard h3,.tcard .m,.tcard .s{transition:color .2s ease}
+.tcard .acc{transition:stroke .2s ease}
+.tcard:hover,.tcard:focus-visible{border-color:transparent;transform:translateY(-3px);box-shadow:0 26px 50px -22px rgba(201,204,232,.35)}
+.tcard:hover::before,.tcard:focus-visible::before{opacity:1}
+.tcard:hover .art,.tcard:focus-visible .art{color:#3A3B40}
+.tcard:hover .acc,.tcard:focus-visible .acc{stroke:var(--on-light)}
+.tcard:hover .et,.tcard:focus-visible .et{color:#5A5B52}
+.tcard:hover h3,.tcard:focus-visible h3{color:#3A3B40}
+.tcard:hover .m,.tcard:focus-visible .m{color:var(--on-light)}
+.tcard:hover .s,.tcard:focus-visible .s{color:#3A3B40!important}
+.tcard:hover .go,.tcard:focus-visible .go{background:var(--on-light);color:var(--ice)}
+.tcard:hover .done,.tcard:focus-visible .done{background:rgba(20,20,22,.1);color:#1E5A40}
+.kpi{transition:background .2s, transform .2s, border-color .2s}
+.kpi:hover{background:var(--surface-2);border-color:var(--line-2);transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.tcard::before,.kpi{transition:none}.tcard:hover,.kpi:hover{transform:none}}
+@media (max-width:600px){#sec-painel{gap:30px}}
+
+/* ===== animação de entrada das ilustrações (só uma vez; visível por padrão) ===== */
+.ill-in :is(path,rect,circle,ellipse):not(.fade){animation:ill-draw 1.25s cubic-bezier(.65,.05,.36,1) both;animation-delay:calc(var(--i,0) * 55ms)}
+.ill-in .acc:not(.fade){animation-duration:.9s;animation-delay:calc(var(--i,0) * 55ms + .35s)}
+.ill-in .fade{animation:ill-fade .7s ease both;animation-delay:calc(var(--i,0) * 55ms + .25s)}
+.ill-in .drive-l{animation:drive-l 1.7s cubic-bezier(.16,.84,.3,1) .1s both}
+.ill-in .drive-r{animation:drive-r 1.7s cubic-bezier(.16,.84,.3,1) .3s both}
+@keyframes ill-draw{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
+@keyframes ill-fade{from{opacity:0}to{opacity:1}}
+@keyframes drive-l{from{transform:translateX(-70px);opacity:0}to{transform:none;opacity:1}}
+@keyframes drive-r{from{transform:translateX(70px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.ill-in *{animation:none!important}}
+
+/* ===== documentos para baixar ===== */
+.docs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.doc-card{display:grid;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto;gap:6px 14px;align-items:start;padding:16px 18px;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);text-decoration:none;transition:border-color .15s,transform .15s}
+.doc-card:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.doc-ico{width:44px;height:44px;border-radius:50%;background:var(--ice);color:var(--on-light);display:grid;place-items:center;font-family:var(--font-num);font-weight:700;font-size:17px;grid-row:1/3}
+.doc-txt{display:grid;gap:3px;min-width:0}
+.doc-txt b{font-size:15px}
+.doc-txt span{font-size:13px;color:var(--muted)}
+.doc-dl{justify-self:start;font-size:12.5px;font-weight:700;color:var(--on-light);background:var(--gold);padding:5px 12px;border-radius:99px;margin-top:4px}
+@media (max-width:1000px){.docs-grid{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.doc-card,.doc-card:hover{transition:none;transform:none}}
+
+/* ===== cartão de conflitos: borda vermelha iridescente girando ===== */
+@property --ring{syntax:'<angle>';inherits:false;initial-value:0deg}
+.tcard.alert-ring{border-color:rgba(255,92,97,.18);box-shadow:var(--shadow),0 0 28px -10px rgba(255,92,97,.45)}
+.tcard.alert-ring::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.6px;pointer-events:none;z-index:2;opacity:.9;
+  background:conic-gradient(from var(--ring),rgba(255,92,97,0) 0deg,rgba(255,92,97,.95) 50deg,#FF9F8E 95deg,#E56FB4 140deg,#FF5C61 185deg,rgba(255,92,97,0) 235deg,rgba(255,92,97,0) 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+  animation:ring-spin 4.8s linear infinite}
+@keyframes ring-spin{to{--ring:360deg}}
+@media (prefers-reduced-motion:reduce){.tcard.alert-ring::after{animation:none}}
+
+/* ===== sistema: voltar à lista de editais ===== */
+.sys-back{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:99px;border:1px solid var(--line-2);background:var(--surface)}
+.sys-back:hover{color:var(--ink);border-color:var(--ink)}
+.top-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap;min-width:0}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="top">
+    <div class="top-left"><a class="sys-back" href="/">← Editais</a><a class="brand" href="#painel"><span class="brand-mark"><img src="/assets/logo-pe-25-2026-artesp.png" alt="Logo do órgão"></span><span class="brand-txt"><b>Pregão Eletrônico 25/2026</b><span>ARTESP · Locação de 103 veículos novos com base operacional</span></span></a></div>
+    <div class="top-chips" id="topChips"></div>
+  </header>
+  <nav class="crumbbar" id="crumbbar" aria-label="Localização" hidden></nav>
+  <main class="content" id="content">
+
+<!-- ======================= PAINEL (TELA INICIAL) ======================= -->
+<section class="sec" id="sec-painel" aria-labelledby="h-painel">
+  <div class="home-hero">
+    <div>
+      <p class="eyebrow" style="color:var(--gold)">Painel de decisão</p>
+      <h1 id="h-painel">Vale a pena disputar<br><b>este pregão?</b></h1>
+      <p class="lead">Locação de 103 veículos zero quilômetro, 50 com motorista e combustível, com central de operações 24 h, para a agência reguladora de transportes de São Paulo. <b>Sessão pública em 25/11/2026, às 9h30.</b></p>
+      <a class="reco" id="reco" href="#parecer"></a>
+    </div>
+    <figure class="hero-art" id="homeArt"></figure>
+  </div>
+  <div class="kpis" id="kpis"></div>
+  <div class="block">
+    <div class="block-h home"><h3>Prazos até a <b>sessão</b></h3><span class="hint">Contagem a partir de hoje. 20/11 é feriado nacional (Lei 14.759/2023).</span></div>
+    <div class="deadlines" id="deadlines"></div>
+  </div>
+  <div class="block">
+    <div class="block-h home"><h3>Assuntos da <b>análise</b></h3><span class="hint">Siga na ordem das etapas ou abra direto o que precisar.</span></div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<!-- ======================= 1. FICHA DO EDITAL ======================= -->
+<section class="sec" id="sec-ficha" data-sec="ficha" hidden>
+  <header class="sec-head"></header>
+  <div class="cover">
+    <div class="cover-main">
+      <div class="org">
+        <div class="org-logo"><img src="/assets/logo-pe-25-2026-artesp.png" alt="Logotipo da ARTESP"></div>
+        <div>
+          <p>ARTESP · Superintendência de Administração Interna (SUADI) · UASG 392601</p>
+          <h1 id="h-visao">Pregão Eletrônico nº 25/2026</h1>
+          <p>Nº 392601-25/2026 · Processo SEI 134.00012246/2026-19 · Edital assinado em 09/11/2026 · TR nº 48/2026 · ETP nº 38/2026</p>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="k">Órgão contratante</span><span class="v">ARTESP</span><span class="s">Agência Reguladora de Serviços Públicos Delegados de Transporte do Estado de São Paulo <span class="src">Edital p. 3</span></span></div>
+        <div class="fact"><span class="k">Modalidade</span><span class="v">Pregão eletrônico</span><span class="s">Lei 14.133/2021 · Decreto estadual 67.608/2023 <span class="src">Edital preâmbulo</span></span></div>
+        <div class="fact"><span class="k">Sessão pública</span><span class="v num">25/11/2026 · 9h30</span><span class="s">horário de Brasília <span class="src">Edital capa, 14.5</span></span></div>
+        <div class="fact"><span class="k">Valor total</span><span class="v num">R$ 74.357.769,52</span><span class="s">30 meses · R$ 2.478.592,32 por mês <span class="src">TR 1.1, 9.1</span></span></div>
+        <div class="fact"><span class="k">Critério de julgamento</span><span class="v">Menor preço global do item</span><span class="s">item único <span class="src">Edital capa, 1.2</span></span></div>
+        <div class="fact"><span class="k">Modo de disputa</span><span class="v">Aberto</span><span class="s">10 min + prorrogações de 2 min · intervalo mínimo de 1% <span class="src">Edital 6.8, 6.11</span></span></div>
+        <div class="fact no"><span class="k">Tratamento favorecido</span><span class="v">Não</span><span class="s">ME/EPP sem benefício pelo valor <span class="src">Edital 3.5.1</span></span></div>
+        <div class="fact no"><span class="k">Margem de preferência</span><span class="v">Não</span><span class="s">não encontrada no edital</span></div>
+        <div class="fact"><span class="k">Vigência do contrato</span><span class="v">30 meses</span><span class="s">prorrogável até 10 anos <span class="src">TR 1.6</span></span></div>
+        <div class="fact"><span class="k">Plataforma</span><span class="v">Compras.gov.br</span><span class="s">credenciamento prévio no SICAF <span class="src">Edital 3.1</span></span></div>
+        <div class="fact"><span class="k">Esclarecimento e impugnação</span><span class="v num">até 19/11/2026</span><span class="s">3 dias úteis antes da sessão, por e-mail <span class="src">Edital 13.1–13.2</span></span></div>
+      </div>
+      <div class="objeto">
+        <span class="k">Objeto completo da contratação</span>
+        <p>Contratação de serviços transporte mediante locação de veículos novos, em caráter não eventual (para utilização em serviço público de natureza permanente ou de longa duração), nas Modalidades: “A” (sem condutor e sem combustível) e “C” (com condutor e com combustível), com a disponibilização de Base operacional fixa (Centro de controle de operações) e “equipamentos veiculares especiais”, com gerenciamento total da frota objetivando o deslocamento para apoio das atividades técnico-administrativas da ARTESP e de Base Operacional Móvel com personalização e “equipamentos veiculares especiais”, enquadrando-se como serviços contínuos, com disponibilização de mão de obra em regime de dedicação exclusiva, e não definidos como serviços de engenharia.</p>
+        <p class="hint">Edital 1.1. São 103 veículos zero quilômetro: 53 na Modalidade A (52 hatches e 1 van adaptada como base móvel) e 50 na Modalidade C, com motorista e combustível (TR 1.3, 5.11.1; Anexo VIII). O contrato atual da ARTESP termina em 06/12/2026 (ETP item 2).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 2. CONDIÇÕES GERAIS ======================= -->
+<section class="sec" id="sec-condicoes" data-sec="cond" aria-labelledby="h-cond" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="cond"></span><div><h2 id="h-cond">Condições gerais da contratação</h2></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Contrato de <b>30 meses, prorrogável até 10 anos</b>, com garantia de <b>5%</b> e repactuação só depois de 1 ano (convenção coletiva para a mão de obra e IPC-FIPE para os demais custos).</span></li>
+    <li><span><b>Item único</b>: os 50 veículos com motorista somam <b>66% do valor</b>; os 53 sem motorista, 15%; central, horas extras e despesas, os outros 18%.</span></li>
+    <li><span>Consórcio permitido. <b>Subcontratação proibida</b>. Pagamento em até 30 dias da nota fiscal, com desconto de até 25% pela avaliação de qualidade.</span></li>
+  </ul></div>
+
+  <div class="tiles six">
+    <div class="tile t4"><span class="k">Vigência</span><span class="v">30 meses</span><span class="s">até 10 anos · TR 1.6</span></div>
+    <div class="tile t1"><span class="k">Garantia contratual</span><span class="v num">5%</span><span class="s">R$ 1,49 mi a R$ 3,72 mi · Minuta 11.1</span></div>
+    <div class="tile t2"><span class="k">Consórcio</span><span class="v">Permitido</span><span class="s">+10% na exigência financeira · Edital 3.11, 8.1.3.1</span></div>
+    <div class="tile t3"><span class="k">Subcontratação</span><span class="v">Proibida</span><span class="s">total ou parcial · TR 1.8, Minuta 4.1</span></div>
+    <div class="tile t5"><span class="k">Vistoria prévia</span><span class="v">Não exigida</span><span class="s">TR 4.5</span></div>
+    <div class="tile t6"><span class="k">Repactuação</span><span class="v">CCT + IPC-FIPE</span><span class="s">após 1 ano · Minuta 7.2, 7.9</span></div>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Para onde vai o dinheiro</h3><span class="hint">Composição do valor estimado no Anexo VIII (Planilha Orçamentária), 30 meses.</span></div>
+    <div class="stack" id="stack" role="img" aria-label="Composição do valor estimado"></div>
+    <ul class="legend" id="legend"></ul>
+    <p class="hint">As linhas da planilha oficial somam R$ 0,02 a mais que o total de R$ 74.357.769,52, por arredondamento. A diferença foi tirada da linha de despesas.</p>
+  </div>
+
+  <div class="block" data-fold="Preço fixo por veículo + preço por km, horas adicionais, pernoite e primeiro mês proporcional" data-fold-icon="cond">
+    <div class="block-h"><h3>Regras de remuneração e pagamento</h3><span class="hint">Valem para os preços unitários da sua planilha.</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Regra</th><th>O que diz</th><th>Fonte</th></tr></thead><tbody>
+      <tr><td><b>Veículo com motorista (C)</b></td><td>Valor fixo mensal por veículo + valor por km rodado. A referência usa 4.500 km por mês por veículo. A contratada paga o combustível</td><td><span class="src">Anexo VIII · TR 5.3.17</span></td></tr>
+      <tr><td><b>Veículo sem motorista (A)</b></td><td>Valor fixo mensal, quilometragem livre. Combustível, pedágio, estacionamento e multas do uso ficam com a ARTESP</td><td><span class="src">Anexo VIII · TR 5.3.16, 5.5.7</span></td></tr>
+      <tr><td><b>Combustível</b></td><td>Etanol obrigatório nos veículos flex; vans preferencialmente diesel, gás natural ou biocombustível; de preferência com cartão de abastecimento</td><td><span class="src">TR 5.1.2</span></td></tr>
+      <tr><td><b>Horas adicionais</b></td><td>Fora do horário contratado, pagas como extraordinárias. Referência: R$ 107,43 (segunda a sábado) e R$ 138,26 (domingos e feriados); estimativa de 49.500 h e 18.000 h em 30 meses</td><td><span class="src">TR 5.2.3.6 · Anexo VIII 8–9</span></td></tr>
+      <tr><td><b>Pernoite do motorista</b></td><td>Reembolso de estadia e refeições até 7 UFESPs; estimativa de 10 pernoites por mês, avisados com 24 h</td><td><span class="src">TR 5.2.3.9</span></td></tr>
+      <tr><td><b>Primeiro mês</b></td><td>Pago na proporção dos dias desde a entrega e o aceite de cada veículo</td><td><span class="src">TR 7.6.1.1</span></td></tr>
+      <tr><td><b>Veículo provisório (seminovo)</b></td><td>Pago pelo preço do veículo novo multiplicado por um fator F, cuja tabela não foi publicada (ver Conflitos)</td><td><span class="src">TR 5.2.1.15.3–4</span></td></tr>
+      <tr><td><b>Recebimento e pagamento</b></td><td>Provisório em 5 dias, definitivo em 5 dias, liquidação em 10 dias úteis e pagamento em até 30 dias da nota fiscal, em conta no Banco do Brasil</td><td><span class="src">TR 7.5, 7.17, 7.21, 7.30, 7.32</span></td></tr>
+      <tr><td><b>Atraso da ARTESP</b></td><td>Atualização monetária + juros de 0,5% ao mês</td><td><span class="src">TR 7.31</span></td></tr>
+      <tr><td><b>Preço máximo</b></td><td>Proposta acima do orçamento estimado é desclassificada. Abaixo de 40% do valor orçado é indício de inexequibilidade</td><td><span class="src">Edital 7.7.3, 7.8</span></td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" data-fold="100% da fatura com nota a partir de 6,75; 90% ou 75% abaixo disso" data-fold-icon="risco">
+    <div class="block-h"><h3>Avaliação de qualidade (IMR) e liberação da fatura</h3><span class="src">Anexo IV, itens 5 e 8</span></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Nota mensal</th><th class="r">Fatura liberada</th></tr></thead><tbody>
+      <tr><td>6,75 ou mais</td><td class="r"><b>100%</b></td></tr>
+      <tr><td>De 5 a menos de 6,75, ou uma nota zero em um item de cada grupo</td><td class="r"><b>90%</b></td></tr>
+      <tr><td>Abaixo de 5, ou mais de uma nota zero nos itens de cada grupo</td><td class="r"><b style="color:var(--bad)">75%</b></td></tr>
+    </tbody></table></div>
+    <p class="hint">Três grupos avaliados: desempenho do motorista (função, assiduidade, postura, uniforme), desempenho das atividades (veículo, manutenção, segurança, limpeza, meio ambiente) e gerenciamento (supervisão, operação, atendimento, regularidade trabalhista). O Anexo IV se declara aplicável à Modalidade C; se o desconto vale para a fatura inteira está em dúvida (ver Conflitos).</p>
+  </div>
+</section>
+
+<!-- ======================= 3. ESTRUTURA OPERACIONAL E ENTREGA ======================= -->
+<section class="sec" id="sec-operacao" data-sec="oper" aria-labelledby="h-oper" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="oper"></span><div><h2 id="h-oper">Estrutura operacional e entrega</h2></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span><b>Base operacional fixa (central de operações) 24 h</b>, de segunda a domingo, e <b>ao menos 50% da frota</b> guardada a até <b>15 minutos</b> da sede da ARTESP, no Itaim Bibi (São Paulo).</span></li>
+    <li><span>Entrega em <b>10 dias úteis</b> da ordem de serviço, aceitando seminovos provisórios. Os zero quilômetro definitivos vêm em 30, 45 ou 60 dias.</span></li>
+    <li><span><b>Reserva técnica de 12%</b> da frota e troca por zero quilômetro a 100.000 km ou 30 meses de uso (há regra conflitante de 24 meses).</span></li>
+  </ul></div>
+
+  <div class="grid-2">
+    <div class="card"><h4><span data-icon="kit"></span>Base operacional fixa (central)</h4><ul>
+      <li>Funciona 24 h, de segunda a domingo, com sistema informatizado e comunicação móvel com os veículos e a ARTESP <span class="src">TR 5.12.5</span></li>
+      <li>Operada por encarregados de transporte em 44 h semanais, com rendição no local <span class="src">TR 5.12.6</span></li>
+      <li>Programação diária, vistoria dos veículos, controle de manutenção, relatório mensal de quilometragem e ocorrências <span class="src">TR 5.12.7</span></li>
+      <li>Imóvel regular: uso do solo, prevenção de incêndio, NR-17 e NR-24, com documentos mostrados quando pedidos <span class="src">TR 5.12.3</span></li>
+    </ul></div>
+    <div class="card"><h4><span data-icon="oper"></span>Onde o serviço acontece</h4><ul>
+      <li>Sede da ARTESP: Rua Iguatemi, 105, Itaim Bibi, São Paulo/SP <span class="src">TR 5.12.2</span></li>
+      <li>Ao menos 50% da frota em local que chegue à sede em até 15 min, em trânsito normal. O local é escolhido pela contratada <span class="src">TR 5.12.2 · ETP 17</span></li>
+      <li>Entrega e apresentação dos veículos na base operacional da contratada <span class="src">TR 5.2.1.10</span></li>
+      <li>Atendimento em qualquer cidade do Estado de São Paulo, com remanejamento quando pedido <span class="src">TR 5.2.3.1</span></li>
+    </ul></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="block">
+      <div class="block-h"><h3>Prazos de entrega</h3><span class="pill elim">Contados da ordem de serviço</span></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Etapa</th><th class="r">Prazo</th></tr></thead><tbody>
+        <tr><td>Aviso de início pela ARTESP</td><td class="r">3 dias úteis antes</td></tr>
+        <tr><td>Todos os veículos disponíveis (seminovos aceitos)</td><td class="r"><b>10 dias úteis</b></td></tr>
+        <tr><td>Zero km definitivo sem adaptação</td><td class="r">30 dias corridos</td></tr>
+        <tr><td>Zero km definitivo com adaptação</td><td class="r">45 dias corridos</td></tr>
+        <tr><td>Van da base móvel (S-4 Categoria 2)</td><td class="r">60 dias corridos</td></tr>
+        <tr><td>Retirada dos veículos no fim do contrato</td><td class="r">5 dias úteis</td></tr>
+      </tbody></table></div>
+      <p class="hint">Fonte: <span class="src">TR 5.5.1, 5.2.1.11–5.2.1.12, 5.3.18</span>. O provisório deve cumprir todos os requisitos da categoria e não gera custo extra para a ARTESP (TR 5.2.1.13).</p>
+    </div>
+    <div class="block">
+      <div class="block-h"><h3>Substituições e atendimento</h3><span class="src">TR 5.2.4.3, 5.3.10–5.3.11, 5.3.17</span></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Situação</th><th class="r">Prazo</th></tr></thead><tbody>
+        <tr><td>Veículo com defeito ou acidente na capital e Grande SP</td><td class="r"><b>3 horas</b></td></tr>
+        <tr><td>Mesmo caso em viagem no interior</td><td class="r">8 h ou 12 h (conflito)</td></tr>
+        <tr><td>Outros casos, a pedido por escrito</td><td class="r">24 horas</td></tr>
+        <tr><td>Motorista ausente (sem dobra de jornada)</td><td class="r">2 horas</td></tr>
+        <tr><td>Assistência e socorro do veículo</td><td class="r">24 h por dia</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card"><h4><span data-icon="cal"></span>Horários de serviço</h4><ul>
+      <li>Grupo B (1 veículo): segunda a domingo, 16 h por dia <span class="src">TR 5.6</span></li>
+      <li>Grupos S-1, S-2 e S-4 com motorista (49 veículos): segunda a sexta, 12 h por dia <span class="src">TR 5.6</span></li>
+      <li><b>Plantão noturno</b>: das 22h às 6h, no mínimo 5 veículos e 5 motoristas à disposição <span class="src">TR 5.6</span></li>
+      <li>Motorista e veículo no ponto de partida 15 min antes do horário <span class="src">TR 5.2.3.3</span></li>
+    </ul></div>
+    <div class="card"><h4><span data-icon="risco"></span>Frota: reserva e renovação</h4><ul>
+      <li><b>Reserva técnica mínima de 12%</b> de veículos físicos, entregues com os demais e guardados na base da ARTESP. 12% de 103 = 12,36 veículos <span class="src">TR 5.2.4.5</span></li>
+      <li>Troca por zero km ao atingir <b>100.000 km ou 30 meses</b> de uso desde o primeiro licenciamento <span class="src">TR 5.2.2.1, 5.3.9</span></li>
+      <li>A base deve trocar veículos com mais de <b>24 meses de fabricação</b> <span class="src">TR 5.12.7.6</span>: regra conflitante (ver Conflitos)</li>
+      <li>A 4.500 km por mês, um veículo com motorista chega a 100.000 km em cerca de 22 meses (conta da análise)</li>
+    </ul></div>
+  </div>
+
+  <div class="card"><h4><span data-icon="risco"></span>Custos que ficam com a contratada</h4>
+    <p>Manutenção preventiva e corretiva, pneus, funilaria, IPVA, licenciamento e seguro total com franquia; lavagem e higienização; combustível na Modalidade C; tag de pedágio, GPS, smartphones e pacote de dados; sinalizadores; uniformes e crachás; central 24 h; reposição de veículos e motoristas <span class="src">TR 5.2.4, 5.2.6, 5.3.16–5.3.17, 5.7, 5.12</span>. A ARTESP garante a guarda dos veículos em suas instalações e paga os adesivos com seu logotipo <span class="src">TR 5.5.2, 5.5.4</span>.</p>
+  </div>
+</section>
+
+<!-- ======================= 4. VEÍCULOS E EQUIPAMENTOS ======================= -->
+<section class="sec" id="sec-veiculos" data-sec="oper" aria-labelledby="h-veic" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="oper"></span><div><h2 id="h-veic">Veículos e equipamentos</h2></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span><b>103 veículos zero km</b>, todos brancos menos o sedã de representação: 81 do Grupo S-4 (80 hatches e 1 van), 17 sedãs S-1, 4 caminhonetes S-2 e 1 sedã B.</span></li>
+    <li><span>Os <b>80 hatches S-4</b> levam giroflex de LED com sirene, smartphone com 4 GB por mês, adesivos de fiscalização e GPS com câmera ao vivo.</span></li>
+    <li><span>A <b>van</b> vira base móvel de fiscalização: revestimento, baterias para 6 h, notebook, mobiliário, toldos e sirene de 120 dB.</span></li>
+  </ul></div>
+
+  <div class="block">
+    <div class="block-h"><h3>Grupos, quantidades e preços de referência</h3><span class="hint">Preço fixo mensal por veículo e preço por km do Anexo VIII.</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Grupo</th><th>Tipo</th><th>Modalidade</th><th class="r">Qtde</th><th>Especificação mínima</th><th class="r">Fixo mensal</th><th class="r">Por km</th></tr></thead><tbody>
+      <tr><td><span class="cat-code">B</span></td><td>Sedã de representação, cor escura (de preferência preta)</td><td>C · 16 h, seg. a dom.</td><td class="r"><b>1</b></td><td>4 portas, 5 ou mais lugares, motor a partir de 1.4</td><td class="r">R$ 34.021,50</td><td class="r">R$ 1,54</td></tr>
+      <tr><td><span class="cat-code">S-1</span></td><td>Sedã branco</td><td>C · 12 h, seg. a sex.</td><td class="r"><b>17</b></td><td>75 cv, porta-malas de 270 L, tanque de 40 L, mais de 3.900 mm, câmbio de 6 marchas, 4 airbags, todos do mesmo modelo</td><td class="r">R$ 25.142,76</td><td class="r">R$ 1,51</td></tr>
+      <tr><td><span class="cat-code">S-2</span></td><td>Caminhonete cabine dupla 4x2, branca</td><td>C · 12 h, seg. a sex.</td><td class="r"><b>4</b></td><td>Motor a partir de 1.8, carga de 650 a 2.000 kg, todos do mesmo modelo</td><td class="r">R$ 30.588,89</td><td class="r">R$ 2,67</td></tr>
+      <tr><td><span class="cat-code">S-4</span></td><td>Hatch branco</td><td>C · 12 h, seg. a sex.</td><td class="r"><b>28</b></td><td>Mesmos mínimos do S-1</td><td class="r">R$ 24.978,25</td><td class="r">R$ 1,52</td></tr>
+      <tr class="hl"><td><span class="cat-code">S-4</span></td><td>Hatch branco, quilometragem livre</td><td>A · sem motorista</td><td class="r"><b>52</b></td><td>Mesmos mínimos do S-1</td><td class="r">R$ 6.849,62</td><td class="r">—</td></tr>
+      <tr class="hl"><td><span class="cat-code">Van</span></td><td>Van de teto alto adaptada como base móvel (S-4 Categoria 2)</td><td>A · sem motorista</td><td class="r"><b>1</b></td><td>Diesel a partir de 2.1 L e 120 cv, 5.956 mm ou mais, ar-condicionado</td><td class="r">R$ 25.327,87</td><td class="r">—</td></tr>
+      <tr><td></td><td><b>Total</b></td><td>50 com motorista · 53 sem</td><td class="r"><b>103</b></td><td></td><td></td><td></td></tr>
+    </tbody></table></div>
+    <p class="hint">Fontes: <span class="src">TR 5.1.1, 5.2.1.10, 5.9, 5.10, 5.11.1 · Anexo VIII</span>. Versão básica da linha, sem opcionais, de preferência de fabricação nacional (TR 5.1.3). A tabela de "níveis de acessórios" anunciada no TR 5.11.2 não foi publicada.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card"><h4><span data-icon="kit"></span>Equipamentos dos 80 hatches S-4</h4><ul>
+      <li>Sinalizador em arco de até 80 mm, 56 LEDs de 1 W, vermelho ou âmbar, 360 graus, com sirene, conforme Resolução CONTRAN 970/2022 <span class="src">TR 5.7.2.2</span></li>
+      <li>Smartphone com câmera de 12 MP e 4 GB de dados por mês, com cobertura em todo o estado <span class="src">TR 5.7.2.1</span></li>
+      <li>Adesivação de fiscalização: logomarca da ARTESP, brasão do Estado, "serviço público estadual", 0800 727 8377 e a finalidade <span class="src">TR 5.7.2.3</span></li>
+      <li>GPS com mapa e vídeo ao vivo de câmera, até 500 veículos na tela, cercas virtuais e alertas por e-mail, sem custo de licença para a ARTESP <span class="src">TR 5.7.2.4</span></li>
+    </ul></div>
+    <div class="card"><h4><span data-icon="oper"></span>Todos os veículos</h4><ul>
+      <li>Tag de pedágio eletrônico (os veículos da ARTESP são isentos) <span class="src">TR 5.7.1.1</span></li>
+      <li>GPS embarcado e rádio ou telefone com o motorista <span class="src">TR 5.2.3.6, 5.3.16</span></li>
+      <li>Logotipo da ARTESP; finais de placa diferentes por causa do rodízio de São Paulo <span class="src">TR 5.2.1.7, 5.2.1.9</span></li>
+      <li>Licenciados em São Paulo e registrados no DETRAN-SP; aprovados na inspeção veicular <span class="src">TR 5.2.1.4, 5.3.4, 5.3.14</span></li>
+      <li>Permitir a instalação de kits de fiscalização da ARTESP (câmeras, georreferenciamento), que ela instala e retira <span class="src">TR 5.8</span></li>
+    </ul></div>
+  </div>
+
+  <div class="block" data-fold="Revestimento, 6 h de baterias, notebook, mobiliário, 2 toldos e sinalização com sirene de 120 dB" data-fold-icon="oper">
+    <div class="block-h"><h3>Van adaptada como base móvel de fiscalização</h3><span class="src">TR 5.10 · ETP 18</span></div>
+    <div class="grid-2">
+      <div class="card"><h4>Interior e energia</h4><ul>
+        <li>Revestimento laminado lavável, isolamento termoacústico, ar-condicionado e cortina de ar nas portas</li>
+        <li>Inversor de 400 W, 4 tomadas pelo inversor, 3 por energia externa, 2 USB e tomada externa blindada</li>
+        <li>Baterias auxiliares com autonomia de 6 h, carregador e cabo de 25 m em carretel; bateria original isolada</li>
+        <li>Notebook Core i7 (ou similar), 16 GB e 1 TB, e modem com pacote de dados</li>
+      </ul></div>
+      <div class="card"><h4>Mobiliário e sinalização</h4><ul>
+        <li>Piso de madeira com alumínio, 2 bancos baú, escrivaninha com gaveta, armários, poltrona giratória e divisória com janela</li>
+        <li>Mesa e 4 cadeiras dobráveis; 2 extintores ABC de 8 kg</li>
+        <li>2 toldos pantográficos (3 m e 1,5 m de extensão, 2 m de largura)</li>
+        <li>Barra sinalizadora com 56 LEDs vermelhos, sinalização secundária e sirene de 200 W com pelo menos 120 dB</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card"><h4><span data-icon="qual"></span>Seguro dos veículos</h4><ul>
+      <li>Cobertura integral contra colisão, incêndio, roubo e furto <span class="src">TR 5.2.6.2.1</span></li>
+      <li>Danos a terceiros por evento: <b>R$ 100 mil materiais, R$ 100 mil corporais e R$ 50 mil morais</b></li>
+      <li>Assistência 24 h em toda a vigência; franquia sempre da contratada <span class="src">TR 5.2.6.2.2</span></li>
+    </ul></div>
+    <div class="card"><h4><span data-icon="cond"></span>Ano e documentos</h4><ul>
+      <li>Zero quilômetro, no ano/modelo indicado na planilha da proposta <span class="src">TR 5.2.1.2</span></li>
+      <li>Nota fiscal de cada veículo entregue no início dos serviços <span class="src">TR 5.3.3</span></li>
+      <li>Entregues de tanque cheio, com vistoria registrada em ficha <span class="src">TR 5.2.1.5–5.2.1.6</span></li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- ======================= 5. MOTORISTAS ======================= -->
+<section class="sec" id="sec-motoristas" data-sec="oper" aria-labelledby="h-mot" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="decl"></span><div><h2 id="h-mot">Serviço de motorista</h2></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span><b>50 postos com motorista</b>: 49 de 12 h por dia, de segunda a sexta, e 1 de 16 h por dia, todos os dias, além do <b>plantão noturno</b> de 5 motoristas.</span></li>
+    <li><span>Motorista com <b>3 anos de experiência</b> em carteira, CNH compatível, curso de direção defensiva e ensino fundamental completo.</span></li>
+    <li><span>Contrato com dedicação exclusiva de mão de obra: planilha de custos por posto, convenção coletiva, repactuação e fiscalização trabalhista mensal.</span></li>
+  </ul></div>
+
+  <div class="block">
+    <div class="block-h"><h3>Condições de contratação dos motoristas</h3></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Tema</th><th>Exigência</th><th>Fonte</th></tr></thead><tbody>
+      <tr><td><b>Experiência</b></td><td>Mínimo de 3 anos na função, registrada em carteira (ou atestado nos termos do art. 442-A da CLT)</td><td><span class="src">TR 5.3.17, 5.12.7.18</span></td></tr>
+      <tr><td><b>Formação</b></td><td>Ensino fundamental completo, CNH de categoria compatível e certificado de direção defensiva</td><td><span class="src">TR 5.12.7.18</span></td></tr>
+      <tr><td><b>Jornada</b></td><td>12 h por dia (segunda a sexta) nos grupos S-1, S-2 e S-4; 16 h por dia (segunda a domingo) no grupo B. Sem dobra de jornada</td><td><span class="src">TR 5.6, 5.3.17</span></td></tr>
+      <tr><td><b>Postos e revezamento</b></td><td>Um posto de 12 h por 5 dias soma 60 h semanais, acima das 44 h de um empregado. A planilha-modelo prevê "folguista" de 0,37 por posto</td><td><span class="src">Anexo VI</span></td></tr>
+      <tr><td><b>Convenção de referência</b></td><td>Sindicato das empresas locadoras de veículos de SP e sindicato dos empregados em locadoras de SP (não obrigatória; vale o enquadramento da empresa)</td><td><span class="src">Edital 7.9.3</span></td></tr>
+      <tr><td><b>Benefícios</b></td><td>Vale-refeição, cesta básica e demais benefícios da convenção; exames e toxicológico na planilha-modelo</td><td><span class="src">TR 5.3.17 · Anexo VI</span></td></tr>
+      <tr><td><b>Uniforme</b></td><td>Calça, camisa social de manga longa, mocassim, meia, jaqueta, cinto, blusa de lã e crachá; 2 conjuntos no início e 1 novo a cada 6 meses, sem custo ao empregado</td><td><span class="src">TR "5.7 Uniformes", 5.2.3.7</span></td></tr>
+      <tr><td><b>Fora do horário</b></td><td>Horas pagas como extraordinárias (subitens 8 e 9 da planilha); pernoite reembolsado até 7 UFESPs</td><td><span class="src">TR 5.2.3.6, 5.2.3.9</span></td></tr>
+      <tr><td><b>Supervisão</b></td><td>Preposto que não pode ser um dos motoristas; encarregados da base em 44 h semanais</td><td><span class="src">TR 5.2.8.1, 5.12.6</span></td></tr>
+      <tr><td><b>Pagamento dos salários</b></td><td>Em conta do empregado na região do serviço. A ARTESP pode pagar salários e reter INSS e FGTS direto da fatura se houver atraso</td><td><span class="src">Minuta 9.1.29–9.1.30</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <p class="hint">A avaliação de qualidade pesa o motorista: função (28%), assiduidade e pontualidade (32%), postura (30%) e uniforme (10%) <span class="src">Anexo IV item 5</span>.</p>
+</section>
+
+<!-- ======================= 6. QUALIFICAÇÃO ======================= -->
+<section class="sec" id="sec-qualificacao" data-sec="qual" aria-labelledby="h-qual" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="qual"></span><div><h2 id="h-qual">Qualificação técnica e econômico-financeira</h2></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Atestados com <b>15 meses</b> de serviço similar, contrato(s) com pelo menos <b>50% do número de veículos</b> (52 de 103), <b>base operacional</b> de frota e <b>veículos equipados</b>.</span></li>
+    <li><span>Índices <b>LG, LC e SG acima de 1</b> e, ao mesmo tempo, <b>capital de giro de 16,66%</b> e <b>patrimônio líquido de 10%</b> do valor estimado.</span></li>
+    <li><span>Sobre os R$ 74,4 milhões: capital de giro de <b>R$ 12,39 milhões</b> e patrimônio líquido de <b>R$ 7,44 milhões</b>. A base de cálculo é ambígua (ver Conflitos).</span></li>
+  </ul></div>
+
+  <div class="block" data-fold="15 meses, 52 veículos, base operacional e veículos equipados" data-fold-icon="qual">
+    <div class="block-h"><h3>Qualificação técnico-operacional por atestados</h3><span class="pill elim">Eliminatório</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>#</th><th>O atestado deve comprovar</th><th>Mínimo</th><th>Fonte</th></tr></thead><tbody>
+      <tr><td>1</td><td>Experiência em serviços similares; vale somar atestados de períodos diferentes, sem precisar ser contínuo</td><td><b>15 meses</b></td><td><span class="src">TR 8.24.1.1</span></td></tr>
+      <tr><td>2</td><td>Contrato(s) com no mínimo 50% do número de veículos a contratar. Atestados de contratos simultâneos podem ser somados</td><td><b>52 veículos</b> (50% de 103 = 51,5)</td><td><span class="src">TR 8.24.1.2, 8.24.2</span></td></tr>
+      <tr><td>3</td><td>Prestação de serviço com disponibilização e operação de base operacional para gerenciamento de frota</td><td>Comprovar</td><td><span class="src">TR 8.24.1.3</span></td></tr>
+      <tr><td>4</td><td>Disponibilização e gerenciamento de veículos com equipamentos especiais ou personalização operacional</td><td>Comprovar</td><td><span class="src">TR 8.24.1.4</span></td></tr>
+    </tbody></table></div>
+    <p class="hint">Atestado de pessoa jurídica pública ou privada, em nome da matriz ou da filial, dentro da atividade do contrato social; a ARTESP pode pedir cópia do contrato e o endereço do contratante <span class="src">TR 8.24, 8.24.3–8.24.5</span>. Atestados de consórcio valem nos termos do art. 67, §§ 10 e 11 <span class="src">TR 8.26</span>.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card" data-fold="LG, LC e SG acima de 1, capital de giro de R$ 12,39 mi e patrimônio líquido de R$ 7,44 mi" data-fold-icon="risco"><h4><span data-icon="risco"></span>Qualificação econômico-financeira</h4><ul>
+      <li>Balanço, DRE e demais demonstrações dos 2 últimos exercícios <span class="src">TR 8.21</span></li>
+      <li><b>LG, LC e SG superiores a 1</b> <span class="src">TR 8.21 a</span></li>
+      <li><b>Capital circulante líquido</b> de 16,66% do valor estimado: <b>R$ 12.388.004,40</b> <span class="src">TR 8.21 b</span></li>
+      <li><b>Patrimônio líquido</b> de 10% do valor estimado: <b>R$ 7.435.776,95</b> <span class="src">TR 8.21 c</span></li>
+      <li>Na base anual (R$ 29.743.107,84), seriam R$ 4.955.201,77 e R$ 2.974.310,78 (ver Conflitos)</li>
+      <li>Declaração de contador habilitado atestando os índices <span class="src">TR 8.22</span></li>
+      <li>Certidão negativa de falência e recuperação; empresa em recuperação participa se o plano estiver homologado <span class="src">TR 8.20–8.21.1</span></li>
+    </ul></div>
+    <div class="card" data-fold="Declaração do Anexo VII.1 e declaração de conhecimento do local" data-fold-icon="decl"><h4><span data-icon="decl"></span>Outras comprovações</h4><ul>
+      <li>Declaração do Anexo VII.1: cumpre normas de saúde e segurança do trabalho e o art. 5º-C da Lei 6.019/1974 <span class="src">TR 8.27</span></li>
+      <li>Declaração de conhecimento das condições locais, que pode ser assinada pelo responsável técnico <span class="src">TR 8.23</span>; o Edital diz que não a exige <span class="src">Edital 8.1.2</span></li>
+      <li>Empresa criada há menos de 2 anos usa o último exercício; criada no ano, o balanço de abertura <span class="src">TR 8.21.1–8.21.2</span></li>
+    </ul></div>
+  </div>
+
+  <div class="card" style="background:var(--tint);border-color:transparent"><h4><span data-icon="matriz"></span>Se a empresa não tem tudo isso</h4><ul>
+    <li><b>Consórcio:</b> soma os atestados e os valores financeiros dos consorciados, com acréscimo de 10% na exigência financeira (R$ 13.626.804,84 de capital de giro e R$ 8.179.354,65 de patrimônio líquido sobre os 30 meses) <span class="src">Edital 8.1.3–8.1.3.1</span></li>
+    <li><b>Somar atestados</b> de contratos simultâneos para chegar aos 52 veículos <span class="src">TR 8.24.2</span></li>
+    <li>Registre como cada lacuna será suprida na <a href="#matriz">Matriz de aderência</a>.</li>
+  </ul></div>
+  <p class="hint">Habilitação jurídica, fiscal e trabalhista (inclusive regularidade de IPVA e ISS) é verificada no SICAF e não está detalhada aqui <span class="src">Edital 8.1.1, 8.7 · TR 8.4–8.18</span>.</p>
+</section>
+
+<!-- ======================= 7. DECLARAÇÕES ======================= -->
+<section class="sec" id="sec-declaracoes" data-sec="decl" aria-labelledby="h-decl" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="decl"></span><div><h2 id="h-decl">Declarações e documentos fora do SICAF</h2></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Com a proposta ajustada (<b>2 horas</b>): planilha de proposta, planilha de custos da mão de obra com BDI e encargos, e <b>declaração de enquadramento sindical</b>.</span></li>
+    <li><span>Na habilitação (<b>2 horas, prorrogáveis por mais 2</b>): declaração do Anexo VII.1, declaração do contador, atestados e declaração de conhecimento do local.</span></li>
+    <li><span>Antes de assinar: <b>carta sindical</b>, <b>capital social</b> compatível com o número de empregados e garantia de 5%.</span></li>
+  </ul></div>
+
+  <div class="block" data-fold="Planilha de proposta, planilha de custos e declaração sindical" data-fold-icon="decl">
+    <div class="block-h"><h3>Com a proposta ajustada ao último lance</h3><span class="pill att">Prazo: 2 horas · Edital 6.20.4</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Documento</th><th>Conteúdo</th><th>Fonte</th></tr></thead><tbody>
+      <tr><td><b>Planilha de proposta (Anexo VI)</b></td><td>Preço fixo mensal e por km de cada grupo, base, horas adicionais, despesas e pernoite, totais em 30 meses e dados da empresa</td><td><span class="src">Edital 7.11 · Anexo VI</span></td></tr>
+      <tr><td><b>Planilha de composição de custos</b></td><td>Custos por posto de 12 h e de 16 h (salário, benefícios, insumos, encargos), com BDI e encargos sociais detalhados</td><td><span class="src">Edital 7.12 · Anexo VI</span></td></tr>
+      <tr><td><b>Declaração de enquadramento sindical</b></td><td>Enquadramento, atividade preponderante, justificativa da convenção adotada, sindicatos, datas-base, vigências e CBO</td><td><span class="src">Edital 7.9.8–7.9.8.1</span></td></tr>
+      <tr><td><b>Ano/modelo e componente de locação</b></td><td>O veículo entregue deve corresponder ao ano/modelo da planilha; a proposta deve separar o componente de locação para o cálculo do provisório</td><td><span class="src">TR 5.2.1.2, 5.2.1.15.5</span></td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" data-fold="Anexo VII.1, contador, atestados, conhecimento do local e consórcio" data-fold-icon="qual">
+    <div class="block-h"><h3>Na habilitação</h3><span class="pill att">2 horas, prorrogável · Edital 8.9.1</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Documento</th><th>Status no edital</th><th>Fonte</th></tr></thead><tbody>
+      <tr><td><b>Declaração do Anexo VII.1</b> (saúde e segurança no trabalho; Lei 6.019, arts. 5º-C e 5º-D)</td><td><span class="pill att">Exigida</span></td><td><span class="src">TR 8.27 · Anexo VII.1</span></td></tr>
+      <tr><td><b>Declaração do contador</b> com LG, LC, SG, capital de giro e patrimônio líquido</td><td><span class="pill att">Exigida</span></td><td><span class="src">TR 8.22</span></td></tr>
+      <tr><td><b>Atestados de capacidade técnica</b> e cópias dos contratos, se pedidas</td><td><span class="pill att">Exigida</span></td><td><span class="src">TR 8.24</span></td></tr>
+      <tr><td><b>Declaração de conhecimento das condições locais</b></td><td><span class="pill info">Por cautela</span></td><td><span class="src">TR 8.23 × Edital 8.1.2</span></td></tr>
+      <tr><td><b>Compromisso de constituição do consórcio</b></td><td><span class="pill info">Se for consórcio</span></td><td><span class="src">TR 8.28.1</span></td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="block">
+      <div class="block-h"><h3>Antes da assinatura</h3><span class="pill info">5 dias da convocação · Edital 14.2.2</span></div>
+      <div class="card"><ul>
+        <li>Carta ou registro do sindicato em que a empresa se enquadra <span class="src">Edital 7.9.9.1</span></li>
+        <li>Capital social integralizado compatível com o número de empregados (Lei 6.019, art. 4º-B) <span class="src">Edital 7.9.9.2</span></li>
+        <li>Garantia de 5%, sob pena de recusa da contratação <span class="src">TR 4.3, 4.3.1</span></li>
+        <li>Sem registro no Cadin estadual <span class="src">Edital 14.2.1.3</span></li>
+        <li>Termo de Ciência e de Notificação do TCE-SP, quando exigido <span class="src">Edital 14.13</span></li>
+        <li>Consórcio constituído e registrado, se for o caso <span class="src">TR 8.28.2</span></li>
+      </ul></div>
+    </div>
+    <div class="block">
+      <div class="block-h"><h3>No início dos serviços</h3><span class="pill info">TR 5.3 e 6.6</span></div>
+      <div class="card"><ul>
+        <li>Designação formal do preposto <span class="src">TR 6.6</span></li>
+        <li>Nota fiscal de cada veículo <span class="src">TR 5.3.3</span></li>
+        <li>Canal de assistência 24 h informado na entrega <span class="src">TR 5.3.8</span></li>
+        <li>Recibos de entrega dos uniformes <span class="src">TR "5.7.4 Uniformes"</span></li>
+      </ul></div>
+    </div>
+  </div>
+  <p class="hint">Não incluídos: documentos cobertos pelo SICAF e declarações feitas em campo próprio do sistema ao cadastrar a proposta (Edital 4.3–4.4, 8.5–8.6). Não há garantia de proposta.</p>
+</section>
+
+<!-- ======================= 8. CONFLITOS ======================= -->
+<section class="sec" id="sec-conflitos" data-sec="conf" aria-labelledby="h-conf" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="conf"></span><div><h2 id="h-conf">Conflitos entre Edital, TR e anexos</h2></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span><b id="confAltaTxt">4</b> pontos de alta gravidade mudam o preço ou a habilitação: renovação da frota em 24 meses, reserva técnica sem preço, fator do veículo provisório não publicado e base do capital de giro e do patrimônio líquido.</span></li>
+    <li><span>O Edital não traz regra de qual documento prevalece em caso de divergência. Os pontos precisam de esclarecimento por escrito.</span></li>
+    <li><span>Prazo para esclarecimento e impugnação: <b>19/11/2026</b>, por e-mail aos 4 endereços do Edital, todos em cópia <span class="src">Edital 13.1–13.2</span>.</span></li>
+  </ul></div>
+  <div class="block" data-fold="Um e-mail para os 4 endereços até 19/11; resposta até 24/11" data-fold-icon="decl">
+    <div class="block-h"><h3>Como questionar</h3></div>
+    <ol class="steps">
+      <li><span><b>Escolha os pontos</b> desta lista que mudam o seu preço ou a sua habilitação. Pedido de esclarecimento para dúvidas; impugnação para regras que considera ilegais.</span></li>
+      <li><span><b>Envie um e-mail</b> para <span class="mono">andrea.paradela@artesp.sp.gov.br</span>, <span class="mono">lcheosorim@artesp.sp.gov.br</span>, <span class="mono">ailton.ramos@artesp.sp.gov.br</span> e <span class="mono">giorgio.shinzaki@artesp.sp.gov.br</span>, todos copiados, com o número do pregão no assunto <span class="src">Edital 13.2</span></span></li>
+      <li><span><b>Prazo: até 19/11/2026</b>. O Edital só conta dias de expediente <span class="src">Edital 13.1, 14.10</span></span></li>
+      <li><span><b>Acompanhe a resposta</b> no Compras.gov.br e em www.artesp.sp.gov.br até 24/11/2026. O pedido não suspende a sessão: continue preparando a proposta <span class="src">Edital 13.3–13.4.1</span></span></li>
+    </ol>
+  </div>
+  <div class="filters" id="confFilters" role="group" aria-label="Filtrar por gravidade"></div>
+  <div class="conf-list" id="confList"></div>
+</section>
+
+<!-- ======================= 9. PLANILHA ======================= -->
+<section class="sec" id="sec-planilha" data-sec="plan" aria-labelledby="h-plan" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="plan"></span><div><h2 id="h-plan">Planilha de custo de referência</h2></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Valores do <b>Anexo VIII</b> (Planilha Orçamentária): 11 subitens que somam <b>R$ 74.357.769,52</b> em 30 meses. O total da proposta acima disso é desclassificado.</span></li>
+    <li><span>Os <b>50 veículos com motorista</b> custam em média <b>R$ 32.903 por mês</b> cada (fixo + 4.500 km). O hatch sem motorista sai a <b>R$ 6.849,62</b>.</span></li>
+    <li><span>A planilha <b>não tem linha</b> para a reserva técnica de 12% nem para o plantão noturno. Esses custos entram nos preços dos subitens.</span></li>
+  </ul></div>
+
+  <div class="tiles six" id="planTiles"></div>
+
+  <div class="block" data-fold="6 subitens de veículos · R$ 60,80 milhões em 30 meses" data-fold-icon="plan">
+    <div class="block-h"><h3>Locação de veículos</h3><span class="hint">Preço por veículo e totais do Anexo VIII. Na Modalidade C, o valor por km é multiplicado por 4.500 km por mês.</span></div>
+    <div class="tbl-wrap"><table class="pl-table"><thead><tr><th>Sub.</th><th>Grupo</th><th class="r">Qtde</th><th class="r">Fixo mensal</th><th class="r">Por km</th><th class="r">Total mensal</th><th class="r">30 meses</th></tr></thead><tbody>
+      <tr><td>1</td><td>B · sedã de representação (C, 16 h)</td><td class="r">1</td><td class="r">R$ 34.021,50</td><td class="r">R$ 1,54</td><td class="r">R$ 40.940,25</td><td class="r">R$ 1.228.207,50</td></tr>
+      <tr><td>2</td><td>S-1 · sedã (C, 12 h)</td><td class="r">17</td><td class="r">R$ 25.142,76</td><td class="r">R$ 1,51</td><td class="r">R$ 542.559,38</td><td class="r">R$ 16.276.781,33</td></tr>
+      <tr><td>3</td><td>S-2 · caminhonete 4x2 (C, 12 h)</td><td class="r">4</td><td class="r">R$ 30.588,89</td><td class="r">R$ 2,67</td><td class="r">R$ 170.415,56</td><td class="r">R$ 5.112.466,80</td></tr>
+      <tr><td>4</td><td>S-4 · hatch (C, 12 h)</td><td class="r">28</td><td class="r">R$ 24.978,25</td><td class="r">R$ 1,52</td><td class="r">R$ 891.226,00</td><td class="r">R$ 26.736.780,00</td></tr>
+      <tr class="tot"><td></td><td>Subtotal Modalidade C</td><td class="r">50</td><td></td><td></td><td class="r">R$ 1.645.141,19</td><td class="r">R$ 49.354.235,63</td></tr>
+      <tr><td>5</td><td>Van base móvel (A)</td><td class="r">1</td><td class="r">R$ 25.327,87</td><td class="r">—</td><td class="r">R$ 25.327,87</td><td class="r">R$ 759.836,18</td></tr>
+      <tr><td>6</td><td>S-4 · hatch, km livre (A)</td><td class="r">52</td><td class="r">R$ 6.849,62</td><td class="r">—</td><td class="r">R$ 356.180,24</td><td class="r">R$ 10.685.407,20</td></tr>
+      <tr class="tot"><td></td><td>Subtotal Modalidade A</td><td class="r">53</td><td></td><td></td><td class="r">R$ 381.508,11</td><td class="r">R$ 11.445.243,38</td></tr>
+    </tbody></table></div>
+    <p class="hint">Na planilha oficial, o valor variável usa o preço por km com mais casas decimais que as mostradas (por exemplo, B: R$ 6.918,75 por mês, e não 1,54 × 4.500 = R$ 6.930,00). O total mensal da Modalidade C foi calculado pela análise.</p>
+  </div>
+
+  <div class="block" data-fold="Base, horas adicionais, despesas e pernoite · R$ 13,56 milhões em 30 meses" data-fold-icon="oper">
+    <div class="block-h"><h3>Base operacional e despesas adicionais</h3></div>
+    <div class="tbl-wrap"><table class="pl-table"><thead><tr><th>Sub.</th><th>Descrição</th><th class="r">Qtde</th><th>Unidade</th><th class="r">Unitário</th><th class="r">30 meses</th></tr></thead><tbody>
+      <tr><td>7</td><td>Base operacional fixa (central de operações)</td><td class="r">30</td><td>mês</td><td class="r">R$ 189.274,92</td><td class="r">R$ 5.678.247,53</td></tr>
+      <tr><td>8</td><td>Hora adicional, segunda a sábado</td><td class="r">49.500</td><td>hora</td><td class="r">R$ 107,43</td><td class="r">R$ 5.317.785,00</td></tr>
+      <tr><td>9</td><td>Hora adicional, domingos e feriados</td><td class="r">18.000</td><td>hora</td><td class="r">R$ 138,26</td><td class="r">R$ 2.488.680,00</td></tr>
+      <tr><td>10</td><td>Despesas eventuais (pedágio federal, estacionamento, Zona Azul)</td><td class="r">30</td><td>mês</td><td class="r">R$ 988,64</td><td class="r">R$ 29.659,28</td></tr>
+      <tr><td>11</td><td>Pernoite (7 UFESPs)</td><td class="r">10</td><td>unitário/mês</td><td class="r">R$ 4.391,87</td><td class="r">R$ 43.918,73</td></tr>
+      <tr class="tot"><td></td><td>Subtotal despesas adicionais</td><td></td><td></td><td></td><td class="r">R$ 13.558.290,53</td></tr>
+      <tr class="tot"><td></td><td>Total geral</td><td></td><td></td><td></td><td class="r">R$ 74.357.769,52</td></tr>
+    </tbody></table></div>
+    <p class="hint">As horas adicionais são estimativas (1.650 h por mês em dias normais e 600 h em domingos e feriados) e só são pagas se usadas. O pernoite aparece com 10 unidades no total, embora o TR estime 10 por mês (ver Conflitos).</p>
+  </div>
+
+  <div class="block" data-fold="Imagem do Anexo VIII (p. 98 do PDF), com zoom" data-fold-icon="plan">
+    <div class="block-h"><h3>Planilha original do órgão</h3></div>
+    <div class="block">
+      <div class="block-h"><span class="hint">Clique na imagem para ampliar.</span><button class="btn ghost small" id="zoomBtn" type="button">Ampliar</button></div>
+      <div class="sheet" id="sheet"><img src="/assets/planilha-pe-25-2026-artesp.jpg" alt="Anexo VIII, Planilha Orçamentária da ARTESP, com os 11 subitens e total de R$ 74.357.769,52" id="sheetImg" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SIMULADOR ======================= -->
+<section class="sec" id="sec-simulador" data-sec="simul" aria-labelledby="h-simul" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="simul"></span><div><h2 id="h-simul">Simulador de lance</h2></div></header>
+  <div class="tldr"><h3>Como usar</h3><ul>
+    <li><span>Informe quanto <b>o seu custo direto representa</b> do valor de referência em cada componente, e os seus percentuais de tributos, despesas e margem.</span></li>
+    <li><span>O simulador calcula o <b>lance mínimo viável</b> para os 30 meses. A faixa vermelha marca 50% da referência; o Edital fala em indício de inexequibilidade abaixo de <b>40%</b> (Edital 7.8).</span></li>
+    <li><span>Os números iniciais são <b>exemplos</b>. Substitua pelos custos reais da empresa, incluindo frota, reserva técnica e renovação.</span></li>
+  </ul></div>
+  <div class="sim">
+    <div class="form" id="simForm">
+      <div class="block-h"><h3>Seus custos</h3><span class="example-tag" id="simExample">Valores de exemplo</span></div>
+      <div id="simCosts" class="form"></div>
+      <div class="block-h" style="margin-top:6px"><h3>Seus percentuais</h3></div>
+      <div id="simParams" class="form"></div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="btn ghost small" type="button" id="simReset">Restaurar exemplo</button><span class="save-state" id="simSave">Carregando…</span></div>
+    </div>
+    <div class="out">
+      <div class="out-main">
+        <div class="tile"><span class="k">Lance mínimo viável</span><span class="v" id="oMin">—</span><span class="s" id="oMinS">valor total em 30 meses</span></div>
+        <div class="tile"><span class="k">Desconto máximo sobre a referência</span><span class="v" id="oDesc">—</span><span class="s">referência R$ 74.357.769,52</span></div>
+      </div>
+      <div class="zone">
+        <b style="font-size:14px">Zona de lance</b>
+        <div class="zone-track" id="zoneTrack" role="img" aria-label="Escala de lance"></div>
+        <div class="zone-scale" id="zoneScale"></div>
+        <div class="zone-key"><span><i style="background:var(--bad-bg);border:1px solid var(--bad)"></i>Abaixo de 50%</span><span><i style="background:var(--neutral-bg)"></i>Abaixo do seu custo</span><span><i style="background:var(--good-bg);border:1px solid var(--good)"></i>Zona viável</span></div>
+      </div>
+      <div class="field big" style="background:var(--surface)"><label for="sim-lance">Lance que pretendo dar</label><small>valor total em 30 meses · teste e veja a margem</small><div class="inp"><span class="u">R$</span><input id="sim-lance" inputmode="decimal" data-k="lance"></div></div>
+      <div class="out-main">
+        <div class="tile"><span class="k">Margem líquida nesse lance</span><span class="v" id="oMarg">—</span><span class="s" id="oMargS"></span></div>
+        <div class="tile"><span class="k">Próximo lance mínimo</span><span class="v" id="oNext">—</span><span class="s">intervalo de 1% · Edital 6.8</span></div>
+      </div>
+      <div id="simAlerts" style="display:grid;gap:10px"></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Para onde vai o lance</th><th class="r">R$</th><th class="r">%</th></tr></thead><tbody id="simBreak"></tbody></table></div>
+      <p class="hint">Fórmula: lance mínimo = (custo direto + despesas indiretas + custo financeiro) ÷ [(1 − desconto do IMR) × (1 − tributos) − margem − custo da garantia]. O custo da garantia considera, por cautela, 5% do valor total mantido por 30 meses; se a base for o valor anual (Minuta 11.1 com o art. 98, parágrafo único), o custo cai a 40% disso. Confirme no Compras.gov.br se o lance é pelo valor total ou mensal (ver Conflitos).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= RISCOS ======================= -->
+<section class="sec" id="sec-riscos" data-sec="risco" aria-labelledby="h-risco" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="risco"></span><div><h2 id="h-risco">Caixa, garantia e riscos de execução</h2></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Entre o primeiro dia de serviço e o primeiro pagamento podem passar <b>cerca de 70 dias</b>. Antes disso, a empresa compra ou financia <b>103 veículos zero km</b> e mais a reserva.</span></li>
+    <li><span>Garantia de <b>5%</b> antes da assinatura: R$ 1,49 milhão na base anual ou R$ 3,72 milhões sobre os 30 meses.</span></li>
+    <li><span>Nota baixa na avaliação mensal libera só <b>90% ou 75% da fatura</b>.</span></li>
+  </ul></div>
+  <div class="tiles" id="riskTiles"></div>
+  <p class="hint">Valores calculados sobre o lance informado no <a href="#simulador">Simulador</a>. O capital de giro cobre só os custos do ciclo; a compra da frota não está nele.</p>
+
+  <div class="block">
+    <div class="block-h"><h3>Ciclo até o primeiro pagamento</h3><span class="src">TR 7.5–7.30</span></div>
+    <div class="timeline">
+      <div class="tl-step"><span class="tl-dot">1</span><b>Execução do mês</b><span>até 30 dias</span></div>
+      <div class="tl-step"><span class="tl-dot">2</span><b>Recebimento provisório</b><span>até 5 dias</span></div>
+      <div class="tl-step"><span class="tl-dot">3</span><b>Recebimento definitivo</b><span>até 5 dias</span></div>
+      <div class="tl-step"><span class="tl-dot">4</span><b>Nota fiscal e liquidação</b><span>10 dias úteis</span></div>
+      <div class="tl-step"><span class="tl-dot">5</span><b>Pagamento</b><span>até 30 dias da nota</span></div>
+    </div>
+    <p class="hint">Estimativa de cerca de 70 dias corridos (30 + 5 + 5 + 30); a liquidação corre dentro dos 30 dias do pagamento. Atraso da ARTESP rende atualização e juros de 0,5% ao mês.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Desconto da avaliação de qualidade na fatura</h3><span class="src">Anexo IV item 8</span></div>
+    <div class="formula">nota ≥ 6,75 → 100% &nbsp;·&nbsp; 5 a 6,75 ou um zero por grupo → 90% &nbsp;·&nbsp; abaixo de 5 ou mais de um zero → 75%</div>
+    <div class="imr">
+      <div class="field"><label for="imr-f">Fatura do mês</label><div class="inp"><span class="u">R$</span><input id="imr-f" inputmode="decimal" value="1.645.141"></div></div>
+      <div class="field"><label for="imr-n">Nota do mês</label><div class="inp"><input id="imr-n" inputmode="decimal" value="6,2"></div></div>
+      <div class="field"><label for="imr-z">Notas zero no grupo</label><div class="inp"><input id="imr-z" inputmode="numeric" value="0"></div></div>
+    </div>
+    <div class="alert warn" id="imrOut"></div>
+    <p class="hint">Valor inicial: parcela mensal da Modalidade C na referência. Se o desconto valer para a fatura inteira, use R$ 2.478.592.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Outros riscos que pesam na decisão</h3></div>
+    <div class="grid-2">
+      <div class="card"><h4><span data-icon="oper"></span>Frota nova imobilizada</h4><p>103 veículos zero km, mais a reserva técnica de 12%, com sinalizadores, GPS com câmera e uma van adaptada. A tabela de fator dos provisórios não foi publicada <span class="src">TR 5.2.1, 5.2.4.5, 5.7</span></p></div>
+      <div class="card"><h4><span data-icon="kit"></span>Prazo apertado de início</h4><p>O contrato atual termina em 06/12/2026 e a entrega é em 10 dias úteis da ordem de serviço. Na prática, o início será com seminovos <span class="src">ETP 2 · TR 5.2.1.11</span></p></div>
+      <div class="card"><h4><span data-icon="cond"></span>Troca da frota durante o contrato</h4><p>A 4.500 km por mês, os veículos com motorista passam de 100.000 km em cerca de 22 meses e precisam virar zero km. Pela regra de 24 meses, todos seriam trocados <span class="src">TR 5.2.2.1, 5.12.7.6</span></p></div>
+      <div class="card"><h4><span data-icon="conf"></span>Mão de obra e repactuação</h4><p>50 postos de motorista mais plantão noturno e central 24 h. A repactuação só vem após 1 ano da data-base da convenção; erro de enquadramento sindical fica com a empresa <span class="src">Minuta 7.2 · Edital 7.9.11</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= KIT ======================= -->
+<section class="sec" id="sec-kit" data-sec="kit" aria-labelledby="h-kit" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="kit"></span><div><h2 id="h-kit">Kit das 2 horas</h2></div></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Depois do lance, o pregoeiro dá <b>2 horas</b> para a proposta ajustada com as planilhas <span class="src">Edital 6.20.4</span>; o prazo só é prorrogado com pedido fundamentado no chat antes de vencer <span class="src">Edital 6.20.5</span>.</span></li>
+    <li><span>Na habilitação, mais <b>2 horas, prorrogáveis por igual período</b>, para os documentos fora do SICAF <span class="src">Edital 8.9.1</span>.</span></li>
+    <li><span>Depois, <b>5 dias</b> para assinar, com garantia, carta sindical e capital social prontos <span class="src">Edital 14.2.2</span>.</span></li>
+  </ul></div>
+  <div class="block-h"><p class="hint">Marque cada item quando o documento estiver pronto e revisado.</p><span class="save-state" id="kitSave">Carregando…</span></div>
+  <div class="kit-groups" id="kitGroups"></div>
+</section>
+
+<!-- ======================= 8. MATRIZ ======================= -->
+<section class="sec" id="sec-matriz" data-sec="matriz" aria-labelledby="h-matriz" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="matriz"></span><div><p class="eyebrow">Decidir · 1 de 4</p><h2 id="h-matriz">Matriz de aderência da empresa</h2><p class="q">A empresa cumpre cada exigência? Se não, como vai suprir?</p></div></header>
+  <div class="verdict-bar wait" id="mxVerdict">
+    <div><h3 id="mxTitle">Decisão pendente</h3><p id="mxText"></p><div class="counts" id="mxCounts"></div></div>
+    <svg class="ring" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="32" fill="none" stroke="var(--surface)" stroke-width="9"/><circle id="mxRing" cx="40" cy="40" r="32" fill="none" stroke="var(--strong)" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 201" transform="rotate(-90 40 40)"/><text id="mxRingTxt" x="40" y="45" text-anchor="middle" font-size="15" font-weight="800" fill="var(--ink)">0%</text></svg>
+  </div>
+  <div class="block-h"><p class="hint">Marque cada linha. <b>Atende com ajuste</b> = vai suprir por parceria, contratação ou outro meio (escreva qual na nota). Itens <span class="pill elim">Eliminatório</span> com "Não atende" geram recomendação de não participar.</p><span class="save-state" id="mxSave">Carregando…</span></div>
+  <div id="mxList" style="display:grid;gap:20px"></div>
+</section>
+
+<!-- ======================= 12. PARECER ======================= -->
+<section class="sec" id="sec-parecer" data-sec="parecer" hidden>
+  <header class="sec-head"></header>
+  <div class="verdict-bar wait" id="parVerdict">
+    <div><p class="eyebrow" style="color:inherit">Recomendação calculada a partir da sua análise</p><h3 id="parTitle">—</h3><p id="parText"></p></div>
+    <svg class="ring" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="32" fill="none" stroke="var(--surface)" stroke-width="9"/><circle id="parRing" cx="40" cy="40" r="32" fill="none" stroke="var(--strong)" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 201" transform="rotate(-90 40 40)"/><text id="parRingTxt" x="40" y="45" text-anchor="middle" font-size="15" font-weight="800" fill="var(--ink)">0%</text></svg>
+  </div>
+  <div class="block"><div class="block-h"><h3>O que sustenta a recomendação</h3><span class="hint">Cada cartão leva à seção de origem.</span></div><div class="grid-2" id="parEvid"></div></div>
+  <div class="block"><div class="block-h"><h3>Próximos passos</h3><span class="hint">Gerados a partir do que ainda está pendente.</span></div><ol class="steps" id="parSteps"></ol></div>
+  <div class="block par-dec">
+    <div class="block-h"><h3>Decisão da empresa</h3><span class="save-state" id="parSave">Carregando…</span></div>
+    <div class="card">
+      <div class="seg" role="group" aria-label="Decisão da empresa" id="parSeg"><button type="button" data-d="participar">Participar</button><button type="button" data-d="condicoes">Participar com condições</button><button type="button" data-d="nao">Não participar</button></div>
+      <label for="parNota" class="hint">Justificativa e responsáveis</label>
+      <textarea id="parNota" placeholder="Participar; responsável pela proposta e pelos documentos; prazos combinados com a equipe."></textarea>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn" type="button" id="parBtn">Registrar parecer</button><span class="hint" id="parReg"></span></div>
+    </div>
+  </div>
+</section>
+
+      <nav class="pager" id="pager" aria-label="Navegação entre seções"></nav>
+    </main>
+  <p class="foot">Análise independente elaborada para apoio à decisão do licitante, com base no Edital do Pregão Eletrônico nº 25/2026 (392601-25/2026) da ARTESP, assinado em 09/11/2026, no Termo de Referência nº 48/2026, no Estudo Técnico Preliminar nº 38/2026 e nos Anexos IV a VIII. Não é documento oficial da ARTESP e não substitui a leitura integral do Edital e anexos.</p>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* ---------------- ícones ---------------- */
+const ICONS={
+ visao:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+ cond:'<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/>',
+ oper:'<path d="M2.5 6.5h11v9.5h-11zM13.5 9.5h4l3.5 3.5v3h-7.5"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>',
+ qual:'<circle cx="12" cy="9" r="5"/><path d="M8.6 12.8 7 21l5-2.6 5 2.6-1.6-8.2"/>',
+ decl:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/>',
+ conf:'<path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/>',
+ plan:'<rect x="3" y="4" width="18" height="16" rx="1.6"/><path d="M3 9h18M3 14h18M9 4v16"/>',
+ matriz:'<rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><path d="m14.5 17.5 2 2 4-4"/>',
+ simul:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/>',
+ risco:'<path d="M4 7h15a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h11v3"/><path d="M16 13.5h.01"/>',
+ kit:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+ alert:'<circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.3v.2"/>',
+ ok:'<circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/>',
+ parecer:'<path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/>',
+ check:'<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+ cal:'<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>'
+};
+const svg=(k)=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICONS[k]||'')+'</svg>';
+document.querySelectorAll('[data-icon]').forEach(el=>{el.innerHTML=svg(el.dataset.icon)});
+
+/* ---------------- ilustrações (linha monocromática) ---------------- */
+const SEDAN='<path d="M24 60V51c0-3 2-5 5-6l20-5 18-13c3-2 6-3 10-3h26c4 0 7 1 10 4l15 13 15 4c3 1 5 3 5 6v9"/><path d="M24 60h19M61 60h48M127 60h21"/><path d="M68 40l11-9h18v9zM102 31h6c2 0 4 1 5 2l8 7h-19z"/><circle class="acc" cx="52" cy="60" r="9"/><circle class="acc" cx="118" cy="60" r="9"/>';
+const ILLU={
+ ficha:'<rect x="52" y="10" width="56" height="72" rx="5"/><path d="M62 24h36M62 33h36M62 42h24M62 51h30"/><circle class="acc" cx="96" cy="68" r="9"/><path class="acc" d="M92 68l3 3 5-6"/><path d="M26 32h16M24 42h18M118 32h16M118 42h18" opacity=".45"/>',
+ cond:'<rect x="40" y="12" width="56" height="70" rx="5"/><path d="M50 26h36M50 35h36M50 44h28"/><path class="acc" d="M50 68c6-6 10 4 16-2s8 2 12-1"/><path d="M118 18l14 14-32 32-17 4 4-17z"/><path d="M112 24l14 14"/>',
+ oper:'<path d="M8 72h144" opacity=".4"/>'+SEDAN,
+ qual:'<rect x="24" y="14" width="112" height="60" rx="5"/><rect x="31" y="21" width="98" height="46" rx="3" opacity=".45"/><path d="M42 35h46M42 44h54M42 53h32"/><circle class="acc" cx="112" cy="56" r="10"/><path class="acc" d="M106 64l-3 14 9-5 9 5-3-14"/>',
+ decl:'<rect x="60" y="8" width="54" height="66" rx="5" opacity=".45"/><rect x="48" y="16" width="54" height="66" rx="5"/><path d="M58 30h34M58 39h34M58 48h22"/><path class="acc" d="M58 68c4-7 8 3 12-2s6-4 9 0 5 1 8-2"/><path d="M58 74h34" opacity=".5"/>',
+ conf:'<rect x="18" y="18" width="46" height="58" rx="5"/><path d="M27 32h28M27 41h28M27 50h18"/><rect x="96" y="18" width="46" height="58" rx="5"/><path d="M105 32h28M105 41h28M105 50h18"/><path class="acc" d="M85 20l-11 24h13l-11 26"/>',
+ plan:'<rect x="26" y="14" width="108" height="64" rx="5"/><path d="M26 30h108M26 46h108M26 62h108M56 14v64M84 14v64M110 14v64"/><rect class="acc" x="84" y="46" width="26" height="16" style="fill:var(--strong);fill-opacity:.2"/>',
+ matriz:'<rect x="40" y="10" width="80" height="72" rx="6"/><rect x="50" y="22" width="11" height="11" rx="2"/><path class="acc" d="M52 28l3 3 5-6"/><path d="M68 28h40"/><rect x="50" y="41" width="11" height="11" rx="2"/><path class="acc" d="M52 47l3 3 5-6"/><path d="M68 47h34"/><rect x="50" y="60" width="11" height="11" rx="2"/><path d="M68 66h28"/>',
+ kit:'<circle cx="70" cy="50" r="26"/><path d="M64 18h12M70 18v6M92 28l5-5"/><path class="acc" d="M70 50V34M70 50l10 7"/><rect x="108" y="38" width="32" height="40" rx="4" opacity=".6"/><path d="M115 48h18M115 56h18M115 64h11" opacity=".6"/>',
+ simul:'<path d="M22 78h116"/><rect x="32" y="26" width="16" height="52" rx="2"/><rect x="56" y="36" width="16" height="42" rx="2"/><rect x="80" y="46" width="16" height="32" rx="2"/><rect class="acc" x="104" y="54" width="16" height="24" rx="2"/><path class="acc" d="M24 44h112" stroke-dasharray="4 4"/>',
+ risco:'<path d="M24 30h76a6 6 0 0 1 6 6v36a6 6 0 0 1-6 6H30a6 6 0 0 1-6-6z"/><path d="M24 34c0-6 4-10 10-10h52v6"/><path d="M106 46H90a6 6 0 0 0 0 12h16z"/><circle cx="92" cy="52" r="1.5"/><path class="acc" d="M118 70c0 2 5 4 12 4s12-2 12-4v-8c0 2-5 4-12 4s-12-2-12-4zM118 62v-8c0 2 5 4 12 4s12-2 12-4v8M118 54c0-2 5-4 12-4s12 2 12 4"/>',
+ parecer:'<path d="M80 18v58M60 80h40"/><circle cx="80" cy="16" r="3"/><path class="acc" d="M38 30h84"/><path d="M38 30l-12 24h24zM122 30l-12 24h24z"/><path d="M24 54a14 5 0 0 0 28 0M108 54a14 5 0 0 0 28 0"/>'
+};
+const ill=k=>'<svg class="ill" viewBox="0 0 160 90" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ILLU[k]||'')+'</svg>';
+let HOME_ART='<svg class="ill" viewBox="0 0 320 170" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 120V64h26v56M52 120V44h30v76M88 120V72h22v48M236 120V52h28v68M270 120V80h24v40" opacity=".28"/><path d="M4 136h312" opacity=".45"/><g class="drive-l"><g transform="translate(-6 74)">'+SEDAN+'</g></g><g class="drive-r"><g transform="translate(150 0)"><path d="M10 134V92c0-5 4-9 9-9h82c6 0 11 3 14 7l20 24c2 3 3 6 3 9v11"/><path d="M10 134h20M54 134h56M134 134h4"/><path d="M24 92h22v18H24zM54 92h22v18H54zM84 92h17c3 0 5 1 7 3l12 15H84z"/><circle class="acc" cx="42" cy="134" r="11"/><circle class="acc" cx="122" cy="134" r="11"/></g></g></svg>';
+
+/* ---------------- formatação ---------------- */
+const BRL=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+const BRL0=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+const NUM=new Intl.NumberFormat('pt-BR',{maximumFractionDigits:2});
+const fmt=n=>BRL.format(n), fmt0=n=>BRL0.format(n);
+const pct=(n,d=1)=>(n*100).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+const parseNum=s=>{ if(typeof s==='number') return s; s=String(s||'').replace(/[^\d,.-]/g,''); if(s.includes(',')){s=s.replace(/\./g,'').replace(',','.')} else if((s.match(/\./g)||[]).length>1 || /\.\d{3}$/.test(s)){s=s.replace(/\./g,'')} const v=parseFloat(s); return isFinite(v)?v:0; };
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $=id=>document.getElementById(id);
+
+/* ===== Edital: Pregão Eletrônico 25/2026 (ARTESP) ===== */
+/* ---------------- dados ---------------- */
+const REF=74357769.52, MESES=30, MENSAL=2478592.32, ANUAL=MENSAL*12;
+const COMPONENTS=[
+ {k:'locC', nome:'Veículos com motorista e combustível', det:'Modalidade C · 50 veículos · fixo mensal + km (4.500 km/mês)', v:49354235.63, cor:'var(--blue)', def:75},
+ {k:'locA', nome:'Veículos sem motorista', det:'Modalidade A · 52 hatches + 1 van base móvel', v:11445243.38, cor:'var(--steel)', def:65},
+ {k:'base', nome:'Base operacional fixa', det:'central de operações 24 h · 30 meses', v:5678247.53, cor:'var(--green)', def:65},
+ {k:'he',   nome:'Horas adicionais', det:'49.500 h normais + 18.000 h domingos e feriados (estimativa)', v:7806465.00, cor:'var(--amber)', def:70},
+ {k:'desp', nome:'Despesas eventuais e pernoites', det:'reembolso · não entra no desconto', v:73577.98, cor:'var(--gold)', fixed:true}
+];
+
+const CONFLITOS=[
+ {g:'alta',tipo:'Dentro do TR',t:'Renovação da frota: 24 meses × 30 meses ou 100.000 km',a:['TR 5.12.7.6','A base deve substituir de imediato os veículos que tiverem ultrapassado 24 meses de fabricação.'],b:['TR 5.2.2.1 e 5.3.9','Troca por zero km ao completar 100.000 km ou 30 meses de uso desde o primeiro licenciamento, o que vier primeiro.'],why:'Com contrato de 30 meses, a regra de 24 meses obriga trocar os 103 veículos uma vez durante a vigência. A regra de 30 meses ou 100.000 km só alcança os que rodam muito. A diferença muda o custo da frota.',todo:'Pedir esclarecimento sobre qual regra vale. Sem resposta, precificar o pior caso.'},
+ {g:'alta',tipo:'TR × Planilha',t:'Reserva técnica de 12% sem preço na planilha',a:['TR 5.2.4.5','Colocar à disposição no mínimo 12% de reserva técnica de veículos físicos, entregues com os demais e guardados na base da ARTESP.'],b:['Anexo VIII','Nenhuma linha para veículos de reserva: só os 103 veículos, a base e as despesas.'],why:'12% de 103 = 12,36 veículos (13 se arredondado para cima) a comprar e manter sem receita própria. Também não está claro se o percentual vale por grupo ou só para a Modalidade C.',todo:'Pedir a quantidade exata, por grupo, e se há remuneração. Incluir o custo nos preços dos subitens.'},
+ {g:'alta',tipo:'Dentro do TR',t:'Fator de pagamento do veículo provisório não publicado',a:['TR 5.2.1.15.3–4','Seminovo provisório é pago por VP = PC × F, com fatores "apresentados em tabela integrante deste item".'],b:['TR publicado','A tabela de fatores não aparece no documento; só a fórmula.'],why:'O contrato atual termina em 06/12/2026 (ETP 2) e a entrega é em 10 dias úteis. Na prática, os primeiros 30 a 60 dias serão com seminovos, pagos por um fator que ninguém conhece.',todo:'Pedir a tabela de fatores e a memória de cálculo antes da sessão.'},
+ {g:'alta',tipo:'TR × ETP × Minuta',t:'Base do capital de giro e do patrimônio líquido',a:['TR 8.21 b–c','16,66% e 10% "do valor estimado da contratação": R$ 12.388.004,40 e R$ 7.435.776,95 sobre os 30 meses.'],b:['ETP 14 · Minuta 11.1','O ETP fala em "valor estimado considerado para fins de habilitação"; a garantia usa o valor anual (art. 98, parágrafo único).'],why:'Na base anual (R$ 29.743.107,84), as exigências cairiam para R$ 4.955.201,77 e R$ 2.974.310,78. A diferença decide quem é habilitado.',todo:'Pedir esclarecimento sobre a base. Sem resposta, comprovar a mais exigente.'},
+ {g:'media',tipo:'TR × Minuta × Edital',t:'Unidade do lance: total ou mensal',a:['TR 1.1 · Edital 5.1.1, 6.5','Item com unidade "Unidade", valor mensal R$ 2.478.592,32 e total R$ 74.357.769,52; o lance é pelo "valor unitário do item".'],b:['Minuta 1.2','O mesmo item aparece com unidade "Mensal".'],why:'Se a unidade for o mês, o lance fica perto de R$ 2,48 milhões; se for o item inteiro, perto de R$ 74,36 milhões. Lance no formato errado pode ser desclassificado.',todo:'Conferir no Compras.gov.br a quantidade e a unidade do item e perguntar ao pregoeiro.'},
+ {g:'media',tipo:'Dentro do TR',t:'Prazo de substituição no interior: 8 h × 12 h',a:['TR 5.2.4.3','Substituir em até 8 horas quando o chamado ocorrer em viagem no interior.'],b:['TR 5.3.10','O mesmo caso com prazo de até 12 horas.'],why:'Define a rede de apoio no interior e o risco de nota baixa ou sanção.',todo:'Pedir qual prazo vale. Planejar para 8 horas.'},
+ {g:'media',tipo:'TR × Anexo IV',t:'Desconto do IMR: só Modalidade C ou fatura inteira',a:['Anexo IV, título e item 1','A avaliação é para a Modalidade C (com condutor e combustível).'],b:['TR 7.3.1, 7.4 · Anexo IV item 8','O percentual de liberação incide sobre "as faturas" mensais.'],why:'Com 75% de liberação, a perda mensal é de R$ 411.285 só na Modalidade C ou de R$ 619.648 na fatura inteira (conta da análise).',todo:'Pedir que fixem a base do desconto.'},
+ {g:'media',tipo:'Minuta × TR × ETP',t:'Garantia: base e limite',a:['Minuta 11.1','5% do valor inicial, observando o art. 98, parágrafo único (valor anual), e limitada a 2 meses da folha dos empregados do contrato.'],b:['TR 4.2 · ETP 12','5%, sem citar a base anual nem o limite da folha.'],why:'A garantia pode ser de R$ 1.487.155,39 (5% do valor anual), R$ 3.717.888,48 (5% dos 30 meses) ou menos, se o limite da folha valer.',todo:'Pedir o valor exato e a base de cálculo.'},
+ {g:'media',tipo:'TR × Lei 14.133',t:'Prazo para apresentar o seguro-garantia',a:['TR 4.3 · Edital 14.2.2','Garantia antes da assinatura, que ocorre em 5 dias da convocação.'],b:['Lei 14.133, art. 96, § 3º','O edital deve dar pelo menos 1 mês, após a homologação, para quem escolhe seguro-garantia.'],why:'Não prestar a garantia equivale a recusar o contrato, com sanções (TR 4.3.1).',todo:'Pedir que o prazo legal fique expresso. Cotar o seguro antes da sessão.'},
+ {g:'media',tipo:'Edital × ETP',t:'Limite de inexequibilidade: 40% do valor × redução de 40%',a:['Edital 7.8','Indício de inexequibilidade abaixo de 40% do valor orçado.'],b:['ETP 15 e 8','"Redução de 40%" é indício (preço abaixo de 60%); na pesquisa de preços, cotações 40% abaixo da média foram descartadas.'],why:'Define a partir de que lance a empresa terá de provar exequibilidade.',todo:'Se o lance ficar abaixo de 60% da referência, ter a planilha de exequibilidade pronta.'},
+ {g:'media',tipo:'Dentro do TR',t:'Grupo S-1 (sedã) × S-4 (hatch)',a:['TR 5.1.1','S-1 e S-4 descritos do mesmo modo: "sedã ou hatch de 1.0 a 1.6".'],b:['TR 5.9.2, 5.9.4 · Anexo VIII','S-1 é "sedã" e S-4 é "hatchback", com os mesmos mínimos técnicos.'],why:'Define o modelo a comprar para 17 sedãs e 80 hatches.',todo:'Pedir confirmação de que S-1 deve ser sedã e S-4 pode ser só hatch.'},
+ {g:'media',tipo:'Dentro do TR',t:'Tabela de níveis de acessórios ausente',a:['TR 5.11.2','"Os veículos possuem classificações de grupo e níveis de acessórios conforme tabela abaixo".'],b:['TR publicado','Nenhuma tabela depois do item; o texto segue para o item 5.12.'],why:'Acessórios mudam o custo de cada grupo.',todo:'Pedir a tabela ou a confirmação de que vale só a versão básica (TR 5.1.3).'},
+ {g:'media',tipo:'TR × Planilha',t:'Plantão noturno sem linha própria',a:['TR 5.6','Das 22h às 6h, no mínimo 5 veículos e 5 motoristas à disposição.'],b:['Anexo VIII','Os postos são de 12 h, de segunda a sexta; só há horas adicionais eventuais.'],why:'Manter 5 motoristas de plantão todas as noites tem custo fixo que a planilha não mostra.',todo:'Perguntar se o plantão é pago por hora adicional ou se deve estar no preço fixo.'},
+ {g:'media',tipo:'Dentro do TR',t:'Atestado de "50% do número de veículos"',a:['TR 8.24.1.2','Contrato(s) com no mínimo 50% do número de veículos a contratar.'],b:['TR 8.24.1.3–8.24.1.4','Exigências "para os lotes que contemplem" base e veículos equipados, num pregão de item único.'],why:'Não diz se vale veículo sem motorista nem se os 52 precisam ser equipados.',todo:'Pedir esclarecimento e reunir atestados que cubram a leitura mais exigente.'},
+ {g:'baixa',tipo:'Edital × TR',t:'Declaração de conhecimento do local',a:['Edital 8.1.2','Não haverá exigência de atestar que conhece o local e as condições.'],b:['TR 8.23','Exige essa declaração na qualificação técnica.'],why:'Risco pequeno de inabilitação por um documento simples.',todo:'Entregar a declaração mesmo assim.'},
+ {g:'baixa',tipo:'TR × Planilha',t:'Quantidade de pernoites',a:['TR 5.2.3.9.2','Estimativa de 10 pernoites por mês (300 em 30 meses).'],b:['Anexo VIII, subitem 11','10 unidades de R$ 4.391,87, total de R$ 43.918,73 nos 30 meses.'],why:'A unidade e a quantidade não fecham. É reembolso, com efeito pequeno no preço.',todo:'Cotar como a planilha manda e pedir correção.'},
+ {g:'baixa',tipo:'Edital × TR',t:'Regime de mão de obra',a:['Edital 1.1','Serviço contínuo com dedicação exclusiva de mão de obra.'],b:['TR 1.6.1','"Com regime de dedicação exclusiva de mão de obra e sem regime de dedicação exclusiva".'],why:'O regime afeta repactuação e fiscalização trabalhista.',todo:'Tratar como dedicação exclusiva, como no Edital e na Minuta.'},
+ {g:'baixa',tipo:'Edital × ETP',t:'Benefícios de ME/EPP',a:['Edital 3.5.1','Não se aplica o tratamento favorecido dos arts. 42 a 49 da LC 123.'],b:['ETP 16','ME/EPP poderão usar os benefícios dos arts. 42 a 49, quando cabível.'],why:'Sem efeito prático: vale o Edital.',todo:'Nenhuma ação necessária.'},
+ {g:'baixa',tipo:'Edital e anexos',t:'Referências e numeração com erro',a:['Edital 8.1 · TR 5.10.1 · Anexo VIII','Habilitação "no Anexo I"; van descrita no item "II.10.2.1" e no "Lote 02"; S-2 como "Categoria 10".'],b:['TR 8 · TR 5.9.3 · ETP 11','Habilitação está no TR item 8; não há item II nem lotes; S-2 é "Categoria 8" no TR; PCA item 108 (TR 2.2) × 233 (ETP).'],why:'Falhas formais copiadas de outros documentos, sem efeito no preço.',todo:'Nenhuma ação necessária.'}
+];
+
+const MATRIZ=[
+ {g:'Habilitação',itens:[
+  {id:'sicaf',t:'SICAF e Compras.gov.br regulares',d:'Credenciamento prévio, inclusive IPVA e ISS em dia',src:'Edital 3.1 · TR 8.16–8.17',elim:true},
+  {id:'indices',t:'LG, LC e SG acima de 1',d:'Balanço e DRE dos 2 últimos exercícios',src:'TR 8.21 a',elim:true},
+  {id:'ccl',t:'Capital de giro de R$ 12,39 milhões',d:'16,66% do valor estimado; R$ 4,96 milhões se a base for anual',src:'TR 8.21 b',elim:true},
+  {id:'pl',t:'Patrimônio líquido de R$ 7,44 milhões',d:'10% do valor estimado; R$ 2,97 milhões se a base for anual',src:'TR 8.21 c',elim:true},
+  {id:'contador',t:'Declaração do contador',d:'Atestando índices, capital de giro e patrimônio líquido',src:'TR 8.22',elim:false},
+  {id:'at-15m',t:'Atestado: 15 meses de serviço similar',d:'Soma de períodos diferentes aceita',src:'TR 8.24.1.1',elim:true},
+  {id:'at-52',t:'Atestado: contrato(s) com 52 veículos ou mais',d:'50% de 103; contratos simultâneos podem ser somados',src:'TR 8.24.1.2, 8.24.2',elim:true},
+  {id:'at-base',t:'Atestado: base operacional de gerenciamento de frota',d:'Disponibilização e operação',src:'TR 8.24.1.3',elim:true},
+  {id:'at-equip',t:'Atestado: veículos com equipamentos especiais',d:'Ou personalização operacional',src:'TR 8.24.1.4',elim:true},
+  {id:'anexo7',t:'Declaração do Anexo VII.1',d:'Saúde e segurança no trabalho; Lei 6.019, arts. 5º-C e 5º-D',src:'TR 8.27',elim:false}
+ ]},
+ {g:'Frota e operação',itens:[
+  {id:'frota',t:'103 veículos zero km dos grupos B, S-1, S-2 e S-4',d:'Mais a reserva técnica de 12%',src:'TR 5.1.1, 5.2.4.5',elim:false},
+  {id:'provis',t:'Seminovos para começar em 10 dias úteis',d:'Zero km definitivos em 30, 45 ou 60 dias',src:'TR 5.2.1.11–5.2.1.12',elim:false},
+  {id:'base',t:'Base operacional 24 h, segunda a domingo',d:'Sistema informatizado e comunicação com os veículos',src:'TR 5.12',elim:false},
+  {id:'15min',t:'Metade da frota a até 15 min do Itaim Bibi',d:'Rua Iguatemi, 105, em trânsito normal',src:'TR 5.12.2',elim:false},
+  {id:'equip',t:'Sinalizador, smartphone e GPS com câmera nos 80 hatches',d:'Fornecedor e instalador definidos',src:'TR 5.7.2',elim:false},
+  {id:'van',t:'Van adaptada como base móvel',d:'Adaptador contratado para entregar em 60 dias',src:'TR 5.10, 5.2.1.12',elim:false},
+  {id:'subst',t:'Substituição em 3 h na capital e 8 h no interior',d:'Rede de apoio no estado',src:'TR 5.2.4.3, 5.3.10',elim:false},
+  {id:'seguro',t:'Seguro total com terceiros',d:'R$ 100 mil materiais, R$ 100 mil corporais, R$ 50 mil morais',src:'TR 5.2.6.2.1',elim:false}
+ ]},
+ {g:'Equipe',itens:[
+  {id:'motoristas',t:'Motoristas para 50 postos e plantão noturno',d:'3 anos de experiência, CNH compatível, direção defensiva',src:'TR 5.6, 5.12.7.18',elim:false},
+  {id:'encarreg',t:'Encarregados da base em 44 h semanais',d:'Cobertura 24 h',src:'TR 5.12.6',elim:false},
+  {id:'preposto',t:'Preposto que não seja motorista',d:'Designado antes do início',src:'TR 5.2.8.1, 6.6',elim:false}
+ ]},
+ {g:'Finanças',itens:[
+  {id:'garantia',t:'Garantia de 5%',d:'R$ 1,49 milhão (base anual) a R$ 3,72 milhões (30 meses)',src:'Minuta 11.1',elim:false},
+  {id:'giro',t:'Caixa para cerca de 70 dias de custos',d:'Mais a compra ou o financiamento da frota',src:'TR 7.5–7.30',elim:false},
+  {id:'capital',t:'Capital social compatível com o número de empregados',d:'Lei 6.019, art. 4º-B',src:'Edital 7.9.9.2',elim:false},
+  {id:'cadin',t:'Sem registro no Cadin estadual',d:'Condição para assinar e para receber',src:'Edital 14.2.1.3 · TR 7.32.1',elim:true}
+ ]}
+];
+
+const KIT=[
+ {g:'Proposta ajustada ao lance',prazo:'2 horas · Edital 6.20.4',itens:[
+  {id:'k-prop',t:'Planilha de proposta (Anexo VI) preenchida',d:'11 subitens, totais em 30 meses e dados da empresa'},
+  {id:'k-comp',t:'Planilha de composição de custos da mão de obra',d:'Postos de 12 h e de 16 h, com BDI e encargos (Edital 7.12)'},
+  {id:'k-sind',t:'Declaração de enquadramento sindical',d:'Atividade, convenção, sindicatos, data-base e CBO (Edital 7.9.8)'},
+  {id:'k-anomod',t:'Ano/modelo dos veículos e componente de locação',d:'TR 5.2.1.2 e 5.2.1.15.5'},
+  {id:'k-valid',t:'Validade da proposta de 60 dias ou mais',d:'Edital 5.8'}
+ ]},
+ {g:'Habilitação',prazo:'2 horas, prorrogável · Edital 8.9.1',itens:[
+  {id:'k-atest',t:'Atestados técnicos digitalizados',d:'15 meses, 52 veículos, base operacional e veículos equipados'},
+  {id:'k-contr',t:'Cópias dos contratos dos atestados',d:'Podem ser pedidas (TR 8.24.4)'},
+  {id:'k-bal',t:'Balanço e DRE dos 2 últimos exercícios',d:'Se não estiverem no SICAF'},
+  {id:'k-cont',t:'Declaração do contador',d:'LG, LC, SG, capital de giro e patrimônio líquido (TR 8.22)'},
+  {id:'k-fal',t:'Certidão de falência e recuperação atualizada',d:'TR 8.20'},
+  {id:'k-anexo7',t:'Declaração do Anexo VII.1 assinada',d:'TR 8.27'},
+  {id:'k-local',t:'Declaração de conhecimento das condições locais',d:'TR 8.23, por cautela'}
+ ]},
+ {g:'Assinatura do contrato',prazo:'5 dias · Edital 14.2.2',itens:[
+  {id:'k-gar',t:'Garantia de 5% contratada',d:'Seguro, fiança, caução ou título (TR 4.3)'},
+  {id:'k-carta',t:'Carta ou registro sindical',d:'Edital 7.9.9.1'},
+  {id:'k-capital',t:'Capital social integralizado compatível',d:'Edital 7.9.9.2'},
+  {id:'k-cadin',t:'Consulta ao Cadin estadual sem pendência',d:'Edital 14.2.1.3'},
+  {id:'k-plano',t:'Plano de entrega dos 103 veículos em 10 dias úteis',d:'Seminovos, base e motoristas contratados'}
+ ]}
+];
+
+const SIM_PARAMS=[
+ {k:'trib',l:'Tributos sobre o faturamento',h:'PIS, COFINS, ISS, IRPJ e CSLL do seu regime',u:'%',def:9},
+ {k:'adm',l:'Despesas indiretas',h:'sobre o custo direto: administração, preposto, sistemas',u:'%',def:5},
+ {k:'glosa',l:'Desconto esperado pelo IMR',h:'perda média do faturamento pela avaliação',u:'%',def:1},
+ {k:'marg',l:'Margem líquida desejada',h:'sobre o valor do lance',u:'%',def:5},
+ {k:'ciclo',l:'Ciclo até receber',h:'dias entre o serviço e o pagamento (TR 7)',u:'dias',def:70},
+ {k:'juros',l:'Custo do capital de giro',h:'taxa mensal do seu financiamento',u:'%/mês',def:1.5},
+ {k:'garan',l:'Custo anual da garantia',h:'prêmio do seguro sobre os 5% garantidos',u:'%/ano',def:1.5}
+];
+const SIM_DEF=()=>{const o={lance:70000000}; COMPONENTS.forEach(c=>{if(!c.fixed)o['c_'+c.k]=c.def}); SIM_PARAMS.forEach(p=>o[p.k]=p.def); return o;};
+
+const SECTIONS=[
+ {id:'ficha',sec:'ficha',nome:'Ficha do edital',q:'Quais são os dados básicos do pregão?',etapa:1,min:2},
+ {id:'condicoes',sec:'cond',nome:'Condições gerais',q:'Quais regras valem para o contrato e como a empresa é paga?',etapa:1,min:4},
+ {id:'operacao',sec:'oper',nome:'Estrutura e entrega',q:'O que a empresa precisa ter montado e em quanto tempo?',etapa:1,min:3},
+ {id:'veiculos',sec:'oper',nome:'Veículos e equipamentos',q:'Quais veículos, quantos e com quais equipamentos?',etapa:1,min:3},
+ {id:'motoristas',sec:'oper',art:'decl',nome:'Serviço de motorista',q:'Em que condições os motoristas trabalham?',etapa:1,min:2},
+ {id:'qualificacao',sec:'qual',nome:'Qualificação',q:'O que a empresa precisa comprovar para ser habilitada?',etapa:2,min:3},
+ {id:'declaracoes',sec:'decl',nome:'Declarações',q:'Quais documentos vão além do SICAF e quando?',etapa:2,min:2},
+ {id:'conflitos',sec:'conf',nome:'Conflitos',q:'Onde os documentos se contradizem e o que fazer antes de propor?',etapa:2,min:4},
+ {id:'planilha',sec:'plan',nome:'Planilha de custo',q:'Como o órgão chegou aos R$ 74,4 milhões?',etapa:2,min:3},
+ {id:'matriz',sec:'matriz',nome:'Matriz de aderência',q:'A empresa cumpre cada exigência? Se não, como vai suprir?',etapa:3,min:6},
+ {id:'kit',sec:'kit',nome:'Kit das 2 horas',q:'O que precisa estar pronto antes da sessão para não perder depois de vencer?',etapa:3,min:4},
+ {id:'simulador',sec:'simul',nome:'Simulador de lance',q:'Até onde a empresa pode baixar o preço sem ter prejuízo?',etapa:4,min:5},
+ {id:'riscos',sec:'risco',nome:'Caixa e riscos',q:'A empresa aguenta financiar a operação até o primeiro pagamento?',etapa:4,min:3},
+ {id:'parecer',sec:'parecer',nome:'Parecer final',q:'Participar ou não participar?',etapa:5,min:3}
+];
+
+/* capital de giro do ciclo: custo mensal (30 meses) × ciclo */
+const giroK=r=>r.C/MESES*((state.sim.ciclo||0)/30);
+const garVal=L=>0.05*L*12/MESES;
+const PRAZO=[2026,11,19];
+
+const TAKE={
+ ficha:()=>'Pregão eletrônico de menor preço global, item único, sem benefício para ME/EPP, com contrato de 30 meses. Os dados básicos e o objeto completo estão abaixo.',
+ condicoes:()=>'Contrato de 30 meses (até 10 anos), garantia de 5% e pagamento em até 30 dias da nota. Os veículos com motorista são 66% do valor.',
+ operacao:()=>'Central 24 h, metade da frota a 15 min do Itaim Bibi e 10 dias úteis para começar, com seminovos até chegarem os zero km.',
+ veiculos:()=>'103 veículos zero km: 80 hatches equipados para fiscalização, 17 sedãs, 4 caminhonetes, 1 sedã executivo e 1 van base móvel.',
+ motoristas:()=>'50 postos com motorista de 12 h (e um de 16 h), mais plantão noturno de 5, com motoristas de 3 anos de experiência.',
+ qualificacao:()=>'Para habilitar: atestados de 15 meses e 52 veículos, índices acima de 1, capital de giro de R$ 12,39 mi e patrimônio líquido de R$ 7,44 mi.',
+ declaracoes:()=>'Planilhas e declaração sindical em 2 horas depois do lance; declarações do contador e do Anexo VII.1 na habilitação.',
+ conflitos:()=>CONFLITOS.filter(c=>c.g==='alta').length+' pontos podem mudar seu preço ou te inabilitar. O prazo para questionar o órgão vence em 19/11 ('+leftTxt(daysUntil(...PRAZO))+').',
+ planilha:()=>'Os 11 subitens somam o teto da proposta. Reserva técnica e plantão noturno não têm linha própria e entram nos seus preços.',
+ matriz:()=>{const s=matrizSummary(); return s.title+': '+s.evaluated+' de '+s.all.length+' requisitos avaliados.';},
+ kit:()=>{const a=KIT.flatMap(g=>g.itens),d=a.filter(i=>state.kit.done[i.id]).length; return d+' de '+a.length+' documentos prontos. Cada um que faltar no prazo de 2 horas pode custar o contrato.';},
+ simulador:()=>{const r=calc(state.sim); return isFinite(r.Pmin)?'Com os custos informados, seu lance mínimo é '+fmt0(r.Pmin)+' em 30 meses (desconto máximo de '+pct(Math.max(0,1-r.Pmin/REF))+')'+(isDefault()?', ainda com custos de exemplo.':'.'):'Com os percentuais atuais, nenhum preço cobre os custos.';},
+ riscos:()=>{const r=calc(state.sim); const L=r.L>0?r.L:REF; return 'Antes de assinar, reserve cerca de '+fmt0(giroK(r))+' de capital de giro e '+fmt0(garVal(L))+' de garantia, além da frota.';},
+ parecer:()=>{const p=parecerCalc(); return p.title+(p.title.endsWith('…')?' ':'. ')+(state.parecer.decisao?'O parecer da empresa já foi registrado.':'Registre a decisão da empresa no fim desta página.');}
+};
+const HN={
+ ficha:()=>[{v:'R$ 74,4 mi',l:'valor total em 30 meses',c:'gold'},{v:'25/11',l:'sessão pública, às 9h30',c:'ink'},{v:'103',l:'veículos zero km',c:'ink'}],
+ condicoes:()=>[{v:'5%',l:'garantia contratual',c:'gold'},{v:'66%',l:'do valor nos veículos com motorista',c:'blue'},{v:'30 dias',l:'para pagar após a nota',c:'ink'}],
+ operacao:()=>[{v:'24 h',l:'central de operações',c:'ink'},{v:'10 dias úteis',l:'para começar',c:'blue'},{v:'12%',l:'de reserva técnica',c:'red'}],
+ veiculos:()=>[{v:'103',l:'veículos zero km',c:'ink'},{v:'80',l:'hatches com giroflex e GPS',c:'blue'},{v:'1',l:'van base móvel',c:'ink'}],
+ motoristas:()=>[{v:'50',l:'postos com motorista',c:'ink'},{v:'12 h',l:'por dia, segunda a sexta',c:'blue'},{v:'5',l:'no plantão noturno',c:'red'}],
+ qualificacao:()=>[{v:'52',l:'veículos a comprovar em atestado',c:'red'},{v:'R$ 12,39 mi',l:'capital de giro exigido',c:'gold'},{v:'R$ 7,44 mi',l:'patrimônio líquido exigido',c:'gold'}],
+ declaracoes:()=>[{v:'4',l:'documentos com a proposta',c:'ink'},{v:'5',l:'na habilitação',c:'ink'},{v:'2 h',l:'prazo depois do lance',c:'red'}],
+ conflitos:()=>{const n=daysUntil(...PRAZO); return [{v:String(CONFLITOS.filter(c=>c.g==='alta').length),l:'de alta gravidade',c:'red'},{v:String(CONFLITOS.length),l:'pontos no total',c:'ink'},{v:n<0?'encerrado':n===0?'hoje':n+(n===1?' dia':' dias'),l:'para questionar (até 19/11)',c:'red'}];},
+ planilha:()=>[{v:'R$ 74,4 mi',l:'total de referência',c:'gold'},{v:'11',l:'subitens a cotar',c:'ink'},{v:'R$ 32,9 mil',l:'por veículo com motorista ao mês',c:'blue'}],
+ matriz:()=>{const s=matrizSummary(); return [{v:(s.c.atende+s.c.ajuste)+' de '+s.all.length,l:'atendidos, com ou sem ajuste',c:'green'},{v:String(s.c.verificar),l:'a verificar',c:'ink'},{v:String(s.blockers.length),l:'bloqueios eliminatórios',c:'red'}];},
+ kit:()=>{const g=KIT.map(x=>x.itens.filter(i=>state.kit.done[i.id]).length+' de '+x.itens.length); const a=KIT.flatMap(x=>x.itens); return [{v:a.filter(i=>state.kit.done[i.id]).length+' de '+a.length,l:'documentos prontos',c:'green'},{v:g[0],l:'proposta ajustada',c:'ink'},{v:g[1],l:'habilitação',c:'ink'}];},
+ simulador:()=>{const r=calc(state.sim), ok=isFinite(r.Pmin); return [{v:ok?fmtMi(r.Pmin):'—',l:'lance mínimo viável',c:'blue'},{v:ok?pct(Math.max(0,1-r.Pmin/REF)):'—',l:'desconto máximo',c:'blue'},{v:isFinite(r.margL)?pct(r.margL):'—',l:'margem no lance testado',c:r.margL<0?'red':'green'}];},
+ riscos:()=>{const r=calc(state.sim), L=r.L>0?r.L:REF; return [{v:fmtMi(giroK(r)),l:'capital de giro estimado',c:'gold'},{v:fmtMi(garVal(L)),l:'garantia (5% do valor anual)',c:'gold'},{v:'~'+NUM.format(state.sim.ciclo||0)+' dias',l:'até o primeiro pagamento',c:'ink'}];},
+ parecer:()=>{const p=parecerCalc(); return [{v:p.title,l:'recomendação calculada',c:'gold'},{v:Math.round(overallProgress()*100)+'%',l:'da análise concluída',c:'ink'},{v:String(p.steps.length),l:'próximos passos',c:'ink'}];}
+};
+const CARD={
+ ficha:()=>({m:'R$ 74,4 mi',s:'sessão em 25/11 · 9h30'}),
+ condicoes:()=>({m:'30 meses',s:'garantia de 5% · até 10 anos'}),
+ operacao:()=>({m:'Central 24 h',s:'início em 10 dias úteis'}),
+ veiculos:()=>({m:'103 veículos',s:'zero km · 80 equipados'}),
+ motoristas:()=>({m:'50 postos',s:'12 h por dia + plantão noturno'}),
+ qualificacao:()=>({m:'4 atestados',s:'e R$ 12,39 mi de capital de giro',c:'alert'}),
+ declaracoes:()=>({m:'9 documentos',s:'2 horas na proposta e na habilitação',c:'warn'}),
+ conflitos:()=>({m:CONFLITOS.length+' pontos',s:CONFLITOS.filter(c=>c.g==='alta').length+' de alta gravidade',c:'alert'}),
+ planilha:()=>({m:'11 subitens',s:'reserva técnica sem linha própria',c:'alert'}),
+ matriz:()=>{const s=matrizSummary(); return {m:(s.c.atende+s.c.ajuste)+' de '+s.all.length,s:s.title,c:s.kind==='go'?'ok':s.kind==='nogo'?'alert':'warn'};},
+ kit:()=>{const a=KIT.flatMap(x=>x.itens), d=a.filter(i=>state.kit.done[i.id]).length; return {m:d+' de '+a.length,s:'documentos prontos',c:d===a.length?'ok':''};},
+ simulador:()=>{const r=calc(state.sim); return {m:isFinite(r.Pmin)?fmtMi(r.Pmin):'—',s:'lance mínimo viável'+(isDefault()?' · exemplo':'')};},
+ riscos:()=>{const r=calc(state.sim); return {m:fmtMi(giroK(r)),s:'capital de giro até receber'};},
+ parecer:()=>{const p=parecerCalc(); return {m:p.title,s:state.parecer.decisao?'decisão registrada':'registrar a decisão',c:p.kind==='go'?'ok':p.kind==='nogo'?'alert':'warn'};}
+};
+
+/* ---------------- condições gerais e planilha ---------------- */
+function renderComposition(){
+  $('stack').innerHTML=COMPONENTS.map(c=>'<i style="width:'+(c.v/REF*100)+'%;background:'+c.cor+'" title="'+esc(c.nome)+'"></i>').join('');
+  $('legend').innerHTML=COMPONENTS.map(c=>'<li><span class="sw" style="background:'+c.cor+'"></span><span><b>'+c.nome+'</b> <span class="hint">· '+c.det+'</span></span><span class="r">'+fmt(c.v)+'</span><span class="r p">'+pct(c.v/REF)+'</span></li>').join('')+'<li><span></span><span><b>Total do item (30 meses)</b></span><span class="r"><b>'+fmt(REF)+'</b></span><span class="r p">100%</span></li>';
+  $('planTiles').innerHTML=COMPONENTS.map((c,i)=>'<div class="tile t'+(i+1)+'"><span class="k">'+c.nome+'</span><span class="v">'+fmt0(c.v)+'</span><span class="s">'+pct(c.v/REF)+' do total</span></div>').join('')+'<div class="tile t6"><span class="k">Total do item</span><span class="v">'+fmt0(REF)+'</span><span class="s">'+fmt0(MENSAL)+' por mês</span></div>';
+}
+function toggleZoom(){const s=$('sheet'); s.classList.toggle('zoom'); $('zoomBtn').textContent=s.classList.contains('zoom')?'Ajustar à largura':'Ampliar';}
+$('zoomBtn').addEventListener('click',toggleZoom); $('sheetImg').addEventListener('click',toggleZoom);
+
+/* ---------------- riscos ---------------- */
+function renderRiscos(r){
+  const L=r.L>0?r.L:REF;
+  const T=[
+   ['Faturamento mensal médio',fmt0(L/MESES),'lance ÷ 30 meses','t4'],
+   ['Garantia de 5%',fmt0(garVal(L)),'base anual · até '+fmt0(0.05*L)+' sobre 30 meses','t1'],
+   ['Capital de giro estimado',fmt0(giroK(r)),'custos de '+NUM.format(state.sim.ciclo)+' dias, sem a frota','t5'],
+   ['Reserva técnica',String(Math.ceil(103*0.12))+' veículos','12% de 103, sem preço na planilha','t3']
+  ];
+  $('riskTiles').innerHTML=T.map(t=>'<div class="tile '+t[3]+'"><span class="k">'+t[0]+'</span><span class="v">'+t[1]+'</span><span class="s">'+t[2]+'</span></div>').join('');
+}
+function renderImr(){
+  const f=parseNum($('imr-f').value), n=parseNum($('imr-n').value), z=parseNum($('imr-z').value);
+  const lib=(n<5||z>1)?0.75:(n<6.75||z===1)?0.9:1;
+  $('imrOut').innerHTML=svg('alert')+'<p>Com nota '+NUM.format(n)+(z?' e '+NUM.format(z)+' nota(s) zero':'')+', a ARTESP libera <b>'+pct(lib,0)+'</b> da fatura: '+fmt(f*lib)+' (desconto de '+fmt(f*(1-lib))+' no mês).</p>';
+}
+['imr-f','imr-n','imr-z'].forEach(id=>$(id).addEventListener('input',renderImr));
+
+
+const E={
+  slug:'pe-25-2026-artesp', docPrefix:'', lsPrefix:'pe25art-',
+  ref:REF, teto:REF, garantiaPct:0.05*MESES/12, giro:'mensal', /* 5% do total mantido por 30 meses: prêmio anual × 2,5 (igual ao resumo do investidor) */
+  sessao:[2026,11,25], sessaoNome:'Sessão', chip:'R$ 74,4 mi · 30 meses',
+  deadlines:[
+   {d:[2026,11,19],lbl:'19/11',t:'Último dia para impugnar e pedir esclarecimento',s:'Edital 13.1–13.2 · e-mail, com os 4 endereços em cópia: ',mail:'andrea.paradela@artesp.sp.gov.br'},
+   {d:[2026,11,24],lbl:'24/11',t:'Limite para a ARTESP responder',s:'Último dia útil antes da sessão · Edital 13.4'},
+   {d:[2026,11,25],lbl:'25/11 · 9h30',t:'Sessão pública no Compras.gov.br',s:'Envio da proposta até a abertura · Edital 4.2'},
+   {d:[2026,12,6],lbl:'06/12',t:'Fim do contrato atual da ARTESP',s:'Pressão para início rápido, com seminovos · ETP item 2'}
+  ],
+  prazoQuestionar:PRAZO,
+  sim:{
+    tetoNome:'valor estimado', refNome:'referência', artExeq:'Edital 7.8–7.10', artAcima:'Edital 7.7.3',
+    tetoLabel:()=>'Referência<br>R$ 74,4 mi',
+    minSub:r=>'≈ '+fmt0(r.Pmin/MESES)+' por mês',
+    margSub:r=>'≈ '+fmt0(r.margL*r.L)+' em 30 meses',
+    descValue:(r,ok,ref)=>ok?(r.Pmin<ref?pct(1-r.Pmin/ref):'sem desconto'):'—',
+    passo:L=>L*0.01,
+    extraAlerts:r=>{const A=[]; if(r.L>0&&r.L<0.6*REF) A.push(['warn','O lance está abaixo de 60% da referência: o ETP 15 trata isso como indício de inexequibilidade; o Edital 7.8 usa 40%. Tenha a planilha de exequibilidade pronta.']); return A;}
+  },
+  kpis(x){ const {s,r,exemplo,ok}=x; const dImp=daysUntil(...PRAZO); return [
+   {href:'planilha',k:'Valor total estimado',v:'R$ 74,4 mi',c:'gold',s:'30 meses · 103 veículos · item único'},
+   {href:'simulador',k:'Desconto máximo viável',v:ok?pct(Math.max(0,1-r.Pmin/REF)):'—',c:'blue',s:ok?'lance mínimo '+fmtMi(r.Pmin)+(exemplo?' (custos de exemplo)':''):'revise o simulador'},
+   {href:'conflitos',k:'Conflitos graves',v:String(CONFLITOS.filter(c=>c.g==='alta').length),c:'red',s:'questionar até 19/11 ('+leftTxt(dImp)+')'},
+   {href:'matriz',k:'Requisitos atendidos',v:(s.c.atende+s.c.ajuste)+' de '+s.all.length,c:'green',s:s.c.verificar?s.c.verificar+' a verificar na matriz':(s.blockers.length?s.blockers.length+' bloqueio(s)':'todos avaliados')}
+  ]; },
+  precoTxt:r=>'Lance mínimo de '+fmt0(r.Pmin)+' em 30 meses, desconto máximo de '+pct(Math.max(0,1-r.Pmin/REF))+'.'+(r.Pmin<0.6*REF?' Abaixo de 60% da referência: prepare a prova de exequibilidade.':''),
+  riscosTxt:d=>'Renovação da frota, reserva técnica, fator do provisório e base do capital de giro. Prazo para questionar: 19/11 ('+leftTxt(d)+').',
+  prepTxt:(r,L)=>'Documentos do kit das 2 horas prontos. Caixa: cerca de '+fmt0(giroK(r))+' de capital de giro e '+fmt0(garVal(L))+' de garantia, além da frota.',
+  passoBloqueio:'Avaliar consórcio (soma de atestados e de valores, com +10% na exigência financeira) antes de desistir.',
+  exeqStep:'Preparar a prova de exequibilidade do preço (Edital 7.8 a 7.10).',
+  questionarStep:a=>'Decidir até 19/11 se vai pedir esclarecimento ou impugnar os '+a+' pontos de alta gravidade.',
+  stepsGo:['Revisar os preços dos 11 subitens da planilha de proposta.','Cadastrar a proposta no Compras.gov.br antes de 25/11, às 9h30.'],
+  init(){ renderComposition(); renderImr(); },
+  onSim(r){ renderRiscos(r); }
+};
+
+const ETAPAS=[{n:1,nome:'Entender'},{n:2,nome:'Riscos'},{n:3,nome:'Aderência'},{n:4,nome:'Preço'},{n:5,nome:'Parecer'}];
+/* ---------------- estado e armazenamento ---------------- */
+const state={matriz:{status:{},notas:{}},kit:{done:{}},sim:SIM_DEF(),parecer:{decisao:'',nota:'',em:''},prog:{done:{}}};
+const DOCS={matriz:E.docPrefix+'analise/matriz',kit:E.docPrefix+'analise/kit',sim:E.docPrefix+'analise/simulador',parecer:E.docPrefix+'analise/parecer'};
+const SAVE_EL={matriz:'mxSave',kit:'kitSave',sim:'simSave',parecer:'parSave'};
+let db=null, mode='local';
+const lsGet=k=>{try{const v=localStorage.getItem(E.lsPrefix+k);return v?JSON.parse(v):null}catch(e){return null}};
+const lsSet=(k,v)=>{try{localStorage.setItem(E.lsPrefix+k,JSON.stringify(v))}catch(e){}};
+function setSave(name,cls,txt){const el=$(SAVE_EL[name]); if(!el)return; el.className='save-state'+(cls?' '+cls:''); el.textContent=txt;}
+const timers={}, writing={}, pending={};
+function persist(name){
+  lsSet(name,state[name]);
+  if(!db){setSave(name,'local','Salvo neste navegador');return;}
+  setSave(name,'busy','Salvando…');
+  clearTimeout(timers[name]);
+  timers[name]=setTimeout(()=>flush(name),700);
+}
+async function flush(name){
+  if(writing[name]){pending[name]=true;return;}
+  writing[name]=true;
+  try{ await db.doc(DOCS[name]).set(JSON.parse(JSON.stringify(state[name]))); setSave(name,'','Salvo para a equipe'); }
+  catch(e){ setSave(name,'err', (e&&(e.code==='permission_denied'||e.code==='not_granted'))?'Somente leitura: salvo só neste navegador':'Não foi possível salvar para a equipe; salvo neste navegador'); }
+  writing[name]=false;
+  if(pending[name]){pending[name]=false;flush(name);}
+}
+function mergeIn(name,data){
+  if(!data) return;
+  if(name==='sim') state.sim=Object.assign(SIM_DEF(),data);
+  else if(name==='matriz') state.matriz={status:Object.assign({},data.status||{}),notas:Object.assign({},data.notas||{})};
+  else if(name==='kit') state.kit={done:Object.assign({},data.done||{})};
+  else if(name==='parecer') state.parecer=Object.assign({decisao:'',nota:'',em:''},data);
+}
+['matriz','kit','sim','parecer'].forEach(n=>{const v=lsGet(n); if(v) mergeIn(n,v);});
+{const pg=lsGet('prog'); if(pg&&pg.done) state.prog.done=pg.done;}
+
+async function connectDb(){
+  try{ db = window.claude && window.claude.use ? await window.claude.use('db') : null; }catch(e){ db=null; }
+  if(!db){ ['matriz','kit','sim','parecer'].forEach(n=>setSave(n,'local','Salvo neste navegador')); return; }
+  mode='db';
+  ['matriz','kit','sim','parecer'].forEach(name=>{
+    setSave(name,'','Salvo para a equipe');
+    try{
+      db.doc(DOCS[name]).onSnapshot(snap=>{
+        if(snap.metadata && snap.metadata.hasPendingWrites) return;
+        if(writing[name] || timers[name]&&pending[name]) return;
+        if(snap.exists){ mergeIn(name,snap.data()); lsSet(name,state[name]); rerender(name); }
+      },()=>setSave(name,'local','Sem conexão com a equipe; salvo neste navegador'));
+    }catch(e){ setSave(name,'local','Salvo neste navegador'); }
+  });
+}
+function rerender(name){
+  if(name==='matriz') renderMatriz();
+  if(name==='kit') renderKit();
+  if(name==='sim') renderSim(true);
+  if(name==='parecer') renderParecer();
+  renderOverview();
+}
+
+/* ---------------- navegação ---------------- */
+let currentId='painel';
+const fmtMi=n=>'R$ '+(n/1e6).toLocaleString('pt-BR',{maximumFractionDigits:n<1e7?2:1})+' mi';
+function buildNav(){
+  $('homeArt').innerHTML=HOME_ART;
+  $('cards').innerHTML=SECTIONS.map(s=>'<a class="tcard'+(s.id==='conflitos'?' alert-ring':'')+'" href="#'+s.id+'" data-sec="'+s.sec+'"><span class="art">'+ill(s.art||s.sec)+'<span class="done" id="cd-'+s.id+'" hidden>✓ concluída</span></span><span class="body"><span class="et">Etapa '+s.etapa+' · '+ETAPAS[s.etapa-1].nome+'</span><h3>'+s.nome+'</h3><span class="m" id="cm-'+s.id+'"></span><span class="s" id="cs-'+s.id+'"></span><span class="go">Abrir →</span></span></a>').join('');
+}
+function route(){
+  let id=(location.hash||'').replace('#','');
+  const home=!SECTIONS.some(s=>s.id===id);
+  if(home) id='painel';
+  currentId=id;
+  document.querySelectorAll('.sec').forEach(el=>{el.hidden = el.id!=='sec-'+id});
+  const cb=$('crumbbar'), pg=$('pager');
+  if(home){ cb.hidden=true; pg.hidden=true; pg.innerHTML=''; refreshProgress(); window.scrollTo(0,0); return; }
+  const s=SECTIONS.find(x=>x.id===id), i=SECTIONS.indexOf(s);
+  cb.hidden=false; pg.hidden=false;
+  cb.innerHTML='<a class="back" href="#painel">← Painel</a><span class="crumb-info">Etapa '+s.etapa+' de 5 · '+ETAPAS[s.etapa-1].nome+' · página '+(i+1)+' de '+SECTIONS.length+'<span class="mini-prog" title="Análise concluída"><i style="width:'+Math.round(overallProgress()*100)+'%"></i></span></span>';
+  const prev=SECTIONS[i-1], next=SECTIONS[i+1];
+  let ph=prev?'<a href="#'+prev.id+'"><span>← Anterior</span><b>'+prev.nome+'</b></a>':'<a href="#painel"><span>← Voltar</span><b>Painel</b></a>';
+  if(next){ const auto=(id==='matriz'||id==='kit'); const done=secProgress(id)>=1;
+    ph+='<button class="btn next-btn" type="button" data-next="'+next.id+'" data-mark="'+(auto?'':id)+'">'+((done||auto)?'Seguir para ':'Concluir e seguir para ')+next.nome+' →</button>'; }
+  else ph+='<a class="next-btn" href="#painel"><span>Fim da análise</span><b>Voltar ao painel →</b></a>';
+  pg.innerHTML=ph;
+  refreshProgress(); window.scrollTo(0,0);
+}
+$('pager').addEventListener('click',e=>{const b=e.target.closest('.next-btn[data-next]'); if(!b)return; if(b.dataset.mark){state.prog.done[b.dataset.mark]=true; lsSet('prog',state.prog);} location.hash='#'+b.dataset.next;});
+
+/* ---------------- prazos ---------------- */
+function daysUntil(y,m,d){const now=new Date(); const a=new Date(now.getFullYear(),now.getMonth(),now.getDate()); const b=new Date(y,m-1,d); return Math.round((b-a)/86400000);}
+function renderDeadlines(){
+  $('deadlines').innerHTML=E.deadlines.map(x=>{const n=daysUntil(...x.d); const left=n<0?'encerrado':n===0?'hoje':n===1?'amanhã':'em '+n+' dias'; return '<div class="dl'+(n>=0&&n<=2?' urgent':'')+'"><div class="d"><b>'+x.lbl+'</b><span class="left">'+left+'</span></div><p>'+x.t+'</p><span class="hint">'+x.s+(x.mail?'<span class="mono">'+x.mail+'</span> <button class="copy" type="button" data-copy="'+x.mail+'">copiar</button>':'')+'</span></div>';}).join('');
+  const n=daysUntil(...E.sessao);
+  $('topChips').innerHTML='<span class="chip'+(n<=10&&n>=0?' hot':'')+'">'+svg('cal')+(n>0?E.sessaoNome+' em '+n+(n===1?' dia':' dias'):n===0?E.sessaoNome+' hoje':E.sessaoNome+' realizada')+'</span><span class="chip num">'+E.chip+'</span>';
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]'); if(!b) return; const t=b.dataset.copy; const done=()=>{b.textContent='copiado'; setTimeout(()=>b.textContent='copiar',1500)}; try{navigator.clipboard.writeText(t).then(done,()=>{selectText(b.previousElementSibling)})}catch(err){selectText(b.previousElementSibling)}});
+function selectText(el){try{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}catch(e){}}
+
+/* ---------------- conflitos ---------------- */
+let confFilter='todos';
+function renderConflitos(){
+  const counts={alta:0,media:0,baixa:0}; CONFLITOS.forEach(c=>counts[c.g]++);
+  const F=[['todos','Todos ('+CONFLITOS.length+')'],['alta','Alta ('+counts.alta+')'],['media','Média ('+counts.media+')'],['baixa','Baixa ('+counts.baixa+')']];
+  $('confFilters').innerHTML=F.map(f=>'<button class="fbtn" type="button" data-f="'+f[0]+'" aria-pressed="'+(confFilter===f[0])+'">'+f[1]+'</button>').join('');
+  const lab={alta:'Alta',media:'Média',baixa:'Baixa'};
+  $('confList').innerHTML=CONFLITOS.map((c,i)=>({c,i})).filter(o=>confFilter==='todos'||o.c.g===confFilter).map(({c,i})=>'<details class="fold conf-f"><summary><span class="fold-txt"><b>'+(i+1)+'. '+c.t+'</b><span>'+c.a[0]+' × '+c.b[0]+'</span></span><span class="fold-meta"><span class="pill info">'+c.tipo+'</span><span class="pill '+c.g+'">'+lab[c.g]+'</span></span><span class="fold-more"><span class="m-open">Ver mais</span><span class="m-close">Ver menos</span>'+CHEV+'</span></summary><div class="fold-body conf"><div class="versus"><div class="side-a"><span class="src">'+c.a[0]+'</span><span>'+c.a[1]+'</span></div><div class="vs">×</div><div class="side-b"><span class="src">'+c.b[0]+'</span><span>'+c.b[1]+'</span></div></div><p class="why">'+c.why+'</p><p class="todo"><b>O que fazer:</b> '+c.todo+'</p></div></details>').join('');
+  const nb=$('navConfBadge'); if(nb) nb.textContent=counts.alta; $('confAltaTxt').textContent=counts.alta;
+}
+$('confFilters').addEventListener('click',e=>{const b=e.target.closest('[data-f]'); if(!b)return; confFilter=b.dataset.f; renderConflitos();});
+
+/* ---------------- matriz ---------------- */
+const ST=[['atende','Atende'],['ajuste','Atende com ajuste'],['nao','Não atende'],['verificar','A verificar']];
+function matrizSummary(){
+  const all=MATRIZ.flatMap(g=>g.itens); let c={atende:0,ajuste:0,nao:0,verificar:0}; const blockers=[];
+  all.forEach(it=>{const v=state.matriz.status[it.id]||'verificar'; c[v]++; if(v==='nao'&&it.elim) blockers.push(it.t);});
+  const evaluated=all.length-c.verificar;
+  let kind='wait',title='Decisão pendente',text='';
+  if(blockers.length){kind='nogo';title='Não participar nas condições atuais';text='Exigência eliminatória não atendida: '+blockers.join('; ')+'. Avalie consórcio ou parceria antes de desistir.';}
+  else if(c.verificar>0){kind='wait';title='Decisão pendente';text=c.verificar+' de '+all.length+' requisitos ainda sem avaliação.'+(c.nao?' Há '+c.nao+' item(ns) não eliminatório(s) sem atendimento.':'');}
+  else if(c.nao>0){kind='wait';title='Participar com plano de ação';text='Nenhum eliminatório bloqueia, mas '+c.nao+' requisito(s) precisam de solução até a assinatura.';}
+  else {kind='go';title='Apta a participar';text=c.ajuste?c.ajuste+' requisito(s) dependem de ajuste: confirme os parceiros antes da sessão.':'Todos os requisitos avaliados como atendidos.';}
+  return {all,c,blockers,evaluated,kind,title,text};
+}
+function renderMatriz(){
+  const list=$('mxList');
+  if(!list.dataset.built){
+    list.innerHTML=MATRIZ.map(g=>'<div class="req-group"><div class="group-title">'+g.g+'</div>'+g.itens.map(it=>'<div class="req" id="req-'+it.id+'"><div class="req-txt"><b>'+it.t+' '+(it.elim?'<span class="pill elim">Eliminatório</span>':'')+'</b><span>'+it.d+' · <span class="src">'+it.src+'</span></span></div><div class="seg" role="group" aria-label="Situação: '+esc(it.t)+'">'+ST.map(s=>'<button type="button" data-id="'+it.id+'" data-v="'+s[0]+'">'+s[1]+'</button>').join('')+'</div><input class="note" id="note-'+it.id+'" data-note="'+it.id+'" placeholder="Nota: como vai suprir, quem é o parceiro, documento…" aria-label="Nota sobre '+esc(it.t)+'"></div>').join('')+'</div>').join('');
+    list.dataset.built='1';
+  }
+  MATRIZ.flatMap(g=>g.itens).forEach(it=>{
+    const v=state.matriz.status[it.id]||'verificar';
+    const row=$('req-'+it.id); row.className='req st-'+v;
+    row.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===v)));
+    const n=$('note-'+it.id); if(document.activeElement!==n) n.value=state.matriz.notas[it.id]||'';
+  });
+  const s=matrizSummary();
+  const vb=$('mxVerdict'); vb.className='verdict-bar '+s.kind; $('mxTitle').textContent=s.title; $('mxText').textContent=s.text;
+  $('mxCounts').innerHTML='<span class="pill ok">'+s.c.atende+' atende</span><span class="pill att">'+s.c.ajuste+' com ajuste</span><span class="pill elim">'+s.c.nao+' não atende</span><span class="pill info">'+s.c.verificar+' a verificar</span>';
+  const p=s.evaluated/s.all.length; $('mxRing').setAttribute('stroke-dasharray',(201*p).toFixed(1)+' 201'); $('mxRingTxt').textContent=Math.round(p*100)+'%';
+}
+$('mxList').addEventListener('click',e=>{const b=e.target.closest('.seg button'); if(!b)return; state.matriz.status[b.dataset.id]=b.dataset.v; renderMatriz(); renderOverview(); persist('matriz');});
+$('mxList').addEventListener('input',e=>{const n=e.target.closest('[data-note]'); if(!n)return; state.matriz.notas[n.dataset.note]=n.value.slice(0,500); persist('matriz');});
+
+/* ---------------- simulador ---------------- */
+const RV=()=>E.ref!=null?E.ref:(state.sim.mercado||0);
+function compCost(c,sv){ if(c.fixed) return c.v; const x=Math.max(0,sv['c_'+c.k]||0); if(c.v==null) return x*(c.mult?Math.max(0,sv[c.mult]||0):1); return c.v*x/100; }
+function calc(sv){
+  let cdir=0; COMPONENTS.forEach(c=>{cdir+=compCost(c,sv);});
+  const ind=cdir*(sv.adm||0)/100, C=cdir+ind;
+  const unico=E.giro==='unico', ciclo=sv.ciclo||0, j=(sv.juros||0)/100;
+  const K=unico?C:C/12*(ciclo/30), F=unico?C*j*(ciclo/30):K*j*12;
+  const g=(sv.glosa||0)/100,t=(sv.trib||0)/100,m=(sv.marg||0)/100,rg=(sv.garan||0)/100, gp=E.garantiaPct||0;
+  const den=(1-g)*(1-t)-m-gp*rg;
+  const Pmin=den>0?(C+F)/den:Infinity;
+  const L=sv.lance;
+  const margL=L>0?((L*(1-g)*(1-t))-C-F-gp*L*rg)/L:NaN;
+  return {cdir,ind,C,K,F,Pmin,L,margL,g,t,m,rg,gp};
+}
+function buildSimForm(){
+  $('simCosts').innerHTML=COMPONENTS.map(c=>{
+    if(c.fixed) return '<div class="field"><label>'+c.nome+'</label><small>'+fmt0(c.v)+' · repasse, custo igual à receita</small><div class="inp" style="background:transparent;border-style:dashed"><input value="100" disabled aria-label="'+c.nome+' em % da referência"><span class="u">%</span></div></div>';
+    const abs=c.v==null;
+    return '<div class="field"><label for="sim-c_'+c.k+'">'+c.nome+'</label><small>'+(abs?(c.det?c.det+' · ':''):'referência '+fmt0(c.v)+' · ')+'seu custo = <b id="simv-'+c.k+'"></b></small><div class="inp">'+(abs?'<span class="u">R$</span>':'')+'<input id="sim-c_'+c.k+'" inputmode="decimal" data-k="c_'+c.k+'">'+(abs?(c.mult?'<span class="u">/'+c.multU+'</span>':''):'<span class="u">%</span>')+'</div></div>';
+  }).join('');
+  $('simParams').innerHTML=SIM_PARAMS.map(p=>'<div class="field"><label for="sim-'+p.k+'">'+p.l+'</label><small>'+p.h+'</small><div class="inp">'+(p.u==='R$'?'<span class="u">R$</span>':'')+'<input id="sim-'+p.k+'" inputmode="decimal" data-k="'+p.k+'">'+(p.u==='R$'?'':'<span class="u">'+p.u+'</span>')+'</div></div>').join('');
+}
+function isDefault(){const d=SIM_DEF(); return Object.keys(d).every(k=>Math.abs((state.sim[k]??d[k])-d[k])<1e-9);}
+function renderSim(fromRemote){
+  document.querySelectorAll('#sec-simulador [data-k]').forEach(inp=>{ if(document.activeElement===inp && fromRemote!=='force') return; const k=inp.dataset.k; const v=state.sim[k]; inp.value = (k==='lance'||k==='mercado')? NUM.format(Math.round(v)) : NUM.format(v); });
+  const r=calc(state.sim), S=E.sim, REFV=RV(), TETO=E.teto;
+  COMPONENTS.forEach(c=>{const el=$('simv-'+c.k); if(el) el.textContent=fmt0(compCost(c,state.sim));});
+  $('simExample').hidden=!isDefault();
+  const ok=isFinite(r.Pmin);
+  $('oMin').textContent=ok?fmt0(r.Pmin):'Inviável'; $('oMinS').textContent=ok?S.minSub(r):'margem e tributos passam de 100%';
+  $('oDesc').textContent=S.descValue(r,ok,REFV,TETO);
+  $('oMarg').textContent=isFinite(r.margL)?pct(r.margL):'—'; $('oMarg').style.color=r.margL<0?'var(--bad)':r.margL<(state.sim.marg||0)/100?'var(--warn)':'var(--good)';
+  $('oMargS').textContent=isFinite(r.margL)?S.margSub(r):'';
+  $('oNext').textContent=r.L>0?fmt0(Math.max(0,r.L-S.passo(r.L))):'—';
+  const max=Math.max(REFV,TETO)*1.06, X=v=>Math.max(0,Math.min(100,v/max*100));
+  const half=REFV*0.5, pm=ok?Math.min(r.Pmin,max):max;
+  let z='<span class="zone-seg" style="left:0;width:'+X(half)+'%;background:var(--bad-bg)"></span>';
+  z+='<span class="zone-seg" style="left:'+X(half)+'%;width:'+Math.max(0,X(Math.max(pm,half))-X(half))+'%;background:var(--neutral-bg)"></span>';
+  if(ok&&r.Pmin<TETO) z+='<span class="zone-seg" style="left:'+X(Math.max(r.Pmin,half))+'%;width:'+(X(TETO)-X(Math.max(r.Pmin,half)))+'%;background:var(--good-bg)"></span>';
+  z+='<span class="zone-mark" style="left:'+X(TETO)+'%;background:var(--ink)" title="'+S.tetoNome+'"></span>';
+  if(Math.abs(REFV-TETO)>1) z+='<span class="zone-mark" style="left:'+X(REFV)+'%;background:var(--muted)" title="'+S.refNome+'"></span>';
+  if(ok) z+='<span class="zone-mark" style="left:'+X(r.Pmin)+'%;background:var(--blue)" title="Lance mínimo"></span>';
+  if(r.L>0) z+='<span class="zone-mark" style="left:'+X(r.L)+'%;background:var(--warn);width:5px;transform:translateX(-2.5px)" title="Seu lance"></span>';
+  $('zoneTrack').innerHTML=z;
+  const lab=(v,t,cls)=>'<span class="'+(cls||'')+'" style="left:'+X(v)+'%">'+t+'</span>';
+  let sc=lab(0,'R$ 0','start')+lab(half,'50%<br>'+fmt0(half).replace(/\s/g,' '));
+  sc+=lab(TETO,S.tetoLabel(TETO),'end');
+  $('zoneScale').innerHTML=sc;
+  const A=[]; const ico=k=>svg(k);
+  if(!ok) A.push(['bad','Com esses percentuais nenhum preço cobre os custos. Reduza margem ou tributos.']);
+  else if(r.Pmin>TETO) A.push(['bad','Seu lance mínimo ('+fmt0(r.Pmin)+') passa do '+S.tetoNome+'. Nas condições informadas, a empresa não consegue competir.']);
+  else if(r.Pmin<half) A.push(['warn','Seu lance mínimo fica abaixo de 50% da '+S.refNome+'. O órgão pode exigir prova de exequibilidade ('+S.artExeq+').']);
+  else A.push(['ok','Há espaço para disputar entre '+fmt0(r.Pmin)+' e '+fmt0(TETO)+'.']);
+  if(r.L>0){
+    if(r.L>TETO) A.push(['bad','O lance informado está acima do '+S.tetoNome+' ('+S.artAcima+').']);
+    else if(r.L<half) A.push(['warn','O lance informado está abaixo de 50% da '+S.refNome+': indício de inexequibilidade.']);
+    else if(ok&&r.L<r.Pmin) A.push(['bad','O lance informado está abaixo do seu mínimo: a margem fica em '+pct(r.margL)+'.']);
+  }
+  (S.extraAlerts?S.extraAlerts(r):[]).forEach(a=>A.push(a));
+  $('simAlerts').innerHTML=A.map(a=>'<div class="alert '+a[0]+'">'+ico(a[0]==='ok'?'ok':'alert')+'<p>'+a[1]+'</p></div>').join('');
+  const L=r.L>0?r.L:(ok?r.Pmin:TETO);
+  const rows=[['Custo direto',r.cdir],['Despesas indiretas',r.ind],['Custo financeiro do capital de giro',r.F]];
+  if(r.gp) rows.push(['Garantia contratual (prêmio)',r.gp*L*r.rg]);
+  rows.push(['Tributos',L*(1-r.g)*r.t]);
+  if(r.g) rows.push(['Desconto esperado do IMR',L*r.g]);
+  const used=rows.reduce((a,b)=>a+b[1],0); rows.push(['Margem líquida',L-used]);
+  $('simBreak').innerHTML=rows.map(x=>'<tr><td>'+x[0]+'</td><td class="r"'+(x[1]<0?' style="color:var(--bad)"':'')+'>'+fmt0(x[1])+'</td><td class="r">'+pct(x[1]/L)+'</td></tr>').join('')+'<tr><td><b>Lance analisado</b></td><td class="r"><b>'+fmt0(L)+'</b></td><td class="r">100%</td></tr>';
+  if(E.onSim) E.onSim(r);
+}
+$('sec-simulador').addEventListener('input',e=>{const i=e.target.closest('[data-k]'); if(!i)return; state.sim[i.dataset.k]=parseNum(i.value); renderSim(); renderOverview(); persist('sim');});
+$('sec-simulador').addEventListener('change',e=>{const i=e.target.closest('[data-k]'); if(!i)return; renderSim('force');});
+$('simReset').addEventListener('click',()=>{state.sim=SIM_DEF(); renderSim('force'); renderOverview(); persist('sim');});
+
+/* ---------------- kit ---------------- */
+function renderKit(){
+  const box=$('kitGroups');
+  if(!box.dataset.built){
+    box.innerHTML=KIT.map((g,gi)=>'<div class="kit-g"><div class="kit-g-h"><h4>'+g.g+' <span class="pill att">'+g.prazo+'</span></h4><div style="display:flex;align-items:center;gap:10px;flex:1;justify-content:flex-end"><div class="prog"><i id="kp-'+gi+'"></i></div><span class="num" id="kc-'+gi+'" style="font-size:13px;font-weight:700"></span></div></div>'+g.itens.map(it=>'<div class="check" id="chk-'+it.id+'"><input type="checkbox" id="cb-'+it.id+'" data-kit="'+it.id+'"><label for="cb-'+it.id+'">'+it.t+'<span>'+it.d+'</span></label></div>').join('')+'</div>').join('');
+    box.dataset.built='1';
+  }
+  KIT.forEach((g,gi)=>{let d=0; g.itens.forEach(it=>{const on=!!state.kit.done[it.id]; if(on)d++; $('cb-'+it.id).checked=on; $('chk-'+it.id).classList.toggle('done',on);}); $('kp-'+gi).style.width=(d/g.itens.length*100)+'%'; $('kc-'+gi).textContent=d+'/'+g.itens.length;});
+}
+$('kitGroups').addEventListener('change',e=>{const c=e.target.closest('[data-kit]'); if(!c)return; if(c.checked) state.kit.done[c.dataset.kit]=true; else delete state.kit.done[c.dataset.kit]; renderKit(); renderOverview(); persist('kit');});
+
+/* ---------------- visão geral ---------------- */
+function renderOverview(){
+  const s=matrizSummary(), pc=parecerCalc(), r=calc(state.sim), exemplo=isDefault();
+  const ok=isFinite(r.Pmin);
+  const K=E.kpis({s,pc,r,exemplo,ok});
+  $('kpis').innerHTML=K.map(k=>'<a class="kpi" href="#'+k.href+'"><span class="k">'+k.k+'</span><span class="v c-'+k.c+'">'+k.v+'</span><span class="s">'+k.s+'</span></a>').join('');
+  const labD={participar:'Participar',condicoes:'Participar com condições',nao:'Não participar'};
+  const tot=overallProgress();
+  $('reco').innerHTML='<div><span class="k">Recomendação atual</span><b>'+pc.title+'</b><p>'+(state.parecer.decisao?'Decisão registrada: '+labD[state.parecer.decisao]+'.':pc.text)+'</p></div><div class="reco-prog"><span class="bar"><i style="width:'+Math.round(tot*100)+'%"></i></span><span>'+Math.round(tot*100)+'% da análise concluída</span></div>';
+  refreshProgress();
+}
+
+/* ---------------- jornada, banners e parecer ---------------- */
+function secProgress(id){
+  if(id==='matriz'){const s=matrizSummary(); return s.evaluated/s.all.length;}
+  if(id==='kit'){const a=KIT.flatMap(g=>g.itens); return a.filter(i=>state.kit.done[i.id]).length/a.length;}
+  if(id==='parecer') return state.parecer.decisao?1:0;
+  return state.prog.done[id]?1:0;
+}
+const overallProgress=()=>SECTIONS.reduce((a,s)=>a+secProgress(s.id),0)/SECTIONS.length;
+const pl=(n,um,varios)=>n===1?um:varios.replace('#',n);
+const leftTxt=n=>n<0?'encerrado':n===0?'hoje':n===1?'amanhã':'em '+n+' dias';
+function renderHeroes(){
+  SECTIONS.forEach(s=>{
+    const sec=$('sec-'+s.id); const el=sec&&sec.querySelector('.sec-head'); if(!el) return;
+    if(!el.querySelector('.hero-art')){ el.innerHTML='<div class="hero-txt"></div><figure class="hero-art">'+ill(s.art||s.sec)+'</figure>'; sec.setAttribute('aria-labelledby','bn-'+s.id); }
+    const done=secProgress(s.id)>=1;
+    el.querySelector('.hero-txt').innerHTML='<p class="eyebrow">Etapa '+s.etapa+' de 5 · '+ETAPAS[s.etapa-1].nome+(done?' · <span class="done-tag">✓ concluída</span>':'')+'</p><h2 id="bn-'+s.id+'">'+s.nome+'</h2><div class="hero-nums">'+HN[s.id]().map(n=>'<div class="hn"><span class="v c-'+n.c+'">'+n.v+'</span><span class="l">'+n.l+'</span></div>').join('')+'</div><p class="lead"><b>Conclusão:</b> '+TAKE[s.id]()+'</p>';
+  });
+}
+function renderCards(){
+  SECTIONS.forEach(s=>{
+    const c=CARD[s.id](); const m=$('cm-'+s.id); if(!m) return;
+    m.textContent=c.m; const st=$('cs-'+s.id); st.textContent=c.s; st.className='s'+(c.c?' st-'+c.c:'');
+    $('cd-'+s.id).hidden=secProgress(s.id)<1;
+  });
+}
+function refreshProgress(){renderHeroes(); renderCards(); renderParecer(); prepIll();}
+
+function parecerCalc(){
+  const s=matrizSummary(), r=calc(state.sim), allK=KIT.flatMap(g=>g.itens), kd=allK.filter(i=>state.kit.done[i.id]).length;
+  const leitura=SECTIONS.filter(x=>!['matriz','kit','parecer'].includes(x.id)), lidas=leitura.filter(x=>state.prog.done[x.id]).length;
+  const alta=CONFLITOS.filter(c=>c.g==='alta').length, dImp=E.prazoQuestionar?daysUntil(...E.prazoQuestionar):-1;
+  const ok=isFinite(r.Pmin), precoOk=ok&&r.Pmin<=E.teto, exemplo=isDefault();
+  const L=r.L>0?r.L:E.teto;
+  const evid=[
+   {href:'matriz',icon:'matriz',t:'Aderência',kind:s.kind,status:s.kind==='go'?'Atende':s.kind==='nogo'?'Bloqueio':(s.c.verificar?'Pendente':'Com ajustes'),txt:s.evaluated+' de '+s.all.length+' requisitos avaliados: '+s.c.atende+' atende, '+s.c.ajuste+' com ajuste, '+s.c.nao+' não atende.'},
+   {href:'simulador',icon:'simul',t:'Preço',kind:!precoOk?'nogo':(exemplo?'wait':'go'),status:!precoOk?'Inviável':(exemplo?'Custos de exemplo':'Viável'),txt:ok?E.precoTxt(r):'Com os percentuais atuais, nenhum preço cobre os custos.'},
+   {href:'conflitos',icon:'conf',t:'Riscos do edital',kind:'wait',status:alta+' de alta gravidade',txt:E.riscosTxt(dImp)},
+   {href:'kit',icon:'kit',t:'Preparação',kind:kd===allK.length?'go':'wait',status:kd+' de '+allK.length,txt:E.prepTxt(r,L)}
+  ];
+  const steps=[];
+  let kind,title,text;
+  if(s.kind==='nogo'||!precoOk){
+    kind='nogo'; title='Não participar nas condições atuais';
+    text=s.blockers.length?'Há exigência eliminatória sem solução: '+s.blockers.join('; ')+'.':'Seu custo não cabe no '+E.sim.tetoNome+'.';
+    s.blockers.forEach(b=>steps.push('Resolver o requisito eliminatório: '+b+'.'));
+    if(s.blockers.length) steps.push(E.passoBloqueio);
+    if(!precoOk) steps.push('Rever os custos e percentuais no Simulador de lance.');
+  } else {
+    if(s.c.verificar>0) steps.push(pl(s.c.verificar,'Avaliar o requisito ainda pendente','Avaliar os # requisitos ainda pendentes')+' na Matriz de aderência.');
+    if(s.c.nao>0) steps.push(pl(s.c.nao,'Definir como resolver o requisito não atendido','Definir como resolver os # requisitos não atendidos')+' até a assinatura.');
+    if(s.c.ajuste>0) steps.push(pl(s.c.ajuste,'Confirmar o parceiro ou arranjo do requisito com ajuste.','Confirmar os parceiros ou arranjos dos # requisitos com ajuste.'));
+    if(exemplo) steps.push('Trocar os custos de exemplo do Simulador pelos custos reais da empresa.');
+    if(ok&&r.Pmin<0.5*RV()) steps.push(E.exeqStep);
+    if(kd<allK.length) steps.push('Completar o '+(SECTIONS.find(x=>x.id==='kit')||{nome:'kit'}).nome+': '+pl(allK.length-kd,'falta 1 item.','faltam # itens.'));
+    if(dImp>=0) steps.push(E.questionarStep(alta));
+    if(steps.length){kind='wait'; title='Participar se…'; text='A análise indica que dá para participar, desde que você resolva as pendências listadas em Próximos passos.';}
+    else {kind='go'; title='Participar'; text='Requisitos atendidos, preço viável e documentos prontos.';}
+  }
+  if(lidas<leitura.length) steps.push('Concluir a leitura das seções: '+lidas+' de '+leitura.length+' revisadas.');
+  if(kind==='go') E.stepsGo.forEach(x=>steps.push(x));
+  return {kind,title,text,evid,steps};
+}
+let parDraft=null;
+function renderParecer(){
+  const p=parecerCalc();
+  $('parVerdict').className='verdict-bar '+p.kind; $('parTitle').textContent=p.title; $('parText').textContent=p.text;
+  const tot=overallProgress(); $('parRing').setAttribute('stroke-dasharray',(201*tot).toFixed(1)+' 201'); $('parRingTxt').textContent=Math.round(tot*100)+'%';
+  const pc={go:'ok',wait:'att',nogo:'elim'};
+  $('parEvid').innerHTML=p.evid.map(e=>'<a class="card ev" href="#'+e.href+'"><h4>'+svg(e.icon)+e.t+' <span class="pill '+pc[e.kind]+'" style="margin-left:auto">'+e.status+'</span></h4><p>'+e.txt+'</p></a>').join('');
+  $('parSteps').innerHTML=p.steps.map(x=>'<li><span>'+x+'</span></li>').join('');
+  const d=parDraft!==null?parDraft:state.parecer.decisao;
+  $('parSeg').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.d===d)));
+  const nota=$('parNota'); if(document.activeElement!==nota && parDraft===null) nota.value=state.parecer.nota||'';
+  const lab={participar:'Participar',condicoes:'Participar com condições',nao:'Não participar'};
+  $('parReg').textContent=state.parecer.decisao?('Registrado: '+lab[state.parecer.decisao]+' · '+new Date(state.parecer.em).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'})):'Nenhum parecer registrado ainda.';
+}
+$('parSeg').addEventListener('click',e=>{const b=e.target.closest('[data-d]'); if(!b)return; parDraft=b.dataset.d; renderParecer();});
+$('parBtn').addEventListener('click',()=>{const d=parDraft!==null?parDraft:state.parecer.decisao; if(!d){$('parReg').textContent='Escolha uma decisão antes de registrar.'; return;} state.parecer={decisao:d,nota:$('parNota').value.slice(0,1500),em:new Date().toISOString()}; parDraft=null; renderOverview(); persist('parecer');});
+
+/* ---------------- animação de entrada ---------------- */
+const ILL_ON=('IntersectionObserver' in window) && !(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+const ILL_IO=ILL_ON?new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) startIll(e.target); }),{rootMargin:'0px 0px 12% 0px',threshold:0}):null;
+function startIll(svg){ if(svg.classList.contains('ill-in')) return; svg.classList.add('ill-in'); if(ILL_IO) ILL_IO.unobserve(svg); }
+function kickIll(){
+  if(!ILL_ON||document.visibilityState!=='visible') return;
+  const vh=window.innerHeight;
+  document.querySelectorAll('svg.ill[data-anim]:not(.ill-in)').forEach(svg=>{ const r=svg.getBoundingClientRect(); if(r.width&&r.bottom>0&&r.top<vh*1.1) startIll(svg); });
+}
+function prepIll(){
+  if(!ILL_ON) return;
+  document.querySelectorAll('svg.ill:not([data-anim])').forEach(svg=>{
+    svg.dataset.anim='1'; let i=0;
+    svg.querySelectorAll('path,rect,circle,ellipse').forEach(el=>{
+      if(el.closest('.drive-l,.drive-r')) return;
+      if(el.getAttribute('stroke-dasharray')||(el.style&&el.style.fill)) el.classList.add('fade'); else el.setAttribute('pathLength','1');
+      el.style.setProperty('--i',i++);
+    });
+    ILL_IO.observe(svg);
+  });
+  kickIll();
+}
+
+/* ---------------- blocos recolhíveis ---------------- */
+const CHEV='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+function initFolds(){
+  document.querySelectorAll('[data-fold]').forEach(el=>{
+    const det=document.createElement('details'); det.className='fold';
+    const bh=el.querySelector(':scope > .block-h'), h4=el.querySelector(':scope > h4');
+    let title='', meta=[], hints=[];
+    if(bh){ const h3=bh.querySelector('h3'); title=h3?h3.innerHTML:''; [...bh.children].forEach(c=>{ if(c===h3) return; (c.classList.contains('hint')?hints:meta).push(c); }); bh.remove(); }
+    else if(h4){ h4.querySelectorAll('[data-icon],svg').forEach(i=>i.remove()); title=h4.innerHTML; h4.remove(); }
+    const sum=document.createElement('summary');
+    sum.innerHTML='<span class="fold-ico">'+svg(el.dataset.foldIcon||'plan')+'</span><span class="fold-txt"><b>'+title+'</b><span>'+esc(el.dataset.fold)+'</span></span><span class="fold-meta"></span><span class="fold-more"><span class="m-open">Ver mais</span><span class="m-close">Ver menos</span>'+CHEV+'</span>';
+    meta.forEach(m=>sum.querySelector('.fold-meta').appendChild(m));
+    const body=document.createElement('div'); body.className='fold-body';
+    hints.forEach(h=>{const p=document.createElement('p'); p.className='hint'; p.innerHTML=h.innerHTML; body.appendChild(p);});
+    while(el.firstChild) body.appendChild(el.firstChild);
+    det.appendChild(sum); det.appendChild(body); el.replaceWith(det);
+  });
+}
+
+/* ---------------- início ---------------- */
+initFolds(); buildNav(); buildSimForm(); renderDeadlines(); renderConflitos(); renderMatriz(); renderKit(); if(E.init) E.init(); renderSim('force'); renderOverview(); route();
+window.addEventListener('hashchange',route);
+connectDb();
+})();
+</script>
+
+</body>
+</html>

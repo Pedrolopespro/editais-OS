@@ -1,0 +1,35 @@
+{
+ "slug": "pe-25-2026-artesp",
+ "ordem": 5,
+ "titulo": "Pregão 25/2026 ARTESP · Painel de Decisão",
+ "nome": "Pregão Eletrônico 25/2026",
+ "sub": "ARTESP · Locação de 103 veículos novos com base operacional",
+ "pergunta": "Vale a pena disputar<br><b>este pregão?</b>",
+ "lead": "Locação de 103 veículos zero quilômetro, 50 com motorista e combustível, com central de operações 24 h, para a agência reguladora de transportes de São Paulo. <b>Sessão pública em 25/11/2026, às 9h30.</b>",
+ "prazos_hint": "Contagem a partir de hoje. 20/11 é feriado nacional (Lei 14.759/2023).",
+ "foot": "Análise independente elaborada para apoio à decisão do licitante, com base no Edital do Pregão Eletrônico nº 25/2026 (392601-25/2026) da ARTESP, assinado em 09/11/2026, no Termo de Referência nº 48/2026, no Estudo Técnico Preliminar nº 38/2026 e nos Anexos IV a VIII. Não é documento oficial da ARTESP e não substitui a leitura integral do Edital e anexos.",
+ "og_title": "Vale a pena disputar o Pregão 25/2026 da ARTESP?",
+ "descricao": "Painel de decisão do Pregão Eletrônico 25/2026 da ARTESP: locação de 103 veículos novos por 30 meses, valores, riscos, conflitos do edital, simulador de lance e parecer final.",
+ "card": {
+  "orgao": "ARTESP · Agência de Transportes do Estado de São Paulo",
+  "modalidade": "Pregão eletrônico",
+  "numero": "25/2026",
+  "objeto": "Locação de 103 veículos novos, 50 com motorista, e central de operações 24 h",
+  "valor": "R$ 74,4 mi",
+  "valor_s": "valor total em 30 meses",
+  "data": [
+   2026,
+   11,
+   25
+  ],
+  "data_lbl": "25/11 · 9h30",
+  "evento": "Sessão pública",
+  "art": "oper",
+  "ls": "pe25art-"
+ },
+ "replace": {
+  "{{LOGO}}": "/assets/logo-pe-25-2026-artesp.png",
+  "{{PLANILHA}}": "/assets/planilha-pe-25-2026-artesp.jpg",
+  "{{DOCS}}": "/docs/"
+ }
+}

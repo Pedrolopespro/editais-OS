@@ -1,0 +1,53 @@
+{
+ "titulo": "Pregão 90029/2026 · Anvisa · Resumo",
+ "orgao": "Agência Nacional de Vigilância Sanitária (Anvisa)",
+ "unidade": "Coordenação de Licitações · UASG 253002",
+ "pregao": "Pregão Eletrônico nº 90029/2026 · Edital 27/2026",
+ "sessao": {"data": [2026, 11, 23], "hora": "14h", "fuso": "horário de Brasília", "plataforma": "Compras.gov.br", "url": "https://www.gov.br/compras"},
+ "objeto": "Aluguel de carros com motorista, combustível e seguro para os servidores da Anvisa nas regionais Goiás (Lote 02) e Norte (Lote 05), por 60 meses. Os números desta tela somam os 2 lotes do pregão.",
+ "condicoes": ["2 lotes: Goiás e Norte", "Menor preço", "Disputa aberta", "Sem preferência para ME/EPP", "Sem margem de preferência", "Orçamento público"],
+ "referencia": 11004440.40,
+ "contrato_meses": 60,
+ "vigencia": {"v": "60 meses", "s": "renovável por até 10 anos"},
+ "garantia": {"pct": 1, "s": "do total · equivale a 5% do valor anual · seguro até a assinatura"},
+ "tabela": {"item": "Parcela", "qtd": "Por mês", "valor": "Valor em 60 meses", "sub": "valores máximos · Lotes 02 e 05", "total": "Lotes 02 (GO) e 05 (Norte) · 32 itens", "total_qtd": "11 postos · 10 carros"},
+ "capital_sub": "capital de giro · fora a compra dos 10 carros 0 km",
+ "valor_periodo": "em 60 meses · Lote 02 Goiás + Lote 05 Norte",
+ "grupos": [
+  {"nome": "Motoristas · Goiás", "ex": "2 básico, 1 4x4 e 2 executivo", "cats": "itens 1, 5, 9", "qtd": 5, "qtd_txt": "5 postos", "v": 2588261.40},
+  {"nome": "Carros fixos · Goiás", "ex": "aluguel fixo e km de 4 carros 0 km", "cats": "itens 2–3, 6–7, 10–11", "qtd": 4, "qtd_txt": "4 carros", "v": 989236.80},
+  {"nome": "Avulsos e pernoites · Goiás", "ex": "22 diárias e 6 pernoites por mês", "cats": "itens 4, 8, 12–18", "qtd": 22, "qtd_txt": "22 diárias", "v": 1038111.60},
+  {"nome": "Motoristas · Norte", "ex": "1 básico e 5 4x4", "cats": "itens 19, 23", "qtd": 6, "qtd_txt": "6 postos", "v": 1996521.00},
+  {"nome": "Carros fixos · Norte", "ex": "aluguel fixo e km de 6 carros 0 km", "cats": "itens 20–21, 24–25", "qtd": 6, "qtd_txt": "6 carros", "v": 2176165.20},
+  {"nome": "Avulsos e pernoites · Norte", "ex": "43 diárias e 14 pernoites por mês", "cats": "itens 22, 26–32", "qtd": 43, "qtd_txt": "43 diárias", "v": 2216144.40}
+ ],
+ "custos": [
+  {"nome": "Motoristas", "curto": "Motoristas", "ref": 4584782.40, "pct": 70, "cor": "var(--green)"},
+  {"nome": "Diárias avulsas e excedentes", "curto": "Diárias avulsas", "ref": 2872368.00, "pct": 65, "cor": "var(--steel)"},
+  {"nome": "Aluguel fixo dos carros", "curto": "Aluguel fixo", "ref": 2543785.80, "pct": 55, "cor": "var(--blue)"},
+  {"nome": "Km rodado dos carros fixos", "curto": "Km rodado", "ref": 621616.20, "pct": 70, "cor": "var(--gold)"},
+  {"nome": "Pernoites (repasse ao motorista)", "curto": "Pernoites", "ref": 381888.00, "pct": 100, "cor": "var(--amber)"}
+ ],
+ "locais": {
+  "estados": [{"uf": "DF", "nome": "Distrito Federal"}, {"uf": "MS", "nome": "Mato Grosso do Sul"}, {"uf": "PA", "nome": "Pará"}, {"uf": "AM", "nome": "Amazonas"}, {"uf": "RO", "nome": "Rondônia"}, {"uf": "AC", "nome": "Acre"}, {"uf": "AP", "nome": "Amapá"}],
+  "itens": [
+   {"k": "Onde", "v": "Lote 02: Brasília (DF), Campo Grande e Corumbá (MS) · Lote 05: PA, AM, RO, AC e AP · pela planilha de quantitativos; lista oficial de endereços a confirmar"},
+   {"k": "Prazo para começar", "v": "30 dias após assinar, com os carros 0 km · carro parado trocado em até 2 h"},
+   {"k": "Frota própria", "v": "10 carros 0 km: 3 sedans, 6 caminhonetes 4x4 e 1 executivo · os avulsos podem vir de locadoras"},
+   {"k": "Atendimento", "v": "Central telefônica em horário comercial e número de emergência · não exige escritório local"}
+  ]
+ },
+ "parametros": {"indiretas": 8, "tributos": 13, "glosa": 1, "ciclo_dias": 83, "juros_mes": 1.5, "garantia_pct": 1, "garantia_custo_ano": 1.5},
+ "cenarios": [
+  {"id": "alto", "nome": "Conservador", "lance": 10800000},
+  {"id": "base", "nome": "Provável", "lance": 10500000, "padrao": true},
+  {"id": "agressivo", "nome": "Agressivo", "lance": 10250000}
+ ],
+ "veredito": {"txt": "Vale disputar, com condições", "nivel": "medio", "risco": "risco médio"},
+ "cuidados": [
+  {"t": "10 carros 0 km antes de começar", "d": "a compra só volta aos poucos, ao longo dos 60 meses"},
+  {"t": "35% da receita depende do uso", "d": "km, diárias avulsas e pernoites são estimativas"},
+  {"t": "Exigências que eliminam", "d": "atestado de 2 anos com 3 postos e capital de giro de 16,66% do valor anual"}
+ ],
+ "nota": "Valores do contrato: Edital 27/2026 (Pregão 90029/2026) e Termo de Referência 171/2026, item 1.1 (preços máximos), somando os 2 lotes do pregão: Lote 02, Regional Goiás (R$ 4.615.609,80), e Lote 05, Regional Norte (R$ 6.388.830,60). Locais: planilha de quantitativos da Anvisa. Retorno: estimativa com os custos de exemplo do simulador da análise completa, já descontados impostos, despesas indiretas, custo do dinheiro (1,5% ao mês) e garantia; a compra dos carros entra aos poucos no custo do aluguel fixo. Antes de decidir, troque pelos custos reais da empresa."
+}

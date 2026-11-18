@@ -1,0 +1,35 @@
+{
+ "slug": "pe-106-2026-hortolandia",
+ "ordem": 3,
+ "titulo": "Pregão 106/2026 Hortolândia · Painel de Decisão",
+ "nome": "Pregão Eletrônico 106/2026",
+ "sub": "Prefeitura de Hortolândia (SP) · Locação de 173 veículos sem motorista",
+ "pergunta": "Vale a pena disputar<br><b>este pregão?</b>",
+ "lead": "Locação de 173 veículos sem motorista, sem combustível e com quilometragem livre para as secretarias de Hortolândia (SP), em 24 itens disputados separadamente. <b>Sessão pública em 27/11/2026, às 8h30, na BBMNET.</b>",
+ "prazos_hint": "Contagem a partir de hoje. 20/11 é feriado nacional (Lei 14.759/2023).",
+ "foot": "Análise independente elaborada para apoio à decisão do licitante, com base no Edital do Pregão Eletrônico nº 106/2026 (Edital nº 127/2026, de 06/11/2026), no Termo de Referência (Anexo I), na Proposta Final (Anexo II), na Minuta de Contrato (Anexo III) e no Termo de Ciência e de Notificação (Anexo IV). Não é documento oficial da Prefeitura Municipal de Hortolândia e não substitui a leitura integral do Edital e anexos.",
+ "og_title": "Vale a pena disputar o Pregão 106/2026 de Hortolândia?",
+ "descricao": "Painel de decisão do Pregão Eletrônico 106/2026 da Prefeitura de Hortolândia (SP), locação de 173 veículos em 24 itens: valores, garantias, conflitos do edital, simulador de lance e parecer final.",
+ "card": {
+  "orgao": "Prefeitura Municipal de Hortolândia (SP)",
+  "modalidade": "Pregão eletrônico",
+  "numero": "106/2026",
+  "objeto": "Locação de 173 veículos sem motorista em 24 itens",
+  "valor": "R$ 18,6 mi",
+  "valor_s": "valor anual estimado · 24 itens",
+  "data": [
+   2026,
+   11,
+   27
+  ],
+  "data_lbl": "27/11 · 8h30",
+  "evento": "Sessão pública",
+  "art": "oper",
+  "ls": "pe106hor-"
+ },
+ "replace": {
+  "{{LOGO}}": "/assets/logo-pe-106-2026-hortolandia.png",
+  "{{DOCS}}": "/docs/"
+ },
+ "artifact": false
+}
