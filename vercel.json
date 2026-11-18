@@ -1,4 +1,8 @@
 {
+  "redirects": [
+    { "source": "/pe-319-2026/investidor", "destination": "/resumo/pe-319-2026/", "permanent": true },
+    { "source": "/pe-319-2026/investidor/", "destination": "/resumo/pe-319-2026/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

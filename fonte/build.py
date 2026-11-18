@@ -83,21 +83,21 @@ for d in pastas:
     meta, p = montar(d)
     os.makedirs(os.path.join(RAIZ, meta["slug"]), exist_ok=True)
     open(os.path.join(RAIZ, meta["slug"], "index.html"), "w", encoding="utf-8", newline="\n").write(p)
-    c = dict(meta["card"]); c["slug"] = meta["slug"]
+    c = dict(meta["card"]); c["slug"] = meta["slug"]; c["logo"] = meta.get("replace", {}).get("{{LOGO}}", "/favicon.svg")
     inv = os.path.join(d, "investidor.json")
     if os.path.exists(inv):
         dados = json.load(open(inv, encoding="utf-8"))
-        url = SITE + meta["slug"] + "/investidor/"
+        url = SITE + "resumo/" + meta["slug"] + "/"
         pg = open(os.path.join(AQUI, "core", "investidor.html"), encoding="utf-8").read()
         pg = (pg.replace("{{TITULO}}", dados["titulo"]).replace("{{LOGO}}", meta.get("replace", {}).get("{{LOGO}}", "/favicon.svg"))
                 .replace("{{PAINEL}}", "/" + meta["slug"] + "/")
-                .replace("{{SOCIAL}}", social(dados["titulo"], "Visão do investidor: quanto colocar, quanto o contrato paga e quanto sobra de lucro, em uma tela.", url))
+                .replace("{{SOCIAL}}", social(dados["titulo"], "Resumo do edital: órgão, sessão, valor do contrato, veículos, locais e retorno estimado, em uma tela.", url))
                 .replace("/*DADOS*/null", json.dumps(dados, ensure_ascii=False)))
         assert "{{" not in pg, re.findall(r"\{\{[A-Z_]+\}\}", pg)[:5]
-        os.makedirs(os.path.join(RAIZ, meta["slug"], "investidor"), exist_ok=True)
-        open(os.path.join(RAIZ, meta["slug"], "investidor", "index.html"), "w", encoding="utf-8", newline="\n").write(pg)
-        c["investidor"] = True
-        print("gerado", meta["slug"] + "/investidor/index.html")
+        os.makedirs(os.path.join(RAIZ, "resumo", meta["slug"]), exist_ok=True)
+        open(os.path.join(RAIZ, "resumo", meta["slug"], "index.html"), "w", encoding="utf-8", newline="\n").write(pg)
+        c["resumo"] = "/resumo/" + meta["slug"] + "/"
+        print("gerado", "resumo/" + meta["slug"] + "/index.html")
     cards.append(c)
     print("gerado", meta["slug"] + "/index.html")
 

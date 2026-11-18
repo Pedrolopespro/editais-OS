@@ -6,7 +6,7 @@ Painéis de decisão para licitações e dispensas. A página inicial lista os e
 |---|---|
 | `/` | Lista de editais |
 | `/pe-319-2026/` | Pregão Eletrônico 319/2026 · Casa Civil · locação de veículos |
-| `/pe-319-2026/investidor/` | Visão do investidor do Pregão 319: capital, faturamento, lucro e retorno em uma tela |
+| `/resumo/pe-319-2026/` | Resumo do Pregão 319 para o investidor: órgão, sessão, valor do contrato, veículos, locais e retorno em uma tela |
 | `/de-70025-40-2026/` | Dispensa Eletrônica 70025-40/2026 · TRE-DF · vídeo animado 2D |
 
 Links antigos do Pregão 319 (`/#conflitos` etc.) redirecionam para `/pe-319-2026/`.
@@ -19,7 +19,7 @@ Links antigos do Pregão 319 (`/#conflitos` etc.) redirecionam para `/pe-319-202
   - `meta.json`: títulos, textos do topo, cartão da lista e arquivos usados.
   - `secoes.html`: seções próprias do edital (ficha, condições, conflitos, simulador, kit…).
   - `edital.js`: dados e regras do edital (seções, conflitos, matriz, kit, custos do simulador, números do topo) no objeto `E`.
-  - `investidor.json` (opcional): dados da visão do investidor (custos, cenários de lance, linha do tempo, cuidados). Se existir, o build gera `/<slug>/investidor/` com o modelo `fonte/core/investidor.html` e põe o link na lista. Use os mesmos custos do simulador para os números baterem com o painel completo.
+  - `investidor.json` (opcional): dados da visão do investidor (custos, cenários de lance, linha do tempo, cuidados). Se existir, o build gera o resumo em `/resumo/<slug>/` com o modelo `fonte/core/investidor.html` e ativa o botão Resumo no cartão da lista. Use os mesmos custos do simulador para os números baterem com o painel completo.
 
 ## Como adicionar um edital
 

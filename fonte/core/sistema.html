@@ -13,16 +13,38 @@
 /* Lista de editais: um cartão por edital, ordenados pelo prazo mais próximo */
 .sys-mark{width:44px;height:44px;flex:none}
 .ed-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.ed-card .body{padding-right:66px}
 .ed-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .ed-chip{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--surface-3);color:var(--muted)}
 .ed-chip.hot{background:var(--red-bg);color:var(--red-ink)}
 .ed-chip.st-go{background:var(--green-bg);color:var(--green)} .ed-chip.st-wait{background:var(--amber-bg);color:var(--amber)} .ed-chip.st-nogo{background:var(--red-bg);color:var(--red-ink)}
-.tcard:hover .ed-chip{background:rgba(20,20,22,.1);color:#2A2B30}
-.ed-item{display:grid;gap:8px;align-content:start}
-.ed-inv{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:11px 18px;border-radius:99px;background:var(--surface);border:1px solid var(--line-2);text-decoration:none;font-weight:600;font-size:14px}
-.ed-inv:hover{background:var(--surface-2)}
-.ed-inv-s{color:var(--green);font-weight:500;font-size:13px}
+/* cartão do edital = menu: logo do órgão + Resumo + Análise completa */
+.tcard.ed-card{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto 1fr;transition:box-shadow .2s ease,border-color .2s ease}
+.tcard.ed-card::before{display:none}
+.tcard.ed-card:hover{transform:none;border-color:var(--line-2)}
+.ed-top{padding:18px 20px 0;position:relative;z-index:1}
+.ed-logo{width:60px;height:60px;border-radius:16px;background:#fff;display:grid;place-items:center;box-shadow:0 6px 16px -8px rgba(0,0,0,.5)}
+.ed-logo img{width:44px;height:44px;object-fit:contain}
+.tcard.ed-card .body{padding:10px 20px 14px}
+.ed-menu{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 20px 20px;align-self:end;position:relative;z-index:1}
+.ed-btn{display:grid;gap:1px;padding:11px 16px;border-radius:16px;border:1px solid var(--line-2);background:var(--surface-2);text-decoration:none;transition:background .15s ease,border-color .15s ease}
+.ed-btn b{font-size:15px;color:var(--ink);display:flex;justify-content:space-between;gap:8px}
+.ed-btn b::after{content:"→";font-weight:600}
+.ed-btn span{font-size:12.5px;color:var(--muted)}
+.ed-btn.pri{background:var(--ice);border-color:transparent}
+.ed-btn.pri b{color:var(--on-light)} .ed-btn.pri span{color:#3B3C42}
+.ed-btn:hover,.ed-btn:focus-visible{background:#fff;border-color:transparent}
+.ed-btn:hover b,.ed-btn:focus-visible b{color:var(--on-light)} .ed-btn:hover span,.ed-btn:focus-visible span{color:#3B3C42}
+.ed-btn.off{opacity:.5;cursor:default}
+.ed-btn.off b::after{content:""}
+.ed-btn.off:hover{background:var(--surface-2);border-color:var(--line-2)} .ed-btn.off:hover b{color:var(--ink)} .ed-btn.off:hover span{color:var(--muted)}
+/* borda animada: acompanha o edital selecionado (mouse em cima ou foco do teclado) */
+.tcard.ed-card:is(:hover,:focus-within){border-color:rgba(255,92,97,.18);box-shadow:var(--shadow),0 0 28px -10px rgba(255,92,97,.45)}
+.tcard.ed-card:is(:hover,:focus-within)::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.6px;pointer-events:none;z-index:2;opacity:.9;
+  background:conic-gradient(from var(--ring),rgba(255,92,97,0) 0deg,rgba(255,92,97,.95) 50deg,#FF9F8E 95deg,#E56FB4 140deg,#FF5C61 185deg,rgba(255,92,97,0) 235deg,rgba(255,92,97,0) 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+  animation:ring-spin 4.8s linear infinite}
+@media (prefers-reduced-motion:reduce){.tcard.ed-card::after{animation:none}}
+@media (max-width:520px){.ed-menu{grid-template-columns:1fr}}
 .ed-new{border:1.5px dashed var(--line-2);border-radius:var(--r-lg);padding:22px;display:grid;gap:6px;align-content:center;color:var(--muted)}
 .ed-new b{color:var(--ink);font-size:16px}
 @media (max-width:900px){.ed-grid{grid-template-columns:minmax(0,1fr)}}
@@ -46,7 +68,7 @@
     </div>
     <div class="kpis" id="kpis"></div>
     <div class="block">
-      <div class="block-h home"><h3>Editais em <b>análise</b></h3><span class="hint">Clique num edital para abrir o painel completo.</span></div>
+      <div class="block-h home"><h3>Editais em <b>análise</b></h3><span class="hint">Escolha Resumo ou Análise completa em cada edital.</span></div>
       <div class="ed-grid" id="lista"></div>
     </div>
   </section>
@@ -86,7 +108,8 @@ document.getElementById('kpis').innerHTML=K.map(k=>'<div class="kpi"><span class
 if(prox){const n=daysUntil(prox.data); document.getElementById('topChips').innerHTML='<span class="chip'+(n<=3?' hot':'')+'">Próximo prazo: '+esc(prox.data_lbl)+' · '+left(n)+'</span>';}
 document.getElementById('lista').innerHTML=lista.map(e=>{
   const n=daysUntil(e.data), p=parecer(e.ls), st=p?LAB[p]:['Em análise',''];
-  return '<div class="ed-item"><a class="tcard ed-card'+(n>=0&&n<=2?' alert-ring':'')+'" href="/'+e.slug+'/" data-sec="ficha"><span class="art">'+svg(ART[e.art]||ART.doc)+'</span><span class="body"><span class="et">'+esc(e.modalidade)+' · '+esc(e.numero)+'</span><h3>'+esc(e.orgao)+'</h3><span class="m">'+esc(e.objeto)+'</span><span class="s">'+esc(e.valor)+' · '+esc(e.valor_s)+'</span><span class="ed-meta"><span class="ed-chip'+(n>=0&&n<=2?' hot':'')+'">'+esc(e.evento)+': '+esc(e.data_lbl)+' · '+left(n)+'</span><span class="ed-chip '+st[1]+'">'+st[0]+'</span></span><span class="go">Abrir →</span></span></a>'+(e.investidor?'<a class="ed-inv" href="/'+e.slug+'/investidor/"><span>Visão do investidor</span><span class="ed-inv-s">retorno e lucro em uma tela →</span></a>':'')+'</div>';
+  const res=e.resumo?'<a class="ed-btn pri" href="'+e.resumo+'"><b>Resumo</b><span>valores, veículos e retorno</span></a>':'<span class="ed-btn off" aria-disabled="true"><b>Resumo</b><span>em preparo</span></span>';
+  return '<article class="tcard ed-card" data-sec="ficha"><div class="ed-top"><span class="ed-logo"><img src="'+esc(e.logo||'/favicon.svg')+'" alt="Logo de '+esc(e.orgao)+'"></span></div><div class="body"><span class="et">'+esc(e.modalidade)+' · '+esc(e.numero)+'</span><h3>'+esc(e.orgao)+'</h3><span class="m">'+esc(e.objeto)+'</span><span class="s">'+esc(e.valor)+' · '+esc(e.valor_s)+'</span><span class="ed-meta"><span class="ed-chip'+(n>=0&&n<=2?' hot':'')+'">'+esc(e.evento)+': '+esc(e.data_lbl)+' · '+left(n)+'</span><span class="ed-chip '+st[1]+'">'+st[0]+'</span></span></div><nav class="ed-menu" aria-label="Abrir '+esc(e.modalidade)+' '+esc(e.numero)+'">'+res+'<a class="ed-btn" href="/'+e.slug+'/"><b>Análise completa</b><span>edital, riscos e parecer</span></a></nav></article>';
 }).join('')+'<div class="ed-new"><b>Novo edital</b><span>Envie o edital e o termo de referência em PDF na conversa. O painel é montado no mesmo formato e aparece aqui.</span></div>';
 })();
 </script>
