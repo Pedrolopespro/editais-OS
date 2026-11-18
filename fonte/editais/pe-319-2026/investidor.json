@@ -1,37 +1,51 @@
 {
  "titulo": "Pregão 319/2026 · Visão do investidor",
- "nome": "Pregão Eletrônico 319/2026",
- "orgao": "Presidência da República",
- "objeto": "Aluguel de carros, vans e ônibus com motorista para a Presidência da República em SP, RJ, MG e ES",
- "sessao": {"data": [2026, 11, 23], "hora": "9h30"},
+ "orgao": "Casa Civil da Presidência da República",
+ "unidade": "Secretaria de Administração · UASG 110001",
+ "pregao": "Pregão Eletrônico nº 319/2026",
+ "sessao": {"data": [2026, 11, 23], "hora": "9h30", "fuso": "horário de Brasília", "plataforma": "Compras.gov.br", "url": "https://www.gov.br/compras"},
+ "objeto": "Aluguel de carros, vans, ônibus e veículos blindados, com e sem motorista, para a Presidência da República e a segurança do Presidente e do Vice-Presidente nos 4 estados do Sudeste.",
+ "condicoes": ["Menor preço por item", "Disputa aberta e fechada", "Sem preferência para ME/EPP", "Sem margem de preferência", "Orçamento público"],
  "referencia": 20835706.71,
  "contrato_meses": 12,
- "renovacao": "Renovável por até 10 anos",
- "veredito": {"txt": "Vale disputar, com condições", "nivel": "medio", "risco": "Risco médio"},
- "custos": [
-  {"nome": "Aluguel dos veículos", "ref": 14456136.20, "pct": 55},
-  {"nome": "Motoristas", "ref": 4791359.20, "pct": 85},
-  {"nome": "Agentes de missão", "ref": 807024.00, "pct": 70},
-  {"nome": "Combustível (reembolsado)", "ref": 705552.91, "pct": 100},
-  {"nome": "Reservas não usadas", "ref": 75634.40, "pct": 30}
+ "vigencia": {"v": "12 meses", "s": "renovável por até 10 anos"},
+ "garantia": {"pct": 5, "s": "do valor anual · seguro-garantia até a assinatura"},
+ "grupos": [
+  {"nome": "Sedans e executivos", "ex": "sedan e executivo", "cats": "K, L", "d24": 3191, "d10": 2262, "v": 3657410.60},
+  {"nome": "Blindados", "ex": "executivos e SUVs blindados", "cats": "A–D", "d24": 1004, "d10": 561, "v": 4535740.00},
+  {"nome": "Vans e furgões", "ex": "vans de passageiros e furgões", "cats": "M–P", "d24": 1250, "d10": 1065, "v": 3159966.00},
+  {"nome": "SUVs", "ex": "SUVs de três portes", "cats": "E–H", "d24": 661, "d10": 363, "v": 1530612.00},
+  {"nome": "Ônibus", "ex": "rodoviário, urbano e micro-ônibus", "cats": "Q–S", "d24": 66, "d10": 181, "v": 780411.60},
+  {"nome": "Caminhonetes", "ex": "4x4 e 4x2", "cats": "I, J", "d24": 223, "d10": 60, "v": 467454.00},
+  {"nome": "Especiais", "ex": "microcaminhão, guincho e adaptado", "cats": "T–V", "d24": 62, "d10": 176, "v": 324542.00}
  ],
+ "custos": [
+  {"nome": "Aluguel dos veículos", "curto": "Veículos", "ref": 14456136.20, "pct": 55, "cor": "var(--blue)"},
+  {"nome": "Motoristas", "curto": "Motoristas", "ref": 4791359.20, "pct": 85, "cor": "var(--green)"},
+  {"nome": "Agentes de missão", "curto": "Agentes de missão", "ref": 807024.00, "pct": 70, "cor": "var(--steel)"},
+  {"nome": "Combustível (reembolsado)", "curto": "Combustível", "ref": 705552.91, "pct": 100, "cor": "var(--gold)"},
+  {"nome": "Reservas não usadas", "curto": "Reservas não usadas", "ref": 75634.40, "pct": 30, "cor": "var(--amber)"}
+ ],
+ "locais": {
+  "estados": [{"uf": "SP", "nome": "São Paulo"}, {"uf": "RJ", "nome": "Rio de Janeiro"}, {"uf": "MG", "nome": "Minas Gerais"}, {"uf": "ES", "nome": "Espírito Santo"}],
+  "itens": [
+   {"k": "Onde", "v": "Capital e interior dos 4 estados"},
+   {"k": "Prazo para o carro chegar", "v": "4 h na capital e região metropolitana · 6 h no interior"},
+   {"k": "Frota própria", "v": "16 veículos em nome da empresa (6 executivos ou SUVs e 10 sedans) · leasing aceito"},
+   {"k": "Atendimento", "v": "Central e celular 24 h exclusivos · não exige escritório local"}
+  ]
+ },
  "parametros": {"indiretas": 8, "tributos": 13, "glosa": 1, "ciclo_dias": 85, "juros_mes": 1.5, "garantia_pct": 5, "garantia_custo_ano": 1.5},
  "cenarios": [
-  {"id": "alto", "nome": "Conservador", "lance": 20000000, "dica": "lance 4% abaixo do máximo"},
-  {"id": "base", "nome": "Provável", "lance": 19200000, "dica": "lance 8% abaixo do máximo", "padrao": true},
-  {"id": "agressivo", "nome": "Agressivo", "lance": 18400000, "dica": "lance 12% abaixo do máximo"}
+  {"id": "alto", "nome": "Conservador", "lance": 20000000},
+  {"id": "base", "nome": "Provável", "lance": 19200000, "padrao": true},
+  {"id": "agressivo", "nome": "Agressivo", "lance": 18400000}
  ],
- "capital_extra": "+ 16 carros em nome da empresa (compra ou leasing)",
- "linha_do_tempo": [
-  {"quando": "23/11", "o_que": "Disputa de preços", "det": "online, no Compras.gov.br"},
-  {"quando": "Dez/26", "o_que": "Assinatura", "det": "seguro-garantia de 5% e 16 carros próprios"},
-  {"quando": "Mar/27", "o_que": "1º pagamento", "det": "cerca de 85 dias após começar"},
-  {"quando": "Dez/27", "o_que": "Fim do 1º ano", "det": "capital volta com os últimos pagamentos"}
- ],
+ "veredito": {"txt": "Vale disputar, com condições", "nivel": "medio", "risco": "risco médio"},
  "cuidados": [
-  {"t": "O dinheiro demora a entrar", "d": "O governo paga cerca de 85 dias depois do serviço. Por isso o capital de giro é necessário."},
-  {"t": "Preço travado por 12 meses", "d": "Se o salário dos motoristas subir em 2027, a diferença sai do lucro."},
-  {"t": "Exigências que eliminam", "d": "A empresa precisa comprovar experiência (atestados) e ter 16 carros próprios na assinatura."}
+  {"t": "Pagamento em cerca de 85 dias", "d": "por isso é preciso capital de giro"},
+  {"t": "Preço travado por 12 meses", "d": "reajuste salarial dos motoristas sai do lucro"},
+  {"t": "Exigências que eliminam", "d": "atestados de experiência e 16 carros próprios"}
  ],
- "nota": "Estimativa com os custos de exemplo do simulador da análise completa, já descontados impostos, despesas indiretas, custo do dinheiro (1,5% ao mês) e garantia. Antes de decidir, troque pelos custos reais da empresa. Datas aproximadas."
+ "nota": "Valores do contrato: Edital e Termo de Referência nº 236/2026, Apêndice IV (preços máximos). Retorno: estimativa com os custos de exemplo do simulador da análise completa, já descontados impostos, despesas indiretas, custo do dinheiro (1,5% ao mês) e garantia. Antes de decidir, troque pelos custos reais da empresa."
 }
