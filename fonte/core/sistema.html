@@ -19,6 +19,10 @@
 .ed-chip.hot{background:var(--red-bg);color:var(--red-ink)}
 .ed-chip.st-go{background:var(--green-bg);color:var(--green)} .ed-chip.st-wait{background:var(--amber-bg);color:var(--amber)} .ed-chip.st-nogo{background:var(--red-bg);color:var(--red-ink)}
 .tcard:hover .ed-chip{background:rgba(20,20,22,.1);color:#2A2B30}
+.ed-item{display:grid;gap:8px;align-content:start}
+.ed-inv{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:11px 18px;border-radius:99px;background:var(--surface);border:1px solid var(--line-2);text-decoration:none;font-weight:600;font-size:14px}
+.ed-inv:hover{background:var(--surface-2)}
+.ed-inv-s{color:var(--green);font-weight:500;font-size:13px}
 .ed-new{border:1.5px dashed var(--line-2);border-radius:var(--r-lg);padding:22px;display:grid;gap:6px;align-content:center;color:var(--muted)}
 .ed-new b{color:var(--ink);font-size:16px}
 @media (max-width:900px){.ed-grid{grid-template-columns:minmax(0,1fr)}}
@@ -82,7 +86,7 @@ document.getElementById('kpis').innerHTML=K.map(k=>'<div class="kpi"><span class
 if(prox){const n=daysUntil(prox.data); document.getElementById('topChips').innerHTML='<span class="chip'+(n<=3?' hot':'')+'">Próximo prazo: '+esc(prox.data_lbl)+' · '+left(n)+'</span>';}
 document.getElementById('lista').innerHTML=lista.map(e=>{
   const n=daysUntil(e.data), p=parecer(e.ls), st=p?LAB[p]:['Em análise',''];
-  return '<a class="tcard ed-card'+(n>=0&&n<=2?' alert-ring':'')+'" href="/'+e.slug+'/" data-sec="ficha"><span class="art">'+svg(ART[e.art]||ART.doc)+'</span><span class="body"><span class="et">'+esc(e.modalidade)+' · '+esc(e.numero)+'</span><h3>'+esc(e.orgao)+'</h3><span class="m">'+esc(e.objeto)+'</span><span class="s">'+esc(e.valor)+' · '+esc(e.valor_s)+'</span><span class="ed-meta"><span class="ed-chip'+(n>=0&&n<=2?' hot':'')+'">'+esc(e.evento)+': '+esc(e.data_lbl)+' · '+left(n)+'</span><span class="ed-chip '+st[1]+'">'+st[0]+'</span></span><span class="go">Abrir →</span></span></a>';
+  return '<div class="ed-item"><a class="tcard ed-card'+(n>=0&&n<=2?' alert-ring':'')+'" href="/'+e.slug+'/" data-sec="ficha"><span class="art">'+svg(ART[e.art]||ART.doc)+'</span><span class="body"><span class="et">'+esc(e.modalidade)+' · '+esc(e.numero)+'</span><h3>'+esc(e.orgao)+'</h3><span class="m">'+esc(e.objeto)+'</span><span class="s">'+esc(e.valor)+' · '+esc(e.valor_s)+'</span><span class="ed-meta"><span class="ed-chip'+(n>=0&&n<=2?' hot':'')+'">'+esc(e.evento)+': '+esc(e.data_lbl)+' · '+left(n)+'</span><span class="ed-chip '+st[1]+'">'+st[0]+'</span></span><span class="go">Abrir →</span></span></a>'+(e.investidor?'<a class="ed-inv" href="/'+e.slug+'/investidor/"><span>Visão do investidor</span><span class="ed-inv-s">retorno e lucro em uma tela →</span></a>':'')+'</div>';
 }).join('')+'<div class="ed-new"><b>Novo edital</b><span>Envie o edital e o termo de referência em PDF na conversa. O painel é montado no mesmo formato e aparece aqui.</span></div>';
 })();
 </script>

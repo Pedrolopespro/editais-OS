@@ -583,6 +583,10 @@ th{background:var(--surface-2)}
 .ed-chip.hot{background:var(--red-bg);color:var(--red-ink)}
 .ed-chip.st-go{background:var(--green-bg);color:var(--green)} .ed-chip.st-wait{background:var(--amber-bg);color:var(--amber)} .ed-chip.st-nogo{background:var(--red-bg);color:var(--red-ink)}
 .tcard:hover .ed-chip{background:rgba(20,20,22,.1);color:#2A2B30}
+.ed-item{display:grid;gap:8px;align-content:start}
+.ed-inv{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:11px 18px;border-radius:99px;background:var(--surface);border:1px solid var(--line-2);text-decoration:none;font-weight:600;font-size:14px}
+.ed-inv:hover{background:var(--surface-2)}
+.ed-inv-s{color:var(--green);font-weight:500;font-size:13px}
 .ed-new{border:1.5px dashed var(--line-2);border-radius:var(--r-lg);padding:22px;display:grid;gap:6px;align-content:center;color:var(--muted)}
 .ed-new b{color:var(--ink);font-size:16px}
 @media (max-width:900px){.ed-grid{grid-template-columns:minmax(0,1fr)}}
@@ -620,7 +624,7 @@ th{background:var(--surface-2)}
 const antigos=['ficha','condicoes','operacao','qualificacao','declaracoes','conflitos','planilha','matriz','kit','simulador','riscos','parecer'];
 const h=(location.hash||'').replace('#','');
 if(h&&antigos.includes(h)){ location.replace('/pe-319-2026/#'+h); return; }
-const EDITAIS=[{"orgao": "Tribunal Regional Eleitoral do DF", "modalidade": "Dispensa eletrônica", "numero": "70025-40/2026", "objeto": "Vídeo animado 2D de cerca de 5 minutos", "valor": "Até R$ 65,5 mil", "valor_s": "teto legal · sem preço máximo", "data": [2026, 11, 18], "data_lbl": "18/11 · 12h às 18h", "evento": "Lances", "art": "anim", "ls": "de70025-", "slug": "de-70025-40-2026"}, {"orgao": "Casa Civil da Presidência da República", "modalidade": "Pregão eletrônico", "numero": "319/2026", "objeto": "Locação de veículos com e sem motorista nos 4 estados do Sudeste", "valor": "R$ 20,8 mi", "valor_s": "valor anual estimado", "data": [2026, 11, 23], "data_lbl": "23/11 · 9h30", "evento": "Sessão pública", "art": "oper", "ls": "pe319-", "slug": "pe-319-2026"}];
+const EDITAIS=[{"orgao": "Tribunal Regional Eleitoral do DF", "modalidade": "Dispensa eletrônica", "numero": "70025-40/2026", "objeto": "Vídeo animado 2D de cerca de 5 minutos", "valor": "Até R$ 65,5 mil", "valor_s": "teto legal · sem preço máximo", "data": [2026, 11, 18], "data_lbl": "18/11 · 12h às 18h", "evento": "Lances", "art": "anim", "ls": "de70025-", "slug": "de-70025-40-2026"}, {"orgao": "Casa Civil da Presidência da República", "modalidade": "Pregão eletrônico", "numero": "319/2026", "objeto": "Locação de veículos com e sem motorista nos 4 estados do Sudeste", "valor": "R$ 20,8 mi", "valor_s": "valor anual estimado", "data": [2026, 11, 23], "data_lbl": "23/11 · 9h30", "evento": "Sessão pública", "art": "oper", "ls": "pe319-", "slug": "pe-319-2026", "investidor": true}];
 const ART={
  oper:'<path d="M8 72h144" opacity=".4"/><path d="M24 60V51c0-3 2-5 5-6l20-5 18-13c3-2 6-3 10-3h26c4 0 7 1 10 4l15 13 15 4c3 1 5 3 5 6v9"/><path d="M24 60h19M61 60h48M127 60h21"/><path d="M68 40l11-9h18v9zM102 31h6c2 0 4 1 5 2l8 7h-19z"/><circle class="acc" cx="52" cy="60" r="9"/><circle class="acc" cx="118" cy="60" r="9"/>',
  anim:'<rect x="30" y="34" width="74" height="46" rx="4"/><path d="M30 34l70-15 4 12-70 15z"/><path class="acc" d="M44 30l6 10M62 26l6 10M80 22l6 10"/><path d="M42 54h30M42 64h40M42 72h22" opacity=".6"/><circle class="acc" cx="128" cy="58" r="14"/><path class="acc" d="M124 51v14l11-7z"/>',
@@ -646,7 +650,7 @@ document.getElementById('kpis').innerHTML=K.map(k=>'<div class="kpi"><span class
 if(prox){const n=daysUntil(prox.data); document.getElementById('topChips').innerHTML='<span class="chip'+(n<=3?' hot':'')+'">Próximo prazo: '+esc(prox.data_lbl)+' · '+left(n)+'</span>';}
 document.getElementById('lista').innerHTML=lista.map(e=>{
   const n=daysUntil(e.data), p=parecer(e.ls), st=p?LAB[p]:['Em análise',''];
-  return '<a class="tcard ed-card'+(n>=0&&n<=2?' alert-ring':'')+'" href="/'+e.slug+'/" data-sec="ficha"><span class="art">'+svg(ART[e.art]||ART.doc)+'</span><span class="body"><span class="et">'+esc(e.modalidade)+' · '+esc(e.numero)+'</span><h3>'+esc(e.orgao)+'</h3><span class="m">'+esc(e.objeto)+'</span><span class="s">'+esc(e.valor)+' · '+esc(e.valor_s)+'</span><span class="ed-meta"><span class="ed-chip'+(n>=0&&n<=2?' hot':'')+'">'+esc(e.evento)+': '+esc(e.data_lbl)+' · '+left(n)+'</span><span class="ed-chip '+st[1]+'">'+st[0]+'</span></span><span class="go">Abrir →</span></span></a>';
+  return '<div class="ed-item"><a class="tcard ed-card'+(n>=0&&n<=2?' alert-ring':'')+'" href="/'+e.slug+'/" data-sec="ficha"><span class="art">'+svg(ART[e.art]||ART.doc)+'</span><span class="body"><span class="et">'+esc(e.modalidade)+' · '+esc(e.numero)+'</span><h3>'+esc(e.orgao)+'</h3><span class="m">'+esc(e.objeto)+'</span><span class="s">'+esc(e.valor)+' · '+esc(e.valor_s)+'</span><span class="ed-meta"><span class="ed-chip'+(n>=0&&n<=2?' hot':'')+'">'+esc(e.evento)+': '+esc(e.data_lbl)+' · '+left(n)+'</span><span class="ed-chip '+st[1]+'">'+st[0]+'</span></span><span class="go">Abrir →</span></span></a>'+(e.investidor?'<a class="ed-inv" href="/'+e.slug+'/investidor/"><span>Visão do investidor</span><span class="ed-inv-s">retorno e lucro em uma tela →</span></a>':'')+'</div>';
 }).join('')+'<div class="ed-new"><b>Novo edital</b><span>Envie o edital e o termo de referência em PDF na conversa. O painel é montado no mesmo formato e aparece aqui.</span></div>';
 })();
 </script>

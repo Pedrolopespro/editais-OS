@@ -1,0 +1,37 @@
+{
+ "titulo": "Pregão 319/2026 · Visão do investidor",
+ "nome": "Pregão Eletrônico 319/2026",
+ "orgao": "Presidência da República",
+ "objeto": "Aluguel de carros, vans e ônibus com motorista para a Presidência da República em SP, RJ, MG e ES",
+ "sessao": {"data": [2026, 11, 23], "hora": "9h30"},
+ "referencia": 20835706.71,
+ "contrato_meses": 12,
+ "renovacao": "Renovável por até 10 anos",
+ "veredito": {"txt": "Vale disputar, com condições", "nivel": "medio", "risco": "Risco médio"},
+ "custos": [
+  {"nome": "Aluguel dos veículos", "ref": 14456136.20, "pct": 55},
+  {"nome": "Motoristas", "ref": 4791359.20, "pct": 85},
+  {"nome": "Agentes de missão", "ref": 807024.00, "pct": 70},
+  {"nome": "Combustível (reembolsado)", "ref": 705552.91, "pct": 100},
+  {"nome": "Reservas não usadas", "ref": 75634.40, "pct": 30}
+ ],
+ "parametros": {"indiretas": 8, "tributos": 13, "glosa": 1, "ciclo_dias": 85, "juros_mes": 1.5, "garantia_pct": 5, "garantia_custo_ano": 1.5},
+ "cenarios": [
+  {"id": "alto", "nome": "Conservador", "lance": 20000000, "dica": "lance 4% abaixo do máximo"},
+  {"id": "base", "nome": "Provável", "lance": 19200000, "dica": "lance 8% abaixo do máximo", "padrao": true},
+  {"id": "agressivo", "nome": "Agressivo", "lance": 18400000, "dica": "lance 12% abaixo do máximo"}
+ ],
+ "capital_extra": "+ 16 carros em nome da empresa (compra ou leasing)",
+ "linha_do_tempo": [
+  {"quando": "23/11", "o_que": "Disputa de preços", "det": "online, no Compras.gov.br"},
+  {"quando": "Dez/26", "o_que": "Assinatura", "det": "seguro-garantia de 5% e 16 carros próprios"},
+  {"quando": "Mar/27", "o_que": "1º pagamento", "det": "cerca de 85 dias após começar"},
+  {"quando": "Dez/27", "o_que": "Fim do 1º ano", "det": "capital volta com os últimos pagamentos"}
+ ],
+ "cuidados": [
+  {"t": "O dinheiro demora a entrar", "d": "O governo paga cerca de 85 dias depois do serviço. Por isso o capital de giro é necessário."},
+  {"t": "Preço travado por 12 meses", "d": "Se o salário dos motoristas subir em 2027, a diferença sai do lucro."},
+  {"t": "Exigências que eliminam", "d": "A empresa precisa comprovar experiência (atestados) e ter 16 carros próprios na assinatura."}
+ ],
+ "nota": "Estimativa com os custos de exemplo do simulador da análise completa, já descontados impostos, despesas indiretas, custo do dinheiro (1,5% ao mês) e garantia. Antes de decidir, troque pelos custos reais da empresa. Datas aproximadas."
+}
