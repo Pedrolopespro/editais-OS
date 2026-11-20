@@ -11,7 +11,9 @@ Painéis de decisão para licitações e dispensas. A página inicial lista os e
 | `/pe-25-2026-artesp/` | Pregão Eletrônico 25/2026 · ARTESP · 103 veículos com e sem motorista |
 | `/pe-106-2026-hortolandia/` | Pregão Eletrônico 106/2026 · Prefeitura de Hortolândia (SP) · 173 veículos em 24 itens |
 | `/pe-18-2026-casa-militar-go/` | Pregão Eletrônico 18/2026 · Casa Militar de Goiás · 12 SUVs blindados |
-| `/resumo/<edital>/` | Resumo de cada edital para o investidor |
+| `/pe-24-2026-ifb/` | Pregão Eletrônico 24/2026 · Instituto Federal de Brasília · registro de preços de uniformes escolares |
+| `/lic-7004688324-transpetro/` | Licitação 7004688324 · Transpetro (Petrobras) · 55 veículos em 2 lotes, Petronect |
+| `/resumo/<edital>/` | Resumo de cada edital para o investidor (IFB e Transpetro também com PDF para baixar) |
 
 Links antigos do Pregão 319 (`/#conflitos` etc.) redirecionam para `/pe-319-2026/`.
 
@@ -31,6 +33,9 @@ Links antigos do Pregão 319 (`/#conflitos` etc.) redirecionam para `/pe-319-202
 1. Copie a pasta de um edital parecido em `fonte/editais/` com o novo slug (ex.: `pe-123-2027`).
 2. Preencha `meta.json`, `secoes.html` e `edital.js` com os dados do novo edital. Use `lsPrefix` e `docPrefix` próprios para não misturar as marcações.
 3. Rode `python fonte/build.py`. O painel sai em `/<slug>/` e entra na lista automaticamente.
+4. Para ter o PDF do resumo, ponha `"pdf": true` no `investidor.json`, rode o build e depois `python fonte/gerar_pdf.py` (usa o Microsoft Edge ou o Chrome instalado). O PDF fica em `/resumo/<slug>/resumo-<slug>.pdf` e o resumo ganha o botão "Baixar PDF".
+
+Campos opcionais do `investidor.json`: `rotulos` troca rótulos fixos do resumo (`kTotK`, `kMesK`, `kVigK`, `kGarK`, `tLoc`, `tCare`, `rLucK`) e `roi_nota` troca o texto "sem a compra da frota" (use `""` para esconder).
 
 ## Planilha de custos
 

@@ -1,0 +1,35 @@
+{
+ "slug": "lic-7004688324-transpetro",
+ "ordem": 8,
+ "titulo": "Licitação 7004688324 · Transpetro · Painel de Decisão",
+ "nome": "Licitação Transpetro nº 7004688324",
+ "sub": "Transpetro · Locação de 55 veículos sem motorista em 2 lotes (NNESE e SSPCO)",
+ "pergunta": "Vale a pena disputar<br><b>esta licitação?</b>",
+ "lead": "Aluguel de carros e picapes sem motorista, por 36 meses, para os projetos de engenharia da Transpetro: Lote 1 (RJ, MA, PE e PA, 13 veículos) e Lote 2 (SP, PR, SC e RS, 42 veículos), mais o lote virtual com os dois. Disputa fechada no Petronect, com orçamento sigiloso. <b>Abertura das propostas em 01/12/2026, às 12h.</b>",
+ "prazos_hint": "Contagem a partir de hoje (20/11, feriado nacional). Dúvidas e impugnação ainda abertas até 24/11.",
+ "foot": "Análise independente elaborada para apoio à decisão do licitante, com base no Edital da Licitação nº 7004688324 da Petrobras Transporte S.A. – Transpetro (Lei 13.303/2016 e Regulamento de Licitações e Contratos da Transpetro), na Especificação Técnica ET-4000.00-9300-900-PTD-002 de cada lote, na minuta do contrato do Lote 1, no modelo de DFP do Lote 2 e nos Adendos B, D e E. O orçamento da Transpetro é sigiloso: os valores em reais deste painel são estimativa nossa, explicada na seção Planilha. Não é documento oficial da Transpetro e não substitui a leitura integral do Edital e adendos.",
+ "og_title": "Vale a pena disputar a licitação 7004688324 da Transpetro?",
+ "descricao": "Painel de decisão da Licitação 7004688324 da Transpetro: locação de 55 veículos sem motorista em 2 lotes (NNESE e SSPCO), disputa fechada no Petronect, conflitos do edital, simulador de proposta e parecer final.",
+ "card": {
+  "orgao": "Petrobras Transporte S.A. – Transpetro",
+  "modalidade": "Licitação (Lei 13.303)",
+  "numero": "7004688324",
+  "objeto": "Locação de 55 veículos sem motorista em 2 lotes (NNESE e SSPCO), 36 meses",
+  "valor": "R$ 11,0 mi",
+  "valor_s": "estimativa nossa · orçamento sigiloso",
+  "data": [
+   2026,
+   12,
+   1
+  ],
+  "data_lbl": "01/12 · 12h",
+  "evento": "Abertura das propostas",
+  "art": "oper",
+  "ls": "tp7004-"
+ },
+ "replace": {
+  "{{LOGO}}": "/assets/logo-lic-7004688324-transpetro.png",
+  "{{DOCS}}": "/docs/"
+ },
+ "artifact": false
+}

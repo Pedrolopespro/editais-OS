@@ -1,0 +1,1836 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Painel de decisão da Licitação 7004688324 da Transpetro: locação de 55 veículos sem motorista em 2 lotes (NNESE e SSPCO), disputa fechada no Petronect, conflitos do edital, simulador de proposta e parecer final.">
+<meta name="theme-color" content="#0D0D0F">
+<link rel="canonical" href="https://editais-os.vercel.app/lic-7004688324-transpetro/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Sistema de Análise de Editais">
+<meta property="og:title" content="Vale a pena disputar a licitação 7004688324 da Transpetro?">
+<meta property="og:description" content="Painel de decisão da Licitação 7004688324 da Transpetro: locação de 55 veículos sem motorista em 2 lotes (NNESE e SSPCO), disputa fechada no Petronect, conflitos do edital, simulador de proposta e parecer final.">
+<meta property="og:url" content="https://editais-os.vercel.app/lic-7004688324-transpetro/">
+<meta property="og:image" content="https://editais-os.vercel.app/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vale a pena disputar a licitação 7004688324 da Transpetro?">
+<meta name="twitter:description" content="Painel de decisão da Licitação 7004688324 da Transpetro: locação de 55 veículos sem motorista em 2 lotes (NNESE e SSPCO), disputa fechada no Petronect, conflitos do edital, simulador de proposta e parecer final.">
+<meta name="twitter:image" content="https://editais-os.vercel.app/og-image.jpg">
+<title>Licitação 7004688324 · Transpetro · Painel de Decisão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+/* Layout: tela inicial com números e cartões (um por assunto); cada cartão abre uma página com números no topo, conclusão em uma frase e detalhes recolhidos. Tema escuro fixo; cor só com significado: dourado = dinheiro e recomendação, azul = preço e informação, verde = ok, vermelho = risco e prazo. */
+:root{
+  color-scheme:dark;
+  --bg:#0A0B0D; --surface:#121316; --surface-2:#17191D; --surface-3:#1E2126; --line:#262930; --line-2:#363A42;
+  --ink:#F2F3F5; --muted:#9BA1AB; --dim:#6E747E; --ill:#8A909A;
+  --gold:#CDAA61; --gold-bg:rgba(205,170,97,.12); --blue:#5B9BFF; --blue-bg:rgba(91,155,255,.12);
+  --green:#3CCB8B; --green-bg:rgba(60,203,139,.12); --red:#FF5C61; --red-bg:rgba(255,92,97,.13); --red-ink:#FF8F93;
+  --amber:#E7AE45; --amber-bg:rgba(231,174,69,.13); --steel:#B9BEC7;
+  --good:var(--green); --good-bg:var(--green-bg); --warn:var(--amber); --warn-bg:var(--amber-bg); --bad:var(--red); --bad-bg:var(--red-bg); --neutral-bg:var(--surface-3);
+  --focus:var(--blue); --tint:var(--surface-3); --strong:var(--steel);
+  --font-ui:"Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-num:"Inter Tight", "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --r-lg:18px; --r-md:14px; --r-sm:9px;
+}
+[data-sec="ficha"],[data-sec="plan"],[data-sec="risco"],[data-sec="parecer"]{--strong:var(--gold)}
+[data-sec="cond"],[data-sec="simul"]{--strong:var(--blue)}
+[data-sec="qual"],[data-sec="conf"]{--strong:var(--red)}
+[data-sec="matriz"],[data-sec="kit"]{--strong:var(--green)}
+[data-sec="oper"],[data-sec="decl"]{--strong:var(--steel)}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-ui);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;line-height:1.2;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.num{font-variant-numeric:tabular-nums}
+.mono{font-family:var(--font-mono)}
+.c-gold{color:var(--gold)} .c-blue{color:var(--blue)} .c-green{color:var(--green)} .c-red{color:var(--red)} .c-ink{color:var(--ink)}
+.acc{stroke:var(--strong)}
+
+/* ---------- estrutura ---------- */
+.shell{max-width:1240px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:20px 28px;display:grid;gap:18px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand-mark{width:44px;height:44px;border-radius:12px;background:#F2F3F5;display:grid;place-items:center;flex:none}
+.brand-mark img{width:32px;height:32px;object-fit:contain}
+.brand-txt{display:grid;min-width:0}
+.brand-txt b{font-size:15px;font-weight:700}
+.brand-txt span{font-size:12.5px;color:var(--muted)}
+.top-chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:99px;border:1px solid var(--line-2);font-size:12.5px;font-weight:600;white-space:nowrap;color:var(--muted)}
+.chip svg{width:15px;height:15px}
+.chip.hot{border-color:color-mix(in srgb,var(--red) 55%,transparent);color:var(--red-ink)}
+.crumbbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px}
+.crumbbar a.back{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:14px;padding:8px 14px;border-radius:10px;background:var(--surface-2);border:1px solid var(--line)}
+.crumbbar a.back:hover{border-color:var(--line-2);background:var(--surface-3)}
+.crumb-info{font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.mini-prog{width:110px;height:5px;border-radius:99px;background:var(--surface-3);overflow:hidden;display:inline-block}
+.mini-prog i{display:block;height:100%;background:var(--gold)}
+.content{display:grid;min-width:0}
+.sec{display:grid;gap:22px;min-width:0;animation:fade .25s ease}
+@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.sec{animation:none}}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--strong)}
+.hint{font-size:13px;color:var(--muted);max-width:75ch}
+.src{display:inline-block;font-family:var(--font-mono);font-size:11px;padding:1px 7px;border-radius:6px;background:var(--surface-3);color:var(--muted);white-space:nowrap;vertical-align:1px}
+.foot{font-size:12px;color:var(--dim);padding-top:14px;border-top:1px solid var(--line)}
+
+/* ---------- tela inicial ---------- */
+.home-hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;align-items:center;padding:6px 0 2px}
+.home-hero h1{font-family:var(--font-num);font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-.03em;margin-top:8px}
+.lead{color:var(--muted);font-size:16px;max-width:64ch;margin-top:10px}
+.lead b{color:var(--ink);font-weight:600}
+.hero-art{color:var(--ill);margin:0;display:grid;place-items:center}
+.hero-art svg{width:100%;height:auto;display:block;max-height:180px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:16px 18px;display:grid;gap:4px;text-decoration:none;min-width:0;transition:border-color .15s}
+.kpi:hover{border-color:var(--line-2)}
+.kpi .k{font-size:12.5px;color:var(--muted)}
+.kpi .v{font-family:var(--font-num);font-size:clamp(26px,3vw,36px);font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1;overflow-wrap:anywhere}
+.kpi .s{font-size:12.5px;color:var(--dim)}
+.reco{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;background:var(--surface);border:1px solid color-mix(in srgb,var(--gold) 55%,transparent);border-radius:var(--r-md);padding:16px 20px;text-decoration:none}
+.reco:hover{background:var(--surface-2)}
+.reco .k{font-size:11.5px;color:var(--gold);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.reco b{display:block;font-family:var(--font-num);font-size:20px;font-weight:700;margin-top:2px}
+.reco p{font-size:13.5px;color:var(--muted);margin-top:2px}
+.reco-prog{display:grid;gap:6px;justify-items:end;font-size:12.5px;color:var(--muted)}
+.reco-prog .bar{width:170px;height:6px;border-radius:99px;background:var(--surface-3);overflow:hidden}
+.reco-prog .bar i{display:block;height:100%;background:var(--gold);border-radius:99px}
+.deadlines{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.dl{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;display:grid;gap:3px;align-content:start;background:var(--surface)}
+.dl .d{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.dl .d b{font-family:var(--font-num);font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
+.dl .left{font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--surface-3);color:var(--muted)}
+.dl.urgent{border-color:color-mix(in srgb,var(--red) 45%,var(--line))}
+.dl.urgent .left{background:var(--red-bg);color:var(--red-ink)}
+.dl p{font-size:13.5px}
+.copy{border:1px solid var(--line-2);background:transparent;border-radius:8px;padding:1px 8px;font-size:11.5px;cursor:pointer;color:var(--muted)}
+.block-h.home{margin-top:6px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;display:grid;grid-template-rows:auto 1fr;transition:border-color .15s, transform .15s;min-width:0}
+.tcard:hover{border-color:color-mix(in srgb,var(--strong) 60%,var(--line));transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.tcard,.tcard:hover{transition:none;transform:none}}
+.tcard .art{height:108px;background:var(--surface-2);border-bottom:1px solid var(--line);display:grid;place-items:center;color:var(--ill);position:relative}
+.tcard .art svg{height:86px;width:auto;max-width:90%}
+.tcard .done{position:absolute;top:10px;right:10px;font-size:11.5px;font-weight:700;color:var(--green);background:var(--green-bg);padding:2px 9px;border-radius:99px}
+.tcard .body{padding:14px 16px 16px;display:grid;gap:3px;align-content:start}
+.tcard .et{font-size:11px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.tcard h3{font-size:14.5px;font-weight:600;color:var(--muted);margin-top:2px}
+.tcard .m{font-family:var(--font-num);font-size:24px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;line-height:1.2}
+.tcard .s{font-size:12.5px;color:var(--dim)}
+.tcard .s.st-alert{color:var(--red-ink)} .tcard .s.st-ok{color:var(--green)} .tcard .s.st-warn{color:var(--amber)}
+.tcard .go{margin-top:10px;font-size:13px;font-weight:600;color:var(--strong)}
+
+/* ---------- topo das páginas ---------- */
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:28px;align-items:center;padding:4px 0 2px}
+.sec-head h2{font-family:var(--font-num);font-size:clamp(28px,3.6vw,42px);font-weight:700;letter-spacing:-.03em;margin-top:6px}
+.hero-nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:10px;margin-top:16px}
+.hn{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;display:grid;gap:2px;min-width:0}
+.hn .v{font-family:var(--font-num);font-size:26px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.15;overflow-wrap:anywhere}
+.hn .l{font-size:12.5px;color:var(--muted)}
+.done-tag{color:var(--green);letter-spacing:0;text-transform:none}
+
+/* ---------- blocos ---------- */
+.tldr{border:1px solid var(--line);border-radius:var(--r-md);padding:16px 20px;display:grid;gap:10px;background:var(--surface)}
+.tldr h3{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.tldr ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.tldr li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:8px;align-items:start}
+.tldr li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--strong);margin:8px 0 0 3px}
+.tldr b{font-weight:700}
+.block{display:grid;gap:12px;min-width:0}
+.block-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.block-h h3{font-size:17px;font-weight:600}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:var(--r-md);padding:16px 18px;display:grid;gap:8px;align-content:start;min-width:0;background:var(--surface)}
+.card h4{font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
+.card h4 svg{width:18px;height:18px;color:var(--strong);flex:none}
+.card p,.card li{font-size:14px}
+.card ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.card li::marker{color:var(--dim)}
+.card .muted{color:var(--muted);font-size:13px}
+.card a{color:var(--blue)}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.pill.elim,.pill.alta{background:var(--red-bg);color:var(--red-ink)}
+.pill.att,.pill.media{background:var(--amber-bg);color:var(--amber)}
+.pill.ok{background:var(--green-bg);color:var(--green)}
+.pill.info,.pill.baixa{background:var(--surface-3);color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px}
+.tiles.six{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tile{border-radius:var(--r-md);padding:14px 16px;display:grid;gap:4px;align-content:start;background:var(--surface);border:1px solid var(--line);min-width:0}
+.tile .k{font-size:12.5px;color:var(--muted)}
+.tile .v{font-family:var(--font-num);font-size:22px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.tile .s{font-size:12.5px;color:var(--dim)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:11px;padding:10px 18px;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;background:var(--ink);color:#0A0B0D}
+.btn:hover{background:#FFFFFF}
+.btn.ghost{background:var(--surface-3);color:var(--ink);border:1px solid var(--line-2)}
+.btn.ghost:hover{background:var(--surface-2)}
+.btn.small{padding:7px 12px;font-size:13px;border-radius:9px}
+
+/* ---------- tabelas ---------- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding:11px 14px;background:var(--surface-2);border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl-min{min-width:720px}
+.tbl-mid{min-width:560px}
+.cat-code{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--surface-3);font-weight:700;font-size:12.5px}
+.barcell{display:grid;grid-template-columns:minmax(60px,1fr) 52px;gap:8px;align-items:center}
+.bar{height:6px;border-radius:99px;background:var(--surface-3);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:var(--strong)}
+tr.hl td{background:rgba(255,255,255,.025)}
+
+/* ---------- ficha ---------- */
+.cover{display:grid;gap:18px}
+.cover-main{border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);padding:22px;display:grid;gap:18px}
+.org{display:flex;gap:16px;align-items:center}
+.org-logo{width:64px;height:64px;border-radius:16px;background:#F2F3F5;display:grid;place-items:center;flex:none}
+.org-logo img{width:48px;height:48px;object-fit:contain}
+.org h1{font-family:var(--font-num);font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.02em}
+.org p{color:var(--muted);font-size:13.5px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:10px}
+.fact{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;display:grid;gap:3px;align-content:start;min-width:0}
+.fact .k,.objeto .k{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}
+.fact .v{font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.fact .s{font-size:12.5px;color:var(--muted)}
+.fact.no .v{color:var(--red)}
+.objeto{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;display:grid;gap:6px}
+.objeto p{font-size:14.5px;max-width:95ch}
+
+/* ---------- composição e filtros ---------- */
+.stack{display:flex;height:14px;border-radius:99px;overflow:hidden;background:var(--surface-3);gap:2px}
+.stack i{display:block;height:100%}
+.legend{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.legend li{display:grid;grid-template-columns:12px minmax(0,1fr) auto 56px;gap:10px;align-items:center;font-size:14px}
+.legend .sw{width:12px;height:12px;border-radius:4px}
+.legend .r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.legend .p{color:var(--muted)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.fbtn{border:1px solid var(--line-2);background:transparent;border-radius:99px;padding:6px 14px;font-size:13px;font-weight:600;cursor:pointer;color:var(--muted)}
+.fbtn[aria-pressed="true"]{background:var(--ink);color:#0A0B0D;border-color:var(--ink)}
+
+/* ---------- conflitos ---------- */
+.conf-list{display:grid;gap:12px}
+details.fold.conf-f>summary{grid-template-columns:minmax(0,1fr) auto auto}
+.fold-body.conf{display:grid;gap:10px}
+.conf .stripe{background:var(--line-2)}
+.conf.alta .stripe{background:var(--red)} .conf.media .stripe{background:var(--amber)}
+.conf-body{padding:14px 18px;display:grid;gap:10px}
+.conf-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.conf-top h4{font-size:16px;font-weight:600;margin-right:auto}
+.versus{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr);gap:8px;align-items:stretch}
+.versus .side-a,.versus .side-b{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px;display:grid;gap:4px;align-content:start}
+.versus .vs{display:grid;place-items:center;font-size:11px;font-weight:800;color:var(--dim)}
+.conf .why{font-size:13.5px;color:var(--muted)}
+.conf .todo{font-size:13.5px}
+.conf .todo b{color:var(--strong)}
+
+/* ---------- planilha ---------- */
+.sheet{border:1px solid var(--line);border-radius:var(--r-md);overflow:auto;background:#FFFFFF;max-height:72vh}
+.sheet img{display:block;max-width:none;width:100%;height:auto;cursor:zoom-in}
+.sheet.zoom img{width:2157px;max-width:none;cursor:zoom-out}
+.gs-card{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:16px;align-items:center;border-radius:var(--r-md);padding:16px 18px;background:var(--surface);border:1px solid color-mix(in srgb,var(--green) 40%,var(--line))}
+.gs-ico{width:52px;height:52px;border-radius:14px;background:var(--green-bg);color:var(--green);display:grid;place-items:center}
+.gs-ico svg{width:26px;height:26px}
+.gs-txt{display:grid;gap:4px;min-width:0}
+.gs-txt b{font-size:16px}
+.gs-txt span{font-size:13.5px;color:var(--muted)}
+.pl-table{min-width:760px}
+.pl-table td:nth-child(2){min-width:210px}
+.pl-table th.fx{text-align:center;color:var(--ink)}
+.pl-table th.fx1{background:rgba(91,155,255,.16)} .pl-table th.fx2{background:rgba(60,203,139,.14)} .pl-table th.fx3{background:rgba(160,140,255,.16)} .pl-table th.fx4{background:rgba(205,170,97,.16)}
+.pl-table td.fx1{background:rgba(91,155,255,.05)} .pl-table td.fx2{background:rgba(60,203,139,.045)} .pl-table td.fx3{background:rgba(160,140,255,.05)} .pl-table td.fx4{background:rgba(205,170,97,.05)}
+.pl-table tr.bad td{background:rgba(255,92,97,.07)}
+.pl-table tr.tot td{background:var(--surface-2);font-weight:700}
+.pl-table .sub{display:block;font-size:11.5px;color:var(--dim);font-weight:500}
+.pl-table td.warn{color:var(--red-ink);font-weight:700}
+
+/* ---------- matriz ---------- */
+.verdict-bar{border-radius:var(--r-md);padding:18px 22px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line)}
+.verdict-bar.go{border-color:color-mix(in srgb,var(--green) 55%,var(--line))}
+.verdict-bar.nogo{border-color:color-mix(in srgb,var(--red) 55%,var(--line))}
+.verdict-bar.wait{border-color:color-mix(in srgb,var(--amber) 55%,var(--line))}
+.verdict-bar h3{font-family:var(--font-num);font-size:21px;font-weight:700}
+.verdict-bar.go h3{color:var(--green)} .verdict-bar.nogo h3{color:var(--red)} .verdict-bar.wait h3{color:var(--amber)}
+.verdict-bar p{font-size:14px;color:var(--muted)}
+.ring{width:74px;height:74px}
+.counts{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.req-group{display:grid;gap:8px}
+.group-title{display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.group-title::after{content:"";height:1px;background:var(--line);flex:1}
+.req{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;align-items:center;background:var(--surface)}
+.req.st-nao{border-color:color-mix(in srgb,var(--red) 50%,var(--line))}
+.req.st-atende{border-color:color-mix(in srgb,var(--green) 40%,var(--line))}
+.req.st-ajuste{border-color:color-mix(in srgb,var(--amber) 45%,var(--line))}
+.req-txt{display:grid;gap:3px;min-width:0}
+.req-txt b{font-size:14.5px;font-weight:600}
+.req-txt span{font-size:13px;color:var(--muted)}
+.seg{display:inline-flex;background:var(--surface-2);border:1px solid var(--line);border-radius:11px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;border-radius:8px;padding:6px 10px;font-size:12.5px;font-weight:600;cursor:pointer;color:var(--muted);white-space:nowrap}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"][data-v="atende"],.seg button[aria-pressed="true"][data-d="participar"]{background:var(--green-bg);color:var(--green)}
+.seg button[aria-pressed="true"][data-v="ajuste"],.seg button[aria-pressed="true"][data-d="condicoes"]{background:var(--amber-bg);color:var(--amber)}
+.seg button[aria-pressed="true"][data-v="nao"],.seg button[aria-pressed="true"][data-d="nao"]{background:var(--red-bg);color:var(--red-ink)}
+.seg button[aria-pressed="true"][data-v="verificar"]{background:var(--surface-3);color:var(--ink)}
+.note{grid-column:1/-1;width:100%;border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:13px;background:var(--surface-2)}
+.save-state{font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.save-state::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
+.save-state.local::before{background:var(--amber)} .save-state.busy::before{background:var(--blue)} .save-state.err::before{background:var(--red)}
+
+/* ---------- simulador ---------- */
+.sim{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:18px;align-items:start}
+.form{display:grid;gap:10px}
+.field{display:grid;grid-template-columns:minmax(0,1fr) 116px;gap:4px 12px;align-items:center;padding:10px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
+.field label{font-size:13.5px;font-weight:600}
+.field small{grid-column:1/2;font-size:12px;color:var(--muted)}
+.field .inp{grid-row:1/3;grid-column:2;display:flex;align-items:center;gap:4px;background:var(--surface-2);border:1px solid var(--line-2);border-radius:9px;padding:0 8px}
+.field input{width:100%;border:0;background:transparent;padding:8px 0;text-align:right;font-variant-numeric:tabular-nums;font-weight:700;outline:none}
+.field .u{font-size:12px;color:var(--muted)}
+.field.big{grid-template-columns:minmax(0,1fr) 180px}
+.out{border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);padding:20px;display:grid;gap:16px}
+.out-main{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px}
+.out-main .tile{background:var(--surface-2)}
+.zone{display:grid;gap:8px}
+.zone-track{position:relative;height:30px;border-radius:9px;background:var(--surface-3)}
+.zone-seg{position:absolute;top:0;bottom:0}
+.zone-mark{position:absolute;top:-6px;bottom:-6px;width:3px;border-radius:3px;transform:translateX(-1.5px)}
+.zone-scale{position:relative;height:34px;font-size:11.5px;color:var(--muted)}
+.zone-scale span{position:absolute;transform:translateX(-50%);white-space:nowrap;text-align:center;line-height:1.25}
+.zone-scale span.end{transform:translateX(-100%);text-align:right}
+.zone-scale span.start{transform:none;text-align:left}
+.zone-key{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.zone-key i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.alert{border-radius:12px;padding:12px 14px;font-size:14px;display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start;border:1px solid var(--line)}
+.alert svg{width:20px;height:20px}
+.alert.ok{background:var(--green-bg);color:var(--green)} .alert.warn{background:var(--amber-bg);color:var(--amber)} .alert.bad{background:var(--red-bg);color:var(--red-ink)}
+.alert p{color:var(--ink)}
+.example-tag{font-size:11.5px;font-weight:700;color:var(--amber);background:var(--amber-bg);padding:3px 9px;border-radius:99px}
+
+/* ---------- riscos ---------- */
+.timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
+.tl-step{display:grid;gap:6px;padding:0 8px;position:relative;text-align:center;justify-items:center}
+.tl-step::before{content:"";position:absolute;top:15px;left:0;right:0;height:2px;background:var(--line-2);z-index:0}
+.tl-step:first-child::before{left:50%}.tl-step:last-child::before{right:50%}
+.tl-dot{width:32px;height:32px;border-radius:50%;background:var(--surface-3);color:var(--strong);display:grid;place-items:center;font-weight:800;font-size:13px;position:relative;z-index:1;border:3px solid var(--bg)}
+.tl-step b{font-size:13.5px}
+.tl-step span{font-size:12.5px;color:var(--muted)}
+.imr{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px}
+.formula{font-family:var(--font-mono);font-size:13px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;overflow-x:auto}
+
+/* ---------- kit ---------- */
+.kit-groups{display:grid;gap:16px}
+.kit-g{border:1px solid var(--line);border-radius:var(--r-md);padding:16px 18px;display:grid;gap:12px;background:var(--surface)}
+.kit-g-h{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.kit-g-h h4{font-size:16px;font-weight:600}
+.prog{height:6px;border-radius:99px;background:var(--surface-3);overflow:hidden;min-width:120px;flex:1;max-width:240px}
+.prog i{display:block;height:100%;background:var(--green);border-radius:99px;transition:width .2s}
+.check{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:10px;align-items:start;padding:8px 4px;border-top:1px solid var(--line)}
+.check:first-of-type{border-top:0}
+.check input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--green)}
+.check label{font-size:14px;cursor:pointer}
+.check label span{display:block;font-size:12.5px;color:var(--muted)}
+.check.done label{color:var(--dim);text-decoration:line-through}
+
+/* ---------- navegação entre páginas ---------- */
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:18px;margin-top:24px}
+.pager a{display:grid;gap:2px;text-decoration:none;padding:10px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--line);min-width:0;max-width:48%}
+.pager a:hover{border-color:var(--line-2)}
+.pager a span{font-size:12px;color:var(--muted)}
+.pager a b{font-size:14px}
+.pager .next-btn{margin-left:auto}
+
+/* ---------- blocos recolhíveis ---------- */
+details.fold{border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);min-width:0}
+details.fold>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:40px minmax(0,1fr) auto auto;gap:14px;align-items:center;padding:14px 16px;border-radius:var(--r-md);transition:background .15s}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary:hover{background:var(--surface-2)}
+details.fold[open]>summary{border-bottom:1px solid var(--line);border-radius:var(--r-md) var(--r-md) 0 0}
+.fold-ico{width:40px;height:40px;border-radius:12px;background:var(--surface-3);color:var(--strong);display:grid;place-items:center}
+.fold-ico svg{width:20px;height:20px}
+.fold-txt{display:grid;gap:2px;min-width:0}
+.fold-txt b{font-size:15.5px;font-weight:600}
+.fold-txt>span{font-size:13px;color:var(--muted)}
+.fold-meta{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.fold-meta:empty{display:none}
+.fold-more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap;padding:6px 12px;border-radius:99px;border:1px solid var(--line-2)}
+.fold-more .chev{width:16px;height:16px;transition:transform .2s}
+details.fold[open] .fold-more .chev{transform:rotate(180deg)}
+details.fold[open] .m-open,details.fold:not([open]) .m-close{display:none}
+.fold-body{padding:16px;display:grid;gap:12px;min-width:0}
+details.fold[open] .fold-body{animation:fade .2s ease}
+@media (prefers-reduced-motion:reduce){details.fold[open] .fold-body{animation:none}.fold-more .chev{transition:none}}
+
+/* ---------- parecer ---------- */
+a.card.ev{text-decoration:none;color:var(--ink);transition:border-color .15s}
+a.card.ev:hover{border-color:var(--line-2)}
+.steps{margin:0;padding:0;list-style:none;display:grid;gap:8px;counter-reset:st}
+.steps li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:12px;font-size:14px;background:var(--surface)}
+.steps li::before{counter-increment:st;content:counter(st);width:28px;height:28px;border-radius:50%;background:var(--surface-3);color:var(--gold);display:grid;place-items:center;font-weight:800;font-size:13px}
+.par-dec .card{gap:12px}
+.par-dec textarea{width:100%;min-height:90px;border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;background:var(--surface-2);resize:vertical;font-size:14px}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1000px){
+  .kpis,.deadlines{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .home-hero,.sec-head{grid-template-columns:minmax(0,1fr)}
+  .hero-art{display:none}
+  .sim{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){
+  .shell{padding-block:14px 22px;gap:14px}
+  .cards{grid-template-columns:minmax(0,1fr)}
+  .tcard{grid-template-columns:96px minmax(0,1fr);grid-template-rows:auto}
+  .tcard .art{height:auto;border-bottom:0;border-right:1px solid var(--line)}
+  .tcard .art svg{height:56px}
+  .tcard .done{top:6px;right:6px;font-size:10.5px;padding:1px 6px}
+  .tiles.six{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .versus,.req,.verdict-bar,.reco,.gs-card{grid-template-columns:minmax(0,1fr)}
+  .versus .vs{padding:2px 0}
+  .reco-prog{justify-items:start}
+  .gs-ico{display:none}
+  .field,.field.big{grid-template-columns:minmax(0,1fr) 110px}
+  .timeline{grid-template-columns:minmax(0,1fr);gap:10px}
+  .tl-step{grid-template-columns:32px minmax(0,1fr);text-align:left;justify-items:start;column-gap:12px}
+  .tl-step::before{display:none}
+  .tl-dot{grid-row:1/3}
+  .pager a{max-width:100%}
+  details.fold>summary{grid-template-columns:minmax(0,1fr);gap:8px;padding:14px}
+  .fold-ico{display:none}
+  .fold-meta{justify-content:flex-start}
+  .fold-more{justify-self:start}
+}
+@media (max-width:600px){.kpi{padding:12px 14px}.kpi .v{font-size:24px}}
+@media (max-width:330px){.kpis{grid-template-columns:minmax(0,1fr)}}
+
+/* ===== acabamento: estética aurora (cartão de destaque em degradê, carvão arredondado, números pastel) ===== */
+:root{
+  --bg:#0D0D0F; --surface:#18181B; --surface-2:#1F1F23; --surface-3:#29292E; --line:rgba(255,255,255,.06); --line-2:rgba(255,255,255,.11);
+  --ink:#F4F4F1; --muted:#A4A4AA; --dim:#74747B; --ill:#9C9CA3;
+  --gold:#E3E8AE; --gold-bg:rgba(227,232,174,.12); --blue:#C3C8F3; --blue-bg:rgba(195,200,243,.12);
+  --green:#B4E2CD; --green-bg:rgba(180,226,205,.12); --red:#F4A39C; --red-bg:rgba(244,163,156,.13); --red-ink:#F7B9B3;
+  --amber:#EBD08A; --amber-bg:rgba(235,208,138,.13); --steel:#DADADE; --ice:#D4EBEA; --on-light:#141416;
+  --aurora:linear-gradient(118deg,#E3E8B2 0%,#D6DCC8 34%,#C9CCE8 68%,#D5E7E2 100%);
+  --aurora-bar:linear-gradient(90deg,#E3E8B2,#C9CCE8);
+  --font-num:"Sora", "Inter", "Segoe UI", system-ui, sans-serif;
+  --r-lg:28px; --r-md:22px; --r-sm:14px;
+  --shadow:0 18px 40px -20px rgba(0,0,0,.65);
+}
+body{background:radial-gradient(1100px 520px at 88% -8%,rgba(227,232,178,.07),transparent 62%),radial-gradient(900px 480px at -8% 4%,rgba(201,204,232,.06),transparent 60%),var(--bg);background-attachment:fixed}
+.brand-mark{border-radius:50%}
+.chip{border-radius:99px;background:var(--surface);border-color:var(--line-2)}
+.crumbbar{border-top:0;padding-top:0}
+.crumbbar a.back{border-radius:99px;background:var(--surface-2);border-color:var(--line)}
+.foot{border-top:0}
+
+/* topo da tela inicial: cartão aurora com texto escuro */
+.home-hero{background:var(--aurora);color:var(--on-light);border-radius:var(--r-lg);padding:30px 32px;box-shadow:var(--shadow);grid-template-columns:minmax(0,1fr) 300px;align-items:end}
+.home-hero .eyebrow{color:#45472F!important}
+.home-hero h1{font-weight:300;color:var(--on-light);letter-spacing:-.035em}
+.home-hero h1 b{font-weight:700}
+.home-hero .lead{color:#3B3C42}
+.home-hero .lead b{color:var(--on-light)}
+.home-hero .hero-art{color:#34353B;align-self:center}
+.home-hero .acc{stroke:var(--on-light)}
+.home-hero .reco{margin-top:20px;background:#141416;border:0;box-shadow:none;color:var(--ink);border-radius:var(--r-md)}
+.home-hero .reco:hover{background:#1A1A1D}
+
+/* números */
+.kpi{border-radius:var(--r-md);background:var(--surface);border-color:var(--line);box-shadow:var(--shadow);padding:18px 20px}
+.kpi .v,.tcard .m,.hn .v,.tile .v,.reco b,.dl .d b,.sec-head h2,.home-hero h1,.org h1,.verdict-bar h3{font-family:var(--font-num)}
+.kpi .v{font-weight:600}
+
+/* cartões de assunto */
+.tcard{border-radius:var(--r-lg);background:var(--surface);border-color:var(--line);box-shadow:var(--shadow);position:relative}
+.tcard .art{background:transparent;border-bottom:0;height:92px;padding:18px 20px 0;place-items:center start}
+.tcard .art svg{height:66px;max-width:none}
+.tcard .body{padding:8px 20px 20px;padding-right:66px}
+.tcard .done{background:var(--green-bg);color:var(--green);top:16px;right:16px}
+.tcard .go{position:absolute;right:16px;bottom:16px;width:40px;height:40px;border-radius:50%;background:var(--ice);color:var(--on-light);display:grid;place-items:center;font-size:0;margin:0;transition:background .15s}
+.tcard .go::after{content:"→";font-size:17px;font-weight:600;line-height:1}
+.tcard:hover .go{background:#FFFFFF}
+.tcard:hover{border-color:var(--line-2)}
+
+/* topo das páginas: o primeiro número vira cartão aurora */
+.sec-head{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px 28px;box-shadow:var(--shadow)}
+.hn{background:var(--surface-2);border:0;border-radius:var(--r-md);padding:14px 16px}
+.hero-nums .hn:first-child{background:var(--aurora)}
+.hero-nums .hn:first-child .v{color:var(--on-light)!important}
+.hero-nums .hn:first-child .l{color:#3B3C42}
+
+/* superfícies, botões e controles */
+.card,.tldr,details.fold,.tbl-wrap,.kit-g,.out,.cover-main,.dl,.verdict-bar,.gs-card,.req,.field,.steps li,.tile{border-radius:var(--r-md);border-color:var(--line)}
+.card,.tldr,details.fold,.tbl-wrap,.kit-g,.out,.cover-main,.dl,.verdict-bar,.gs-card{box-shadow:var(--shadow)}
+details.fold>summary{border-radius:var(--r-md)}
+details.fold[open]>summary{border-radius:var(--r-md) var(--r-md) 0 0}
+.fold-ico,.gs-ico{border-radius:50%;background:var(--ice);color:var(--on-light)}
+.fold-more{border:0;background:var(--surface-3);color:var(--ink)}
+.btn{background:var(--ice);color:var(--on-light);border-radius:99px;padding:11px 20px}
+.btn:hover{background:#FFFFFF}
+.btn.ghost{background:var(--surface-3);color:var(--ink);border:1px solid var(--line-2)}
+.seg,.seg button,.fbtn,.pill,.example-tag{border-radius:99px}
+.fbtn[aria-pressed="true"]{background:var(--ice);border-color:var(--ice);color:var(--on-light)}
+.reco-prog .bar i,.mini-prog i,.prog i,.bar i{background:var(--aurora-bar)}
+.zone-track{border-radius:99px;overflow:hidden}
+.tl-dot,.steps li::before{background:var(--ice);color:var(--on-light)}
+.cat-code{border-radius:50%}
+.fact,.objeto{border-radius:var(--r-sm);border-color:var(--line)}
+.org-logo{border-radius:50%}
+.pager a{border-radius:var(--r-md);border-color:var(--line)}
+th{background:var(--surface-2)}
+@media (max-width:1000px){.home-hero{grid-template-columns:minmax(0,1fr);padding:24px 22px}}
+@media (max-width:600px){
+  .tcard .art{border-right:0;padding:12px 0 12px 14px;place-items:center}
+  .tcard .art svg{height:50px}
+  .tcard .body{padding:12px 56px 14px 12px}
+  .tcard .go{width:34px;height:34px;right:12px;bottom:auto;top:50%;transform:translateY(-50%)}
+  .sec-head{padding:20px 18px}
+}
+
+/* ===== tela inicial: respiro, títulos de seção e destaque ao passar o mouse ===== */
+#sec-painel{gap:44px}
+#sec-painel .block{gap:18px}
+.block-h.home{margin-top:0;align-items:end}
+.block-h.home h3{font-family:var(--font-num);font-size:clamp(26px,3vw,34px);font-weight:300;letter-spacing:-.03em;line-height:1.15}
+.block-h.home h3 b{font-weight:700}
+.cards{gap:18px}
+.kpis,.deadlines{gap:14px}
+.tcard::before{content:"";position:absolute;inset:0;background:var(--aurora);opacity:0;transition:opacity .28s ease;pointer-events:none}
+.tcard .art,.tcard .body{position:relative;z-index:1}
+.tcard .art,.tcard .et,.tcard h3,.tcard .m,.tcard .s{transition:color .2s ease}
+.tcard .acc{transition:stroke .2s ease}
+.tcard:hover,.tcard:focus-visible{border-color:transparent;transform:translateY(-3px);box-shadow:0 26px 50px -22px rgba(201,204,232,.35)}
+.tcard:hover::before,.tcard:focus-visible::before{opacity:1}
+.tcard:hover .art,.tcard:focus-visible .art{color:#3A3B40}
+.tcard:hover .acc,.tcard:focus-visible .acc{stroke:var(--on-light)}
+.tcard:hover .et,.tcard:focus-visible .et{color:#5A5B52}
+.tcard:hover h3,.tcard:focus-visible h3{color:#3A3B40}
+.tcard:hover .m,.tcard:focus-visible .m{color:var(--on-light)}
+.tcard:hover .s,.tcard:focus-visible .s{color:#3A3B40!important}
+.tcard:hover .go,.tcard:focus-visible .go{background:var(--on-light);color:var(--ice)}
+.tcard:hover .done,.tcard:focus-visible .done{background:rgba(20,20,22,.1);color:#1E5A40}
+.kpi{transition:background .2s, transform .2s, border-color .2s}
+.kpi:hover{background:var(--surface-2);border-color:var(--line-2);transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.tcard::before,.kpi{transition:none}.tcard:hover,.kpi:hover{transform:none}}
+@media (max-width:600px){#sec-painel{gap:30px}}
+
+/* ===== animação de entrada das ilustrações (só uma vez; visível por padrão) ===== */
+.ill-in :is(path,rect,circle,ellipse):not(.fade){animation:ill-draw 1.25s cubic-bezier(.65,.05,.36,1) both;animation-delay:calc(var(--i,0) * 55ms)}
+.ill-in .acc:not(.fade){animation-duration:.9s;animation-delay:calc(var(--i,0) * 55ms + .35s)}
+.ill-in .fade{animation:ill-fade .7s ease both;animation-delay:calc(var(--i,0) * 55ms + .25s)}
+.ill-in .drive-l{animation:drive-l 1.7s cubic-bezier(.16,.84,.3,1) .1s both}
+.ill-in .drive-r{animation:drive-r 1.7s cubic-bezier(.16,.84,.3,1) .3s both}
+@keyframes ill-draw{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
+@keyframes ill-fade{from{opacity:0}to{opacity:1}}
+@keyframes drive-l{from{transform:translateX(-70px);opacity:0}to{transform:none;opacity:1}}
+@keyframes drive-r{from{transform:translateX(70px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.ill-in *{animation:none!important}}
+
+/* ===== documentos para baixar ===== */
+.docs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.doc-card{display:grid;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto;gap:6px 14px;align-items:start;padding:16px 18px;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);text-decoration:none;transition:border-color .15s,transform .15s}
+.doc-card:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.doc-ico{width:44px;height:44px;border-radius:50%;background:var(--ice);color:var(--on-light);display:grid;place-items:center;font-family:var(--font-num);font-weight:700;font-size:17px;grid-row:1/3}
+.doc-txt{display:grid;gap:3px;min-width:0}
+.doc-txt b{font-size:15px}
+.doc-txt span{font-size:13px;color:var(--muted)}
+.doc-dl{justify-self:start;font-size:12.5px;font-weight:700;color:var(--on-light);background:var(--gold);padding:5px 12px;border-radius:99px;margin-top:4px}
+@media (max-width:1000px){.docs-grid{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.doc-card,.doc-card:hover{transition:none;transform:none}}
+
+/* ===== cartão de conflitos: borda vermelha iridescente girando ===== */
+@property --ring{syntax:'<angle>';inherits:false;initial-value:0deg}
+.tcard.alert-ring{border-color:rgba(255,92,97,.18);box-shadow:var(--shadow),0 0 28px -10px rgba(255,92,97,.45)}
+.tcard.alert-ring::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.6px;pointer-events:none;z-index:2;opacity:.9;
+  background:conic-gradient(from var(--ring),rgba(255,92,97,0) 0deg,rgba(255,92,97,.95) 50deg,#FF9F8E 95deg,#E56FB4 140deg,#FF5C61 185deg,rgba(255,92,97,0) 235deg,rgba(255,92,97,0) 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+  animation:ring-spin 4.8s linear infinite}
+@keyframes ring-spin{to{--ring:360deg}}
+@media (prefers-reduced-motion:reduce){.tcard.alert-ring::after{animation:none}}
+
+/* ===== sistema: voltar à lista de editais ===== */
+.sys-back{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:99px;border:1px solid var(--line-2);background:var(--surface)}
+.sys-back:hover{color:var(--ink);border-color:var(--ink)}
+.top-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap;min-width:0}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="top">
+    <div class="top-left"><a class="sys-back" href="/">← Editais</a><a class="brand" href="#painel"><span class="brand-mark"><img src="/assets/logo-lic-7004688324-transpetro.png" alt="Logo do órgão"></span><span class="brand-txt"><b>Licitação Transpetro nº 7004688324</b><span>Transpetro · Locação de 55 veículos sem motorista em 2 lotes (NNESE e SSPCO)</span></span></a></div>
+    <div class="top-chips" id="topChips"></div>
+  </header>
+  <nav class="crumbbar" id="crumbbar" aria-label="Localização" hidden></nav>
+  <main class="content" id="content">
+
+<!-- ======================= PAINEL (TELA INICIAL) ======================= -->
+<section class="sec" id="sec-painel" aria-labelledby="h-painel">
+  <div class="home-hero">
+    <div>
+      <p class="eyebrow" style="color:var(--gold)">Painel de decisão</p>
+      <h1 id="h-painel">Vale a pena disputar<br><b>esta licitação?</b></h1>
+      <p class="lead">Aluguel de carros e picapes sem motorista, por 36 meses, para os projetos de engenharia da Transpetro: Lote 1 (RJ, MA, PE e PA, 13 veículos) e Lote 2 (SP, PR, SC e RS, 42 veículos), mais o lote virtual com os dois. Disputa fechada no Petronect, com orçamento sigiloso. <b>Abertura das propostas em 01/12/2026, às 12h.</b></p>
+      <a class="reco" id="reco" href="#parecer"></a>
+    </div>
+    <figure class="hero-art" id="homeArt"></figure>
+  </div>
+  <div class="kpis" id="kpis"></div>
+  <div class="block">
+    <div class="block-h home"><h3>Prazos até a <b>sessão</b></h3><span class="hint">Contagem a partir de hoje (20/11, feriado nacional). Dúvidas e impugnação ainda abertas até 24/11.</span></div>
+    <div class="deadlines" id="deadlines"></div>
+  </div>
+  <div class="block">
+    <div class="block-h home"><h3>Assuntos da <b>análise</b></h3><span class="hint">Siga na ordem das etapas ou abra direto o que precisar.</span></div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<!-- ======================= 1. FICHA DO EDITAL ======================= -->
+<section class="sec" id="sec-ficha" data-sec="ficha" hidden>
+  <header class="sec-head"></header>
+  <div class="cover">
+    <div class="cover-main">
+      <div class="org">
+        <div class="org-logo"><img src="/assets/logo-lic-7004688324-transpetro.png" alt="Logotipo da Transpetro"></div>
+        <div>
+          <p>Petrobras Transporte S.A. – Transpetro · Gerência de Suprimentos · Rio de Janeiro (RJ)</p>
+          <h1 id="h-visao">Licitação nº 7004688324</h1>
+          <p>Lei 13.303/2016 e Regulamento de Licitações e Contratos da Transpetro · Portal Petronect · ET-4000.00-9300-900-PTD-002</p>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="k">Órgão contratante</span><span class="v">Transpetro</span><span class="s">Petrobras Transporte S.A., Av. Presidente Vargas, 328, Rio de Janeiro <span class="src">Edital p. 3, 10.1.1</span></span></div>
+        <div class="fact"><span class="k">Modalidade</span><span class="v">Licitação de estatal</span><span class="s">Lei 13.303/2016 · não é pregão da Lei 14.133 <span class="src">Edital p. 3</span></span></div>
+        <div class="fact"><span class="k">Abertura das propostas</span><span class="v num">01/12/2026 · 12h</span><span class="s">"Data Fim"; envio aberto desde 09/11 às 12h · fuso do usuário no portal <span class="src">Edital p. 1–2</span></span></div>
+        <div class="fact"><span class="k">Valor total</span><span class="v num">Sigiloso</span><span class="s">estimativa nossa: R$ 10.962.000,00 em 36 meses (ver Planilha) <span class="src">Edital 5.1 e, 5.2</span></span></div>
+        <div class="fact"><span class="k">Lotes</span><span class="v">2 lotes + lote virtual</span><span class="s">Lote 1 NNESE · Lote 2 SSPCO · virtual = 1 + 2 <span class="src">Edital p. 1</span></span></div>
+        <div class="fact"><span class="k">Critério de julgamento</span><span class="v">Menor preço por lote</span><span class="s">empreitada por preço unitário <span class="src">Edital p. 1</span></span></div>
+        <div class="fact"><span class="k">Modo de disputa</span><span class="v">Fechado</span><span class="s">proposta única, sem lances; depois há negociação <span class="src">Edital p. 1, 5.4</span></span></div>
+        <div class="fact"><span class="k">Tratamento favorecido</span><span class="v">Sim (ME/EPP)</span><span class="s">desempate se até 10% acima da melhor · ampla participação <span class="src">Edital 3.2.1.3, 4.2</span></span></div>
+        <div class="fact no"><span class="k">Margem de preferência</span><span class="v">Não</span><span class="s">não prevista no Edital <span class="src">Edital (todo)</span></span></div>
+        <div class="fact"><span class="k">Vigência do contrato</span><span class="v">36 meses</span><span class="s">execução de 1.080 dias · vigência de 1.170 dias · por lote <span class="src">Minuta L1 4.1 · DFP L2</span></span></div>
+        <div class="fact"><span class="k">Plataforma</span><span class="v">Petronect</span><span class="s">www.petronect.com.br · inscrição na Oportunidade <span class="src">Edital p. 2–3</span></span></div>
+        <div class="fact"><span class="k">Dúvidas e impugnação</span><span class="v num">Até 24/11/2026</span><span class="s">dúvidas até 15h na Sala de Colaboração · impugnação 5 dias úteis antes da abertura <span class="src">Edital p. 2, 10.1</span></span></div>
+      </div>
+      <div class="objeto">
+        <span class="k">Objeto completo da contratação</span>
+        <p>Serviços de locação de veículos para apoio à implantação de projetos NNESE e SSPCO, conforme as especificações deste Edital e de seus adendos. Lote 1: Serviços de locação de veículos para apoio à implantação de projetos NNESE. Lote 2: Serviços de locação de veículos para apoio à implantação de projetos SSPCO.</p>
+        <p class="hint">Fonte: Edital p. 1 e 1.1. Os veículos são <b>sem motorista</b>: quem dirige são empregados da Transpetro ou pessoas autorizadas (ET 4.1), e o combustível fica com a Transpetro (ET 7.1). A empresa pode propor para um lote, para os dois e também para o <b>lote virtual</b> (1 + 2). A Transpetro compara a soma das melhores propostas de cada lote com a melhor do lote virtual; se um lote ficar sem proposta válida, o lote virtual não pode ser contratado. Cada lote vira um contrato próprio (Edital p. 1).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 2. CONDIÇÕES GERAIS ======================= -->
+<section class="sec" id="sec-condicoes" data-sec="cond" hidden>
+  <header class="sec-head"></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Contrato de <b>36 meses de execução</b> por lote, pago por <b>veículo efetivamente mobilizado</b> no mês. A Transpetro não se obriga a usar todo o valor estimado <span class="src">Minuta 4.1.1, 5.1.1 · ET 4.3</span>.</span></li>
+    <li><span><b>Sem garantia de proposta e sem garantia contratual</b>. A Transpetro só retém <b>1% de cada medição</b> para verbas trabalhistas, devolvido no fim <span class="src">Minuta 20.1–20.3</span>.</span></li>
+    <li><span>Pagamento no <b>30º dia após o fim do período de medição</b> (26 a 25). O orçamento é sigiloso: os R$ 10,96 mi abaixo são <b>estimativa nossa</b>.</span></li>
+  </ul></div>
+
+  <div class="tiles six">
+    <div class="tile t4"><span class="k">Execução</span><span class="v">36 meses</span><span class="s">1.080 dias da Autorização de Serviço · Minuta 4.1.1</span></div>
+    <div class="tile t1"><span class="k">Garantia contratual</span><span class="v">Não exigida</span><span class="s">retenção de 1% por medição · Minuta 20.1</span></div>
+    <div class="tile t2"><span class="k">Subcontratação</span><span class="v">Só eventuais</span><span class="s">e temporários no Lote 2 · ET 6</span></div>
+    <div class="tile t3"><span class="k">Visita técnica</span><span class="v">Opcional</span><span class="s">pedido justificado até 18/11 · Edital 2.4</span></div>
+    <div class="tile t5"><span class="k">Reajuste</span><span class="v">Anual</span><span class="s">fórmula com 94% em equipamentos · Minuta 7.1</span></div>
+    <div class="tile t6"><span class="k">Pagamento</span><span class="v">30 dias</span><span class="s">após o fim da medição · Minuta 6.1</span></div>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Para onde vai o dinheiro (estimativa)</h3><span class="hint">Soma dos 2 lotes em 36 meses, com preços de mercado adotados por nós e a divisão de custo do simulador.</span></div>
+    <div class="stack" id="stack" role="img" aria-label="Composição do valor estimado"></div>
+    <ul class="legend" id="legend"></ul>
+  </div>
+
+  <div class="block" data-fold="Lote 1 NNESE ≈ R$ 2,93 mi · Lote 2 SSPCO ≈ R$ 8,03 mi · lote virtual ≈ R$ 10,96 mi" data-fold-icon="plan">
+    <div class="block-h"><h3>Os 2 lotes e o lote virtual</h3><span class="pill att">Valores estimados por nós</span></div>
+    <div class="tbl-wrap"><table class="pl-table tbl-mid" id="loteTable"><thead><tr><th>Parcela</th><th class="r">Lote 1 · NNESE</th><th class="r">Lote 2 · SSPCO</th><th class="r">Lote virtual (1 + 2)</th></tr></thead><tbody></tbody></table></div>
+    <p class="hint">Quantidades da ET de cada lote (Tabelas I e III). Preço por veículo e divisão por parcela: premissas nossas, explicadas na seção Planilha. Não inclui os veículos eventuais, cuja quantidade estaria na PPU (Anexo 2), ausente.</p>
+  </div>
+
+  <div class="block" data-fold="Proposta: não exigida · contrato: não exigida · retenção de 1% de cada medição" data-fold-icon="risco">
+    <div class="block-h"><h3>Garantias</h3><span class="src">Edital (todo) · Minuta 20</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Garantia</th><th>Regra</th><th>Fonte</th></tr></thead><tbody>
+      <tr><td><b>Garantia de proposta</b></td><td>Não exigida. A sanção por desistir após a abertura é processo administrativo, sem garantia a executar</td><td><span class="src">Edital 3.2.7.1</span></td></tr>
+      <tr><td><b>Garantia de execução do contrato</b></td><td>Não exigida na minuta do Lote 1. A do Lote 2 não veio nos arquivos (ver Conflitos)</td><td><span class="src">Minuta L1 (toda)</span></td></tr>
+      <tr><td><b>Retenção para verbas trabalhistas</b></td><td>1% do valor de cada medição, só sobre itens de serviço; vale também para faturas de reajuste</td><td><span class="src">Minuta 20.1, 20.1.2</span></td></tr>
+      <tr><td><b>Devolução</b></td><td>Até 30 dias após entregar os comprovantes das verbas rescisórias; reajustada até o fim dos serviços, sem juros depois disso</td><td><span class="src">Minuta 20.2–20.3.1</span></td></tr>
+      <tr><td><b>Garantia corporativa (PCG)</b></td><td>Opcional, só para quem não atinge os índices contábeis: empresa do mesmo grupo assume as obrigações de pagamento</td><td><span class="src">Adendo D, Nota 3</span></td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="block" data-fold="Mensalidade por veículo mobilizado; pagamento no 30º dia; reajuste anual; multas até 30%" data-fold-icon="cond">
+    <div class="block-h"><h3>Regras de remuneração, pagamento e multas</h3><span class="hint">Valem para os 2 lotes, pela minuta do Lote 1.</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Regra</th><th>O que diz</th><th>Fonte</th></tr></thead><tbody>
+      <tr><td><b>Unidade de medição</b></td><td>1 veículo por mês efetivamente mobilizado. Fração só no mês de mobilização e de desmobilização; conta a partir do dia seguinte à entrega (D+1)</td><td><span class="src">ET 4.3, 7.1</span></td></tr>
+      <tr><td><b>Km rodado</b></td><td>Não muda o valor: "a medição mensal independe da quilometragem rodada"</td><td><span class="src">ET 4.1.4</span></td></tr>
+      <tr><td><b>Valor do contrato</b></td><td>Estimado; não obriga a Transpetro a pedir volume mínimo</td><td><span class="src">Minuta 5.1–5.1.1.1</span></td></tr>
+      <tr><td><b>Período de medição</b></td><td>Do dia 26 ao dia 25; Folha de Registro de Serviços no 1º dia útil seguinte</td><td><span class="src">Minuta 15.1–15.1.2</span></td></tr>
+      <tr><td><b>Pagamento</b></td><td>No 30º dia contado do fim do período de medição, com nota fiscal até o 4º dia útil do mês; atraso na nota adia o pagamento</td><td><span class="src">Minuta 6.1–6.1.1</span></td></tr>
+      <tr><td><b>Reajuste</b></td><td>Anual, a partir do mês da proposta: 6% mão de obra e 94% equipamentos. A minuta não diz quais índices usar (ver Conflitos)</td><td><span class="src">Minuta 7.1</span></td></tr>
+      <tr><td><b>Reembolsos</b></td><td>Pedágios (via tag), participação da Transpetro em sinistros e despesas de locomoção e hospedagem aprovadas antes</td><td><span class="src">ET 5, 7.10 · Minuta 25</span></td></tr>
+      <tr><td><b>Sinistros com condutor da Transpetro</b></td><td>Acidente: Transpetro paga até 10% do valor FIPE. Perda total ou roubo: 7% da FIPE. Mau uso comprovado: reembolso integral. Desgaste: nada</td><td><span class="src">ET 4.1.5.4</span></td></tr>
+      <tr><td><b>Multas de atraso</b></td><td>0,1% por dia (exigência ou pedido da fiscalização), 0,018% por dia (prazo contratual), 0,009% por dia (prazos parciais), sobre o valor do contrato; teto de 30%</td><td><span class="src">Minuta 8.1.1–8.2</span></td></tr>
+      <tr><td><b>Multas compensatórias</b></td><td>20% por descumprimento total; 10% por cumprimento parcial ou defeituoso</td><td><span class="src">Minuta 8.3.1–8.3.2</span></td></tr>
+      <tr><td><b>Limite de responsabilidade</b></td><td>Até 10% do valor contratual reajustado ou US$ 10 milhões, só danos diretos</td><td><span class="src">Minuta 17.1–17.2.1</span></td></tr>
+      <tr><td><b>Tributos</b></td><td>O Edital diz que o serviço não está na lista do ISS (LC 116/03). Simples Nacional é permitido, sem revisão de preço por desenquadramento</td><td><span class="src">Edital 3.1.2.1.2, 3.1.2.1.4</span></td></tr>
+      <tr><td><b>Validade da proposta</b></td><td>No mínimo 120 dias da "Data Fim"</td><td><span class="src">Edital 3.1.3</span></td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<!-- ======================= 3. ENTREGA E OPERAÇÃO ======================= -->
+<section class="sec" id="sec-operacao" data-sec="oper" hidden>
+  <header class="sec-head"></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Lote 1: veículos <b>0 km em até 60 dias</b> da solicitação de mobilização; até 120 dias da Autorização de Serviço vale veículo temporário com até 30 mil km <span class="src">ET L1 4.1</span>.</span></li>
+    <li><span>Lote 2: veículos com <b>até 30 mil km e até 1 ano</b>; a Transpetro prevê mobilizar <b>75% da frota até o 12º mês</b>. O prazo de entrega após o pedido não está escrito <span class="src">ET L2 4.1, 4.1.2</span>.</span></li>
+    <li><span><b>Não exige escritório local</b>. Exige preposto disponível 24 h, assistência 24 h por 0800, veículo substituto e sistema de gestão com rastreador, câmeras e boletim eletrônico <span class="src">ET 4.1.5.5–7.9</span>.</span></li>
+  </ul></div>
+
+  <div class="grid-2">
+    <div class="card"><h4><span data-icon="kit"></span>Prazos de entrega</h4><ul>
+      <li>Mobilização conforme a Autorização de Serviço emitida no início; novas mobilizações dentro do total da PPU <span class="src">ET 4.1.2</span></li>
+      <li>Lote 1: veículos definitivos em até 60 dias após a solicitação <span class="src">ET L1 4.1</span></li>
+      <li>Veículo eventual (mínimo de 30 dias de aluguel): Lote 1 em "15 (dez)" dias corridos; Lote 2 em 10 dias corridos <span class="src">ET 4.2</span></li>
+      <li>Entrega agendada, com termo de vistoria e tanque cheio; a medição conta a partir de D+1 <span class="src">ET 7.1</span></li>
+    </ul></div>
+    <div class="card"><h4><span data-icon="risco"></span>Quando o carro para</h4><ul>
+      <li>Parado por mais de 24 h (manutenção, roubo, acidente): substituto com a mesma especificação, levado à base do veículo, sem custo <span class="src">ET 4.1.5.5</span></li>
+      <li>Assistência 24 h, 7 dias, em todo o país, por telefone 0800 que aceite celular; guincho, pneu e chaveiro incluídos <span class="src">ET 7.4</span></li>
+      <li>Transporte imediato do condutor e passageiros até o destino, por conta da empresa (pode ser táxi) <span class="src">ET 7.4</span></li>
+      <li>Manutenção agendada com 7 dias de aviso, em concessionária ou oficina autorizada, com termo de vistoria <span class="src">ET 4.1.5, 4.1.5.1</span></li>
+    </ul></div>
+    <div class="card"><h4><span data-icon="plan"></span>Controle e sistemas</h4><ul>
+      <li>Rastreador GPS com identificação do condutor: o carro não liga sem ela; relatórios on-line em Excel e PDF <span class="src">ET 4.1.5.6</span></li>
+      <li>Câmeras de cabine e da via, visão noturna, 7 dias de gravação, ligadas ao sistema elétrico <span class="src">ET 4.1.1.1</span></li>
+      <li>Ferramenta de gestão da frota e Boletim Diário do Veículo eletrônico (BDV-E) no celular, com BDV em papel como reserva <span class="src">ET 7.9</span></li>
+      <li>Se usar nuvem: dados no Brasil, backup e disponibilidade mínima de 99% <span class="src">Anexo 5 do Adendo A</span></li>
+    </ul></div>
+    <div class="card"><h4><span data-icon="decl"></span>Equipe e rotina</h4><ul>
+      <li>Preposto com conhecimento de frota e informática, disponível 24 h, sem dedicação exclusiva; custo da empresa <span class="src">ET 7.8</span></li>
+      <li>Sem motorista: condução por empregados da Transpetro ou autorizados, com CNH válida <span class="src">ET 4.1, 7.11</span></li>
+      <li>Gestão de multas de trânsito com relatório mensal; a Transpetro reembolsa as de seus condutores <span class="src">ET 7.5</span></li>
+      <li>Tags de pedágio em todos os veículos; inspeção de segurança pelo check-list do Anexo 1A <span class="src">ET 7.10 · Anexo 1A</span></li>
+    </ul></div>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Onde o serviço é prestado</h3><span class="src">ET 3 de cada lote</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Lote</th><th>Instalações da Transpetro (bases de entrega)</th><th>UF</th></tr></thead><tbody>
+      <tr><td><b>Lote 1 · NNESE</b></td><td>Sede (Av. Presidente Vargas, 328, Rio de Janeiro), Terminal de Angra dos Reis, Terminal de Campos Elíseos (Duque de Caxias), Terminal de Suape (Ipojuca), Terminal de São Luís (Itaqui) e Terminal de Belém</td><td>RJ, PE, MA, PA</td></tr>
+      <tr><td><b>Lote 2 · SSPCO</b></td><td>Terminais de São Caetano do Sul, São Sebastião, Guararema, Guarulhos, Barueri e Ribeirão Preto, REPLAN (Paulínia), REVAP (São José dos Campos), Paranaguá, Itajaí, Guaramirim e Almirante Soares Dutra (Osório); a Tabela I cita também Santos, sem endereço na lista</td><td>SP, PR, SC, RS</td></tr>
+    </tbody></table></div>
+    <p class="hint">Os veículos podem rodar em municípios próximos, faixas de dutos, estradas de acesso, áreas portuárias, refinarias e outras instalações do Sistema Petrobras nos estados das bases, inclusive em estrada de terra (ET 3, 4.1.3). Devolução no mesmo local da entrega (ET 7.7).</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card"><h4><span data-icon="risco"></span>Custos que ficam com a contratada</h4>
+      <p>Compra e posse da frota, manutenção preventiva e corretiva (sem peça recondicionada), pneus de primeira linha, ARLA, seguro com RC e APP, IPVA, licenciamento e emplacamento, rastreador, câmeras e chips, sistema de gestão, adesivos, assistência 24 h, substitutos, entrega e retirada, preposto <span class="src">ET 4.1.5–7.8</span></p>
+    </div>
+    <div class="card"><h4><span data-icon="ok"></span>O que fica com a Transpetro</h4>
+      <p>Combustível durante o contrato, pedágios (reembolso mensal), multas de trânsito de seus condutores (reembolso), parte dos sinistros com seus condutores (10% ou 7% da FIPE) e mau uso comprovado. Base física da empresa: não exigida <span class="src">ET 4.1.5.4, 7.1, 7.5, 7.10</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 4. VEÍCULOS ======================= -->
+<section class="sec" id="sec-veiculos" data-sec="oper" hidden>
+  <header class="sec-head"></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span><b>55 veículos fixos</b>: Lote 1 com 10 sedans e 3 picapes 4x4; Lote 2 com 11 sedans, 25 hatches e 6 picapes 4x4. Mais veículos eventuais, em quantidade que só a PPU (ausente) diria.</span></li>
+    <li><span>Sedan e hatch <b>flex de 80 cv com pacote completo de segurança</b> (controle de cruzeiro adaptativo, frenagem autônoma, visão 360°). Picape <b>diesel 4x4 de 170 cv</b>, cabine dupla e 1.000 kg de carga.</span></li>
+    <li><span>Uso pesado: a média histórica dá <b>cerca de 4.200 km por mês por carro</b> e 5.700 km por picape. A frota bate o limite de troca (150 mil e 200 mil km) perto do fim do contrato, ou antes no Lote 2.</span></li>
+  </ul></div>
+
+  <div class="block">
+    <div class="block-h"><h3>Quantidades por base</h3><span class="src">ET L1 e L2, Tabela I</span></div>
+    <div class="grid-2">
+      <div class="tbl-wrap"><table><thead><tr><th>Lote 1 · base</th><th class="r">Sedan</th><th class="r">Picape</th></tr></thead><tbody>
+        <tr><td>Sede/RJ, Campos Elíseos e Angra dos Reis</td><td class="r">4</td><td class="r">3</td></tr>
+        <tr><td>São Luís</td><td class="r">2</td><td class="r">0</td></tr>
+        <tr><td>Suape</td><td class="r">2</td><td class="r">0</td></tr>
+        <tr><td>Belém</td><td class="r">2</td><td class="r">0</td></tr>
+        <tr><td><b>Total</b></td><td class="r"><b>10</b></td><td class="r"><b>3</b></td></tr>
+      </tbody></table></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Lote 2 · base</th><th class="r">Sedan</th><th class="r">Hatch</th><th class="r">Picape</th></tr></thead><tbody>
+        <tr><td>São Caetano, Santos, Guarulhos, Barueri, Guararema, Ribeirão Preto, REPLAN, REVAP e São Sebastião</td><td class="r">10</td><td class="r">22</td><td class="r">5</td></tr>
+        <tr><td>Paranaguá</td><td class="r">—</td><td class="r">1</td><td class="r">—</td></tr>
+        <tr><td>Osório</td><td class="r">—</td><td class="r">1</td><td class="r">—</td></tr>
+        <tr><td>Itajaí</td><td class="r">—</td><td class="r">1</td><td class="r">—</td></tr>
+        <tr><td>Guaramirim</td><td class="r">1</td><td class="r">—</td><td class="r">1</td></tr>
+        <tr><td><b>Total</b></td><td class="r"><b>11</b></td><td class="r"><b>25</b></td><td class="r"><b>6</b></td></tr>
+      </tbody></table></div>
+    </div>
+    <p class="hint">A Tabela III de cada ET repete os totais (Lote 1: 10 sedans e 3 picapes; Lote 2: 11, 25 e 6). A Tabela I do Lote 2 foi conferida na imagem da página 7 da ET, porque o texto extraído saiu embaralhado.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Especificação dos veículos</h3><span class="src">ET 4.1.1 e 4.1.1.1</span></div>
+    <div class="tbl-wrap"><table class="tbl-min"><thead><tr><th>Tipo</th><th>Especificação mínima</th><th>Lotes</th></tr></thead><tbody>
+      <tr><td><b>Sedan leve</b></td><td>4 portas, mínimo 80 cv, flex, 4 passageiros + condutor. ABS, controle de estabilidade e de tração, assistente de frenagem e de partida em rampa, controle de cruzeiro e cruzeiro adaptativo, alerta de colisão, frenagem autônoma, alerta de faixa, detector de ponto cego, câmera de ré, sensores dianteiros e traseiros, visão 360°, faróis full LED automáticos, sensor de chuva, monitor de pressão dos pneus, multimídia com GPS e Android Auto/CarPlay, ajuste lombar, película antivandalismo</td><td>1 e 2</td></tr>
+      <tr><td><b>Hatch</b></td><td>Mesma lista do sedan, em carroceria hatch, 4 portas, mínimo 80 cv, flex</td><td>2</td></tr>
+      <tr><td><b>Picape tracionada</b></td><td>4x4, diesel, mínimo 170 cv e 43,5 kgf·m, cabine dupla, 4 passageiros + condutor, carga de 1.000 kg e 1.000 L, grade frontal com bandeja, santo antônio, engate, estribos, protetor de cárter e de caçamba, pneus mistos, sensor de estacionamento</td><td>1 e 2</td></tr>
+      <tr><td><b>Câmeras (todos)</b></td><td>Câmera frontal e interna com visão noturna, gravação em looping de no mínimo 7 dias, cartão de 32 GB, imagens com placa, data e hora, protegidas contra edição, integradas à telemetria</td><td>1 e 2</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="block">
+      <div class="block-h"><h3>Idade da frota</h3><span class="pill elim">Regras diferentes por lote</span></div>
+      <div class="card"><ul>
+        <li><b>Lote 1:</b> definitivos 0 km; temporários até 120 dias da Autorização de Serviço com até 30 mil km e até 1 ano de fabricação <span class="src">ET L1 4.1</span></li>
+        <li><b>Lote 2:</b> todos com até 30 mil km e até 1 ano do início do contrato; próprios ou em posse, sem locar de terceiros, salvo eventuais e temporários de até 120 dias <span class="src">ET L2 4.1, 6</span></li>
+        <li><b>Troca obrigatória:</b> aos 4 anos de fabricação ou 150 mil km (sedan e hatch) ou 200 mil km (picape), o que vier primeiro <span class="src">ET 7.7</span></li>
+      </ul></div>
+    </div>
+    <div class="block">
+      <div class="block-h"><h3>Uso estimado e desgaste</h3><span class="src">ET 4.1.3–4.1.4</span></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Tipo</th><th class="r">Km/mês por veículo</th><th class="r">Km em 36 meses</th><th class="r">Terra (médio + moderado)</th></tr></thead><tbody>
+        <tr><td>Sedan L1 · L2</td><td class="r">4.200 · 4.182</td><td class="r">≈ 151 mil</td><td class="r">20%</td></tr>
+        <tr><td>Hatch L2</td><td class="r">4.240</td><td class="r">≈ 153 mil</td><td class="r">20%</td></tr>
+        <tr><td>Picape L1 · L2</td><td class="r">5.667</td><td class="r">≈ 204 mil</td><td class="r">70% L1 · 30% L2</td></tr>
+      </tbody></table></div>
+      <p class="hint">Cálculo nosso: total de km/mês da Tabela III ÷ veículos. Um veículo do Lote 2 que comece com 30 mil km chega ao limite de 150 mil km por volta do 28º mês (hatch e sedan) e de 200 mil km por volta do 30º mês (picape) e precisa ser trocado.</p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card"><h4><span data-icon="decl"></span>Identificação e documentos</h4><ul>
+      <li>Adesivo com o nome da contratada, podendo ser imantado; substituto com mais de 30 dias também <span class="src">ET 7.2</span></li>
+      <li>Documentos de circulação em dia, guardados e renovados pela empresa; conformidade legal comprovada todo ano <span class="src">ET 7.6, 7.10</span></li>
+      <li>Nada de alterar as características originais sem autorização; a Transpetro pode instalar acessórios com aceite da empresa <span class="src">ET 7.10</span></li>
+    </ul></div>
+    <div class="card"><h4><span data-icon="ok"></span>Seguro do veículo</h4><ul>
+      <li>Responsabilidade civil por danos materiais e corporais a passageiros e terceiros <span class="src">ET 7.3 a–b</span></li>
+      <li>Acidentes pessoais de passageiros (morte, invalidez, despesas médicas e odontológicas) <span class="src">ET 7.3</span></li>
+      <li>Certificados entregues à Transpetro; o aceite não confirma que a cobertura basta <span class="src">ET 7.3</span></li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- ======================= 5. QUALIFICAÇÃO ======================= -->
+<section class="sec" id="sec-qualificacao" data-sec="qual" hidden>
+  <header class="sec-head"></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Técnica: basta <b>1 atestado de locação de veículos leves</b> (ou transporte com veículos leves), <b>sem quantidade mínima</b> <span class="src">Anexo D.3, item 3</span>.</span></li>
+    <li><span>Financeira: <b>patrimônio líquido de 5% do valor da proposta</b>, liquidez corrente de 0,8 ou mais e alavancagem de até 70%. Quem não atinge pode usar garantia da empresa-mãe <span class="src">Adendo D, Tabela 1 e Nota 3</span>.</span></li>
+    <li><span>Quem já é aprovado no <b>Cadastro de Fornecedores da Petrobras</b> e tem GRI baixo ou médio pode ser habilitado sem mandar documentos <span class="src">Edital 6.2–6.2.2</span>.</span></li>
+  </ul></div>
+
+  <div class="block" data-fold="Patrimônio líquido de 5% da proposta, liquidez de 0,8 e alavancagem de até 70%" data-fold-icon="risco">
+    <div class="block-h"><h3>Qualificação econômico-financeira</h3><span class="pill elim">Eliminatório</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Indicador</th><th>Exigência</th><th class="r">Lote 1</th><th class="r">Lote 2</th><th class="r">Lote virtual</th></tr></thead><tbody>
+      <tr><td><b>Patrimônio líquido</b></td><td>≥ 5% do valor da proposta</td><td class="r">≈ R$ 146.700</td><td class="r">≈ R$ 401.400</td><td class="r">≈ R$ 548.100</td></tr>
+      <tr><td><b>Liquidez corrente</b></td><td>≥ 0,8</td><td class="r">0,8</td><td class="r">0,8</td><td class="r">0,8</td></tr>
+      <tr><td><b>Alavancagem</b></td><td>≤ 70% (dívida financeira líquida sobre o PL)</td><td class="r">70%</td><td class="r">70%</td><td class="r">70%</td></tr>
+    </tbody></table></div>
+    <p class="hint">Fonte: Adendo D, Tabela 1, e Anexo D.2. Valores em reais calculados por nós sobre a estimativa de cada lote (5% × R$ 2.934.000 e R$ 8.028.000); o valor real depende da sua proposta. Se a dívida financeira líquida for zero ou negativa, a alavancagem é considerada atendida (Anexo D.2). Só vale capital integralizado e registrado (Adendo D, Nota 1). Demonstrações do último exercício, ou do penúltimo até 180 dias após o fim do último (Anexo D.2, item 2).</p>
+  </div>
+
+  <div class="block" data-fold="1 serviço de locação de veículos leves para pessoas, família 99005761" data-fold-icon="qual">
+    <div class="block-h"><h3>Qualificação técnica</h3><span class="pill elim">Eliminatório</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Requisito</th><th>Como comprovar</th><th>Fonte</th></tr></thead><tbody>
+      <tr><td><b>Tradição de fornecimento</b> na família 99005761 (locação de automóveis, utilitários e minivans para pessoas)</td><td>Pelo menos 1 serviço. Vale também transporte com veículos leves</td><td><span class="src">Anexo D.3, 1 e 3</span></td></tr>
+      <tr><td><b>Documentos aceitos</b></td><td>Atestado do cliente (assinado, com CNPJ da empresa e escopo), contrato encerrado com a Petrobras, atestado de consórcio (com termo) ou relatório de homologação da Petrobras</td><td><span class="src">Anexo D.3, 3.2</span></td></tr>
+      <tr><td><b>Contrato com a Petrobras</b></td><td>Desempenho verificado (BAD ≥ 70 ou IDF ≥ 4); contínuo em andamento vale com mais de 50% do prazo ou 1 ano</td><td><span class="src">Anexo D.3, 3.2 b</span></td></tr>
+      <tr><td><b>Não valem</b></td><td>Atestados de empresa do mesmo grupo ou com sócio, administrador ou funcionário em comum</td><td><span class="src">Anexo D.3, Notas</span></td></tr>
+      <tr><td><b>Técnico-SMS</b></td><td>Não aplicável nesta licitação</td><td><span class="src">Adendo D, Tabela 2</span></td></tr>
+    </tbody></table></div>
+    <p class="hint">O atestado pode ser substituído pelo Certificado de Registro Cadastral da Petrobras válido para a família 99005761 (Adendo D, item 3). Só valem documentos que provem condição anterior à abertura das propostas (Edital 6.6.1).</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card"><h4><span data-icon="decl"></span>Outros requisitos que eliminam</h4><ul>
+      <li>Grau de Risco de Integridade (GRI) alto; sem GRI, responder o questionário DDI (Adendo E) no prazo da habilitação <span class="src">Edital 10.6.3.1, 10.6.4</span></li>
+      <li>Critério legal: certidão da Junta Comercial, contrato ou estatuto social e CNPJ <span class="src">Adendo D, item 1 · Anexo D.1</span></li>
+      <li>Consórcio e cooperativa proibidos; recuperação judicial só com plano homologado <span class="src">Edital 2.2, 2.3 b, 2.3.2</span></li>
+      <li>FGTS, CND federal e CNDT regulares para assinar; débito no Cadin pode excluir <span class="src">Edital 9.2 b–c</span></li>
+    </ul></div>
+    <div class="card" style="background:var(--tint);border-color:transparent"><h4><span data-icon="matriz"></span>Se a empresa não tem tudo isso</h4><ul>
+      <li><b>Garantia corporativa (PCG):</b> empresa do mesmo grupo que atinja os índices assina a carta do Adendo D, entregue junto com a habilitação <span class="src">Adendo D, Nota 3</span></li>
+      <li><b>Atestado:</b> vale o de matriz, filial ou empresa do mesmo grupo, provada a relação <span class="src">Anexo D.3, Notas</span></li>
+      <li><b>Consórcio:</b> não é permitido <span class="src">Edital 2.2</span></li>
+      <li>Registre como cada lacuna será resolvida na <a href="#matriz">Matriz de aderência</a>.</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- ======================= 6. DECLARAÇÕES ======================= -->
+<section class="sec" id="sec-declaracoes" data-sec="decl" hidden>
+  <header class="sec-head"></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Com a proposta: <b>PPU preenchida</b>, <b>DFP</b> do Adendo C e o <b>aceite digital</b> da Declaração Unificada (Adendo B), tudo no Petronect antes de 01/12 às 12h <span class="src">Edital 3.2.1, 3.2.2</span>.</span></li>
+    <li><span>Após a abertura, <b>1 dia útil</b> para a habilitação, o questionário DDI (se não tiver GRI) e os papéis de ME/EPP <span class="src">Edital 3.3, 3.4, 10.6.3.1</span>.</span></li>
+    <li><span>Para assinar (2 dias úteis): Declaração Unificada assinada, aba DFC do DFP e certidões em dia <span class="src">Edital 3.2.1.1, 9.1.1, 9.2.3</span>.</span></li>
+  </ul></div>
+
+  <div class="block" data-fold="PPU, DFP e aceite da Declaração Unificada, no campo Notas e Anexos" data-fold-icon="decl">
+    <div class="block-h"><h3>Com a proposta (até a abertura)</h3><span class="pill att">01/12 · 12h</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Documento</th><th>Conteúdo</th><th>Fonte</th></tr></thead><tbody>
+      <tr><td><b>PPU (Anexo 2 do Adendo A)</b></td><td>Preços unitários de cada item, anexada em "Cabeçalho &gt; Notas e Anexos", tipo "Anexos". O total vai no campo "Preço" da aba "Itens" e prevalece se divergir</td><td><span class="src">Edital 3.2.2 a, 5.3.1</span></td></tr>
+      <tr><td><b>DFP único (Adendo C)</b></td><td>Formação de cada preço unitário (custos, indiretos, lucro, tributos), anexado como tipo "DFP"; total igual ao da PPU</td><td><span class="src">Edital 3.2.2 b</span></td></tr>
+      <tr><td><b>Declaração Unificada (Adendo B)</b></td><td>Aceite digital no portal: conduta ética, proposta independente, conformidade, sem parentesco impeditivo, atendimento ao Edital, art. 37–38 da Lei 13.303, situação econômica</td><td><span class="src">Edital 3.2.1 · Adendo B</span></td></tr>
+      <tr><td><b>Autodeclaração ME/EPP</b></td><td>Marcar "Sim" no portal ao enviar; não é aceita retificação depois</td><td><span class="src">Edital 3.2.1.3–3.2.1.3.1</span></td></tr>
+      <tr><td><b>Optante do Simples</b></td><td>Informar alíquotas, tabela e faixa; apresentar termo de opção, PGDAS-D e DEFIS (aba DAT do DFP)</td><td><span class="src">Edital 3.1.2.1.2 · DFP, aba DAT</span></td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="block">
+      <div class="block-h"><h3>Após a abertura</h3><span class="pill att">1 dia útil · Edital 3.3</span></div>
+      <div class="card"><ul>
+        <li>Documentos de habilitação não aprovados no Cadastro da Petrobras, com o check-list do Anexo D.0 <span class="src">Edital 6.3 · Adendo D</span></li>
+        <li>Questionário de Due Diligence de Integridade (Adendo E), se não tiver GRI <span class="src">Edital 10.6.3.1</span></li>
+        <li>ME/EPP: DRE assinada, declaração do Anexo B.2 e certidão da Junta com o contrato social <span class="src">Edital 3.2.1.3.2, 3.4</span></li>
+        <li>Se pedido: prova de exequibilidade e nova PPU em caso de divergência <span class="src">Edital 3.2.2 a, 5.2.4</span></li>
+      </ul><p class="muted">Pela Sala de Colaboração; prorrogável a pedido justificado dentro do prazo.</p></div>
+    </div>
+    <div class="block">
+      <div class="block-h"><h3>Para assinar e durante o contrato</h3><span class="pill info">2 dias úteis · Edital 9.1.1</span></div>
+      <div class="card"><ul>
+        <li>Declaração Unificada assinada pelo representante legal (assinatura qualificada ou avançada) <span class="src">Edital 3.2.1.1, 10.10.1</span></li>
+        <li>Aba DFC do DFP: dados bancários, signatários e sócios <span class="src">Edital 9.2.3</span></li>
+        <li>Declaração periódica de conformidade (Anexo 3) e relação de bens e serviços importados (Anexo 4), se o contrato passar de US$ 1 milhão <span class="src">Minuta 2.11 · Anexos 3 e 4</span></li>
+        <li>Certificado de homologação do rastreador, plano de manutenção na data de início e certificados de seguro <span class="src">ET 4.1.5, 4.1.5.6, 7.3</span></li>
+      </ul></div>
+    </div>
+  </div>
+  <p class="hint">Não incluídos: documentos que o Cadastro de Fornecedores da Petrobras já cobre e a cartilha de conduta (Anexo B.1), que é só de leitura.</p>
+</section>
+
+<!-- ======================= 7. CONFLITOS ======================= -->
+<section class="sec" id="sec-conflitos" data-sec="conf" hidden>
+  <header class="sec-head"></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span><b id="confAltaTxt">3</b> pontos de alta gravidade: faltam a <b>PPU</b> (os dois lotes), a <b>minuta do contrato do Lote 2</b> e o <b>DFP do Lote 1</b> nos arquivos recebidos. Sem eles não dá para montar a proposta completa.</span></li>
+    <li><span>Entre contrato e anexos, <b>prevalece o contrato</b> <span class="src">Minuta 26.2</span>. Entre PPU e o preço digitado no portal, <b>prevalece o portal</b> <span class="src">Edital 5.3.1</span>.</span></li>
+    <li><span>O prazo ainda está aberto: <b>dúvidas até 24/11 às 15h</b> e <b>impugnação até 24/11</b>, pela Sala de Colaboração <span class="src">Edital p. 2, 10.1</span>.</span></li>
+  </ul></div>
+  <div class="block" data-fold="Baixar o pacote completo no Petronect e mandar as dúvidas até 24/11, 15h" data-fold-icon="decl">
+    <div class="block-h"><h3>Como agir antes de 24/11</h3></div>
+    <ol class="steps">
+      <li><span><b>Inscreva-se na Oportunidade 7004688324</b> no Petronect e baixe todos os anexos de cada lote, em especial a PPU (Anexo 2 do Adendo A) <span class="src">Edital p. 2, 11.1</span></span></li>
+      <li><span><b>Confira o que falta</b>: minuta do Lote 2, DFP do Lote 1 e quantidade de veículos eventuais na PPU.</span></li>
+      <li><span><b>Mande as dúvidas na Sala de Colaboração até 24/11 às 15h</b>, no texto da mensagem (anexos não são aceitos) <span class="src">Edital p. 2</span></span></li>
+      <li><span><b>Impugne até 24/11</b> o que for ilegal ou impedir a proposta (5 dias úteis antes da abertura, contagem nossa com dias úteis do Rio de Janeiro) <span class="src">Edital 10.1, 10.7</span></span></li>
+      <li><span><b>Acompanhe as respostas</b> na Sala de Colaboração e na área pública do portal. Uma prorrogação da abertura não reabre o prazo de dúvidas <span class="src">Edital p. 2, 3.2.12.1</span></span></li>
+    </ol>
+  </div>
+  <div class="filters" id="confFilters" role="group" aria-label="Filtrar por gravidade"></div>
+  <div class="conf-list" id="confList"></div>
+</section>
+
+<!-- ======================= 8. PLANILHA ======================= -->
+<section class="sec" id="sec-planilha" data-sec="plan" hidden>
+  <header class="sec-head"></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>A Transpetro <b>não divulga o orçamento</b>, mas desclassifica quem ficar acima dele depois da negociação <span class="src">Edital 5.1 e</span>. O modelo de DFP do Lote 2 veio <b>sem nenhum valor</b> de referência.</span></li>
+    <li><span>Para ter uma ordem de grandeza, estimamos <b>R$ 5.000 por sedan, R$ 4.200 por hatch e R$ 10.500 por picape, por mês</b>: <b>R$ 10.962.000 em 36 meses</b> nos 2 lotes. São premissas nossas, não da Transpetro.</span></li>
+    <li><span>Indício de preço inexequível: proposta abaixo de <b>70% do menor valor</b> entre o orçamento e a média das propostas acima de 50% dele <span class="src">Edital 5.2</span>.</span></li>
+  </ul></div>
+
+  <div class="tiles six" id="planTiles"></div>
+
+  <div class="block" data-fold="55 veículos × 36 meses ≈ R$ 10,96 mi · R$ 304.500 por mês" data-fold-icon="plan">
+    <div class="block-h"><h3>Estimativa por lote e tipo de veículo</h3><span class="pill att">Premissa nossa</span></div>
+    <div class="tbl-wrap"><table class="pl-table tbl-min" id="plEst"></table></div>
+    <p class="hint">Quantidades: ET de cada lote, Tabelas I e III. Preço mensal: referência de mercado adotada por nós para locação de frota de 36 meses sem motorista e sem combustível, com manutenção, seguro e rastreamento. Troque pelos seus preços. Não inclui veículos eventuais nem a rampa de mobilização do Lote 2 (75% até o 12º mês).</p>
+  </div>
+
+  <div class="block" data-fold="6 linhas de veículos por mês no Lote 2; custos, indiretos, lucro e impostos" data-fold-icon="cond">
+    <div class="block-h"><h3>O que o DFP (Adendo C) pede</h3><span class="src">DFP Lote 2, abas Orientações, DFP-Serviços, DAT e DFC</span></div>
+    <div class="tbl-wrap"><table class="tbl-mid"><thead><tr><th>Parte</th><th>O que já vem no modelo</th></tr></thead><tbody>
+      <tr><td><b>Cabeçalho</b></td><td>"LOTE 2 - Serviços de locação de veículos para apoio à implantação de projetos SSPCO"; prazo de execução de 36 meses</td></tr>
+      <tr><td><b>1.1 Mão de obra</b></td><td>Só a linha "Preposto" em mão de obra indireta; canteiro com tag de pedágio, planos de SMS, exames, celular e seguro anual (3)</td></tr>
+      <tr><td><b>1.3 Equipamentos</b></td><td>Sedan, Hatch, Pickup e Veículo eventual (sedan, hatch e pickup), unidade "Mês", sem quantidades nem preços</td></tr>
+      <tr><td><b>2 a 4</b></td><td>Custo financeiro e administração central; lucro; ISS, PIS, COFINS, CPRB, Simples e ICMS</td></tr>
+      <tr><td><b>Regras</b></td><td>Só células amarelas editáveis; macros habilitadas; modelo próprio não é aceito; total do DFP = total da PPU = preço no portal</td></tr>
+    </tbody></table></div>
+    <p class="hint">O DFP deve detalhar "rigorosamente" cada preço unitário da PPU (Edital 3.2.2 b). DFP sem relação com os preços pode impedir a assinatura, com possibilidade de substituição retificada (Edital 9.2 f).</p>
+  </div>
+</section>
+
+<!-- ======================= 9. SIMULADOR ======================= -->
+<section class="sec" id="sec-simulador" data-sec="simul" hidden>
+  <header class="sec-head"></header>
+  <div class="tldr"><h3>Como usar</h3><ul>
+    <li><span>Informe quanto <b>o seu custo</b> representa da nossa estimativa em cada parcela, e os seus percentuais de tributos, despesas e margem.</span></li>
+    <li><span>O simulador soma os <b>2 lotes em 36 meses</b> (que é também o lote virtual) e mostra abaixo o mínimo de <b>cada lote</b>.</span></li>
+    <li><span>A referência é <b>estimativa nossa</b> (orçamento sigiloso) e os custos iniciais são <b>exemplos</b>. Substitua pelos números reais da empresa.</span></li>
+  </ul></div>
+  <div class="sim">
+    <div class="form" id="simForm">
+      <div class="block-h"><h3>Seus custos</h3><span class="example-tag" id="simExample">Valores de exemplo</span></div>
+      <div id="simCosts" class="form"></div>
+      <div class="block-h" style="margin-top:6px"><h3>Seus percentuais</h3></div>
+      <div id="simParams" class="form"></div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="btn ghost small" type="button" id="simReset">Restaurar exemplo</button><span class="save-state" id="simSave">Carregando…</span></div>
+    </div>
+    <div class="out">
+      <div class="out-main">
+        <div class="tile"><span class="k">Proposta mínima viável</span><span class="v" id="oMin">—</span><span class="s" id="oMinS">2 lotes, 36 meses</span></div>
+        <div class="tile"><span class="k">Desconto máximo sobre a estimativa</span><span class="v" id="oDesc">—</span><span class="s">estimativa R$ 10.962.000,00</span></div>
+      </div>
+      <div class="zone">
+        <b style="font-size:14px">Zona de proposta</b>
+        <div class="zone-track" id="zoneTrack" role="img" aria-label="Escala de proposta"></div>
+        <div class="zone-scale" id="zoneScale"></div>
+        <div class="zone-key"><span><i style="background:var(--bad-bg);border:1px solid var(--bad)"></i>Abaixo de 50% da estimativa</span><span><i style="background:var(--neutral-bg)"></i>Abaixo do seu custo</span><span><i style="background:var(--good-bg);border:1px solid var(--good)"></i>Zona viável</span></div>
+      </div>
+      <div class="field big" style="background:var(--surface)"><label for="sim-lance">Proposta que pretendo dar (2 lotes, 36 meses)</label><small>teste um valor e veja a margem</small><div class="inp"><span class="u">R$</span><input id="sim-lance" inputmode="decimal" data-k="lance"></div></div>
+      <div class="out-main">
+        <div class="tile"><span class="k">Margem líquida nessa proposta</span><span class="v" id="oMarg">—</span><span class="s" id="oMargS"></span></div>
+        <div class="tile"><span class="k">Proposta 1% menor</span><span class="v" id="oNext">—</span><span class="s">disputa fechada, sem lances · negociação depois · Edital 5.4</span></div>
+      </div>
+      <div id="simAlerts" style="display:grid;gap:10px"></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Para onde vai a proposta</th><th class="r">R$</th><th class="r">%</th></tr></thead><tbody id="simBreak"></tbody></table></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Proposta mínima por lote</th><th class="r">Estimativa</th><th class="r">Mínimo</th><th class="r">Desconto</th></tr></thead><tbody id="simLotes"></tbody></table></div>
+      <p class="hint">Fórmula: proposta mínima = (custo direto + despesas indiretas + custo financeiro) ÷ [(1 − perdas) × (1 − tributos) − margem]. Sem garantia contratual. Atenção: na Transpetro o indício de inexequibilidade é abaixo de 70% (Edital 5.2), e não 50%; o simulador avisa abaixo. Proposta acima do orçamento sigiloso, após negociação, é desclassificada (Edital 5.1 e).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 10. RISCOS ======================= -->
+<section class="sec" id="sec-riscos" data-sec="risco" hidden>
+  <header class="sec-head"></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>O maior desembolso é <b>a frota: até 55 veículos</b> (13 zero km no Lote 1), comprados ou financiados antes de faturar. O aluguel paga a compra aos poucos, em 36 meses.</span></li>
+    <li><span>Entre o início de um mês de medição e o pagamento passam <b>cerca de 60 dias</b>; a retenção de 1% só volta no fim.</span></li>
+    <li><span>A receita depende de <b>veículo mobilizado</b>: a Transpetro não garante volume, e no Lote 2 prevê só 75% da frota até o 12º mês <span class="src">Minuta 5.1.1 · ET L2 4.1.2</span>.</span></li>
+  </ul></div>
+  <div class="tiles" id="riskTiles"></div>
+  <p class="hint">Valores calculados sobre a proposta informada no <a href="#simulador">Simulador</a>, para os 2 lotes.</p>
+
+  <div class="block">
+    <div class="block-h"><h3>Quanto custa comprar a frota (exemplo)</h3><span class="pill att">Preços de exemplo, não do edital</span></div>
+    <div class="grid-2">
+      <div class="form" id="frForm"></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Lote</th><th class="r">Veículos</th><th class="r">Compra</th></tr></thead><tbody id="frOut"></tbody></table></div>
+    </div>
+    <p class="hint">Troque pelos preços de compra que a empresa conseguir com as montadoras. O Lote 2 aceita veículos com até 30 mil km e até 1 ano, o que pode baratear a compra, mas antecipa a troca obrigatória (ver Veículos).</p>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Ciclo até o pagamento</h3><span class="src">Minuta 6.1, 15.1</span></div>
+    <div class="timeline">
+      <div class="tl-step"><span class="tl-dot">1</span><b>Período de medição</b><span>dia 26 a dia 25 · 30 dias</span></div>
+      <div class="tl-step"><span class="tl-dot">2</span><b>Folha de Registro</b><span>1º dia útil seguinte</span></div>
+      <div class="tl-step"><span class="tl-dot">3</span><b>Nota fiscal</b><span>até o 4º dia útil</span></div>
+      <div class="tl-step"><span class="tl-dot">4</span><b>Prazo da Transpetro</b><span>30 dias contados do dia 25</span></div>
+      <div class="tl-step"><span class="tl-dot">5</span><b>Pagamento</b><span>crédito em conta · retenção de 1%</span></div>
+    </div>
+    <p class="hint">Do primeiro dia de medição ao pagamento: cerca de 60 dias corridos (cálculo nosso). Nota atrasada adia o pagamento pelo mesmo número de dias, e não há juros pelo prazo normal (Minuta 6.1.1, 6.1.3.2).</p>
+  </div>
+
+  <div class="block">
+    <div class="block-h"><h3>Outros riscos que pesam na decisão</h3></div>
+    <div class="grid-2">
+      <div class="card"><h4><span data-icon="conf"></span>Orçamento escondido</h4><p>Sem valor de referência, a empresa pode ficar acima do orçamento e ser desclassificada após a negociação, ou deixar dinheiro na mesa. Abaixo de 70% do orçamento, terá de provar a exequibilidade em 1 dia útil <span class="src">Edital 5.1 e, 5.2, 5.2.4</span></p></div>
+      <div class="card"><h4><span data-icon="oper"></span>Rodagem alta</h4><p>Cerca de 50 mil km por ano por carro e 68 mil por picape, parte em estrada de terra: manutenção pesada e revenda baixa. No Lote 2, quem começa com 30 mil km troca a frota por volta do 28º mês <span class="src">ET 4.1.3, 4.1.4, 7.7</span></p></div>
+      <div class="card"><h4><span data-icon="kit"></span>Carro sofisticado e prazo curto</h4><p>Lote 1 exige 13 veículos 0 km em 60 dias do pedido, com pacote completo de assistência à condução, câmeras e rastreador com bloqueio de partida. Atraso gera multa diária <span class="src">ET L1 4.1 · Minuta 8.1</span></p></div>
+      <div class="card"><h4><span data-icon="cond"></span>Volume não garantido</h4><p>O valor é estimado, sem volume mínimo, e a medição é por veículo mobilizado. A receita só se confirma depois da Autorização de Serviço e de cada pedido de mobilização <span class="src">Minuta 5.1.1 · ET 4.1.2, 4.3</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 11. KIT ======================= -->
+<section class="sec" id="sec-kit" data-sec="kit" hidden>
+  <header class="sec-head"></header>
+  <div class="tldr"><h3>Em resumo</h3><ul>
+    <li><span>Na disputa fechada, <b>tudo da proposta vai antes da abertura</b>: PPU, DFP e preço no portal. Depois não se inclui o que devia estar na proposta <span class="src">Edital 3.2.2, 10.3</span>.</span></li>
+    <li><span>Após a abertura, <b>1 dia útil</b> para habilitação, DDI e documentos de ME/EPP, prorrogável só a pedido justificado dentro do prazo <span class="src">Edital 3.3, 3.4, 6.3.1</span>.</span></li>
+    <li><span>Depois, <b>2 dias úteis</b> para assinar, e a frota começa a ser pedida pela Autorização de Serviço <span class="src">Edital 9.1.1 · ET 4.1.2</span>.</span></li>
+  </ul></div>
+  <div class="block-h"><p class="hint">Marque cada item quando o documento estiver pronto e revisado.</p><span class="save-state" id="kitSave">Carregando…</span></div>
+  <div class="kit-groups" id="kitGroups"></div>
+</section>
+
+<!-- ======================= 8. MATRIZ ======================= -->
+<section class="sec" id="sec-matriz" data-sec="matriz" aria-labelledby="h-matriz" hidden>
+  <header class="sec-head"><span class="sec-ico" data-icon="matriz"></span><div><p class="eyebrow">Decidir · 1 de 4</p><h2 id="h-matriz">Matriz de aderência da empresa</h2><p class="q">A empresa cumpre cada exigência? Se não, como vai suprir?</p></div></header>
+  <div class="verdict-bar wait" id="mxVerdict">
+    <div><h3 id="mxTitle">Decisão pendente</h3><p id="mxText"></p><div class="counts" id="mxCounts"></div></div>
+    <svg class="ring" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="32" fill="none" stroke="var(--surface)" stroke-width="9"/><circle id="mxRing" cx="40" cy="40" r="32" fill="none" stroke="var(--strong)" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 201" transform="rotate(-90 40 40)"/><text id="mxRingTxt" x="40" y="45" text-anchor="middle" font-size="15" font-weight="800" fill="var(--ink)">0%</text></svg>
+  </div>
+  <div class="block-h"><p class="hint">Marque cada linha. <b>Atende com ajuste</b> = vai suprir por parceria, contratação ou outro meio (escreva qual na nota). Itens <span class="pill elim">Eliminatório</span> com "Não atende" geram recomendação de não participar.</p><span class="save-state" id="mxSave">Carregando…</span></div>
+  <div id="mxList" style="display:grid;gap:20px"></div>
+</section>
+
+<!-- ======================= 12. PARECER ======================= -->
+<section class="sec" id="sec-parecer" data-sec="parecer" hidden>
+  <header class="sec-head"></header>
+  <div class="verdict-bar wait" id="parVerdict">
+    <div><p class="eyebrow" style="color:inherit">Recomendação calculada a partir da sua análise</p><h3 id="parTitle">—</h3><p id="parText"></p></div>
+    <svg class="ring" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="32" fill="none" stroke="var(--surface)" stroke-width="9"/><circle id="parRing" cx="40" cy="40" r="32" fill="none" stroke="var(--strong)" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 201" transform="rotate(-90 40 40)"/><text id="parRingTxt" x="40" y="45" text-anchor="middle" font-size="15" font-weight="800" fill="var(--ink)">0%</text></svg>
+  </div>
+  <div class="block"><div class="block-h"><h3>O que sustenta a recomendação</h3><span class="hint">Cada cartão leva à seção de origem.</span></div><div class="grid-2" id="parEvid"></div></div>
+  <div class="block"><div class="block-h"><h3>Próximos passos</h3><span class="hint">Gerados a partir do que ainda está pendente.</span></div><ol class="steps" id="parSteps"></ol></div>
+  <div class="block par-dec">
+    <div class="block-h"><h3>Decisão da empresa</h3><span class="save-state" id="parSave">Carregando…</span></div>
+    <div class="card">
+      <div class="seg" role="group" aria-label="Decisão da empresa" id="parSeg"><button type="button" data-d="participar">Participar</button><button type="button" data-d="condicoes">Participar com condições</button><button type="button" data-d="nao">Não participar</button></div>
+      <label for="parNota" class="hint">Justificativa e responsáveis</label>
+      <textarea id="parNota" placeholder="Participar; responsável pela proposta e pelos documentos; prazos combinados com a equipe."></textarea>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn" type="button" id="parBtn">Registrar parecer</button><span class="hint" id="parReg"></span></div>
+    </div>
+  </div>
+</section>
+
+      <nav class="pager" id="pager" aria-label="Navegação entre seções"></nav>
+    </main>
+  <p class="foot">Análise independente elaborada para apoio à decisão do licitante, com base no Edital da Licitação nº 7004688324 da Petrobras Transporte S.A. – Transpetro (Lei 13.303/2016 e Regulamento de Licitações e Contratos da Transpetro), na Especificação Técnica ET-4000.00-9300-900-PTD-002 de cada lote, na minuta do contrato do Lote 1, no modelo de DFP do Lote 2 e nos Adendos B, D e E. O orçamento da Transpetro é sigiloso: os valores em reais deste painel são estimativa nossa, explicada na seção Planilha. Não é documento oficial da Transpetro e não substitui a leitura integral do Edital e adendos.</p>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* ---------------- ícones ---------------- */
+const ICONS={
+ visao:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+ cond:'<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/>',
+ oper:'<path d="M2.5 6.5h11v9.5h-11zM13.5 9.5h4l3.5 3.5v3h-7.5"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>',
+ qual:'<circle cx="12" cy="9" r="5"/><path d="M8.6 12.8 7 21l5-2.6 5 2.6-1.6-8.2"/>',
+ decl:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/>',
+ conf:'<path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/>',
+ plan:'<rect x="3" y="4" width="18" height="16" rx="1.6"/><path d="M3 9h18M3 14h18M9 4v16"/>',
+ matriz:'<rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><path d="m14.5 17.5 2 2 4-4"/>',
+ simul:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/>',
+ risco:'<path d="M4 7h15a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a2 2 0 0 1 2-2h11v3"/><path d="M16 13.5h.01"/>',
+ kit:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+ alert:'<circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.3v.2"/>',
+ ok:'<circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16.5 9.5"/>',
+ parecer:'<path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/>',
+ check:'<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+ cal:'<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>'
+};
+const svg=(k)=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICONS[k]||'')+'</svg>';
+document.querySelectorAll('[data-icon]').forEach(el=>{el.innerHTML=svg(el.dataset.icon)});
+
+/* ---------------- ilustrações (linha monocromática) ---------------- */
+const SEDAN='<path d="M24 60V51c0-3 2-5 5-6l20-5 18-13c3-2 6-3 10-3h26c4 0 7 1 10 4l15 13 15 4c3 1 5 3 5 6v9"/><path d="M24 60h19M61 60h48M127 60h21"/><path d="M68 40l11-9h18v9zM102 31h6c2 0 4 1 5 2l8 7h-19z"/><circle class="acc" cx="52" cy="60" r="9"/><circle class="acc" cx="118" cy="60" r="9"/>';
+const ILLU={
+ ficha:'<rect x="52" y="10" width="56" height="72" rx="5"/><path d="M62 24h36M62 33h36M62 42h24M62 51h30"/><circle class="acc" cx="96" cy="68" r="9"/><path class="acc" d="M92 68l3 3 5-6"/><path d="M26 32h16M24 42h18M118 32h16M118 42h18" opacity=".45"/>',
+ cond:'<rect x="40" y="12" width="56" height="70" rx="5"/><path d="M50 26h36M50 35h36M50 44h28"/><path class="acc" d="M50 68c6-6 10 4 16-2s8 2 12-1"/><path d="M118 18l14 14-32 32-17 4 4-17z"/><path d="M112 24l14 14"/>',
+ oper:'<path d="M8 72h144" opacity=".4"/>'+SEDAN,
+ qual:'<rect x="24" y="14" width="112" height="60" rx="5"/><rect x="31" y="21" width="98" height="46" rx="3" opacity=".45"/><path d="M42 35h46M42 44h54M42 53h32"/><circle class="acc" cx="112" cy="56" r="10"/><path class="acc" d="M106 64l-3 14 9-5 9 5-3-14"/>',
+ decl:'<rect x="60" y="8" width="54" height="66" rx="5" opacity=".45"/><rect x="48" y="16" width="54" height="66" rx="5"/><path d="M58 30h34M58 39h34M58 48h22"/><path class="acc" d="M58 68c4-7 8 3 12-2s6-4 9 0 5 1 8-2"/><path d="M58 74h34" opacity=".5"/>',
+ conf:'<rect x="18" y="18" width="46" height="58" rx="5"/><path d="M27 32h28M27 41h28M27 50h18"/><rect x="96" y="18" width="46" height="58" rx="5"/><path d="M105 32h28M105 41h28M105 50h18"/><path class="acc" d="M85 20l-11 24h13l-11 26"/>',
+ plan:'<rect x="26" y="14" width="108" height="64" rx="5"/><path d="M26 30h108M26 46h108M26 62h108M56 14v64M84 14v64M110 14v64"/><rect class="acc" x="84" y="46" width="26" height="16" style="fill:var(--strong);fill-opacity:.2"/>',
+ matriz:'<rect x="40" y="10" width="80" height="72" rx="6"/><rect x="50" y="22" width="11" height="11" rx="2"/><path class="acc" d="M52 28l3 3 5-6"/><path d="M68 28h40"/><rect x="50" y="41" width="11" height="11" rx="2"/><path class="acc" d="M52 47l3 3 5-6"/><path d="M68 47h34"/><rect x="50" y="60" width="11" height="11" rx="2"/><path d="M68 66h28"/>',
+ kit:'<circle cx="70" cy="50" r="26"/><path d="M64 18h12M70 18v6M92 28l5-5"/><path class="acc" d="M70 50V34M70 50l10 7"/><rect x="108" y="38" width="32" height="40" rx="4" opacity=".6"/><path d="M115 48h18M115 56h18M115 64h11" opacity=".6"/>',
+ simul:'<path d="M22 78h116"/><rect x="32" y="26" width="16" height="52" rx="2"/><rect x="56" y="36" width="16" height="42" rx="2"/><rect x="80" y="46" width="16" height="32" rx="2"/><rect class="acc" x="104" y="54" width="16" height="24" rx="2"/><path class="acc" d="M24 44h112" stroke-dasharray="4 4"/>',
+ risco:'<path d="M24 30h76a6 6 0 0 1 6 6v36a6 6 0 0 1-6 6H30a6 6 0 0 1-6-6z"/><path d="M24 34c0-6 4-10 10-10h52v6"/><path d="M106 46H90a6 6 0 0 0 0 12h16z"/><circle cx="92" cy="52" r="1.5"/><path class="acc" d="M118 70c0 2 5 4 12 4s12-2 12-4v-8c0 2-5 4-12 4s-12-2-12-4zM118 62v-8c0 2 5 4 12 4s12-2 12-4v8M118 54c0-2 5-4 12-4s12 2 12 4"/>',
+ parecer:'<path d="M80 18v58M60 80h40"/><circle cx="80" cy="16" r="3"/><path class="acc" d="M38 30h84"/><path d="M38 30l-12 24h24zM122 30l-12 24h24z"/><path d="M24 54a14 5 0 0 0 28 0M108 54a14 5 0 0 0 28 0"/>'
+};
+const ill=k=>'<svg class="ill" viewBox="0 0 160 90" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ILLU[k]||'')+'</svg>';
+let HOME_ART='<svg class="ill" viewBox="0 0 320 170" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 120V64h26v56M52 120V44h30v76M88 120V72h22v48M236 120V52h28v68M270 120V80h24v40" opacity=".28"/><path d="M4 136h312" opacity=".45"/><g class="drive-l"><g transform="translate(-6 74)">'+SEDAN+'</g></g><g class="drive-r"><g transform="translate(150 0)"><path d="M10 134V92c0-5 4-9 9-9h82c6 0 11 3 14 7l20 24c2 3 3 6 3 9v11"/><path d="M10 134h20M54 134h56M134 134h4"/><path d="M24 92h22v18H24zM54 92h22v18H54zM84 92h17c3 0 5 1 7 3l12 15H84z"/><circle class="acc" cx="42" cy="134" r="11"/><circle class="acc" cx="122" cy="134" r="11"/></g></g></svg>';
+
+/* ---------------- formatação ---------------- */
+const BRL=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+const BRL0=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+const NUM=new Intl.NumberFormat('pt-BR',{maximumFractionDigits:2});
+const fmt=n=>BRL.format(n), fmt0=n=>BRL0.format(n);
+const pct=(n,d=1)=>(n*100).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+const parseNum=s=>{ if(typeof s==='number') return s; s=String(s||'').replace(/[^\d,.-]/g,''); if(s.includes(',')){s=s.replace(/\./g,'').replace(',','.')} else if((s.match(/\./g)||[]).length>1 || /\.\d{3}$/.test(s)){s=s.replace(/\./g,'')} const v=parseFloat(s); return isFinite(v)?v:0; };
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $=id=>document.getElementById(id);
+
+/* ===== Edital: Licitação 7004688324 · Petrobras Transporte S.A. – Transpetro · Lotes 1 (NNESE) e 2 (SSPCO) ===== */
+/* ---------------- dados ---------------- */
+/* Orçamento sigiloso (Edital 5.1 e). REF = estimativa nossa: veículos da ET (Tabelas I e III) × preço mensal de mercado adotado × 36 meses. */
+const MESES=36;
+const PRECO={sedan:5000, hatch:4200, picape:10500};   /* R$ por veículo por mês · premissa nossa, não é dado do edital */
+// [lote, tipo, chave de preço, quantidade, bases]
+const FROTA=[
+ [1,'Sedan leve','sedan',10,'Sede/RJ, Angra, Campos Elíseos (4) · São Luís (2) · Suape (2) · Belém (2)'],
+ [1,'Picape 4x4 diesel','picape',3,'Sede/RJ, Angra e Campos Elíseos'],
+ [2,'Sedan leve','sedan',11,'Grupo SP (10) · Guaramirim (1)'],
+ [2,'Hatch','hatch',25,'Grupo SP (22) · Paranaguá, Osório e Itajaí (1 cada)'],
+ [2,'Picape 4x4 diesel','picape',6,'Grupo SP (5) · Guaramirim (1)']
+];
+const valorLinha=x=>x[3]*PRECO[x[2]]*MESES;
+const refLote=n=>FROTA.filter(x=>x[0]===n).reduce((s,x)=>s+valorLinha(x),0);
+const REF1=refLote(1), REF2=refLote(2), REF=REF1+REF2;   /* 2.934.000 + 8.028.000 = 10.962.000 */
+const fmtK=n=>'R$ '+Math.round(n/1000).toLocaleString('pt-BR')+' mil';
+Object.assign(ILLU,{
+ frota:'<path d="M14 64V46l14-2 12-14h38l10 14h46c3 0 6 3 6 6v14"/><path d="M14 64h14M52 64h60M136 64h14"/><path d="M46 44l8-10h20v10z"/><path d="M88 44V30" opacity=".45"/><circle class="acc" cx="40" cy="64" r="9"/><circle class="acc" cx="124" cy="64" r="9"/><path d="M98 52h44" opacity=".45"/>'
+});
+/* divisão do custo de referência por parcela: premissa nossa, igual nos 2 lotes */
+const PARTES={frota:0.55, man:0.12, seg:0.13, tec:0.05, oper:0.15};
+const COMPONENTS=[
+ {k:'frota', nome:'Frota: depreciação e custo da compra', det:'55 veículos · 0 km no Lote 1 · até 30 mil km no Lote 2', v:REF*PARTES.frota, cor:'var(--blue)', def:70},
+ {k:'man',   nome:'Manutenção, pneus e revisões', det:'≈ 4.200 km/mês por carro · concessionária autorizada', v:REF*PARTES.man, cor:'var(--green)', def:70},
+ {k:'seg',   nome:'Seguro, IPVA e licenciamento', det:'RC, APP e documentos em dia', v:REF*PARTES.seg, cor:'var(--gold)', def:70},
+ {k:'tec',   nome:'Rastreador, câmeras e sistema', det:'GPS com identificação do condutor · BDV-E · chips', v:REF*PARTES.tec, cor:'var(--steel)', def:60},
+ {k:'oper',  nome:'Operação: substitutos, 0800 e preposto', det:'veículo substituto, guincho, entrega, adesivos, tags', v:REF*PARTES.oper, cor:'var(--amber)', def:60}
+];
+const LOTES=[
+ {n:'Lote 1 · NNESE',ref:REF1,q:'13 veículos'},
+ {n:'Lote 2 · SSPCO',ref:REF2,q:'42 veículos'}
+];
+
+const CONFLITOS=[
+ {g:'alta',tipo:'Edital × arquivos',t:'Planilha de Preços Unitários (PPU) ausente nos 2 lotes',a:['Edital 3.2.2 a · 11.1','A proposta é a PPU "encaminhada conforme Anexo 2 do Adendo A", e o total dela vai no campo "Preço" do portal.'],b:['Pastas Lote 1 e Lote 2','Nenhum Anexo 2 nos arquivos. A ET cita "itens 3 e 4" (Lote 1) e "4, 5 e 6" (Lote 2) da PPU para os eventuais, sem quantidade.'],why:'Sem a PPU não se sabe quantos meses de veículo eventual a Transpetro estima nem o formato exigido. Item em branco é tido como incluído nos demais preços (Edital 3.2.2 a, ii).',todo:'Baixar a PPU de cada lote no Petronect. Se não estiver lá, pedir na Sala de Colaboração até 24/11, 15h.'},
+ {g:'alta',tipo:'Edital × arquivos',t:'Minuta do contrato só no Lote 1',a:['Edital p. 1, 9.1.1, 11.1','Um contrato por lote, "cuja minuta se encontra no Adendo A".'],b:['Pasta Lote 2','Tem os anexos do Adendo A (ET, check-list, nuvem, dados), mas não a minuta. Nenhum documento do Lote 2 remete à minuta do Lote 1.'],why:'Prazo, pagamento, reajuste, multas e retenção do Lote 2 não podem ser conferidos. O DFP do Lote 2 indica 36 meses, igual ao Lote 1, mas o resto é suposição.',todo:'Baixar a minuta do Lote 2 no portal ou perguntar se vale a do Lote 1. Até a resposta, cotar o Lote 2 com as regras do Lote 1.'},
+ {g:'alta',tipo:'Edital × arquivos',t:'Demonstrativo de Formação de Preços (DFP) só no Lote 2',a:['Edital 3.2.2 b, 3.2.11','DFP único conforme Adendo C é obrigatório na proposta; falta de documento pode desclassificar.'],b:['Pasta Lote 1','Sem Adendo C. O modelo do Lote 2 traz no cabeçalho "LOTE 2 - ... SSPCO" e linha de hatch, que o Lote 1 não tem.'],why:'O DFP é anexado junto com a proposta e não pode ser incluído depois (Edital 10.3). Usar o modelo errado pode ser recusado ("não serão aceitos DFP em modelos diversos", DFP, Orientações 1.2).',todo:'Baixar o DFP do Lote 1 no Petronect. Se não houver, perguntar se o modelo do Lote 2 vale para o Lote 1 e para o lote virtual.'},
+ {g:'media',tipo:'ET Lote 1 × ET Lote 2',t:'Mesma ET, idades de frota diferentes',a:['ET L1 4.1','Veículos definitivos 0 km, em até 60 dias da solicitação de mobilização.'],b:['ET L2 4.1, 4.1.2','Veículos com até 30 mil km e até 1 ano; nenhum prazo de entrega após a solicitação; 75% da frota até o 12º mês.'],why:'O custo da frota muda bastante entre os lotes e no Lote 2 falta o prazo de entrega que define atraso e multa.',todo:'Cotar cada lote com a sua regra. Perguntar o prazo de entrega do Lote 2 e se vale a mobilização temporária de 120 dias também ali.'},
+ {g:'media',tipo:'Dentro da ET',t:'Rodagem estimada estoura o limite de troca',a:['ET 4.1.4, Tabela III','Sedans 42 mil km/mês para 10 (L1) e 46 mil para 11 (L2); hatches 106 mil para 25; picapes 17 mil para 3 e 34 mil para 6.'],b:['ET 7.7','Troca obrigatória com 4 anos ou 150 mil km (sedan e hatch) ou 200 mil km (picape).'],why:'Cálculo nosso: cerca de 151 mil km por carro e 204 mil por picape em 36 meses. No Lote 2, quem começa com 30 mil km troca por volta do 28º mês. A medição não paga km a mais (ET 4.1.4).',todo:'Embutir no preço a revenda baixa e uma eventual troca no fim do contrato. Perguntar se a Tabela III é uso real esperado ou só histórico.'},
+ {g:'media',tipo:'Dentro da ET',t:'Carro de 80 cv com pacote completo de assistência',a:['ET 4.1.1 i–ii','Sedan e hatch "mínimo 80 cv", flex, com cruzeiro adaptativo, frenagem autônoma, ponto cego, visão 360°, sensor de chuva e faróis full LED.'],b:['ET 4.1.1.1','Câmera com "ventosa de fixação" e "bateria 150 mAh", mas ligada ao sistema elétrico e integrada à telemetria; resolução "1920X108".'],why:'Poucos modelos flex de entrada reúnem todos os itens; o preço real fica perto de versões topo de linha. A especificação da câmera mistura produto avulso e sistema embarcado.',todo:'Listar já os modelos que atendem a tudo e perguntar se itens equivalentes são aceitos e qual é a resolução correta da câmera frontal.'},
+ {g:'media',tipo:'Dentro da minuta',t:'Reajuste sem índices definidos',a:['Minuta 7.1','Fórmula com a1 = 0,06 (mão de obra) e c1 = 0,94 (equipamentos).'],b:['Minuta 7.1','"M, MT e EQ" são "índice(s) de preço(s) considerado(s) como representativo(s)", sem dizer quais.'],why:'Num contrato de 36 meses de frota, o índice do reajuste pesa no preço dos anos 2 e 3.',todo:'Perguntar quais índices valem para M1 e EQ1 (e para o Lote 2).'},
+ {g:'media',tipo:'Edital × Adendo D',t:'Patrimônio líquido de 5% "da proposta": de qual lote?',a:['Adendo D, Tabela 1','PL de 5% do valor da proposta.'],b:['Edital p. 1','Propostas por lote e pelo lote virtual (1 + 2), com contratos separados.'],why:'Quem disputa os dois lotes e o virtual pode ser medido pela soma (≈ R$ 548 mil na nossa estimativa) ou lote a lote.',todo:'Conferir o PL no cenário mais exigente (soma) ou preparar a garantia corporativa. Perguntar na Sala de Colaboração.'},
+ {g:'baixa',tipo:'ET Lote 2 × PPU',t:'Numeração dos itens no Lote 2',a:['ET L2 4.1, 4.2','Itens 1, 2 e 3 (próprios) e 4, 5 e 6 (eventuais).'],b:['ET L2 4.3','Medição "conforme os itens 1.1, 1.2, 2.1 e 2.2 da PPU".'],why:'Sem a PPU não dá para saber qual numeração vale; pode gerar erro de preenchimento.',todo:'Seguir a numeração da PPU baixada no portal.'},
+ {g:'baixa',tipo:'Dentro da ET',t:'Prazo do veículo eventual no Lote 1',a:['ET L1 4.2','"Em até 15 (dez) dias corridos".'],b:['ET L2 4.2','"Em até 10 (dez) dias corridos".'],why:'Número e extenso divergem no Lote 1. Vale o mais curto por cautela.',todo:'Planejar 10 dias nos 2 lotes.'},
+ {g:'baixa',tipo:'Edital × DFP',t:'ISS: não incide, mas aparece no DFP',a:['Edital 3.1.2.1.4','O serviço "não se enquadra" na lista de serviços da LC 116/03.'],b:['Edital 3.1.2.1.4.1 · DFP','Regra de alíquota média de ISS; linha de ISS e código da LC 116 na aba DAT.'],why:'Locação de bens móveis não sofre ISS; incluir ISS encarece a proposta à toa.',todo:'Deixar ISS zerado e justificar no DFP, salvo orientação contrária da Transpetro.'},
+ {g:'baixa',tipo:'Dentro da ET',t:'Remissões erradas e locais incompletos',a:['ET 4.1.5.2, 5 · Anexo 1A','Cita item "4.1.13.4" (não existe) e "4.1.5,3" para a participação em sinistros, que está no 4.1.5.4; o check-list se chama "Anexo E" no próprio arquivo.'],b:['ET L2 3, Tabela I','A Tabela I inclui Santos, que não está na lista de endereços.'],why:'Falhas de redação; Santos pode ser uma base de entrega a mais.',todo:'Perguntar o endereço de Santos; nas remissões, usar o item correto.'}
+];
+
+const MATRIZ=[
+ {g:'Habilitação',itens:[
+  {id:'cad',t:'Inscrição no Petronect e Cadastro da Petrobras',d:'Critérios aprovados dispensam documentos (Edital 6.2.1)',src:'Edital p. 2, 6.2',elim:false},
+  {id:'pl',t:'Patrimônio líquido de 5% da proposta',d:'≈ R$ 146,7 mil (L1), R$ 401,4 mil (L2), R$ 548,1 mil (soma)',src:'Adendo D, Tabela 1',elim:true},
+  {id:'lc',t:'Liquidez corrente de 0,8 ou mais',d:'Balanço do último exercício (ou penúltimo até 180 dias)',src:'Adendo D · Anexo D.2',elim:true},
+  {id:'alav',t:'Alavancagem de até 70%',d:'Ou garantia corporativa da empresa-mãe',src:'Adendo D, Nota 3 · Anexo D.2',elim:true},
+  {id:'atest',t:'Atestado de locação de veículos leves para pessoas',d:'1 serviço, sem quantidade mínima (família 99005761)',src:'Anexo D.3, 3',elim:true},
+  {id:'gri',t:'GRI baixo ou médio, ou questionário DDI respondido',d:'GRI alto exclui da licitação',src:'Edital 10.6.3.1, 10.6.4',elim:true},
+  {id:'regular',t:'FGTS, CND federal e CNDT regulares',d:'Condição para assinar; Cadin pode excluir',src:'Edital 9.2 b–c',elim:true},
+  {id:'forma',t:'Empresa isolada, não cooperativa',d:'Consórcio e cooperativa proibidos',src:'Edital 2.2, 2.3.2',elim:true}
+ ]},
+ {g:'Proposta',itens:[
+  {id:'ppu',t:'PPU de cada lote preenchida e anexada',d:'Total igual ao campo "Preço" do portal',src:'Edital 3.2.2 a',elim:true},
+  {id:'dfp',t:'DFP de cada lote no modelo do Adendo C',d:'Macros habilitadas; total = PPU',src:'Edital 3.2.2 b',elim:true},
+  {id:'virtual',t:'Decisão sobre o lote virtual',d:'Proposta para 1 + 2 com desconto pela escala, se fizer sentido',src:'Edital p. 1',elim:false}
+ ]},
+ {g:'Frota e operação',itens:[
+  {id:'l1frota',t:'Lote 1: 10 sedans e 3 picapes 0 km em 60 dias',d:'Temporários até 120 dias com até 30 mil km',src:'ET L1 4.1',elim:false},
+  {id:'l2frota',t:'Lote 2: 11 sedans, 25 hatches e 6 picapes',d:'Até 30 mil km e 1 ano; 75% até o 12º mês',src:'ET L2 4.1, 4.1.2',elim:false},
+  {id:'modelos',t:'Modelos que atendem a toda a lista da ET',d:'Assistência à condução, visão 360°, picape 170 cv diesel',src:'ET 4.1.1',elim:false},
+  {id:'sistemas',t:'Rastreador com identificação do condutor e câmeras',d:'Ferramenta de gestão, BDV-E e nuvem no Brasil',src:'ET 4.1.1.1, 4.1.5.6, 7.9 · Anexo 5',elim:false},
+  {id:'apoio',t:'Assistência 24 h por 0800 e substituto em 24 h',d:'Em RJ, MA, PE, PA, SP, PR, SC e RS',src:'ET 4.1.5.5, 7.4',elim:false},
+  {id:'preposto',t:'Preposto disponível 24 h',d:'Sem dedicação exclusiva',src:'ET 7.8',elim:false}
+ ]},
+ {g:'Finanças',itens:[
+  {id:'compra',t:'Dinheiro ou crédito para comprar a frota',d:'Até 55 veículos antes de faturar',src:'ET 4.1',elim:false},
+  {id:'giro',t:'Capital de giro para cerca de 60 dias',d:'Mais a retenção de 1% de cada medição até o fim',src:'Minuta 6.1, 20.1',elim:false},
+  {id:'seguro',t:'Seguro dos veículos com RC e APP',d:'Certificados entregues à Transpetro',src:'ET 7.3',elim:false}
+ ]}
+];
+
+const KIT=[
+ {g:'Antes da abertura',prazo:'até 01/12 · 12h',itens:[
+  {id:'k-baixar',t:'PPU, minuta do Lote 2 e DFP do Lote 1 baixados',d:'Oportunidade 7004688324 no Petronect'},
+  {id:'k-duvidas',t:'Dúvidas enviadas na Sala de Colaboração',d:'Até 24/11 às 15h, no texto da mensagem (Edital p. 2)'},
+  {id:'k-ppu',t:'PPU de cada lote preenchida',d:'Anexada em Notas e Anexos, tipo "Anexos" (Edital 3.2.2 a)'},
+  {id:'k-dfp',t:'DFP de cada lote preenchido',d:'Anexado como tipo "DFP"; total igual ao da PPU (Edital 3.2.2 b)'},
+  {id:'k-preco',t:'Preço total digitado na aba "Itens"',d:'É o que vale para julgamento (Edital 5.3.1)'},
+  {id:'k-aceite',t:'Aceite digital da Declaração Unificada',d:'E autodeclaração de ME/EPP, se for o caso (Edital 3.2.1)'},
+  {id:'k-status',t:'Status "Cotação Apresentada" conferido',d:'Edital 3.2.10'}
+ ]},
+ {g:'Habilitação e efetividade',prazo:'1 dia útil · Edital 3.3, 6.3.1',itens:[
+  {id:'k-legal',t:'Certidão da Junta, contrato social e CNPJ',d:'Se não aprovados no Cadastro (Anexo D.1)'},
+  {id:'k-balanco',t:'Balanço e DRE com recibo e hash do SPED',d:'Auditoria se for grande porte (Anexo D.2)'},
+  {id:'k-pcg',t:'Carta de garantia corporativa',d:'Só se não atingir os índices (Adendo D, Nota 3)'},
+  {id:'k-atest',t:'Atestado de locação de veículos leves',d:'Assinado, com CNPJ e escopo (Anexo D.3)'},
+  {id:'k-d0',t:'Check-list do Anexo D.0 preenchido',d:'Indica qual arquivo comprova cada requisito'},
+  {id:'k-ddi',t:'Questionário DDI (Adendo E)',d:'Se a empresa não tiver GRI (Edital 10.6.3.1)'},
+  {id:'k-exeq',t:'Prova de exequibilidade pronta',d:'Cotações dos veículos, memória de cálculo, seguro (Edital 5.2.3)'},
+  {id:'k-me',t:'ME/EPP: DRE, Anexo B.2 e certidão da Junta',d:'Edital 3.2.1.3.2, 3.4'}
+ ]},
+ {g:'Assinatura e início',prazo:'2 dias úteis · Edital 9.1.1',itens:[
+  {id:'k-decl',t:'Declaração Unificada assinada',d:'Assinatura qualificada ou avançada (Edital 3.2.1.1, 10.10.1)'},
+  {id:'k-dfc',t:'Aba DFC do DFP preenchida',d:'Dados bancários, signatários e sócios (Edital 9.2.3)'},
+  {id:'k-cert',t:'FGTS, CND e CNDT em dia',d:'Edital 9.2 b'},
+  {id:'k-frota',t:'Frota encomendada e seguro contratado',d:'Lote 1: 0 km em 60 dias da solicitação'},
+  {id:'k-sist',t:'Rastreadores, câmeras e sistema de gestão',d:'Com certificado de homologação (ET 4.1.5.6)'},
+  {id:'k-manut',t:'Plano de manutenção dos veículos',d:'Entregue na data de início (ET 4.1.5)'}
+ ]}
+];
+
+const SIM_PARAMS=[
+ {k:'trib',l:'Tributos sobre o faturamento',h:'PIS, COFINS, IRPJ e CSLL do seu regime · sem ISS (Edital 3.1.2.1.4)',u:'%',def:11},
+ {k:'adm',l:'Despesas indiretas',h:'sobre o custo direto: administração central, gestão da frota',u:'%',def:6},
+ {k:'glosa',l:'Perdas na medição',h:'veículo parado, multas e descontos, sobre o faturamento',u:'%',def:1},
+ {k:'marg',l:'Margem líquida desejada',h:'sobre o valor da proposta',u:'%',def:8},
+ {k:'ciclo',l:'Ciclo até receber',h:'do 1º dia da medição ao pagamento (Minuta 6.1)',u:'dias',def:60},
+ {k:'juros',l:'Custo do capital de giro',h:'taxa mensal do seu financiamento',u:'%/mês',def:1.5}
+];
+const SIM_DEF=()=>{const o={lance:10400000}; COMPONENTS.forEach(c=>{if(!c.fixed)o['c_'+c.k]=c.def}); SIM_PARAMS.forEach(p=>o[p.k]=p.def); return o;};
+
+/* capital de giro: o motor calcula sobre 12 meses; aqui o contrato tem 36 */
+const giro=r=>r.K*12/MESES;
+function calcLote(L,sv){
+  let cdir=0; COMPONENTS.forEach(c=>{cdir+=L.ref*PARTES[c.k]*Math.max(0,sv['c_'+c.k]||0)/100;});
+  const C=cdir*(1+(sv.adm||0)/100), F=C*((sv.ciclo||0)/30)*((sv.juros||0)/100);
+  const g=(sv.glosa||0)/100,t=(sv.trib||0)/100,m=(sv.marg||0)/100;
+  const den=(1-g)*(1-t)-m;
+  return den>0?(C+F)/den:Infinity;
+}
+
+const SECTIONS=[
+ {id:'ficha',sec:'ficha',nome:'Ficha do edital',etapa:1},
+ {id:'condicoes',sec:'cond',nome:'Condições gerais',etapa:1},
+ {id:'operacao',sec:'oper',art:'kit',nome:'Entrega e operação',etapa:1},
+ {id:'veiculos',sec:'oper',art:'frota',nome:'Veículos',etapa:1},
+ {id:'qualificacao',sec:'qual',nome:'Qualificação',etapa:2},
+ {id:'declaracoes',sec:'decl',nome:'Declarações',etapa:2},
+ {id:'conflitos',sec:'conf',nome:'Conflitos',etapa:2},
+ {id:'planilha',sec:'plan',nome:'Planilha e valor',etapa:2},
+ {id:'matriz',sec:'matriz',nome:'Matriz de aderência',etapa:3},
+ {id:'kit',sec:'kit',nome:'Kit do 1 dia útil',etapa:3},
+ {id:'simulador',sec:'simul',nome:'Simulador de proposta',etapa:4},
+ {id:'riscos',sec:'risco',nome:'Caixa e riscos',etapa:4},
+ {id:'parecer',sec:'parecer',nome:'Parecer final',etapa:5}
+];
+
+const IMP=[2026,11,24];
+const altas=()=>CONFLITOS.filter(c=>c.g==='alta').length;
+const diasTxt=n=>n<0?'encerrado':n===0?'hoje':n+(n===1?' dia':' dias');
+const TAKE={
+ ficha:()=>'Licitação da Lei 13.303 no Petronect, disputa fechada, menor preço por lote, com lote virtual. Abertura das propostas em 01/12, às 12h.',
+ condicoes:()=>'Contrato de 36 meses por lote, pago por veículo mobilizado, sem garantia contratual. Orçamento sigiloso: estimamos cerca de R$ 11,0 mi nos 2 lotes.',
+ operacao:()=>'Lote 1 com veículos 0 km em 60 dias do pedido; Lote 2 com até 30 mil km. Sem escritório local, mas com 0800, substituto e preposto 24 h.',
+ veiculos:()=>'55 veículos sem motorista: 21 sedans, 25 hatches e 9 picapes 4x4 diesel, com pacote completo de assistência à condução e uso de ~4.200 km por mês.',
+ qualificacao:()=>'Para habilitar: 1 atestado de locação de veículos leves, PL de 5% da proposta, liquidez de 0,8 e alavancagem de até 70%.',
+ declaracoes:()=>'PPU, DFP e aceite da Declaração Unificada vão com a proposta. Habilitação e DDI em 1 dia útil após o chamado.',
+ conflitos:()=>altas()+' pontos de alta gravidade: faltam PPU, minuta do Lote 2 e DFP do Lote 1. Dúvidas e impugnação até 24/11 ('+leftTxt(daysUntil(...IMP))+').',
+ planilha:()=>'Orçamento sigiloso e DFP sem valores. Nossa estimativa: R$ 10.962.000 em 36 meses (Lote 1 R$ 2,93 mi, Lote 2 R$ 8,03 mi).',
+ matriz:()=>{const s=matrizSummary(); return s.title+': '+s.evaluated+' de '+s.all.length+' requisitos avaliados.';},
+ kit:()=>{const a=KIT.flatMap(g=>g.itens),d=a.filter(i=>state.kit.done[i.id]).length; return d+' de '+a.length+' itens prontos. Na disputa fechada, o que faltar na proposta não entra depois.';},
+ simulador:()=>{const r=calc(state.sim); return isFinite(r.Pmin)?'Com os custos informados, a proposta mínima nos 2 lotes é '+fmt0(r.Pmin)+' (desconto máximo de '+pct(Math.max(0,1-r.Pmin/REF))+' sobre a nossa estimativa)'+(isDefault()?', ainda com custos de exemplo.':'.'):'Com os percentuais atuais, nenhum preço cobre os custos.';},
+ riscos:()=>{const r=calc(state.sim); return 'Antes de faturar: comprar a frota (cerca de '+fmtMi(frTotal())+' no exemplo) e reservar cerca de '+fmt0(giro(r))+' de capital de giro.';},
+ parecer:()=>{const p=parecerCalc(); return p.title+(p.title.endsWith('…')?' ':'. ')+(state.parecer.decisao?'O parecer da empresa já foi registrado.':'Registre a decisão da empresa no fim desta página.');}
+};
+const HN={
+ ficha:()=>[{v:'01/12',l:'abertura das propostas, às 12h',c:'ink'},{v:'2 + 1',l:'lotes e lote virtual',c:'ink'},{v:'Sigiloso',l:'orçamento da Transpetro',c:'gold'}],
+ condicoes:()=>[{v:'≈ R$ 11,0 mi',l:'estimativa nossa em 36 meses',c:'gold'},{v:'Sem garantia',l:'retenção de 1% por medição',c:'green'},{v:'30 dias',l:'para pagar após a medição',c:'ink'}],
+ operacao:()=>[{v:'60 dias',l:'para entregar 0 km no Lote 1',c:'blue'},{v:'24 h',l:'para pôr veículo substituto',c:'red'},{v:'Sem base',l:'escritório local não exigido',c:'green'}],
+ veiculos:()=>[{v:'55',l:'veículos fixos nos 2 lotes',c:'ink'},{v:'9',l:'picapes 4x4 diesel',c:'blue'},{v:'~4.200 km',l:'por mês por carro',c:'red'}],
+ qualificacao:()=>[{v:'1',l:'atestado, sem quantidade mínima',c:'green'},{v:'5%',l:'da proposta em patrimônio líquido',c:'gold'},{v:'0,8',l:'liquidez corrente mínima',c:'ink'}],
+ declaracoes:()=>[{v:'3',l:'arquivos com a proposta',c:'ink'},{v:'1 dia útil',l:'para a habilitação',c:'red'},{v:'2 dias úteis',l:'para assinar',c:'ink'}],
+ conflitos:()=>{const n=daysUntil(...IMP); return [{v:String(altas()),l:'de alta gravidade',c:'red'},{v:String(CONFLITOS.length),l:'pontos no total',c:'ink'},{v:diasTxt(n),l:'para questionar (até 24/11)',c:n<0?'red':'blue'}];},
+ planilha:()=>[{v:'R$ 304.500',l:'por mês nos 2 lotes (estimativa)',c:'gold'},{v:'55',l:'veículos × 36 meses',c:'ink'},{v:'70%',l:'abaixo disso, indício de inexequível',c:'red'}],
+ matriz:()=>{const s=matrizSummary(); return [{v:(s.c.atende+s.c.ajuste)+' de '+s.all.length,l:'atendidos, com ou sem ajuste',c:'green'},{v:String(s.c.verificar),l:'a verificar',c:'ink'},{v:String(s.blockers.length),l:'bloqueios eliminatórios',c:'red'}];},
+ kit:()=>{const a=KIT.flatMap(x=>x.itens); const g=KIT.map(x=>x.itens.filter(i=>state.kit.done[i.id]).length+' de '+x.itens.length); return [{v:a.filter(i=>state.kit.done[i.id]).length+' de '+a.length,l:'itens prontos',c:'green'},{v:g[0],l:'antes da abertura',c:'ink'},{v:g[1],l:'habilitação',c:'ink'}];},
+ simulador:()=>{const r=calc(state.sim), ok=isFinite(r.Pmin); return [{v:ok?fmtMi(r.Pmin):'—',l:'proposta mínima nos 2 lotes',c:'blue'},{v:ok?pct(Math.max(0,1-r.Pmin/REF)):'—',l:'desconto máximo sobre a estimativa',c:'blue'},{v:isFinite(r.margL)?pct(r.margL):'—',l:'margem na proposta testada',c:r.margL<0?'red':'green'}];},
+ riscos:()=>{const r=calc(state.sim); return [{v:fmtMi(frTotal()),l:'compra da frota (exemplo)',c:'gold'},{v:fmtK(giro(r)),l:'capital de giro estimado',c:'gold'},{v:'~60 dias',l:'do início da medição ao pagamento',c:'ink'}];},
+ parecer:()=>{const p=parecerCalc(); return [{v:p.title,l:'recomendação calculada',c:'gold'},{v:Math.round(overallProgress()*100)+'%',l:'da análise concluída',c:'ink'},{v:String(p.steps.length),l:'próximos passos',c:'ink'}];}
+};
+const CARD={
+ ficha:()=>({m:'01/12 · 12h',s:'abertura no Petronect'}),
+ condicoes:()=>({m:'36 meses',s:'sem garantia · orçamento sigiloso',c:'warn'}),
+ operacao:()=>({m:'60 dias',s:'0 km no Lote 1 · substituto em 24 h'}),
+ veiculos:()=>({m:'55 veículos',s:'sem motorista · 2 lotes'}),
+ qualificacao:()=>({m:'1 atestado',s:'PL de 5% da proposta',c:'warn'}),
+ declaracoes:()=>({m:'PPU + DFP',s:'com a proposta · habilitação em 1 dia útil',c:'warn'}),
+ conflitos:()=>({m:CONFLITOS.length+' pontos',s:altas()+' de alta gravidade',c:'alert'}),
+ planilha:()=>({m:'≈ R$ 11,0 mi',s:'estimativa nossa · orçamento sigiloso',c:'alert'}),
+ matriz:()=>{const s=matrizSummary(); return {m:(s.c.atende+s.c.ajuste)+' de '+s.all.length,s:s.title,c:s.kind==='go'?'ok':s.kind==='nogo'?'alert':'warn'};},
+ kit:()=>{const a=KIT.flatMap(x=>x.itens), d=a.filter(i=>state.kit.done[i.id]).length; return {m:d+' de '+a.length,s:'itens prontos',c:d===a.length?'ok':''};},
+ simulador:()=>{const r=calc(state.sim); return {m:isFinite(r.Pmin)?fmtMi(r.Pmin):'—',s:'proposta mínima nos 2 lotes'+(isDefault()?' · exemplo':'')};},
+ riscos:()=>({m:fmtMi(frTotal()),s:'compra da frota · exemplo'}),
+ parecer:()=>{const p=parecerCalc(); return {m:p.title,s:state.parecer.decisao?'decisão registrada':'registrar a decisão',c:p.kind==='go'?'ok':p.kind==='nogo'?'alert':'warn'};}
+};
+
+/* ---------------- condições gerais e planilha ---------------- */
+function renderComposition(){
+  $('stack').innerHTML=COMPONENTS.map(c=>'<i style="width:'+(c.v/REF*100)+'%;background:'+c.cor+'" title="'+esc(c.nome)+'"></i>').join('');
+  $('legend').innerHTML=COMPONENTS.map(c=>'<li><span class="sw" style="background:'+c.cor+'"></span><span><b>'+c.nome+'</b> <span class="hint">· '+c.det+'</span></span><span class="r">'+fmt(c.v)+'</span><span class="r p">'+pct(c.v/REF)+'</span></li>').join('')+'<li><span></span><span><b>Total estimado dos 2 lotes</b></span><span class="r"><b>'+fmt(REF)+'</b></span><span class="r p">100%</span></li>';
+  let h='';
+  COMPONENTS.forEach(c=>{const p=PARTES[c.k]; h+='<tr><td><b>'+c.nome+'</b></td><td class="r">'+fmt(REF1*p)+'</td><td class="r">'+fmt(REF2*p)+'</td><td class="r">'+fmt(REF*p)+'</td></tr>';});
+  h+='<tr><td><b>Veículos fixos</b></td><td class="r">13</td><td class="r">42</td><td class="r">55</td></tr>';
+  h+='<tr><td><b>Por mês</b></td><td class="r">'+fmt(REF1/MESES)+'</td><td class="r">'+fmt(REF2/MESES)+'</td><td class="r">'+fmt(REF/MESES)+'</td></tr>';
+  h+='<tr><td><b>Total em 36 meses</b></td><td class="r"><b>'+fmt(REF1)+'</b></td><td class="r"><b>'+fmt(REF2)+'</b></td><td class="r"><b>'+fmt(REF)+'</b></td></tr>';
+  $('loteTable').querySelector('tbody').innerHTML=h;
+  $('planTiles').innerHTML=[
+    ['Lote 1 · NNESE',fmt0(REF1),'13 veículos · '+fmt0(REF1/MESES)+' por mês','t1'],
+    ['Lote 2 · SSPCO',fmt0(REF2),'42 veículos · '+fmt0(REF2/MESES)+' por mês','t2'],
+    ['Lote virtual (1 + 2)',fmt0(REF),'55 veículos · 36 meses','t6'],
+    ['Sedan (premissa)',fmt0(PRECO.sedan),'por veículo por mês','t3'],
+    ['Hatch (premissa)',fmt0(PRECO.hatch),'por veículo por mês','t4'],
+    ['Picape 4x4 (premissa)',fmt0(PRECO.picape),'por veículo por mês','t5']
+  ].map(t=>'<div class="tile '+t[3]+'"><span class="k">'+t[0]+'</span><span class="v">'+t[1]+'</span><span class="s">'+t[2]+'</span></div>').join('');
+}
+function renderPlanilha(){
+  let h='<thead><tr><th>Lote</th><th>Veículo</th><th>Bases</th><th class="r">Qtd</th><th class="r">R$/mês (premissa)</th><th class="r">Mensal</th><th class="r">36 meses</th></tr></thead><tbody>';
+  [1,2].forEach(n=>{
+    FROTA.filter(x=>x[0]===n).forEach(x=>{const m=x[3]*PRECO[x[2]]; h+='<tr><td><span class="cat-code">'+n+'</span></td><td>'+esc(x[1])+'</td><td>'+esc(x[4])+'</td><td class="r">'+x[3]+'</td><td class="r">'+fmt(PRECO[x[2]])+'</td><td class="r">'+fmt(m)+'</td><td class="r"><b>'+fmt(m*MESES)+'</b></td></tr>';});
+    const R=n===1?REF1:REF2; h+='<tr class="tot"><td></td><td>Total do Lote '+n+'</td><td></td><td class="r">'+(n===1?13:42)+'</td><td></td><td class="r">'+fmt(R/MESES)+'</td><td class="r">'+fmt(R)+'</td></tr>';
+  });
+  h+='<tr class="tot"><td></td><td>Lote virtual (1 + 2)</td><td></td><td class="r">55</td><td></td><td class="r">'+fmt(REF/MESES)+'</td><td class="r">'+fmt(REF)+'</td></tr></tbody>';
+  $('plEst').innerHTML=h;
+}
+
+/* ---------------- compra da frota (exemplo) ---------------- */
+const FR=[
+ {k:'sedan',l:'Sedan com o pacote da ET',h:'preço de compra por unidade (exemplo)',def:140000},
+ {k:'hatch',l:'Hatch com o pacote da ET',h:'preço de compra por unidade (exemplo)',def:110000},
+ {k:'picape',l:'Picape 4x4 diesel, cabine dupla',h:'preço de compra por unidade (exemplo)',def:280000}
+];
+const frState={}; FR.forEach(f=>frState[f.k]=f.def);
+const frLote=n=>FROTA.filter(x=>x[0]===n).reduce((s,x)=>s+x[3]*(frState[x[2]]||0),0);
+const frTotal=()=>frLote(1)+frLote(2);
+function buildFr(){
+  try{const v=JSON.parse(localStorage.getItem(E.lsPrefix+'fr')||'null'); if(v) FR.forEach(f=>{if(typeof v[f.k]==='number') frState[f.k]=v[f.k];});}catch(e){}
+  $('frForm').innerHTML=FR.map(f=>'<div class="field"><label for="fr-'+f.k+'">'+f.l+'</label><small>'+f.h+'</small><div class="inp"><span class="u">R$</span><input id="fr-'+f.k+'" inputmode="decimal" data-fr="'+f.k+'"></div></div>').join('');
+  $('frForm').addEventListener('input',e=>{const i=e.target.closest('[data-fr]'); if(!i)return; frState[i.dataset.fr]=parseNum(i.value); try{localStorage.setItem(E.lsPrefix+'fr',JSON.stringify(frState))}catch(err){} renderFr(); renderRiscos(calc(state.sim)); renderOverview();});
+  $('frForm').addEventListener('change',()=>renderFr(true));
+}
+function renderFr(force){
+  document.querySelectorAll('#frForm [data-fr]').forEach(inp=>{ if(document.activeElement===inp && !force) return; inp.value=NUM.format(Math.round(frState[inp.dataset.fr]||0)); });
+  $('frOut').innerHTML='<tr><td>Lote 1 · 10 sedans e 3 picapes 0 km</td><td class="r">13</td><td class="r">'+fmt0(frLote(1))+'</td></tr><tr><td>Lote 2 · 11 sedans, 25 hatches e 6 picapes</td><td class="r">42</td><td class="r">'+fmt0(frLote(2))+'</td></tr><tr><td><b>Os 2 lotes</b></td><td class="r"><b>55</b></td><td class="r"><b>'+fmt0(frTotal())+'</b></td></tr>';
+}
+
+/* ---------------- simulador por lote e riscos ---------------- */
+function renderLotes(r){
+  const rows=LOTES.map(L=>{const p=calcLote(L,state.sim), ok=isFinite(p); return '<tr><td>'+L.n+' <span class="hint">· '+L.q+'</span></td><td class="r">'+fmt0(L.ref)+'</td><td class="r"><b>'+(ok?fmt0(p):'—')+'</b></td><td class="r"'+(ok&&p>L.ref?' style="color:var(--bad)"':'')+'>'+(ok?(p<L.ref?pct(1-p/L.ref):'acima da estimativa'):'—')+'</td></tr>';});
+  rows.push('<tr><td><b>Lote virtual (1 + 2)</b></td><td class="r">'+fmt0(REF)+'</td><td class="r"><b>'+(isFinite(r.Pmin)?fmt0(r.Pmin):'—')+'</b></td><td class="r">'+(isFinite(r.Pmin)?(r.Pmin<REF?pct(1-r.Pmin/REF):'acima da estimativa'):'—')+'</td></tr>');
+  $('simLotes').innerHTML=rows.join('');
+}
+function renderRiscos(r){
+  const L=r.L>0?r.L:REF;
+  const T=[
+   ['Faturamento mensal médio',fmt0(L/MESES),'proposta ÷ 36 meses, frota completa','t4'],
+   ['Compra da frota (exemplo)',fmt0(frTotal()),'55 veículos · preços do quadro abaixo','t3'],
+   ['Capital de giro estimado',fmt0(giro(r)),'custos de '+NUM.format(state.sim.ciclo)+' dias','t5'],
+   ['Retenção de 1% no fim',fmt0(L*0.01),'devolvida após o contrato · Minuta 20','t1']
+  ];
+  $('riskTiles').innerHTML=T.map(t=>'<div class="tile '+t[3]+'"><span class="k">'+t[0]+'</span><span class="v">'+t[1]+'</span><span class="s">'+t[2]+'</span></div>').join('');
+}
+
+const E={
+  slug:'lic-7004688324-transpetro', docPrefix:'editais/lic-7004688324-transpetro/', lsPrefix:'tp7004-',
+  ref:REF, teto:REF, garantiaPct:0, giro:'mensal',
+  sessao:[2026,12,1], sessaoNome:'Abertura', chip:'≈ R$ 11,0 mi (estimado) · 2 lotes · 36 meses',
+  deadlines:[
+   {d:[2026,11,18],lbl:'18/11',t:'Pedido justificado de visita técnica (opcional)',s:'3 dias úteis antes do prazo de dúvidas, contagem nossa · Edital 2.4.1'},
+   {d:[2026,11,24],lbl:'24/11 · 15h',t:'Último prazo para dúvidas na Sala de Colaboração',s:'No texto da mensagem, sem anexos · Edital p. 2'},
+   {d:[2026,11,24],lbl:'24/11',t:'Último dia para impugnar o Edital',s:'5 dias úteis antes da abertura, contagem nossa · Edital 10.1 · Sala de Colaboração'},
+   {d:[2026,12,1],lbl:'01/12 · 12h',t:'Abertura das propostas no Petronect',s:'PPU, DFP e preço no portal até a "Data Fim" · Edital p. 1, 3.2.8'}
+  ],
+  prazoQuestionar:IMP,
+  sim:{
+    tetoNome:'valor estimado (orçamento sigiloso)', refNome:'estimativa', artExeq:'Edital 5.2 a 5.2.5', artAcima:'Edital 5.1 e',
+    tetoLabel:()=>'Estimativa<br>R$ 11,0 mi',
+    minSub:r=>'≈ '+fmt0(r.Pmin/MESES)+' por mês, 2 lotes',
+    margSub:r=>'≈ '+fmt0(r.margL*r.L)+' em 36 meses',
+    descValue:(r,ok,ref)=>ok?(r.Pmin<ref?pct(1-r.Pmin/ref):'sem desconto'):'—',
+    passo:L=>L*0.01,
+    extraAlerts:r=>{
+      const A=[];
+      if(isFinite(r.Pmin)&&r.Pmin<0.7*REF) A.push(['warn','Sua proposta mínima fica abaixo de 70% da estimativa. Na Transpetro, abaixo de 70% do orçamento já é indício de inexequibilidade e abre diligência de 1 dia útil (Edital 5.2, 5.2.4).']);
+      if(r.L>0&&r.L<0.7*REF) A.push(['warn','A proposta testada está abaixo de 70% da estimativa: prepare a prova de exequibilidade (Edital 5.2.3).']);
+      A.push(['warn','A referência é estimativa nossa. O orçamento real da Transpetro é sigiloso; acima dele, após a negociação, a proposta é desclassificada (Edital 5.1 e).']);
+      LOTES.forEach(L=>{const p=calcLote(L,state.sim); if(isFinite(p)&&p>L.ref) A.push(['bad','No '+L.n+', a proposta mínima passa da estimativa do lote. Revise os custos desse lote.']);});
+      return A;
+    }
+  },
+  kpis(x){ const {s,r,exemplo,ok}=x; const dImp=daysUntil(...IMP); return [
+   {href:'planilha',k:'Valor estimado (sigiloso)',v:'R$ 11,0 mi',c:'gold',s:'estimativa nossa · Lote 1 R$ 2,93 mi · Lote 2 R$ 8,03 mi'},
+   {href:'simulador',k:'Desconto máximo viável',v:ok?pct(Math.max(0,1-r.Pmin/REF)):'—',c:'blue',s:ok?'proposta mínima '+fmtMi(r.Pmin)+(exemplo?' (custos de exemplo)':''):'revise o simulador'},
+   {href:'conflitos',k:'Conflitos graves',v:String(altas()),c:'red',s:'dúvidas e impugnação até 24/11 ('+leftTxt(dImp)+')'},
+   {href:'matriz',k:'Requisitos atendidos',v:(s.c.atende+s.c.ajuste)+' de '+s.all.length,c:'green',s:s.c.verificar?s.c.verificar+' a verificar na matriz':(s.blockers.length?s.blockers.length+' bloqueio(s)':'todos avaliados')}
+  ]; },
+  precoTxt:r=>'Proposta mínima de '+fmt0(r.Pmin)+' nos 2 lotes, '+pct(Math.max(0,1-r.Pmin/REF))+' abaixo da nossa estimativa (o orçamento real é sigiloso).'+(r.Pmin<0.7*REF?' Abaixo de 70%: exige prova de exequibilidade.':''),
+  riscosTxt:d=>'Faltam PPU, minuta do Lote 2 e DFP do Lote 1; orçamento sigiloso; rodagem alta e frota sofisticada. Dúvidas até 24/11 ('+leftTxt(d)+').',
+  prepTxt:(r,L)=>'Proposta completa no Petronect antes de 01/12, 12h. Caixa: frota de cerca de '+fmt0(frTotal())+' (exemplo) e '+fmt0(giro(r))+' de capital de giro.',
+  passoBloqueio:'Avaliar garantia corporativa da empresa-mãe, atestado de empresa do mesmo grupo ou disputar só o Lote 1 antes de desistir.',
+  exeqStep:'Preparar a prova de exequibilidade (cotações de veículos e memória de cálculo) para responder em 1 dia útil (Edital 5.2.3–5.2.4).',
+  questionarStep:a=>'Mandar na Sala de Colaboração, até 24/11 às 15h, as dúvidas dos '+a+' pontos de alta gravidade.',
+  stepsGo:['Baixar no Petronect a PPU, a minuta do Lote 2 e o DFP do Lote 1.','Anexar PPU e DFP, digitar o preço na aba Itens e conferir o status "Cotação Apresentada" antes de 01/12, 12h.'],
+  init(){ renderComposition(); renderPlanilha(); buildFr(); renderFr(true); },
+  onSim(r){ renderRiscos(r); renderLotes(r); }
+};
+
+const ETAPAS=[{n:1,nome:'Entender'},{n:2,nome:'Riscos'},{n:3,nome:'Aderência'},{n:4,nome:'Preço'},{n:5,nome:'Parecer'}];
+/* ---------------- estado e armazenamento ---------------- */
+const state={matriz:{status:{},notas:{}},kit:{done:{}},sim:SIM_DEF(),parecer:{decisao:'',nota:'',em:''},prog:{done:{}}};
+const DOCS={matriz:E.docPrefix+'analise/matriz',kit:E.docPrefix+'analise/kit',sim:E.docPrefix+'analise/simulador',parecer:E.docPrefix+'analise/parecer'};
+const SAVE_EL={matriz:'mxSave',kit:'kitSave',sim:'simSave',parecer:'parSave'};
+let db=null, mode='local';
+const lsGet=k=>{try{const v=localStorage.getItem(E.lsPrefix+k);return v?JSON.parse(v):null}catch(e){return null}};
+const lsSet=(k,v)=>{try{localStorage.setItem(E.lsPrefix+k,JSON.stringify(v))}catch(e){}};
+function setSave(name,cls,txt){const el=$(SAVE_EL[name]); if(!el)return; el.className='save-state'+(cls?' '+cls:''); el.textContent=txt;}
+const timers={}, writing={}, pending={};
+function persist(name){
+  lsSet(name,state[name]);
+  if(!db){setSave(name,'local','Salvo neste navegador');return;}
+  setSave(name,'busy','Salvando…');
+  clearTimeout(timers[name]);
+  timers[name]=setTimeout(()=>flush(name),700);
+}
+async function flush(name){
+  if(writing[name]){pending[name]=true;return;}
+  writing[name]=true;
+  try{ await db.doc(DOCS[name]).set(JSON.parse(JSON.stringify(state[name]))); setSave(name,'','Salvo para a equipe'); }
+  catch(e){ setSave(name,'err', (e&&(e.code==='permission_denied'||e.code==='not_granted'))?'Somente leitura: salvo só neste navegador':'Não foi possível salvar para a equipe; salvo neste navegador'); }
+  writing[name]=false;
+  if(pending[name]){pending[name]=false;flush(name);}
+}
+function mergeIn(name,data){
+  if(!data) return;
+  if(name==='sim') state.sim=Object.assign(SIM_DEF(),data);
+  else if(name==='matriz') state.matriz={status:Object.assign({},data.status||{}),notas:Object.assign({},data.notas||{})};
+  else if(name==='kit') state.kit={done:Object.assign({},data.done||{})};
+  else if(name==='parecer') state.parecer=Object.assign({decisao:'',nota:'',em:''},data);
+}
+['matriz','kit','sim','parecer'].forEach(n=>{const v=lsGet(n); if(v) mergeIn(n,v);});
+{const pg=lsGet('prog'); if(pg&&pg.done) state.prog.done=pg.done;}
+
+async function connectDb(){
+  try{ db = window.claude && window.claude.use ? await window.claude.use('db') : null; }catch(e){ db=null; }
+  if(!db){ ['matriz','kit','sim','parecer'].forEach(n=>setSave(n,'local','Salvo neste navegador')); return; }
+  mode='db';
+  ['matriz','kit','sim','parecer'].forEach(name=>{
+    setSave(name,'','Salvo para a equipe');
+    try{
+      db.doc(DOCS[name]).onSnapshot(snap=>{
+        if(snap.metadata && snap.metadata.hasPendingWrites) return;
+        if(writing[name] || timers[name]&&pending[name]) return;
+        if(snap.exists){ mergeIn(name,snap.data()); lsSet(name,state[name]); rerender(name); }
+      },()=>setSave(name,'local','Sem conexão com a equipe; salvo neste navegador'));
+    }catch(e){ setSave(name,'local','Salvo neste navegador'); }
+  });
+}
+function rerender(name){
+  if(name==='matriz') renderMatriz();
+  if(name==='kit') renderKit();
+  if(name==='sim') renderSim(true);
+  if(name==='parecer') renderParecer();
+  renderOverview();
+}
+
+/* ---------------- navegação ---------------- */
+let currentId='painel';
+const fmtMi=n=>'R$ '+(n/1e6).toLocaleString('pt-BR',{maximumFractionDigits:n<1e7?2:1})+' mi';
+function buildNav(){
+  $('homeArt').innerHTML=HOME_ART;
+  $('cards').innerHTML=SECTIONS.map(s=>'<a class="tcard'+(s.id==='conflitos'?' alert-ring':'')+'" href="#'+s.id+'" data-sec="'+s.sec+'"><span class="art">'+ill(s.art||s.sec)+'<span class="done" id="cd-'+s.id+'" hidden>✓ concluída</span></span><span class="body"><span class="et">Etapa '+s.etapa+' · '+ETAPAS[s.etapa-1].nome+'</span><h3>'+s.nome+'</h3><span class="m" id="cm-'+s.id+'"></span><span class="s" id="cs-'+s.id+'"></span><span class="go">Abrir →</span></span></a>').join('');
+}
+function route(){
+  let id=(location.hash||'').replace('#','');
+  const home=!SECTIONS.some(s=>s.id===id);
+  if(home) id='painel';
+  currentId=id;
+  document.querySelectorAll('.sec').forEach(el=>{el.hidden = el.id!=='sec-'+id});
+  const cb=$('crumbbar'), pg=$('pager');
+  if(home){ cb.hidden=true; pg.hidden=true; pg.innerHTML=''; refreshProgress(); window.scrollTo(0,0); return; }
+  const s=SECTIONS.find(x=>x.id===id), i=SECTIONS.indexOf(s);
+  cb.hidden=false; pg.hidden=false;
+  cb.innerHTML='<a class="back" href="#painel">← Painel</a><span class="crumb-info">Etapa '+s.etapa+' de 5 · '+ETAPAS[s.etapa-1].nome+' · página '+(i+1)+' de '+SECTIONS.length+'<span class="mini-prog" title="Análise concluída"><i style="width:'+Math.round(overallProgress()*100)+'%"></i></span></span>';
+  const prev=SECTIONS[i-1], next=SECTIONS[i+1];
+  let ph=prev?'<a href="#'+prev.id+'"><span>← Anterior</span><b>'+prev.nome+'</b></a>':'<a href="#painel"><span>← Voltar</span><b>Painel</b></a>';
+  if(next){ const auto=(id==='matriz'||id==='kit'); const done=secProgress(id)>=1;
+    ph+='<button class="btn next-btn" type="button" data-next="'+next.id+'" data-mark="'+(auto?'':id)+'">'+((done||auto)?'Seguir para ':'Concluir e seguir para ')+next.nome+' →</button>'; }
+  else ph+='<a class="next-btn" href="#painel"><span>Fim da análise</span><b>Voltar ao painel →</b></a>';
+  pg.innerHTML=ph;
+  refreshProgress(); window.scrollTo(0,0);
+}
+$('pager').addEventListener('click',e=>{const b=e.target.closest('.next-btn[data-next]'); if(!b)return; if(b.dataset.mark){state.prog.done[b.dataset.mark]=true; lsSet('prog',state.prog);} location.hash='#'+b.dataset.next;});
+
+/* ---------------- prazos ---------------- */
+function daysUntil(y,m,d){const now=new Date(); const a=new Date(now.getFullYear(),now.getMonth(),now.getDate()); const b=new Date(y,m-1,d); return Math.round((b-a)/86400000);}
+function renderDeadlines(){
+  $('deadlines').innerHTML=E.deadlines.map(x=>{const n=daysUntil(...x.d); const left=n<0?'encerrado':n===0?'hoje':n===1?'amanhã':'em '+n+' dias'; return '<div class="dl'+(n>=0&&n<=2?' urgent':'')+'"><div class="d"><b>'+x.lbl+'</b><span class="left">'+left+'</span></div><p>'+x.t+'</p><span class="hint">'+x.s+(x.mail?'<span class="mono">'+x.mail+'</span> <button class="copy" type="button" data-copy="'+x.mail+'">copiar</button>':'')+'</span></div>';}).join('');
+  const n=daysUntil(...E.sessao);
+  $('topChips').innerHTML='<span class="chip'+(n<=10&&n>=0?' hot':'')+'">'+svg('cal')+(n>0?E.sessaoNome+' em '+n+(n===1?' dia':' dias'):n===0?E.sessaoNome+' hoje':E.sessaoNome+' realizada')+'</span><span class="chip num">'+E.chip+'</span>';
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]'); if(!b) return; const t=b.dataset.copy; const done=()=>{b.textContent='copiado'; setTimeout(()=>b.textContent='copiar',1500)}; try{navigator.clipboard.writeText(t).then(done,()=>{selectText(b.previousElementSibling)})}catch(err){selectText(b.previousElementSibling)}});
+function selectText(el){try{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}catch(e){}}
+
+/* ---------------- conflitos ---------------- */
+let confFilter='todos';
+function renderConflitos(){
+  const counts={alta:0,media:0,baixa:0}; CONFLITOS.forEach(c=>counts[c.g]++);
+  const F=[['todos','Todos ('+CONFLITOS.length+')'],['alta','Alta ('+counts.alta+')'],['media','Média ('+counts.media+')'],['baixa','Baixa ('+counts.baixa+')']];
+  $('confFilters').innerHTML=F.map(f=>'<button class="fbtn" type="button" data-f="'+f[0]+'" aria-pressed="'+(confFilter===f[0])+'">'+f[1]+'</button>').join('');
+  const lab={alta:'Alta',media:'Média',baixa:'Baixa'};
+  $('confList').innerHTML=CONFLITOS.map((c,i)=>({c,i})).filter(o=>confFilter==='todos'||o.c.g===confFilter).map(({c,i})=>'<details class="fold conf-f"><summary><span class="fold-txt"><b>'+(i+1)+'. '+c.t+'</b><span>'+c.a[0]+' × '+c.b[0]+'</span></span><span class="fold-meta"><span class="pill info">'+c.tipo+'</span><span class="pill '+c.g+'">'+lab[c.g]+'</span></span><span class="fold-more"><span class="m-open">Ver mais</span><span class="m-close">Ver menos</span>'+CHEV+'</span></summary><div class="fold-body conf"><div class="versus"><div class="side-a"><span class="src">'+c.a[0]+'</span><span>'+c.a[1]+'</span></div><div class="vs">×</div><div class="side-b"><span class="src">'+c.b[0]+'</span><span>'+c.b[1]+'</span></div></div><p class="why">'+c.why+'</p><p class="todo"><b>O que fazer:</b> '+c.todo+'</p></div></details>').join('');
+  const nb=$('navConfBadge'); if(nb) nb.textContent=counts.alta; $('confAltaTxt').textContent=counts.alta;
+}
+$('confFilters').addEventListener('click',e=>{const b=e.target.closest('[data-f]'); if(!b)return; confFilter=b.dataset.f; renderConflitos();});
+
+/* ---------------- matriz ---------------- */
+const ST=[['atende','Atende'],['ajuste','Atende com ajuste'],['nao','Não atende'],['verificar','A verificar']];
+function matrizSummary(){
+  const all=MATRIZ.flatMap(g=>g.itens); let c={atende:0,ajuste:0,nao:0,verificar:0}; const blockers=[];
+  all.forEach(it=>{const v=state.matriz.status[it.id]||'verificar'; c[v]++; if(v==='nao'&&it.elim) blockers.push(it.t);});
+  const evaluated=all.length-c.verificar;
+  let kind='wait',title='Decisão pendente',text='';
+  if(blockers.length){kind='nogo';title='Não participar nas condições atuais';text='Exigência eliminatória não atendida: '+blockers.join('; ')+'. Avalie consórcio ou parceria antes de desistir.';}
+  else if(c.verificar>0){kind='wait';title='Decisão pendente';text=c.verificar+' de '+all.length+' requisitos ainda sem avaliação.'+(c.nao?' Há '+c.nao+' item(ns) não eliminatório(s) sem atendimento.':'');}
+  else if(c.nao>0){kind='wait';title='Participar com plano de ação';text='Nenhum eliminatório bloqueia, mas '+c.nao+' requisito(s) precisam de solução até a assinatura.';}
+  else {kind='go';title='Apta a participar';text=c.ajuste?c.ajuste+' requisito(s) dependem de ajuste: confirme os parceiros antes da sessão.':'Todos os requisitos avaliados como atendidos.';}
+  return {all,c,blockers,evaluated,kind,title,text};
+}
+function renderMatriz(){
+  const list=$('mxList');
+  if(!list.dataset.built){
+    list.innerHTML=MATRIZ.map(g=>'<div class="req-group"><div class="group-title">'+g.g+'</div>'+g.itens.map(it=>'<div class="req" id="req-'+it.id+'"><div class="req-txt"><b>'+it.t+' '+(it.elim?'<span class="pill elim">Eliminatório</span>':'')+'</b><span>'+it.d+' · <span class="src">'+it.src+'</span></span></div><div class="seg" role="group" aria-label="Situação: '+esc(it.t)+'">'+ST.map(s=>'<button type="button" data-id="'+it.id+'" data-v="'+s[0]+'">'+s[1]+'</button>').join('')+'</div><input class="note" id="note-'+it.id+'" data-note="'+it.id+'" placeholder="Nota: como vai suprir, quem é o parceiro, documento…" aria-label="Nota sobre '+esc(it.t)+'"></div>').join('')+'</div>').join('');
+    list.dataset.built='1';
+  }
+  MATRIZ.flatMap(g=>g.itens).forEach(it=>{
+    const v=state.matriz.status[it.id]||'verificar';
+    const row=$('req-'+it.id); row.className='req st-'+v;
+    row.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===v)));
+    const n=$('note-'+it.id); if(document.activeElement!==n) n.value=state.matriz.notas[it.id]||'';
+  });
+  const s=matrizSummary();
+  const vb=$('mxVerdict'); vb.className='verdict-bar '+s.kind; $('mxTitle').textContent=s.title; $('mxText').textContent=s.text;
+  $('mxCounts').innerHTML='<span class="pill ok">'+s.c.atende+' atende</span><span class="pill att">'+s.c.ajuste+' com ajuste</span><span class="pill elim">'+s.c.nao+' não atende</span><span class="pill info">'+s.c.verificar+' a verificar</span>';
+  const p=s.evaluated/s.all.length; $('mxRing').setAttribute('stroke-dasharray',(201*p).toFixed(1)+' 201'); $('mxRingTxt').textContent=Math.round(p*100)+'%';
+}
+$('mxList').addEventListener('click',e=>{const b=e.target.closest('.seg button'); if(!b)return; state.matriz.status[b.dataset.id]=b.dataset.v; renderMatriz(); renderOverview(); persist('matriz');});
+$('mxList').addEventListener('input',e=>{const n=e.target.closest('[data-note]'); if(!n)return; state.matriz.notas[n.dataset.note]=n.value.slice(0,500); persist('matriz');});
+
+/* ---------------- simulador ---------------- */
+const RV=()=>E.ref!=null?E.ref:(state.sim.mercado||0);
+function compCost(c,sv){ if(c.fixed) return c.v; const x=Math.max(0,sv['c_'+c.k]||0); if(c.v==null) return x*(c.mult?Math.max(0,sv[c.mult]||0):1); return c.v*x/100; }
+function calc(sv){
+  let cdir=0; COMPONENTS.forEach(c=>{cdir+=compCost(c,sv);});
+  const ind=cdir*(sv.adm||0)/100, C=cdir+ind;
+  const unico=E.giro==='unico', ciclo=sv.ciclo||0, j=(sv.juros||0)/100;
+  const K=unico?C:C/12*(ciclo/30), F=unico?C*j*(ciclo/30):K*j*12;
+  const g=(sv.glosa||0)/100,t=(sv.trib||0)/100,m=(sv.marg||0)/100,rg=(sv.garan||0)/100, gp=E.garantiaPct||0;
+  const den=(1-g)*(1-t)-m-gp*rg;
+  const Pmin=den>0?(C+F)/den:Infinity;
+  const L=sv.lance;
+  const margL=L>0?((L*(1-g)*(1-t))-C-F-gp*L*rg)/L:NaN;
+  return {cdir,ind,C,K,F,Pmin,L,margL,g,t,m,rg,gp};
+}
+function buildSimForm(){
+  $('simCosts').innerHTML=COMPONENTS.map(c=>{
+    if(c.fixed) return '<div class="field"><label>'+c.nome+'</label><small>'+fmt0(c.v)+' · repasse, custo igual à receita</small><div class="inp" style="background:transparent;border-style:dashed"><input value="100" disabled aria-label="'+c.nome+' em % da referência"><span class="u">%</span></div></div>';
+    const abs=c.v==null;
+    return '<div class="field"><label for="sim-c_'+c.k+'">'+c.nome+'</label><small>'+(abs?(c.det?c.det+' · ':''):'referência '+fmt0(c.v)+' · ')+'seu custo = <b id="simv-'+c.k+'"></b></small><div class="inp">'+(abs?'<span class="u">R$</span>':'')+'<input id="sim-c_'+c.k+'" inputmode="decimal" data-k="c_'+c.k+'">'+(abs?(c.mult?'<span class="u">/'+c.multU+'</span>':''):'<span class="u">%</span>')+'</div></div>';
+  }).join('');
+  $('simParams').innerHTML=SIM_PARAMS.map(p=>'<div class="field"><label for="sim-'+p.k+'">'+p.l+'</label><small>'+p.h+'</small><div class="inp">'+(p.u==='R$'?'<span class="u">R$</span>':'')+'<input id="sim-'+p.k+'" inputmode="decimal" data-k="'+p.k+'">'+(p.u==='R$'?'':'<span class="u">'+p.u+'</span>')+'</div></div>').join('');
+}
+function isDefault(){const d=SIM_DEF(); return Object.keys(d).every(k=>Math.abs((state.sim[k]??d[k])-d[k])<1e-9);}
+function renderSim(fromRemote){
+  document.querySelectorAll('#sec-simulador [data-k]').forEach(inp=>{ if(document.activeElement===inp && fromRemote!=='force') return; const k=inp.dataset.k; const v=state.sim[k]; inp.value = (k==='lance'||k==='mercado')? NUM.format(Math.round(v)) : NUM.format(v); });
+  const r=calc(state.sim), S=E.sim, REFV=RV(), TETO=E.teto;
+  COMPONENTS.forEach(c=>{const el=$('simv-'+c.k); if(el) el.textContent=fmt0(compCost(c,state.sim));});
+  $('simExample').hidden=!isDefault();
+  const ok=isFinite(r.Pmin);
+  $('oMin').textContent=ok?fmt0(r.Pmin):'Inviável'; $('oMinS').textContent=ok?S.minSub(r):'margem e tributos passam de 100%';
+  $('oDesc').textContent=S.descValue(r,ok,REFV,TETO);
+  $('oMarg').textContent=isFinite(r.margL)?pct(r.margL):'—'; $('oMarg').style.color=r.margL<0?'var(--bad)':r.margL<(state.sim.marg||0)/100?'var(--warn)':'var(--good)';
+  $('oMargS').textContent=isFinite(r.margL)?S.margSub(r):'';
+  $('oNext').textContent=r.L>0?fmt0(Math.max(0,r.L-S.passo(r.L))):'—';
+  const max=Math.max(REFV,TETO)*1.06, X=v=>Math.max(0,Math.min(100,v/max*100));
+  const half=REFV*0.5, pm=ok?Math.min(r.Pmin,max):max;
+  let z='<span class="zone-seg" style="left:0;width:'+X(half)+'%;background:var(--bad-bg)"></span>';
+  z+='<span class="zone-seg" style="left:'+X(half)+'%;width:'+Math.max(0,X(Math.max(pm,half))-X(half))+'%;background:var(--neutral-bg)"></span>';
+  if(ok&&r.Pmin<TETO) z+='<span class="zone-seg" style="left:'+X(Math.max(r.Pmin,half))+'%;width:'+(X(TETO)-X(Math.max(r.Pmin,half)))+'%;background:var(--good-bg)"></span>';
+  z+='<span class="zone-mark" style="left:'+X(TETO)+'%;background:var(--ink)" title="'+S.tetoNome+'"></span>';
+  if(Math.abs(REFV-TETO)>1) z+='<span class="zone-mark" style="left:'+X(REFV)+'%;background:var(--muted)" title="'+S.refNome+'"></span>';
+  if(ok) z+='<span class="zone-mark" style="left:'+X(r.Pmin)+'%;background:var(--blue)" title="Lance mínimo"></span>';
+  if(r.L>0) z+='<span class="zone-mark" style="left:'+X(r.L)+'%;background:var(--warn);width:5px;transform:translateX(-2.5px)" title="Seu lance"></span>';
+  $('zoneTrack').innerHTML=z;
+  const lab=(v,t,cls)=>'<span class="'+(cls||'')+'" style="left:'+X(v)+'%">'+t+'</span>';
+  let sc=lab(0,'R$ 0','start')+lab(half,'50%<br>'+fmt0(half).replace(/\s/g,' '));
+  sc+=lab(TETO,S.tetoLabel(TETO),'end');
+  $('zoneScale').innerHTML=sc;
+  const A=[]; const ico=k=>svg(k);
+  if(!ok) A.push(['bad','Com esses percentuais nenhum preço cobre os custos. Reduza margem ou tributos.']);
+  else if(r.Pmin>TETO) A.push(['bad','Seu lance mínimo ('+fmt0(r.Pmin)+') passa do '+S.tetoNome+'. Nas condições informadas, a empresa não consegue competir.']);
+  else if(r.Pmin<half) A.push(['warn','Seu lance mínimo fica abaixo de 50% da '+S.refNome+'. O órgão pode exigir prova de exequibilidade ('+S.artExeq+').']);
+  else A.push(['ok','Há espaço para disputar entre '+fmt0(r.Pmin)+' e '+fmt0(TETO)+'.']);
+  if(r.L>0){
+    if(r.L>TETO) A.push(['bad','O lance informado está acima do '+S.tetoNome+' ('+S.artAcima+').']);
+    else if(r.L<half) A.push(['warn','O lance informado está abaixo de 50% da '+S.refNome+': indício de inexequibilidade.']);
+    else if(ok&&r.L<r.Pmin) A.push(['bad','O lance informado está abaixo do seu mínimo: a margem fica em '+pct(r.margL)+'.']);
+  }
+  (S.extraAlerts?S.extraAlerts(r):[]).forEach(a=>A.push(a));
+  $('simAlerts').innerHTML=A.map(a=>'<div class="alert '+a[0]+'">'+ico(a[0]==='ok'?'ok':'alert')+'<p>'+a[1]+'</p></div>').join('');
+  const L=r.L>0?r.L:(ok?r.Pmin:TETO);
+  const rows=[['Custo direto',r.cdir],['Despesas indiretas',r.ind],['Custo financeiro do capital de giro',r.F]];
+  if(r.gp) rows.push(['Garantia contratual (prêmio)',r.gp*L*r.rg]);
+  rows.push(['Tributos',L*(1-r.g)*r.t]);
+  if(r.g) rows.push(['Desconto esperado do IMR',L*r.g]);
+  const used=rows.reduce((a,b)=>a+b[1],0); rows.push(['Margem líquida',L-used]);
+  $('simBreak').innerHTML=rows.map(x=>'<tr><td>'+x[0]+'</td><td class="r"'+(x[1]<0?' style="color:var(--bad)"':'')+'>'+fmt0(x[1])+'</td><td class="r">'+pct(x[1]/L)+'</td></tr>').join('')+'<tr><td><b>Lance analisado</b></td><td class="r"><b>'+fmt0(L)+'</b></td><td class="r">100%</td></tr>';
+  if(E.onSim) E.onSim(r);
+}
+$('sec-simulador').addEventListener('input',e=>{const i=e.target.closest('[data-k]'); if(!i)return; state.sim[i.dataset.k]=parseNum(i.value); renderSim(); renderOverview(); persist('sim');});
+$('sec-simulador').addEventListener('change',e=>{const i=e.target.closest('[data-k]'); if(!i)return; renderSim('force');});
+$('simReset').addEventListener('click',()=>{state.sim=SIM_DEF(); renderSim('force'); renderOverview(); persist('sim');});
+
+/* ---------------- kit ---------------- */
+function renderKit(){
+  const box=$('kitGroups');
+  if(!box.dataset.built){
+    box.innerHTML=KIT.map((g,gi)=>'<div class="kit-g"><div class="kit-g-h"><h4>'+g.g+' <span class="pill att">'+g.prazo+'</span></h4><div style="display:flex;align-items:center;gap:10px;flex:1;justify-content:flex-end"><div class="prog"><i id="kp-'+gi+'"></i></div><span class="num" id="kc-'+gi+'" style="font-size:13px;font-weight:700"></span></div></div>'+g.itens.map(it=>'<div class="check" id="chk-'+it.id+'"><input type="checkbox" id="cb-'+it.id+'" data-kit="'+it.id+'"><label for="cb-'+it.id+'">'+it.t+'<span>'+it.d+'</span></label></div>').join('')+'</div>').join('');
+    box.dataset.built='1';
+  }
+  KIT.forEach((g,gi)=>{let d=0; g.itens.forEach(it=>{const on=!!state.kit.done[it.id]; if(on)d++; $('cb-'+it.id).checked=on; $('chk-'+it.id).classList.toggle('done',on);}); $('kp-'+gi).style.width=(d/g.itens.length*100)+'%'; $('kc-'+gi).textContent=d+'/'+g.itens.length;});
+}
+$('kitGroups').addEventListener('change',e=>{const c=e.target.closest('[data-kit]'); if(!c)return; if(c.checked) state.kit.done[c.dataset.kit]=true; else delete state.kit.done[c.dataset.kit]; renderKit(); renderOverview(); persist('kit');});
+
+/* ---------------- visão geral ---------------- */
+function renderOverview(){
+  const s=matrizSummary(), pc=parecerCalc(), r=calc(state.sim), exemplo=isDefault();
+  const ok=isFinite(r.Pmin);
+  const K=E.kpis({s,pc,r,exemplo,ok});
+  $('kpis').innerHTML=K.map(k=>'<a class="kpi" href="#'+k.href+'"><span class="k">'+k.k+'</span><span class="v c-'+k.c+'">'+k.v+'</span><span class="s">'+k.s+'</span></a>').join('');
+  const labD={participar:'Participar',condicoes:'Participar com condições',nao:'Não participar'};
+  const tot=overallProgress();
+  $('reco').innerHTML='<div><span class="k">Recomendação atual</span><b>'+pc.title+'</b><p>'+(state.parecer.decisao?'Decisão registrada: '+labD[state.parecer.decisao]+'.':pc.text)+'</p></div><div class="reco-prog"><span class="bar"><i style="width:'+Math.round(tot*100)+'%"></i></span><span>'+Math.round(tot*100)+'% da análise concluída</span></div>';
+  refreshProgress();
+}
+
+/* ---------------- jornada, banners e parecer ---------------- */
+function secProgress(id){
+  if(id==='matriz'){const s=matrizSummary(); return s.evaluated/s.all.length;}
+  if(id==='kit'){const a=KIT.flatMap(g=>g.itens); return a.filter(i=>state.kit.done[i.id]).length/a.length;}
+  if(id==='parecer') return state.parecer.decisao?1:0;
+  return state.prog.done[id]?1:0;
+}
+const overallProgress=()=>SECTIONS.reduce((a,s)=>a+secProgress(s.id),0)/SECTIONS.length;
+const pl=(n,um,varios)=>n===1?um:varios.replace('#',n);
+const leftTxt=n=>n<0?'encerrado':n===0?'hoje':n===1?'amanhã':'em '+n+' dias';
+function renderHeroes(){
+  SECTIONS.forEach(s=>{
+    const sec=$('sec-'+s.id); const el=sec&&sec.querySelector('.sec-head'); if(!el) return;
+    if(!el.querySelector('.hero-art')){ el.innerHTML='<div class="hero-txt"></div><figure class="hero-art">'+ill(s.art||s.sec)+'</figure>'; sec.setAttribute('aria-labelledby','bn-'+s.id); }
+    const done=secProgress(s.id)>=1;
+    el.querySelector('.hero-txt').innerHTML='<p class="eyebrow">Etapa '+s.etapa+' de 5 · '+ETAPAS[s.etapa-1].nome+(done?' · <span class="done-tag">✓ concluída</span>':'')+'</p><h2 id="bn-'+s.id+'">'+s.nome+'</h2><div class="hero-nums">'+HN[s.id]().map(n=>'<div class="hn"><span class="v c-'+n.c+'">'+n.v+'</span><span class="l">'+n.l+'</span></div>').join('')+'</div><p class="lead"><b>Conclusão:</b> '+TAKE[s.id]()+'</p>';
+  });
+}
+function renderCards(){
+  SECTIONS.forEach(s=>{
+    const c=CARD[s.id](); const m=$('cm-'+s.id); if(!m) return;
+    m.textContent=c.m; const st=$('cs-'+s.id); st.textContent=c.s; st.className='s'+(c.c?' st-'+c.c:'');
+    $('cd-'+s.id).hidden=secProgress(s.id)<1;
+  });
+}
+function refreshProgress(){renderHeroes(); renderCards(); renderParecer(); prepIll();}
+
+function parecerCalc(){
+  const s=matrizSummary(), r=calc(state.sim), allK=KIT.flatMap(g=>g.itens), kd=allK.filter(i=>state.kit.done[i.id]).length;
+  const leitura=SECTIONS.filter(x=>!['matriz','kit','parecer'].includes(x.id)), lidas=leitura.filter(x=>state.prog.done[x.id]).length;
+  const alta=CONFLITOS.filter(c=>c.g==='alta').length, dImp=E.prazoQuestionar?daysUntil(...E.prazoQuestionar):-1;
+  const ok=isFinite(r.Pmin), precoOk=ok&&r.Pmin<=E.teto, exemplo=isDefault();
+  const L=r.L>0?r.L:E.teto;
+  const evid=[
+   {href:'matriz',icon:'matriz',t:'Aderência',kind:s.kind,status:s.kind==='go'?'Atende':s.kind==='nogo'?'Bloqueio':(s.c.verificar?'Pendente':'Com ajustes'),txt:s.evaluated+' de '+s.all.length+' requisitos avaliados: '+s.c.atende+' atende, '+s.c.ajuste+' com ajuste, '+s.c.nao+' não atende.'},
+   {href:'simulador',icon:'simul',t:'Preço',kind:!precoOk?'nogo':(exemplo?'wait':'go'),status:!precoOk?'Inviável':(exemplo?'Custos de exemplo':'Viável'),txt:ok?E.precoTxt(r):'Com os percentuais atuais, nenhum preço cobre os custos.'},
+   {href:'conflitos',icon:'conf',t:'Riscos do edital',kind:'wait',status:alta+' de alta gravidade',txt:E.riscosTxt(dImp)},
+   {href:'kit',icon:'kit',t:'Preparação',kind:kd===allK.length?'go':'wait',status:kd+' de '+allK.length,txt:E.prepTxt(r,L)}
+  ];
+  const steps=[];
+  let kind,title,text;
+  if(s.kind==='nogo'||!precoOk){
+    kind='nogo'; title='Não participar nas condições atuais';
+    text=s.blockers.length?'Há exigência eliminatória sem solução: '+s.blockers.join('; ')+'.':'Seu custo não cabe no '+E.sim.tetoNome+'.';
+    s.blockers.forEach(b=>steps.push('Resolver o requisito eliminatório: '+b+'.'));
+    if(s.blockers.length) steps.push(E.passoBloqueio);
+    if(!precoOk) steps.push('Rever os custos e percentuais no Simulador de lance.');
+  } else {
+    if(s.c.verificar>0) steps.push(pl(s.c.verificar,'Avaliar o requisito ainda pendente','Avaliar os # requisitos ainda pendentes')+' na Matriz de aderência.');
+    if(s.c.nao>0) steps.push(pl(s.c.nao,'Definir como resolver o requisito não atendido','Definir como resolver os # requisitos não atendidos')+' até a assinatura.');
+    if(s.c.ajuste>0) steps.push(pl(s.c.ajuste,'Confirmar o parceiro ou arranjo do requisito com ajuste.','Confirmar os parceiros ou arranjos dos # requisitos com ajuste.'));
+    if(exemplo) steps.push('Trocar os custos de exemplo do Simulador pelos custos reais da empresa.');
+    if(ok&&r.Pmin<0.5*RV()) steps.push(E.exeqStep);
+    if(kd<allK.length) steps.push('Completar o '+(SECTIONS.find(x=>x.id==='kit')||{nome:'kit'}).nome+': '+pl(allK.length-kd,'falta 1 item.','faltam # itens.'));
+    if(dImp>=0) steps.push(E.questionarStep(alta));
+    if(steps.length){kind='wait'; title='Participar se…'; text='A análise indica que dá para participar, desde que você resolva as pendências listadas em Próximos passos.';}
+    else {kind='go'; title='Participar'; text='Requisitos atendidos, preço viável e documentos prontos.';}
+  }
+  if(lidas<leitura.length) steps.push('Concluir a leitura das seções: '+lidas+' de '+leitura.length+' revisadas.');
+  if(kind==='go') E.stepsGo.forEach(x=>steps.push(x));
+  return {kind,title,text,evid,steps};
+}
+let parDraft=null;
+function renderParecer(){
+  const p=parecerCalc();
+  $('parVerdict').className='verdict-bar '+p.kind; $('parTitle').textContent=p.title; $('parText').textContent=p.text;
+  const tot=overallProgress(); $('parRing').setAttribute('stroke-dasharray',(201*tot).toFixed(1)+' 201'); $('parRingTxt').textContent=Math.round(tot*100)+'%';
+  const pc={go:'ok',wait:'att',nogo:'elim'};
+  $('parEvid').innerHTML=p.evid.map(e=>'<a class="card ev" href="#'+e.href+'"><h4>'+svg(e.icon)+e.t+' <span class="pill '+pc[e.kind]+'" style="margin-left:auto">'+e.status+'</span></h4><p>'+e.txt+'</p></a>').join('');
+  $('parSteps').innerHTML=p.steps.map(x=>'<li><span>'+x+'</span></li>').join('');
+  const d=parDraft!==null?parDraft:state.parecer.decisao;
+  $('parSeg').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.d===d)));
+  const nota=$('parNota'); if(document.activeElement!==nota && parDraft===null) nota.value=state.parecer.nota||'';
+  const lab={participar:'Participar',condicoes:'Participar com condições',nao:'Não participar'};
+  $('parReg').textContent=state.parecer.decisao?('Registrado: '+lab[state.parecer.decisao]+' · '+new Date(state.parecer.em).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'})):'Nenhum parecer registrado ainda.';
+}
+$('parSeg').addEventListener('click',e=>{const b=e.target.closest('[data-d]'); if(!b)return; parDraft=b.dataset.d; renderParecer();});
+$('parBtn').addEventListener('click',()=>{const d=parDraft!==null?parDraft:state.parecer.decisao; if(!d){$('parReg').textContent='Escolha uma decisão antes de registrar.'; return;} state.parecer={decisao:d,nota:$('parNota').value.slice(0,1500),em:new Date().toISOString()}; parDraft=null; renderOverview(); persist('parecer');});
+
+/* ---------------- animação de entrada ---------------- */
+const ILL_ON=('IntersectionObserver' in window) && !(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+const ILL_IO=ILL_ON?new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) startIll(e.target); }),{rootMargin:'0px 0px 12% 0px',threshold:0}):null;
+function startIll(svg){ if(svg.classList.contains('ill-in')) return; svg.classList.add('ill-in'); if(ILL_IO) ILL_IO.unobserve(svg); }
+function kickIll(){
+  if(!ILL_ON||document.visibilityState!=='visible') return;
+  const vh=window.innerHeight;
+  document.querySelectorAll('svg.ill[data-anim]:not(.ill-in)').forEach(svg=>{ const r=svg.getBoundingClientRect(); if(r.width&&r.bottom>0&&r.top<vh*1.1) startIll(svg); });
+}
+function prepIll(){
+  if(!ILL_ON) return;
+  document.querySelectorAll('svg.ill:not([data-anim])').forEach(svg=>{
+    svg.dataset.anim='1'; let i=0;
+    svg.querySelectorAll('path,rect,circle,ellipse').forEach(el=>{
+      if(el.closest('.drive-l,.drive-r')) return;
+      if(el.getAttribute('stroke-dasharray')||(el.style&&el.style.fill)) el.classList.add('fade'); else el.setAttribute('pathLength','1');
+      el.style.setProperty('--i',i++);
+    });
+    ILL_IO.observe(svg);
+  });
+  kickIll();
+}
+
+/* ---------------- blocos recolhíveis ---------------- */
+const CHEV='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+function initFolds(){
+  document.querySelectorAll('[data-fold]').forEach(el=>{
+    const det=document.createElement('details'); det.className='fold';
+    const bh=el.querySelector(':scope > .block-h'), h4=el.querySelector(':scope > h4');
+    let title='', meta=[], hints=[];
+    if(bh){ const h3=bh.querySelector('h3'); title=h3?h3.innerHTML:''; [...bh.children].forEach(c=>{ if(c===h3) return; (c.classList.contains('hint')?hints:meta).push(c); }); bh.remove(); }
+    else if(h4){ h4.querySelectorAll('[data-icon],svg').forEach(i=>i.remove()); title=h4.innerHTML; h4.remove(); }
+    const sum=document.createElement('summary');
+    sum.innerHTML='<span class="fold-ico">'+svg(el.dataset.foldIcon||'plan')+'</span><span class="fold-txt"><b>'+title+'</b><span>'+esc(el.dataset.fold)+'</span></span><span class="fold-meta"></span><span class="fold-more"><span class="m-open">Ver mais</span><span class="m-close">Ver menos</span>'+CHEV+'</span>';
+    meta.forEach(m=>sum.querySelector('.fold-meta').appendChild(m));
+    const body=document.createElement('div'); body.className='fold-body';
+    hints.forEach(h=>{const p=document.createElement('p'); p.className='hint'; p.innerHTML=h.innerHTML; body.appendChild(p);});
+    while(el.firstChild) body.appendChild(el.firstChild);
+    det.appendChild(sum); det.appendChild(body); el.replaceWith(det);
+  });
+}
+
+/* ---------------- início ---------------- */
+initFolds(); buildNav(); buildSimForm(); renderDeadlines(); renderConflitos(); renderMatriz(); renderKit(); if(E.init) E.init(); renderSim('force'); renderOverview(); route();
+window.addEventListener('hashchange',route);
+connectDb();
+})();
+</script>
+
+</body>
+</html>

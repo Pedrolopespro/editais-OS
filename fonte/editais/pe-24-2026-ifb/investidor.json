@@ -1,0 +1,67 @@
+{
+ "titulo": "Pregão 24/2026 · IFB · Resumo",
+ "orgao": "Instituto Federal de Brasília (IFB)",
+ "unidade": "Coordenação Geral de Aquisições · UASG 158143",
+ "pregao": "Pregão Eletrônico nº 24/2026 · Edital 25/2026",
+ "sessao": {"data": [2026, 11, 25], "hora": "8h", "fuso": "horário de Brasília", "plataforma": "Compras.gov.br", "url": "https://www.gov.br/compras"},
+ "objeto": "Registro de preços para comprar, conforme a necessidade, até 47.139 peças de uniforme escolar (camisetas de manga curta e longa, calças e casacos de moletom, verdes com a marca IFB) para os 10 campi do Instituto Federal de Brasília no Distrito Federal.",
+ "condicoes": ["Registro de preços", "Menor preço por grupo (5 itens)", "Disputa aberta e fechada", "Sem preferência para ME/EPP", "Sem margem de preferência", "Orçamento público"],
+ "referencia": 2754579.74,
+ "contrato_meses": 12,
+ "vigencia": {"v": "12 meses", "s": "prorrogável por mais 12 · contrato de 12 meses"},
+ "garantia": {"pct": 4, "s": "do valor contratado · seguro até a assinatura"},
+ "tabela": {"item": "Uniforme", "qtd": "Peças", "valor": "Valor máximo", "sub": "preços máximos · o IFB pode comprar menos", "total": "Grupo único · 5 itens", "total_qtd": "47.139 peças"},
+ "capital_sub": "capital de giro · pedidos espalhados no ano; pedido único exige mais",
+ "valor_periodo": "valor máximo da ata · o IFB não é obrigado a comprar tudo",
+ "roi_nota": "se os pedidos vierem ao longo do ano",
+ "pdf": true,
+ "rotulos": {"kTotK": "Valor total estimado", "kMesK": "Média por mês", "kVigK": "Validade da ata", "tLoc": "Onde entregar"},
+ "grupos": [
+  {"nome": "Camiseta manga curta · modelo 2", "ex": "verde, gola branca, R$ 51,00 cada", "qtd": 22171, "v": 1130721.00},
+  {"nome": "Casaco de moletom", "ex": "verde, com capuz e bolso canguru, R$ 108,59 cada", "qtd": 5944, "v": 645458.96},
+  {"nome": "Camiseta manga longa · modelo 2", "ex": "verde, punhos de ribana, R$ 47,78 cada", "qtd": 10211, "v": 487881.58},
+  {"nome": "Calça de moletom", "ex": "verde com recorte branco, R$ 58,30 cada", "qtd": 5624, "v": 327879.20},
+  {"nome": "Camiseta manga curta · modelo 1", "ex": "branca com recortes verdes, R$ 51,00 cada", "qtd": 3189, "v": 162639.00}
+ ],
+ "custos": [
+  {"nome": "Tecidos e malhas (exemplo)", "curto": "Tecidos", "ref": 642609, "pct": 100, "cor": "var(--blue)"},
+  {"nome": "Corte, costura e acabamento (exemplo)", "curto": "Confecção", "ref": 366282, "pct": 100, "cor": "var(--green)"},
+  {"nome": "Estamparia em serigrafia (exemplo)", "curto": "Estampa", "ref": 119979, "pct": 100, "cor": "var(--steel)"},
+  {"nome": "Aviamentos, etiquetas e embalagem (exemplo)", "curto": "Aviamentos", "ref": 96138, "pct": 100, "cor": "var(--gold)"},
+  {"nome": "Frete até os 10 campi (exemplo)", "curto": "Frete", "ref": 47139, "pct": 100, "cor": "var(--amber)"},
+  {"nome": "Amostras e laudos (exemplo)", "curto": "Amostras", "ref": 5000, "pct": 100, "cor": "var(--red)"}
+ ],
+ "locais": {
+  "estados": [
+   {"uf": "CPLA", "nome": "Planaltina · 15.360"},
+   {"uf": "CBRA", "nome": "Brasília · 12.040"},
+   {"uf": "CGAM", "nome": "Gama · 6.050"},
+   {"uf": "CEST", "nome": "Estrutural · 3.960"},
+   {"uf": "CSAM", "nome": "Samambaia · 2.450"},
+   {"uf": "CRFI", "nome": "Riacho Fundo · 1.840"},
+   {"uf": "CTAG", "nome": "Taguatinga · 1.600"},
+   {"uf": "CREM", "nome": "Recanto das Emas · 1.460"},
+   {"uf": "CCEI", "nome": "Ceilândia · 1.200"},
+   {"uf": "CSSB", "nome": "São Sebastião · 1.179"}
+  ],
+  "itens": [
+   {"k": "Onde", "v": "10 campi do IFB, todos no Distrito Federal (peças por campus acima)"},
+   {"k": "Prazo de entrega", "v": "Até 60 dias depois de cada pedido (nota de empenho), tudo de uma vez"},
+   {"k": "Antes de vencer", "v": "Amostras de tecido em 7 dias úteis no Campus Planaltina"},
+   {"k": "Produção", "v": "Própria: o edital proíbe subcontratar · não exige loja ou escritório no DF"}
+  ]
+ },
+ "parametros": {"indiretas": 10, "tributos": 16, "glosa": 1, "ciclo_dias": 110, "juros_mes": 1.5, "garantia_pct": 4, "garantia_custo_ano": 1.5},
+ "cenarios": [
+  {"id": "alto", "nome": "Conservador", "lance": 2300000},
+  {"id": "base", "nome": "Provável", "lance": 2100000, "padrao": true},
+  {"id": "agressivo", "nome": "Agressivo", "lance": 1950000}
+ ],
+ "veredito": {"txt": "Vale disputar, com condições", "nivel": "medio", "risco": "risco médio"},
+ "cuidados": [
+  {"t": "O IFB não é obrigado a comprar tudo", "d": "é registro de preços: R$ 2,75 mi é o teto, sem adesão de outros órgãos"},
+  {"t": "Produção paga antes de receber", "d": "até 60 dias para entregar e cerca de 50 até o pagamento; pedido único exige mais caixa"},
+  {"t": "Regras que podem custar caro", "d": "moletom 100% algodão ou misto, multa de 10% por dia de atraso e atestado de 5.000 peças"}
+ ],
+ "nota": "Valores do contrato: Edital 25/2026 (Pregão 24/2026) e Termo de Referência 55/2026, item 1.1 (preços máximos por item). Custos: exemplo hipotético de uma confecção, igual ao do simulador da análise completa, não vem do edital. Retorno: estimativa supondo que o IFB compre as 47.139 peças, já descontados impostos, despesas indiretas, perdas, custo do dinheiro (1,5% ao mês) e garantia. O prazo para questionar o edital venceu em 19/11/2026. Antes de decidir, troque pelos custos reais da empresa."
+}

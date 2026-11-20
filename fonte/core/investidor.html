@@ -40,6 +40,9 @@ button{font:inherit;color:inherit}
 .chip{border:1px solid var(--line-2);background:var(--surface);border-radius:99px;padding:5px 12px;font-size:12.5px;color:var(--muted);white-space:nowrap}
 .btn{display:inline-flex;align-items:center;gap:8px;border-radius:99px;padding:8px 16px;background:#E8EAEC;color:var(--on-light);font-weight:600;font-size:13.5px;text-decoration:none;white-space:nowrap}
 .btn:hover{background:#fff}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+.btn.ghost:hover{background:var(--surface-2)}
+.print-only{display:none}
 
 /* cabeçalho: órgão, pregão e sessão */
 .hero{background:var(--aurora);color:var(--on-light);border-radius:var(--r-lg);padding:16px 22px 14px;box-shadow:var(--shadow);display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px 20px;align-items:center}
@@ -137,12 +140,21 @@ tfoot td.v{color:var(--blue)}
 .foot p{max-width:900px}
 .foot a{color:var(--muted)}
 
-@media (max-width:1060px){
+@media print{
+  @page{size:A4;margin:0}
+  html,body{background:var(--bg)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{padding:10mm 0 0}
+  .shell{zoom:.655;max-width:none;width:1120px;padding:0;margin:0 auto;gap:14px}
+  .bar-top,.seg,.sess .cd,.foot a{display:none!important}
+  .print-only{display:inline}
+  .card,.kpi,.hero{break-inside:avoid}
+}
+@media screen and (max-width:1060px){
   .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
   .kpi.main{grid-column:1/-1}
   .cols,.ret{grid-template-columns:1fr}
 }
-@media (max-width:760px){
+@media screen and (max-width:760px){
   .hero{grid-template-columns:auto minmax(0,1fr);padding:18px 18px 16px}
   .sess{grid-column:1/-1;min-width:0}
   .logo{width:64px;height:64px;border-radius:18px}
@@ -164,6 +176,7 @@ tfoot td.v{color:var(--blue)}
     <a class="back" href="/">← Editais</a>
     <div class="top-r">
       <span class="chip">Resumo</span>
+      <a class="btn ghost" id="pdfBtn" hidden download>Baixar PDF <span aria-hidden="true">↓</span></a>
       <a class="btn" href="{{PAINEL}}">Ver análise completa <span aria-hidden="true">→</span></a>
     </div>
   </nav>
@@ -188,10 +201,10 @@ tfoot td.v{color:var(--blue)}
   </header>
 
   <section class="kpis" aria-label="Valores do contrato">
-    <div class="kpi main"><span class="k">Valor total do contrato</span><span class="v n" id="kTot"></span><span class="s" id="kTotS"></span></div>
-    <div class="kpi"><span class="k">Por mês</span><span class="v n" id="kMes"></span><span class="s" id="kMesS"></span></div>
-    <div class="kpi"><span class="k">Vigência</span><span class="v n" id="kVig"></span><span class="s" id="kVigS"></span></div>
-    <div class="kpi"><span class="k">Garantia do contrato</span><span class="v n" id="kGar"></span><span class="s" id="kGarS"></span></div>
+    <div class="kpi main"><span class="k" id="kTotK">Valor total do contrato</span><span class="v n" id="kTot"></span><span class="s" id="kTotS"></span></div>
+    <div class="kpi"><span class="k" id="kMesK">Por mês</span><span class="v n" id="kMes"></span><span class="s" id="kMesS"></span></div>
+    <div class="kpi"><span class="k" id="kVigK">Vigência</span><span class="v n" id="kVig"></span><span class="s" id="kVigS"></span></div>
+    <div class="kpi"><span class="k" id="kGarK">Garantia do contrato</span><span class="v n" id="kGar"></span><span class="s" id="kGarS"></span></div>
   </section>
 
   <div class="cols">
@@ -234,7 +247,7 @@ tfoot td.v{color:var(--blue)}
   </div>
 
   <footer class="foot">
-    <p id="nota"></p>
+    <p><span class="print-only" id="gerado"></span><span id="nota"></span></p>
     <a href="{{PAINEL}}">Ver análise completa do edital →</a>
   </footer>
 </div>
@@ -267,11 +280,14 @@ function render(id){
   $('rLucS').textContent=mil(r.lucro/meses)+'/mês · lance de '+mi(r.L);
   $('rCap').textContent=mi(r.K);
   $('rRoi').textContent='viram R$ '+dec(Math.round(100*(1+r.lucro/r.K)),0);
-  $('rRoiS').textContent='em cerca de '+(meses+Math.round(P.ciclo_dias/30))+' meses · sem a compra da frota';
+  $('rRoiS').textContent='em cerca de '+(meses+Math.round(P.ciclo_dias/30))+' meses'+(D.roi_nota===''?'':' · '+(D.roi_nota||'sem a compra da frota'));
 }
 
 (function init(){
   document.title=D.titulo;
+  if(D.pdf){const b=$('pdfBtn'); b.href=D.pdf; b.hidden=false;}
+  Object.entries(D.rotulos||{}).forEach(([id,t])=>{const e=$(id); if(e&&!e.children.length) e.textContent=t;});
+  $('gerado').textContent='Resumo gerado em '+new Date().toLocaleDateString('pt-BR')+' · análise completa em editais-os.vercel.app{{PAINEL}} · ';
   $('pregao').textContent=D.pregao; $('orgao').textContent=D.orgao; $('unid').textContent=D.unidade;
   const S=D.sessao, [y,m,d]=S.data, hoje=new Date(); hoje.setHours(0,0,0,0);
   const dias=Math.round((new Date(y,m-1,d)-hoje)/864e5);
@@ -289,7 +305,7 @@ function render(id){
   $('kVig').textContent=D.vigencia.v; $('kVigS').textContent=D.vigencia.s;
   if(D.garantia.pct>0){$('kGar').textContent=mi(REF*D.garantia.pct/100); $('kGarS').textContent=D.garantia.pct+'% '+D.garantia.s;}else{$('kGar').textContent=D.garantia.v||'Não informada'; $('kGarS').textContent=D.garantia.s;}
   $('logoImg').alt='Logo de '+D.orgao;
-  $('rLucK').textContent=D.contrato_meses===12?'Lucro líquido no ano':'Lucro líquido em '+D.contrato_meses+' meses';
+  $('rLucK').textContent=(D.rotulos&&D.rotulos.rLucK)?D.rotulos.rLucK:D.contrato_meses===12?'Lucro líquido no ano':'Lucro líquido em '+D.contrato_meses+' meses';
 
   $('stack').innerHTML=D.custos.map(c=>'<i style="width:'+(c.ref/REF*100)+'%;background:'+c.cor+'" title="'+esc(c.nome)+'"></i>').join('');
   $('stack').setAttribute('aria-label','Composição do valor: '+D.custos.map(c=>c.curto+' '+dec(c.ref/REF*100,0)+'%').join(', '));

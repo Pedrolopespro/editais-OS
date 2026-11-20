@@ -1,0 +1,54 @@
+{
+ "titulo": "Licitação 7004688324 · Transpetro · Resumo",
+ "orgao": "Petrobras Transporte S.A. – Transpetro",
+ "unidade": "Gerência de Suprimentos · Rio de Janeiro (RJ)",
+ "pregao": "Licitação nº 7004688324 · Lei 13.303/2016",
+ "sessao": {"data": [2026, 12, 1], "hora": "12h", "fuso": "horário de Brasília (fuso configurado no portal)", "plataforma": "Petronect", "url": "https://www.petronect.com.br"},
+ "objeto": "Aluguel de 55 carros e picapes sem motorista e sem combustível, por 36 meses, para as equipes de engenharia da Transpetro: Lote 1 (RJ, MA, PE e PA, 13 veículos 0 km) e Lote 2 (SP, PR, SC e RS, 42 veículos). Dá para propor por lote ou pelos dois juntos (lote virtual). Os números desta tela somam os 2 lotes.",
+ "condicoes": ["2 lotes + lote virtual", "Menor preço por lote", "Disputa fechada (proposta única)", "Desempate para ME/EPP", "Sem margem de preferência", "Orçamento sigiloso"],
+ "referencia": 10962000.00,
+ "contrato_meses": 36,
+ "pdf": true,
+ "rotulos": {"kTotK": "Valor estimado (orçamento sigiloso)"},
+ "vigencia": {"v": "36 meses", "s": "1.080 dias de execução por lote · prorrogável"},
+ "garantia": {"pct": 0, "v": "Não exigida", "s": "só retenção de 1% de cada medição, devolvida no fim"},
+ "tabela": {"item": "Lote · veículo", "qtd": "Veículos", "valor": "Valor em 36 meses", "sub": "estimativa nossa · orçamento sigiloso", "total": "Lotes 1 e 2 · 5 grupos de veículos", "total_qtd": "55 veículos"},
+ "capital_sub": "capital de giro · fora a compra dos 55 veículos",
+ "valor_periodo": "em 36 meses · estimativa nossa, Lote 1 + Lote 2",
+ "grupos": [
+  {"nome": "Lote 1 · Sedan", "ex": "0 km · RJ, São Luís, Suape e Belém · R$ 5.000/mês cada (premissa)", "qtd": 10, "qtd_txt": "10 carros", "v": 1800000.00},
+  {"nome": "Lote 1 · Picape 4x4", "ex": "0 km, diesel · Rio, Angra e Duque de Caxias · R$ 10.500/mês cada", "qtd": 3, "qtd_txt": "3 picapes", "v": 1134000.00},
+  {"nome": "Lote 2 · Sedan", "ex": "até 30 mil km · SP e Guaramirim (SC) · R$ 5.000/mês cada", "qtd": 11, "qtd_txt": "11 carros", "v": 1980000.00},
+  {"nome": "Lote 2 · Hatch", "ex": "até 30 mil km · SP, Paranaguá, Itajaí e Osório · R$ 4.200/mês cada", "qtd": 25, "qtd_txt": "25 carros", "v": 3780000.00},
+  {"nome": "Lote 2 · Picape 4x4", "ex": "até 30 mil km, diesel · SP e Guaramirim · R$ 10.500/mês cada", "qtd": 6, "qtd_txt": "6 picapes", "v": 2268000.00}
+ ],
+ "custos": [
+  {"nome": "Frota: depreciação e custo da compra", "curto": "Frota", "ref": 6029100.00, "pct": 70, "cor": "var(--blue)"},
+  {"nome": "Manutenção, pneus e revisões", "curto": "Manutenção", "ref": 1315440.00, "pct": 70, "cor": "var(--green)"},
+  {"nome": "Seguro, IPVA e licenciamento", "curto": "Seguro e IPVA", "ref": 1425060.00, "pct": 70, "cor": "var(--gold)"},
+  {"nome": "Rastreador, câmeras e sistema", "curto": "Tecnologia", "ref": 548100.00, "pct": 60, "cor": "var(--steel)"},
+  {"nome": "Operação: substitutos, 0800 e preposto", "curto": "Operação", "ref": 1644300.00, "pct": 60, "cor": "var(--amber)"}
+ ],
+ "locais": {
+  "estados": [{"uf": "RJ", "nome": "Rio de Janeiro"}, {"uf": "MA", "nome": "Maranhão"}, {"uf": "PE", "nome": "Pernambuco"}, {"uf": "PA", "nome": "Pará"}, {"uf": "SP", "nome": "São Paulo"}, {"uf": "PR", "nome": "Paraná"}, {"uf": "SC", "nome": "Santa Catarina"}, {"uf": "RS", "nome": "Rio Grande do Sul"}],
+  "itens": [
+   {"k": "Onde", "v": "Lote 1: sede no Rio, Angra, Duque de Caxias, São Luís, Suape e Belém · Lote 2: 9 bases em SP, Paranaguá, Itajaí, Guaramirim e Osório"},
+   {"k": "Prazo para começar", "v": "Lote 1: carros 0 km em até 60 dias do pedido · Lote 2: 75% da frota até o 12º mês"},
+   {"k": "Uso", "v": "Sem motorista: dirigem empregados da Transpetro · cerca de 4.200 km por mês por carro"},
+   {"k": "Estrutura", "v": "Não exige escritório local · 0800 24 h, carro substituto e preposto por conta da empresa"}
+  ]
+ },
+ "parametros": {"indiretas": 6, "tributos": 11, "glosa": 1, "ciclo_dias": 60, "juros_mes": 1.5, "garantia_pct": 0, "garantia_custo_ano": 0},
+ "cenarios": [
+  {"id": "alto", "nome": "Conservador", "lance": 10700000},
+  {"id": "base", "nome": "Provável", "lance": 10400000, "padrao": true},
+  {"id": "agressivo", "nome": "Agressivo", "lance": 10100000}
+ ],
+ "veredito": {"txt": "Vale estudar, só com a planilha de preços em mãos", "nivel": "medio", "risco": "risco alto"},
+ "cuidados": [
+  {"t": "O valor do contrato é secreto", "d": "os R$ 10,96 mi são estimativa nossa; acima do orçamento da Transpetro a proposta cai"},
+  {"t": "Comprar até 55 veículos antes de faturar", "d": "13 zero km no Lote 1; o aluguel paga a compra aos poucos, em 36 meses"},
+  {"t": "Só recebe por carro entregue", "d": "a Transpetro não garante volume, e a planilha de preços e a minuta do Lote 2 não vieram"}
+ ],
+ "nota": "Quantidades: Especificação Técnica ET-4000.00-9300-900-PTD-002 de cada lote (Tabelas I e III) e Edital da Licitação 7004688324. A Transpetro não divulga o orçamento e o modelo de DFP veio sem valores; por isso o valor de R$ 10.962.000,00 é estimativa nossa: 55 veículos × 36 meses × R$ 5.000 por sedan, R$ 4.200 por hatch e R$ 10.500 por picape por mês (Lote 1 R$ 2.934.000, Lote 2 R$ 8.028.000), sem os veículos eventuais. Retorno: estimativa com os custos de exemplo do simulador da análise completa, já descontados impostos, despesas indiretas e custo do dinheiro (1,5% ao mês, pagamento em cerca de 60 dias); a compra dos carros entra aos poucos no custo da frota. Antes de decidir, troque pelos preços e custos reais da empresa."
+}

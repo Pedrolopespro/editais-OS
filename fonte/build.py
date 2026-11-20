@@ -87,11 +87,13 @@ for d in pastas:
     inv = os.path.join(d, "investidor.json")
     if os.path.exists(inv):
         dados = json.load(open(inv, encoding="utf-8"))
+        if dados.get("pdf") is True:  # PDF gerado depois por fonte/gerar_pdf.py
+            dados["pdf"] = "resumo-" + meta["slug"] + ".pdf"
         url = SITE + "resumo/" + meta["slug"] + "/"
         pg = open(os.path.join(AQUI, "core", "investidor.html"), encoding="utf-8").read()
         pg = (pg.replace("{{TITULO}}", dados["titulo"]).replace("{{LOGO}}", meta.get("replace", {}).get("{{LOGO}}", "/favicon.svg"))
                 .replace("{{PAINEL}}", "/" + meta["slug"] + "/")
-                .replace("{{SOCIAL}}", social(dados["titulo"], "Resumo do edital: órgão, sessão, valor do contrato, veículos, locais e retorno estimado, em uma tela.", url))
+                .replace("{{SOCIAL}}", social(dados["titulo"], "Resumo do edital: órgão, sessão, valor do contrato, objeto, locais e retorno estimado, em uma tela.", url))
                 .replace("/*DADOS*/null", json.dumps(dados, ensure_ascii=False)))
         assert "{{" not in pg, re.findall(r"\{\{[A-Z_]+\}\}", pg)[:5]
         os.makedirs(os.path.join(RAIZ, "resumo", meta["slug"]), exist_ok=True)

@@ -1,0 +1,35 @@
+{
+ "slug": "pe-24-2026-ifb",
+ "ordem": 6,
+ "titulo": "Pregão 24/2026 · IFB · Painel de Decisão",
+ "nome": "Pregão Eletrônico 24/2026",
+ "sub": "Instituto Federal de Brasília · Uniformes escolares para 10 campi",
+ "pergunta": "Vale a pena disputar<br><b>este pregão?</b>",
+ "lead": "Registro de preços de 47.139 peças de uniforme escolar (camisetas, calças e casacos de moletom) para os 10 campi do IFB no Distrito Federal. Grupo único, 5 itens, valor máximo de R$ 2,75 milhões. <b>Sessão pública em 25/11/2026, às 8h.</b>",
+ "prazos_hint": "Contagem a partir de hoje. 20/11 é feriado nacional (Lei 14.759/2023). O prazo para impugnar e pedir esclarecimento venceu em 19/11.",
+ "foot": "Análise independente elaborada para apoio à decisão do licitante, com base no Edital 25/2026 do IFB (Pregão Eletrônico nº 24/2026, assinado em 09/11/2026), no Termo de Referência 55/2026, no Estudo Técnico Preliminar 48/2026 e nas minutas de Contrato (23/2026) e de Ata de Registro de Preços (18/2026). Não é documento oficial do Instituto Federal de Brasília e não substitui a leitura integral do Edital e anexos.",
+ "og_title": "Vale a pena disputar o Pregão 24/2026 do IFB?",
+ "descricao": "Painel de decisão do Pregão Eletrônico 24/2026 do Instituto Federal de Brasília: registro de preços de uniformes escolares para 10 campi, especificação, amostras, conflitos do edital, simulador de lance e parecer final.",
+ "card": {
+  "orgao": "Instituto Federal de Brasília (IFB)",
+  "modalidade": "Pregão eletrônico",
+  "numero": "24/2026",
+  "objeto": "Registro de preços de uniformes escolares para 10 campi no DF",
+  "valor": "R$ 2,75 mi",
+  "valor_s": "valor máximo da ata",
+  "data": [
+   2026,
+   11,
+   25
+  ],
+  "data_lbl": "25/11 · 8h",
+  "evento": "Sessão pública",
+  "art": "oper",
+  "ls": "pe24ifb-"
+ },
+ "replace": {
+  "{{LOGO}}": "/assets/logo-pe-24-2026-ifb.png",
+  "{{DOCS}}": "/docs/"
+ },
+ "artifact": false
+}
